@@ -16,7 +16,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'NapthaAI', // Usually your GitHub org/user name.
-  projectName: 'naptha-docs', // Usually your repo name.
+  projectName: 'napthaai.github.io', // Usually your repo name.
   deploymentBranch: 'deployment', // Branch for deployment
 
   onBrokenLinks: 'warn',
@@ -39,14 +39,14 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/NapthaAI/naptha-docs/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/NapthaAI/napthaai.github.io/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/NapthaAI/naptha-docs/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/NapthaAI/napthaai.github.io/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -69,13 +69,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/NapthaAI/naptha-docs',
-          label: 'GitHub',
-          position: 'right',
+          label: 'Docs',
         },
       ],
     },
@@ -86,7 +80,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Docs',
               to: '/docs/intro',
             },
           ],

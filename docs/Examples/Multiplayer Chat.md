@@ -2,7 +2,7 @@
 
 [Autogen](https://microsoft.github.io/autogen/docs/Getting-Started) by Microsoft is a framework for building apps with multiple agents that can converse with each other in various patterns, as shown in the original image below.
 
-![](static/img/autogen.png)
+![](/img/autogen.png)
 
 However, the framework is designed for agents running on one node, with the same codebase and data.
 

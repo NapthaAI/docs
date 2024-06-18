@@ -2,7 +2,7 @@
 
 [BabyAGI](https://github.com/yoheinakajima/babyagi) was one of the first multi-agent systems that made use of LLMs for performing useful tasks. It makes use of several different types of agents, such as a task creation agent and an execution agent, as shown in the original image below.
 
-![](static/img/baby-agi.png)
+![](/img/babyagi.png)
 
 However, here's Yohei (creator of BabyAGI) admitting that [BabyAGI isn't a true multi-agent system](https://x.com/yoheinakajima/status/1781183534998380576) since the agents use the same LLM and code base, and run on the same server. 
 

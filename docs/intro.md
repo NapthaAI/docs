@@ -14,5 +14,5 @@ The current Web enables scaling within organizations and platforms, but not betw
 
 Naptha's mission is to make decentralized AI orchestration simple and scalable to support the next generation of apps and use cases. We're developing a framework and infrastructure for building and operating *true* multi-agent systems. Decentralized workflows can run on one or more nodes (rather than on one central server), with different LLMs, and with many local data sources, opening up new use cases for AI devs. 
 
-![](static/img/multi-node-flow.png)
+![](/img/multi-node-flow.png)
 

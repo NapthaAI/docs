@@ -1,0 +1,20 @@
+{
+  "id": "Examples/BabyAGI",
+  "title": "BabyAGI",
+  "description": "BabyAGI was one of the first multi-agent systems that made use of LLMs for performing useful tasks. It makes use of several different types of agents, such as a task creation agent and an execution agent, as shown in the original image below.",
+  "source": "@site/docs/Examples/BabyAGI.md",
+  "sourceDirName": "Examples",
+  "slug": "/Examples/BabyAGI",
+  "permalink": "/docs/Examples/BabyAGI",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/napthaai.github.io/tree/main/docs/Examples/BabyAGI.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Multiplayer Chat",
+    "permalink": "/docs/Examples/Multiplayer Chat"
+  }
+}

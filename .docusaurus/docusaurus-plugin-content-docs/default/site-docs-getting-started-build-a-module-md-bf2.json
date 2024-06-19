@@ -1,0 +1,24 @@
+{
+  "id": "Getting Started/Build a Module",
+  "title": "Build a Module",
+  "description": "You can check out other examples of task and flow modules (and request to join the organization!) at https://huggingface.co/NapthaAI.",
+  "source": "@site/docs/Getting Started/Build a Module.md",
+  "sourceDirName": "Getting Started",
+  "slug": "/Getting Started/Build a Module",
+  "permalink": "/docs/Getting Started/Build a Module",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/napthaai.github.io/tree/main/docs/Getting Started/Build a Module.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/docs/Getting Started/Installation"
+  },
+  "next": {
+    "title": "Hello World",
+    "permalink": "/docs/Examples/Hello World"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "Examples/BabyAGI",
+              "path": "/docs/Examples/BabyAGI",
+              "sidebar": "docs"
+            },
+            {
+              "id": "Examples/Hello World",
+              "path": "/docs/Examples/Hello World",
+              "sidebar": "docs"
+            },
+            {
+              "id": "Examples/Multiplayer Chat",
+              "path": "/docs/Examples/Multiplayer Chat",
+              "sidebar": "docs"
+            },
+            {
+              "id": "Getting Started/Build a Module",
+              "path": "/docs/Getting Started/Build a Module",
+              "sidebar": "docs"
+            },
+            {
+              "id": "Getting Started/Installation",
+              "path": "/docs/Getting Started/Installation",
+              "sidebar": "docs"
+            },
+            {
+              "id": "Getting Started/Naptha Stack",
+              "path": "/docs/Getting Started/Naptha Stack",
+              "sidebar": "docs"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/intro",
+              "sidebar": "docs"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "docs": {
+              "link": {
+                "path": "/docs/intro",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

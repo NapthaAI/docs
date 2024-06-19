@@ -1,0 +1,123 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "docs": [
+      {
+        "type": "link",
+        "label": "Intro",
+        "href": "/docs/intro",
+        "docId": "intro",
+        "unlisted": false
+      },
+      {
+        "type": "category",
+        "label": "Getting Started",
+        "items": [
+          {
+            "type": "link",
+            "label": "Overview of the Naptha Stack",
+            "href": "/docs/Getting Started/Naptha Stack",
+            "docId": "Getting Started/Naptha Stack",
+            "unlisted": false
+          },
+          {
+            "type": "link",
+            "label": "Installation",
+            "href": "/docs/Getting Started/Installation",
+            "docId": "Getting Started/Installation",
+            "unlisted": false
+          },
+          {
+            "type": "link",
+            "label": "Build a Module",
+            "href": "/docs/Getting Started/Build a Module",
+            "docId": "Getting Started/Build a Module",
+            "unlisted": false
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true
+      },
+      {
+        "type": "category",
+        "label": "Examples",
+        "items": [
+          {
+            "type": "link",
+            "label": "Hello World",
+            "href": "/docs/Examples/Hello World",
+            "docId": "Examples/Hello World",
+            "unlisted": false
+          },
+          {
+            "type": "link",
+            "label": "Multiplayer Chat",
+            "href": "/docs/Examples/Multiplayer Chat",
+            "docId": "Examples/Multiplayer Chat",
+            "unlisted": false
+          },
+          {
+            "type": "link",
+            "label": "BabyAGI",
+            "href": "/docs/Examples/BabyAGI",
+            "docId": "Examples/BabyAGI",
+            "unlisted": false
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true
+      }
+    ]
+  },
+  "docs": {
+    "Examples/BabyAGI": {
+      "id": "Examples/BabyAGI",
+      "title": "BabyAGI",
+      "description": "BabyAGI was one of the first multi-agent systems that made use of LLMs for performing useful tasks. It makes use of several different types of agents, such as a task creation agent and an execution agent, as shown in the original image below.",
+      "sidebar": "docs"
+    },
+    "Examples/Hello World": {
+      "id": "Examples/Hello World",
+      "title": "Hello World",
+      "description": "Hello World is usually used as the first function when using a new framework.",
+      "sidebar": "docs"
+    },
+    "Examples/Multiplayer Chat": {
+      "id": "Examples/Multiplayer Chat",
+      "title": "Multiplayer Chat",
+      "description": "Autogen by Microsoft is a framework for building apps with multiple agents that can converse with each other in various patterns, as shown in the original image below.",
+      "sidebar": "docs"
+    },
+    "Getting Started/Build a Module": {
+      "id": "Getting Started/Build a Module",
+      "title": "Build a Module",
+      "description": "You can check out other examples of task and flow modules (and request to join the organization!) at https://huggingface.co/NapthaAI.",
+      "sidebar": "docs"
+    },
+    "Getting Started/Installation": {
+      "id": "Getting Started/Installation",
+      "title": "Installation",
+      "description": "Prerequisities",
+      "sidebar": "docs"
+    },
+    "Getting Started/Naptha Stack": {
+      "id": "Getting Started/Naptha Stack",
+      "title": "Overview of the Naptha Stack",
+      "description": "The Naptha stack is made up of the Naptha SDK, Naptha Nodes and the Naptha Hub.",
+      "sidebar": "docs"
+    },
+    "intro": {
+      "id": "intro",
+      "title": "Intro",
+      "description": "The modern world is one where markets are frequently shifting, new technologies are continuously emerging, and competition is globally increasing. Big companies and institutions struggle to move quickly. The rapidly changing needs require unprecedented levels of interoperability to process information, and share knowledge. We need to increase the scale and speed at which we can co-operate.",
+      "sidebar": "docs"
+    }
+  }
+}

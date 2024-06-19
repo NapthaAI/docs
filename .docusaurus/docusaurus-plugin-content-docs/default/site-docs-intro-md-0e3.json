@@ -1,0 +1,23 @@
+{
+  "id": "intro",
+  "title": "Intro",
+  "description": "The modern world is one where markets are frequently shifting, new technologies are continuously emerging, and competition is globally increasing. Big companies and institutions struggle to move quickly. The rapidly changing needs require unprecedented levels of interoperability to process information, and share knowledge. We need to increase the scale and speed at which we can co-operate.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/docs/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/napthaai.github.io/tree/main/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Overview of the Naptha Stack",
+    "permalink": "/docs/Getting Started/Naptha Stack"
+  }
+}

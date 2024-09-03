@@ -1,0 +1,105 @@
+## Modules
+
+You can also explore Naptha modules on [HuggingFace](https://huggingface.co/NapthaAI).
+
+## Module Template
+
+### Usage Guide
+
+#### 1. Clone
+
+Clone this [minimal example](https://huggingface.co/NapthaAI/template) for creating task and flow modules:
+
+```bash
+git clone https://huggingface.co/NapthaAI/template
+cd template
+```
+*Don't forget to change the name of the module.*
+
+#### 2. Install
+```bash
+poetry install
+```
+
+#### 3. Run
+```bash
+poetry run python <module_name>/run.py
+```
+
+### Structure
+`module_name/...`
+
+* `__init__.py` ~ allow exports
+* `run.py` ~ basic module code
+* `component.yaml` ~ configuration file
+* `schemas.py` ~ input/output schemas
+* `utils.py` ~ utility functions
+
+### Content
+#### run.py
+```python
+from naptha_sdk.utils import get_logger, load_yaml
+from module_name.schemas import InputSchema
+import yaml
+
+logger = get_logger(__name__)
+
+def run(inputs: InputSchema, worker_nodes=None, orchestrator_node=None, flow_run=None, cfg=None):
+    logger.info(f"Inputs: {inputs}")
+    return None
+
+if __name__ == "__main__":
+    cfg_path = "template/component.yaml"
+    cfg = load_yaml(cfg_path)
+    inputs = {"prompt": "hi"}
+    run(inputs, cfg=cfg)
+```
+
+#### component.yaml
+```yaml
+name: template
+author: naptha
+version: 0.1.0
+description: blueprint
+license: MIT
+
+models:
+  default_model_provider: ollama
+  ollama:
+    model: ollama/phi
+    max_tokens: 1000
+    temperature: 0
+    api_base: http://localhost:11434
+  vllm:
+    model: openai/NousResearch/Hermes-3-Llama-3.1-8B
+    api_base: http://localhost:8000/v1
+    max_tokens: 1000
+    temperature: 0
+
+inputs:
+    system_message: "You are a helpful AI assistant."
+    save: false
+    location: ipfs
+
+outputs:
+    save: false
+    location: node
+
+implementation:
+    package:
+        entrypoint: run.py
+```
+
+#### schemas.py
+Create a model for your inputs:
+```python
+from pydantic import BaseModel
+
+class InputSchema(BaseModel):
+    prompt: str
+    llm_backend: str = "ollama"
+```
+Learn how to use Pydantic by reviewing their docs:
+
+* [Models](https://docs.pydantic.dev/1.10/usage/models)
+* [Schema](https://docs.pydantic.dev/1.10/usage/schema)

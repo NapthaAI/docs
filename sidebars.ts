@@ -2,23 +2,27 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   docs: [
-    'intro',
+    'Overview',
     {
       type: 'category',
       label: 'Getting Started',
       items: [
-        'Getting Started/Naptha Stack',
-        'Getting Started/Installation',
-        'Getting Started/Build a Module',
+        'GettingStarted/Installation',
+        'GettingStarted/Architecture',
+        'GettingStarted/Modules',
       ],
     },
     {
       type: 'category',
       label: 'Examples',
       items: [
-        'Examples/Hello World',
-        'Examples/Multiplayer Chat',
+        'Examples/HelloWorld',
+        'Examples/MultiplayerChat',
         'Examples/BabyAGI',
+        'Examples/GenerateImage',
+        'Examples/SimpleRAG',
+        'Examples/OlasPrediction',
+        'Examples/MultiOlas',
       ],
     },
   ],

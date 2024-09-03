@@ -1,10 +1,10 @@
 # Hello World
 
-Hello World is usually used as the first function when using a new framework. 
+Hello World is usually used as the first function when using a new framework.
 
 ## Prerequisities
 
-Make sure you have the Naptha SDK installed. 
+Make sure you have the Naptha SDK installed.
 
 ## Modules Used
 

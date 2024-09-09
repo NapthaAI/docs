@@ -1,6 +1,8 @@
 # Modules
 
-Visit our [GitHub](https://github.com/napthaai) to discover building blocks for distributed multi-agent systems. Also, you can explore Naptha modules on [HuggingFace](https://huggingface.co/NapthaAI).
+Visit our [GitHub](https://github.com/napthaai) to discover building blocks for distributed multi-agent systems.
+
+> Also, you can explore Naptha modules on [HuggingFace](https://huggingface.co/NapthaAI).
 
 ### Examples
 * [Hello World](/Examples/HelloWorld)
@@ -15,13 +17,11 @@ Visit our [GitHub](https://github.com/napthaai) to discover building blocks for 
 
 #### 1. Clone
 
-Clone this [minimal example](https://huggingface.co/NapthaAI/template) for creating task and flow modules:
+Refer to this [minimal example](https://huggingface.co/NapthaAI/template) for how to create basic task and flow modules:
 
 ```bash
-git clone https://huggingface.co/NapthaAI/template
-cd template
+git clone https://huggingface.co/NapthaAI/template && cd template
 ```
-*Don't forget to change the name of the module.*
 
 #### 2. Install
 ```bash
@@ -30,14 +30,14 @@ poetry install
 
 #### 3. Run
 ```bash
-poetry run python <module_name>/run.py
+poetry run python template/run.py
 ```
 
-### File Structure
+### Files
 `module_name/...`
 
-* `__init__.py` ~ allow exports
-* `run.py` ~ basic module code
+* `__init__.py` (empty) ~ allow exports
+* `run.py` ~ basic module code in Python
 * `component.yaml` ~ configuration file
 * *`schemas.py` ~ input/output schemas*
 * *`utils.py` ~ utility functions*
@@ -97,7 +97,6 @@ implementation:
         entrypoint: run.py
 ```
 
-### OPTIONAL
 #### schemas.py
 Create a model for your inputs:
 ```python

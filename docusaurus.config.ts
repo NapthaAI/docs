@@ -17,7 +17,7 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'NapthaAI', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
-  deploymentBranch: 'main', // Branch for deployment
+  deploymentBranch: 'gh-pages', // Branch for deployment
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -48,7 +48,7 @@ const config: Config = {
   themeConfig: {
     image: 'img/naptha-social.jpg',
     navbar: {
-      title: 'Naptha Docs',
+      title: 'Naptha AI',
       logo: {
         alt: '',
         src: 'img/logo.svg',

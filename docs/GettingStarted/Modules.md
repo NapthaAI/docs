@@ -11,7 +11,7 @@ Visit our [GitHub](https://github.com/napthaai) to discover building blocks for 
 * [Multiplayer Chat](/Examples/MultiplayerChat)
 * [BabyAGI](/Examples/BabyAGI)
 
-## Template
+## Module Template
 
 ### Usage Guide
 

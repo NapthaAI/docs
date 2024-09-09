@@ -1,6 +1,6 @@
 # Installation
 
-1. Install Poetry with pipx
+1. Install Poetry
 2. Install Naptha SDK
 3. Setup dev environment
 
@@ -30,7 +30,7 @@ poetry install
 poetry shell
 ```
 
-## 3. Setup Environment
+## 3. Setup Dev Environment
 Next, create a copy of the .env file:
 
 ```bash

@@ -6,7 +6,7 @@ Our tech stack is made of three things:
 * Naptha Nodes
 * Naptha Hub
 
-This architecture is designed with principles of modularity, scalability, and flexibility in mind. Naptha enables distributed multi-agent systems to support a wide range of AI applications.
+This architecture is designed with principles of modularity, scalability, and flexibility in mind. Naptha enables distributed multi-agent systems to grow and support a wide range of AI applications.
 
 ### Naptha SDK
 

@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Naptha Docs',
-  tagline: 'Agentic Software Development',
+  tagline: 'Collaborative Intelligence',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

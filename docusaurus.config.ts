@@ -4,11 +4,11 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Naptha Docs',
-  tagline: 'Decentralized AI Simplified',
+  tagline: 'Collaborative Intelligence',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://napthaai.github.io',
+  url: 'https://docs.naptha.ai',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -16,15 +16,12 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'NapthaAI', // Usually your GitHub org/user name.
-  projectName: 'napthaai.github.io', // Usually your repo name.
-  deploymentBranch: 'deployment', // Branch for deployment
+  projectName: 'docs', // Usually your repo name.
+  deploymentBranch: 'main', // Branch for deployment
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -32,22 +29,15 @@ const config: Config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.ts'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/NapthaAI/napthaai.github.io/tree/main/',
+            'https://github.com/NapthaAI/docs/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/NapthaAI/napthaai.github.io/tree/main/',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -56,37 +46,35 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/naptha-social.jpg',
     navbar: {
-      title: 'Naptha AI',
+      title: 'Naptha Docs',
       logo: {
-        alt: 'My Site Logo',
+        alt: '',
         src: 'img/logo.svg',
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'docs',
+          label: 'Website',
+          href: 'https://naptha.ai',
           position: 'left',
-          label: 'Docs',
-        },
+        }
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'About',
           items: [
             {
-              label: 'Docs',
-              to: '/',
+              label: 'Website',
+              href: 'https://naptha.ai',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Social',
           items: [
             {
               label: 'Twitter',
@@ -95,7 +83,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
+          title: 'Code',
           items: [
             {
               label: 'GitHub',

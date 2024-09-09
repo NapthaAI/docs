@@ -1,6 +1,13 @@
 # Modules
 
-You can also explore Naptha modules on [HuggingFace](https://huggingface.co/NapthaAI).
+Visit our [GitHub](https://github.com/napthaai) to discover building blocks for distributed multi-agent systems. Also, you can explore Naptha modules on [HuggingFace](https://huggingface.co/NapthaAI).
+
+### Examples
+* [Hello World](/Examples/HelloWorld)
+* [Generate Image](/Examples/GenerateImage)
+* [Simple RAG](/Examples/SimpleRAG)
+* [Multiplayer Chat](/Examples/MultiplayerChat)
+* [BabyAGI](/Examples/BabyAGI)
 
 ## Template
 
@@ -26,14 +33,14 @@ poetry install
 poetry run python <module_name>/run.py
 ```
 
-### Structure
+### File Structure
 `module_name/...`
 
 * `__init__.py` ~ allow exports
 * `run.py` ~ basic module code
 * `component.yaml` ~ configuration file
-* `schemas.py` ~ input/output schemas
-* `utils.py` ~ utility functions
+* *`schemas.py` ~ input/output schemas*
+* *`utils.py` ~ utility functions*
 
 ### Content
 #### run.py
@@ -90,6 +97,7 @@ implementation:
         entrypoint: run.py
 ```
 
+### OPTIONAL
 #### schemas.py
 Create a model for your inputs:
 ```python
@@ -103,3 +111,21 @@ Learn how to use Pydantic by reviewing their docs:
 
 * [Models](https://docs.pydantic.dev/1.10/usage/models)
 * [Schema](https://docs.pydantic.dev/1.10/usage/schema)
+
+#### utils.py
+```python
+import logging
+
+
+def get_logger(name):
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.DEBUG)
+    handler = logging.StreamHandler()
+    handler.setLevel(logging.DEBUG)
+    formatter = logging.Formatter(
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    )
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    return logger
+```

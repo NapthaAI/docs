@@ -1,6 +1,6 @@
 # Architecture
 
-Our stack is made of three parts:
+Our stack is made of three things:
 
 * Naptha SDK
 * Naptha Nodes

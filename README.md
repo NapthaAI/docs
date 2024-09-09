@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Naptha AI Docs
-=======
 # Naptha Docs
->>>>>>> origin/main
 
 This documentation site is built using [Docusaurus](https://docusaurus.io/).
 

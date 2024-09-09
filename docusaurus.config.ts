@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Naptha Docs',
-  tagline: 'Decentralized AI Simplified',
+  tagline: 'Agentic Software Development',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -22,9 +22,6 @@ const config: Config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -35,7 +32,7 @@ const config: Config = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: '/', // Serve the docs at the site's root
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.ts'),
           editUrl:
             'https://github.com/NapthaAI/docs/tree/main/',
@@ -51,19 +48,18 @@ const config: Config = {
   themeConfig: {
     image: 'img/naptha-social.jpg',
     navbar: {
-      title: 'Naptha AI',
+      title: 'Naptha Docs',
       logo: {
-        alt: 'Naptha AI',
+        alt: '',
         src: 'img/logo.svg',
       },
-      // items: [
-      //   {
-      //     type: 'docSidebar',
-      //     sidebarId: 'docs',
-      //     position: 'left',
-      //     label: 'Docs',
-      //   },
-      // ],
+      items: [
+        {
+          label: 'Website',
+          href: 'https://naptha.ai',
+          position: 'left',
+        }
+      ],
     },
     footer: {
       style: 'dark',
@@ -78,7 +74,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'Community',
+          title: 'Social',
           items: [
             {
               label: 'Twitter',
@@ -87,7 +83,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'Code Base',
+          title: 'Code',
           items: [
             {
               label: 'GitHub',

@@ -4,7 +4,7 @@
 
 ![](/img/babyagi.png)
 
-However, here's Yohei (creator of BabyAGI) admitting that [BabyAGI isn't a true multi-agent system]() since the agents use the same LLM and code base, and run on the same server. 
+However, here's Yohei (creator of BabyAGI) admitting that [BabyAGI isn't a true multi-agent system](https://x.com/yoheinakajima/status/1781183534998380576) since the agents use the same LLM and code base, and run on the same server. 
 
 Using the Naptha SDK and node infrastructure, we implemented BabyAGI as a true multi-agent system for the first time. You can check out a demo video of this multi-node workflow [here](https://www.youtube.com/watch?v=nzV04zOA0f0). 
 

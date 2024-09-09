@@ -1,4 +1,4 @@
-## Use Cases
+# Use Cases
 
 Some inspiration for Naptha builders:
 

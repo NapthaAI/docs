@@ -1,4 +1,4 @@
-## Architecture
+# Architecture
 
 Our stack is made of three parts:
 

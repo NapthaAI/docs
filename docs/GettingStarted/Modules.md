@@ -1,8 +1,8 @@
-## Modules
+# Modules
 
 You can also explore Naptha modules on [HuggingFace](https://huggingface.co/NapthaAI).
 
-## Module Template
+## Template
 
 ### Usage Guide
 

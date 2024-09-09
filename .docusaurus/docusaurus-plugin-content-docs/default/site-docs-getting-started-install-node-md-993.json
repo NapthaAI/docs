@@ -1,0 +1,15 @@
+{
+  "id": "GettingStarted/InstallNode",
+  "title": "InstallNode",
+  "description": "Install Node",
+  "source": "@site/docs/GettingStarted/InstallNode.md",
+  "sourceDirName": "GettingStarted",
+  "slug": "/GettingStarted/InstallNode",
+  "permalink": "/GettingStarted/InstallNode",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/GettingStarted/InstallNode.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

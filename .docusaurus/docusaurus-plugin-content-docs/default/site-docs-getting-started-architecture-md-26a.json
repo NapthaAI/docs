@@ -1,0 +1,24 @@
+{
+  "id": "GettingStarted/Architecture",
+  "title": "Architecture",
+  "description": "Our stack is made of three things:",
+  "source": "@site/docs/GettingStarted/Architecture.md",
+  "sourceDirName": "GettingStarted",
+  "slug": "/GettingStarted/Architecture",
+  "permalink": "/GettingStarted/Architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/GettingStarted/Architecture.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/GettingStarted/Installation"
+  },
+  "next": {
+    "title": "Modules",
+    "permalink": "/GettingStarted/Modules"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "GettingStarted/Abstractions",
+  "title": "Abstractions",
+  "description": "Abstractions",
+  "source": "@site/docs/GettingStarted/Abstractions.md",
+  "sourceDirName": "GettingStarted",
+  "slug": "/GettingStarted/Abstractions",
+  "permalink": "/GettingStarted/Abstractions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/GettingStarted/Abstractions.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

@@ -1,0 +1,15 @@
+{
+  "id": "Examples/SimpleRAG",
+  "title": "Simple RAG",
+  "description": "Retrieval Augmented Generation",
+  "source": "@site/docs/Examples/SimpleRAG.md",
+  "sourceDirName": "Examples",
+  "slug": "/Examples/SimpleRAG",
+  "permalink": "/Examples/SimpleRAG",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/Examples/SimpleRAG.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

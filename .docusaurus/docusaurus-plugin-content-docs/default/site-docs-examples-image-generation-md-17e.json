@@ -1,0 +1,15 @@
+{
+  "id": "Examples/ImageGeneration",
+  "title": "ImageGeneration",
+  "description": "",
+  "source": "@site/docs/Examples/ImageGeneration.md",
+  "sourceDirName": "Examples",
+  "slug": "/Examples/ImageGeneration",
+  "permalink": "/Examples/ImageGeneration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/Examples/ImageGeneration.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

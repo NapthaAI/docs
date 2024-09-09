@@ -1,0 +1,24 @@
+{
+  "id": "Examples/HelloWorld",
+  "title": "Hello World",
+  "description": "Hello World is usually used as the first function when using a new framework.",
+  "source": "@site/docs/Examples/HelloWorld.md",
+  "sourceDirName": "Examples",
+  "slug": "/Examples/HelloWorld",
+  "permalink": "/Examples/HelloWorld",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/Examples/HelloWorld.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Modules",
+    "permalink": "/GettingStarted/Modules"
+  },
+  "next": {
+    "title": "Multiplayer Chat",
+    "permalink": "/Examples/MultiplayerChat"
+  }
+}

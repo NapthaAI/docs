@@ -1,0 +1,15 @@
+{
+  "id": "GettingStarted/UseCases",
+  "title": "Use Cases",
+  "description": "Some inspiration for Naptha builders:",
+  "source": "@site/docs/GettingStarted/UseCases.md",
+  "sourceDirName": "GettingStarted",
+  "slug": "/GettingStarted/UseCases",
+  "permalink": "/GettingStarted/UseCases",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/GettingStarted/UseCases.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

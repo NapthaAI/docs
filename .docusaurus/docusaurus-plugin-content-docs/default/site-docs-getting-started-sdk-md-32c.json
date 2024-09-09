@@ -1,0 +1,15 @@
+{
+  "id": "GettingStarted/SDK",
+  "title": "SDK",
+  "description": "How to Use the Naptha SDK",
+  "source": "@site/docs/GettingStarted/SDK.md",
+  "sourceDirName": "GettingStarted",
+  "slug": "/GettingStarted/SDK",
+  "permalink": "/GettingStarted/SDK",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/GettingStarted/SDK.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

@@ -1,0 +1,15 @@
+{
+  "id": "Examples/GenerateImage",
+  "title": "Generate Image",
+  "description": "1. Download Module​",
+  "source": "@site/docs/Examples/GenerateImage.md",
+  "sourceDirName": "Examples",
+  "slug": "/Examples/GenerateImage",
+  "permalink": "/Examples/GenerateImage",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/Examples/GenerateImage.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

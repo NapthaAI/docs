@@ -81,18 +81,13 @@ const config: Config = {
           items: [
             {
               label: 'Docs',
-              to: '/docs/intro',
+              to: '/',
             },
           ],
         },
         {
           title: 'Community',
           items: [
-
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/',
-            },
             {
               label: 'Twitter',
               href: 'https://twitter.com/NapthaAI',
@@ -102,10 +97,6 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
             {
               label: 'GitHub',
               href: 'https://github.com/NapthaAI',

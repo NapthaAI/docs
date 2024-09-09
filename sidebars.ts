@@ -21,8 +21,8 @@ const sidebars: SidebarsConfig = {
       label: 'Examples',
       items: [
         'Examples/HelloWorld',
-        'Examples/GenerateImage',
-        'Examples/SimpleRAG',
+        // 'Examples/GenerateImage',
+        // 'Examples/SimpleRAG',
         'Examples/MultiplayerChat',
         'Examples/BabyAGI',
       ],

@@ -12,3 +12,8 @@ cd module_simple_rag
 ```
 poetry install
 ```
+
+#### 3. Run
+```bash
+poetry run python module_simple_rag/run.py
+```

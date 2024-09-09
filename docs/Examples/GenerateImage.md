@@ -11,3 +11,8 @@ cd module_generate_image
 ```
 poetry install
 ```
+
+#### 3. Run
+```bash
+poetry run python module_generate_image/run.py
+```

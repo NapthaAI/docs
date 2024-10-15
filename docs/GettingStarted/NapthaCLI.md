@@ -34,7 +34,7 @@ naptha run <agent_name> <args> --worker-nodes "http://node.naptha.ai:7001"
 ##### Examples
 Try a basic "Hello world" agent:
 ```bash
-naptha run hello_world -p '{"firstname":"Sam", "surname": "Altman"}'
+naptha run hello_world_agent -p "firstname=Sam surname=Altman"
 ```
 
 Try an agent that uses the local LLM running on your node:

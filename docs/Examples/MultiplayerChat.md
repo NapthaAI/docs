@@ -1,4 +1,4 @@
-# Multi-agent Chat
+# Multi-Agent Chat
 
 Using the Naptha SDK and node infrastructure, we implemented a multiplayer chat app where each of the conversational agents runs on a different node using various LLMs.
 
@@ -10,7 +10,7 @@ Make sure you have the Naptha SDK installed.
 
 This multi-agent, multi-node workflow is made of the following components, which you can find on the Naptha HuggingFace:
 
-* [Multi-agent Chat Orchestrator](https://github.com/NapthaAI/multiagent_chat)
+* [Multi-Agent Chat Orchestrator](https://github.com/NapthaAI/multiagent_chat)
 * [Simple Chat Agent](https://github.com/NapthaAI/simple_chat_agent)
 
 ## Run

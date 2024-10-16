@@ -6,21 +6,19 @@ Visit our [GitHub](https://github.com/napthaai) to discover building blocks for 
 
 ### Examples
 * [Hello World](/Examples/HelloWorld)
-* [Generate Image](/Examples/GenerateImage)
-* [Simple RAG](/Examples/SimpleRAG)
 * [Multiplayer Chat](/Examples/MultiplayerChat)
 * [BabyAGI](/Examples/BabyAGI)
 
-## Module Template
+## Template
 
 ### Usage Guide
 
 #### 1. Clone
 
-Refer to this [minimal example](https://huggingface.co/NapthaAI/template) for how to create basic task and flow modules:
+Refer to this [minimal example](https://huggingface.co/NapthaAI/template) for how to create basic agents:
 
 ```bash
-git clone https://huggingface.co/NapthaAI/template && cd template
+git clone https://github.com/NapthaAI/agent_template && cd agent_template
 ```
 
 #### 2. Install
@@ -30,11 +28,11 @@ poetry install
 
 #### 3. Run
 ```bash
-poetry run python template/run.py
+poetry run python agent_template/run.py
 ```
 
 ### Files
-`module_name/...`
+`agent_template/...`
 
 * `__init__.py` (empty) ~ allow exports
 * `run.py` ~ basic module code in Python

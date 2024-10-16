@@ -4,7 +4,7 @@ slug: /
 
 ## Welcome to Naptha!
 
-**Let’s build agents of change to help everyone realize the potential of collaborative intelligence.**
+**Let’s build cooperative AI agents for everyone.**
 
 Naptha is a framework and infrastructure for developing and running massive multi-agent systems across many devices. Our mission is to reimagine the web in order to support next-generation AI applications and use cases.
 

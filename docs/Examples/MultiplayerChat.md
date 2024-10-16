@@ -8,7 +8,7 @@ Make sure you have the Naptha SDK installed.
 
 ## Modules Used
 
-This multi-agent, multi-node workflow is made of the following components, which you can find on the Naptha HuggingFace:
+This multi-agent, multi-node workflow is made of the following components, which you can find on the Naptha GitHub:
 
 * [Multi-Agent Chat Orchestrator](https://github.com/NapthaAI/multiagent_chat)
 * [Simple Chat Agent](https://github.com/NapthaAI/simple_chat_agent)

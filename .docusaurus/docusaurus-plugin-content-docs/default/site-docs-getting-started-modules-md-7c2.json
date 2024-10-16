@@ -1,7 +1,7 @@
 {
   "id": "GettingStarted/Modules",
   "title": "Modules",
-  "description": "Visit our GitHub to discover building blocks for distributed multi-agent systems. Also, you can explore Naptha modules on HuggingFace.",
+  "description": "Visit our GitHub to discover building blocks for distributed multi-agent systems.",
   "source": "@site/docs/GettingStarted/Modules.md",
   "sourceDirName": "GettingStarted",
   "slug": "/GettingStarted/Modules",

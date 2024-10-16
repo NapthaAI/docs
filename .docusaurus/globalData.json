@@ -1,48 +1,100 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/docs",
+      "path": "/",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/docs",
-          "mainDocId": "intro",
+          "path": "/",
+          "mainDocId": "Overview",
           "docs": [
             {
               "id": "Examples/BabyAGI",
-              "path": "/docs/Examples/BabyAGI",
+              "path": "/Examples/BabyAGI",
               "sidebar": "docs"
             },
             {
-              "id": "Examples/Hello World",
-              "path": "/docs/Examples/Hello World",
+              "id": "Examples/GenerateImage",
+              "path": "/Examples/GenerateImage"
+            },
+            {
+              "id": "Examples/HelloWorld",
+              "path": "/Examples/HelloWorld",
               "sidebar": "docs"
             },
             {
-              "id": "Examples/Multiplayer Chat",
-              "path": "/docs/Examples/Multiplayer Chat",
+              "id": "Examples/Image2Image",
+              "path": "/Examples/Image2Image"
+            },
+            {
+              "id": "Examples/MultiOlas",
+              "path": "/Examples/MultiOlas"
+            },
+            {
+              "id": "Examples/MultiplayerChat",
+              "path": "/Examples/MultiplayerChat",
               "sidebar": "docs"
             },
             {
-              "id": "Getting Started/Build a Module",
-              "path": "/docs/Getting Started/Build a Module",
+              "id": "Examples/OlasPrediction",
+              "path": "/Examples/OlasPrediction"
+            },
+            {
+              "id": "Examples/SimpleRAG",
+              "path": "/Examples/SimpleRAG"
+            },
+            {
+              "id": "GettingStarted/Abstractions",
+              "path": "/GettingStarted/Abstractions"
+            },
+            {
+              "id": "GettingStarted/Architecture",
+              "path": "/GettingStarted/Architecture",
               "sidebar": "docs"
             },
             {
-              "id": "Getting Started/Installation",
-              "path": "/docs/Getting Started/Installation",
+              "id": "GettingStarted/BuildAgent",
+              "path": "/GettingStarted/BuildAgent"
+            },
+            {
+              "id": "GettingStarted/Installation",
+              "path": "/GettingStarted/Installation",
               "sidebar": "docs"
             },
             {
-              "id": "Getting Started/Naptha Stack",
-              "path": "/docs/Getting Started/Naptha Stack",
+              "id": "GettingStarted/InstallNode",
+              "path": "/GettingStarted/InstallNode"
+            },
+            {
+              "id": "GettingStarted/InstallSDK",
+              "path": "/GettingStarted/InstallSDK"
+            },
+            {
+              "id": "GettingStarted/Modules",
+              "path": "/GettingStarted/Modules",
               "sidebar": "docs"
+            },
+            {
+              "id": "GettingStarted/NapthaCLI",
+              "path": "/GettingStarted/NapthaCLI"
+            },
+            {
+              "id": "GettingStarted/SDK",
+              "path": "/GettingStarted/SDK"
+            },
+            {
+              "id": "GettingStarted/UseCases",
+              "path": "/GettingStarted/UseCases"
             },
             {
               "id": "intro",
-              "path": "/docs/intro",
+              "path": "/intro"
+            },
+            {
+              "id": "Overview",
+              "path": "/",
               "sidebar": "docs"
             }
           ],
@@ -50,8 +102,8 @@
           "sidebars": {
             "docs": {
               "link": {
-                "path": "/docs/intro",
-                "label": "intro"
+                "path": "/",
+                "label": "Overview"
               }
             }
           }

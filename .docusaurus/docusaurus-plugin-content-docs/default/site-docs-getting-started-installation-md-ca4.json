@@ -1,7 +1,7 @@
 {
   "id": "GettingStarted/Installation",
   "title": "Installation",
-  "description": "1. Install Poetry",
+  "description": "Steps",
   "source": "@site/docs/GettingStarted/Installation.md",
   "sourceDirName": "GettingStarted",
   "slug": "/GettingStarted/Installation",

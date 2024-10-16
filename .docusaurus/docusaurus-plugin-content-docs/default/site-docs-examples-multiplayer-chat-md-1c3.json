@@ -1,7 +1,7 @@
 {
   "id": "Examples/MultiplayerChat",
-  "title": "Multiplayer Chat",
-  "description": "Autogen by Microsoft is a framework for building apps with multiple agents that can converse with each other in various patterns, as shown in the original image below.",
+  "title": "Multi-Agent Chat",
+  "description": "Using the Naptha SDK and node infrastructure, we implemented a multiplayer chat app where each of the conversational agents runs on a different node using various LLMs.",
   "source": "@site/docs/Examples/MultiplayerChat.md",
   "sourceDirName": "Examples",
   "slug": "/Examples/MultiplayerChat",

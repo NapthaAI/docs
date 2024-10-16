@@ -1,0 +1,15 @@
+{
+  "id": "GettingStarted/NapthaCLI",
+  "title": "CLI Usage",
+  "description": "Nodes",
+  "source": "@site/docs/GettingStarted/NapthaCLI.md",
+  "sourceDirName": "GettingStarted",
+  "slug": "/GettingStarted/NapthaCLI",
+  "permalink": "/GettingStarted/NapthaCLI",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/GettingStarted/NapthaCLI.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

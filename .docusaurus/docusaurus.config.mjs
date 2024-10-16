@@ -5,13 +5,13 @@
  */
 export default {
   "title": "Naptha Docs",
-  "tagline": "Decentralized AI Simplified",
+  "tagline": "Collaborative Intelligence",
   "favicon": "img/favicon.ico",
-  "url": "https://napthaai.github.io",
+  "url": "https://docs.naptha.ai",
   "baseUrl": "/",
   "organizationName": "NapthaAI",
-  "projectName": "napthaai.github.io",
-  "deploymentBranch": "deployment",
+  "projectName": "docs",
+  "deploymentBranch": "gh-pages",
   "onBrokenLinks": "warn",
   "onBrokenMarkdownLinks": "warn",
   "i18n": {
@@ -24,16 +24,14 @@ export default {
   },
   "presets": [
     [
-      "classic",
+      "@docusaurus/preset-classic",
       {
         "docs": {
-          "sidebarPath": "C:\\Users\\me\\Documents\\GitHub\\napthaai.github.io\\napthaai.github.io-1\\sidebars.ts",
-          "editUrl": "https://github.com/NapthaAI/napthaai.github.io/tree/main/"
+          "routeBasePath": "/",
+          "sidebarPath": "/Users/jlwaugh/Desktop/basic/sidebars.ts",
+          "editUrl": "https://github.com/NapthaAI/docs/tree/main/"
         },
-        "blog": {
-          "showReadingTime": true,
-          "editUrl": "https://github.com/NapthaAI/napthaai.github.io/tree/main/"
-        },
+        "blog": false,
         "theme": {
           "customCss": "./src/css/custom.css"
         }
@@ -41,19 +39,18 @@ export default {
     ]
   ],
   "themeConfig": {
-    "image": "img/docusaurus-social-card.jpg",
+    "image": "img/naptha-social.png",
     "navbar": {
       "title": "Naptha AI",
       "logo": {
-        "alt": "My Site Logo",
+        "alt": "",
         "src": "img/logo.svg"
       },
       "items": [
         {
-          "type": "docSidebar",
-          "sidebarId": "docs",
-          "position": "left",
-          "label": "Docs"
+          "label": "Website",
+          "href": "https://naptha.ai",
+          "position": "left"
         }
       ],
       "hideOnScroll": false
@@ -62,21 +59,17 @@ export default {
       "style": "dark",
       "links": [
         {
-          "title": "Docs",
+          "title": "About",
           "items": [
             {
-              "label": "Docs",
-              "to": "/docs/intro"
+              "label": "Website",
+              "href": "https://naptha.ai"
             }
           ]
         },
         {
-          "title": "Community",
+          "title": "Social",
           "items": [
-            {
-              "label": "Discord",
-              "href": "https://discordapp.com/invite/"
-            },
             {
               "label": "Twitter",
               "href": "https://twitter.com/NapthaAI"
@@ -84,12 +77,8 @@ export default {
           ]
         },
         {
-          "title": "More",
+          "title": "Code",
           "items": [
-            {
-              "label": "Blog",
-              "to": "/blog"
-            },
             {
               "label": "GitHub",
               "href": "https://github.com/NapthaAI"
@@ -315,6 +304,11 @@ export default {
         "autoCollapseCategories": false
       }
     },
+    "blog": {
+      "sidebar": {
+        "groupByYear": true
+      }
+    },
     "metadata": [],
     "tableOfContents": {
       "minHeadingLevel": 2,
@@ -322,6 +316,13 @@ export default {
     }
   },
   "baseUrlIssueBanner": true,
+  "future": {
+    "experimental_storage": {
+      "type": "localStorage",
+      "namespace": false
+    },
+    "experimental_router": "browser"
+  },
   "onBrokenAnchors": "warn",
   "onDuplicateRoutes": "warn",
   "staticDirectories": [
@@ -343,6 +344,9 @@ export default {
       "comments": true,
       "admonitions": true,
       "headingIds": true
+    },
+    "anchors": {
+      "maintainCase": false
     }
   }
 };

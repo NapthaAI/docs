@@ -5,19 +5,14 @@
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
   "slug": "/intro",
-  "permalink": "/docs/intro",
+  "permalink": "/intro",
   "draft": false,
   "unlisted": false,
-  "editUrl": "https://github.com/NapthaAI/napthaai.github.io/tree/main/docs/intro.md",
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/intro.md",
   "tags": [],
   "version": "current",
   "sidebarPosition": 1,
   "frontMatter": {
     "sidebar_position": 1
-  },
-  "sidebar": "docs",
-  "next": {
-    "title": "Overview of the Naptha Stack",
-    "permalink": "/docs/Getting Started/Naptha Stack"
   }
 }

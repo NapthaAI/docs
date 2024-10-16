@@ -1,6 +1,6 @@
 # BabyAGI
 
-[BabyAGI](https://github.com/yoheinakajima/babyagi) was one of the first multi-agent systems that made use of LLMs for performing useful tasks. It makes use of several different types of agents, such as a task creation agent and an execution agent, as shown in the original image below.
+[BabyAGI](https://github.com/yoheinakajima/babyagi) was one of the first multi-agent systems that used LLMs for performing useful tasks. It makes use of several different types of agents, such as a task creation agent and an execution agent, as shown in the diagram below.
 
 ![](/img/babyagi.png)
 
@@ -29,4 +29,4 @@ You can run the BabyAGI flow from the SDK using the following command:
 naptha run babyagi -p "objective='Research the history of football'" --worker_nodes "http://node.naptha.ai:7001,http://node1.naptha.ai:7001"
 ```
 
-This runs the flow across three different nodes in total - one orchestrator node (whichever you have set as the ```NODE_URL``` in the .env file of the Naptha SDK), and two worker nodes (that you have set using the ```--worker_nodes``` flag).
+This runs the flow across three nodes in total - one orchestrator node (whichever you have set as the ```NODE_URL``` in the .env file of the Naptha SDK), and two worker nodes (that you have set using the ```--worker_nodes``` flag).

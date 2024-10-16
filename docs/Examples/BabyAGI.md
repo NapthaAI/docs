@@ -14,12 +14,12 @@ Make sure you have the Naptha SDK installed.
 
 ## Modules Used
 
-The BabyAGI multi-node workflow is made up of the following components, which you can find on the Naptha HuggingFace:
+The BabyAGI multi-node workflow is made up of the following components, which you can find on the Naptha GitHub:
 
-* [BabyAGI Orchestrator Flow](https://huggingface.co/NapthaAI/babyagi/tree/v0.1)
-* [BabyAGI Task Initiator](https://huggingface.co/NapthaAI/babyagi_task_initiator/tree/v0.1)
-* [BabyAGI Task Finalizer](https://huggingface.co/NapthaAI/babyagi_task_finalizer/tree/v0.1)
-* [BabyAGI Task Executor](https://huggingface.co/NapthaAI/babyagi_task_executor/tree/v0.1)
+* [BabyAGI Orchestrator Flow](https://github.com/NapthaAI/babyagi)
+* [BabyAGI Task Initiator](https://github.com/NapthaAI/babyagi_task_initiator)
+* [BabyAGI Task Finalizer](https://github.com/NapthaAI/babyagi_task_finalizer)
+* [BabyAGI Task Executor](https://github.com/NapthaAI/babyagi_task_executor)
 
 ## Run
 
@@ -29,4 +29,4 @@ You can run the BabyAGI flow from the SDK using the following command:
 naptha run babyagi -p "objective='Research the history of football'" --worker_nodes "http://node.naptha.ai:7001,http://node1.naptha.ai:7001"
 ```
 
-This will run the flow across three different nodes in total - one orchestrator node (whichever you have set as the ```NODE_URL``` in the .env file of the Naptha SDK), and two worker nodes (that you have set using the ```--worker_nodes``` flag).
+This runs the flow across three different nodes in total - one orchestrator node (whichever you have set as the ```NODE_URL``` in the .env file of the Naptha SDK), and two worker nodes (that you have set using the ```--worker_nodes``` flag).

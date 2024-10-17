@@ -1,13 +1,12 @@
-# Agent Decorators
-With only a few lines of code, builders can easily deploy custom AI agents to the Naptha hub or their own local node.
+# Decorators
+> With only a few lines of code, builders can easily deploy custom AI agents to the Naptha hub or their own local node.
 
-### Introduction
-
-Naptha supports a web of multi-agent systems that grow and evolve. This walkthrough explains how to decorate functions in order to quickly publish existing agents, **allowing them to interact with others.**
+### Context
+Naptha supports a web of multi-agent systems that grow and evolve. This walkthrough explains how to decorate functions in order to **quickly publish existing agents, *allowing them to interact with others.***
 
 ### Prerequisites
 
-* Python >= 3.10, <= 3.13
+* Python `>= 3.10, <= 3.13`
 * Poetry package manager
 * Naptha username & password
 
@@ -16,7 +15,7 @@ Naptha supports a web of multi-agent systems that grow and evolve. This walkthro
 ### Step-by-step Walkthrough
 
 #### 1. Setup
-Configure your .env file:
+Configure your `.env` file:
 ```
 HUB_USER=<your_naptha_username>
 HUB_PASS=<your_naptha_password>
@@ -68,7 +67,7 @@ Enter this command:
 ```bash
 naptha publish
 ```
-*This command publishes all agents in the agent_pkgs folder to the Naptha node specified in your .env file.*
+*This command publishes all agents in the `agent_pkgs` folder to the Naptha node specified in your `.env` file.*
 
 #### 8. Test
 Verify the agent is working properly:
@@ -85,11 +84,12 @@ Let's break it down:
 
 By running Python code that includes our decorator, agent functions are automatically processed and converted into Naptha-compatible packages.
 
-Later, when you enter `naptha publish` via the CLI, those agent packages will be added to the Naptha node specified in your .env file.
+Later, when you enter `naptha publish` via the CLI, those agent packages will be added to the Naptha node specified in your `.env` file.
 
 ## Usage Examples
 
-### [Stock Analysis](https://github.com/NapthaAI/crewAI-examples/blob/main/stock_analysis/src/stock_analysis/crew.py) - CrewAI
+### Stock Analysis - CrewAI
+View the full code sample [here](https://github.com/NapthaAI/crewAI-examples/blob/main/stock_analysis/src/stock_analysis/crew.py).
 ```python
 @naptha_agent("financial_agent")
     def financial_agent(self) -> Agent:
@@ -100,4 +100,4 @@ Later, when you enter `naptha publish` via the CLI, those agent packages will be
 
 ## Feedback
 
-Create an issue in the Naptha SDK GitHub repository to let us know any problems, ideas, or questions. We will continue adding examples, and your help is much appreciated!
+[Create issues](https://github.com/NapthaAI/naptha-sdk/issues) in the Naptha SDK GitHub repository to let us know any problems, ideas, or questions. We plan to continue adding examples, and your help would be much appreciated!

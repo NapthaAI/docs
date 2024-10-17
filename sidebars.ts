@@ -10,6 +10,7 @@ const sidebars: SidebarsConfig = {
         'GettingStarted/Installation',
         'GettingStarted/Architecture',
         'GettingStarted/Modules',
+        'GettingStarted/Decorators',
         // 'GettingStarted/BuildAgent',
         // 'GettingStarted/SDK',
         // 'GettingStarted/UseCases',

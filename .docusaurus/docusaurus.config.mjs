@@ -28,7 +28,7 @@ export default {
       {
         "docs": {
           "routeBasePath": "/",
-          "sidebarPath": "/Users/jlwaugh/Desktop/basic/sidebars.ts",
+          "sidebarPath": "/Users/jlwaugh/Desktop/naptha-docs/sidebars.ts",
           "editUrl": "https://github.com/NapthaAI/docs/tree/main/"
         },
         "blog": false,
@@ -39,7 +39,7 @@ export default {
     ]
   ],
   "themeConfig": {
-    "image": "img/naptha-social.png",
+    "image": "img/naptha-social.jpg",
     "navbar": {
       "title": "Naptha AI",
       "logo": {

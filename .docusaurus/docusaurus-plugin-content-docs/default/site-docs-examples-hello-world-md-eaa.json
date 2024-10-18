@@ -14,8 +14,8 @@
   "frontMatter": {},
   "sidebar": "docs",
   "previous": {
-    "title": "Modules",
-    "permalink": "/GettingStarted/Modules"
+    "title": "Decorators",
+    "permalink": "/GettingStarted/Decorators"
   },
   "next": {
     "title": "Multi-Agent Chat",

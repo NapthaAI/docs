@@ -18,7 +18,7 @@
     "permalink": "/GettingStarted/Architecture"
   },
   "next": {
-    "title": "Hello World",
-    "permalink": "/Examples/HelloWorld"
+    "title": "Decorators",
+    "permalink": "/GettingStarted/Decorators"
   }
 }

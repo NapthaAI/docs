@@ -59,6 +59,11 @@
               "path": "/GettingStarted/BuildAgent"
             },
             {
+              "id": "GettingStarted/Decorators",
+              "path": "/GettingStarted/Decorators",
+              "sidebar": "docs"
+            },
+            {
               "id": "GettingStarted/Installation",
               "path": "/GettingStarted/Installation",
               "sidebar": "docs"

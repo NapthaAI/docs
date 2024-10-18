@@ -1,0 +1,24 @@
+{
+  "id": "GettingStarted/Decorators",
+  "title": "Decorators",
+  "description": "With only a few lines of code, builders can easily deploy custom AI agents to the Naptha hub or their own local node.",
+  "source": "@site/docs/GettingStarted/Decorators.md",
+  "sourceDirName": "GettingStarted",
+  "slug": "/GettingStarted/Decorators",
+  "permalink": "/GettingStarted/Decorators",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/NapthaAI/docs/tree/main/docs/GettingStarted/Decorators.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Modules",
+    "permalink": "/GettingStarted/Modules"
+  },
+  "next": {
+    "title": "Hello World",
+    "permalink": "/Examples/HelloWorld"
+  }
+}

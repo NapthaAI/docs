@@ -4,15 +4,15 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/',
-    component: ComponentCreator('/', 'e3c'),
+    component: ComponentCreator('/', '59e'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '769'),
+        component: ComponentCreator('/', '069'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '1d1'),
+            component: ComponentCreator('/', '554'),
             routes: [
               {
                 path: '/Examples/BabyAGI',
@@ -72,6 +72,12 @@ export default [
                 path: '/GettingStarted/BuildAgent',
                 component: ComponentCreator('/GettingStarted/BuildAgent', '10a'),
                 exact: true
+              },
+              {
+                path: '/GettingStarted/Decorators',
+                component: ComponentCreator('/GettingStarted/Decorators', '30b'),
+                exact: true,
+                sidebar: "docs"
               },
               {
                 path: '/GettingStarted/Installation',

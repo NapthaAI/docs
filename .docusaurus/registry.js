@@ -20,6 +20,7 @@ export default {
   "a7bd4aaa": [() => import(/* webpackChunkName: "a7bd4aaa" */ "@theme/DocVersionRoot"), "@theme/DocVersionRoot", require.resolveWeak("@theme/DocVersionRoot")],
   "a94703ab": [() => import(/* webpackChunkName: "a94703ab" */ "@theme/DocRoot"), "@theme/DocRoot", require.resolveWeak("@theme/DocRoot")],
   "aba21aa0": [() => import(/* webpackChunkName: "aba21aa0" */ "@generated/docusaurus-plugin-content-docs/default/__plugin.json"), "@generated/docusaurus-plugin-content-docs/default/__plugin.json", require.resolveWeak("@generated/docusaurus-plugin-content-docs/default/__plugin.json")],
+  "ae7f06bd": [() => import(/* webpackChunkName: "ae7f06bd" */ "@site/docs/GettingStarted/Decorators.md"), "@site/docs/GettingStarted/Decorators.md", require.resolveWeak("@site/docs/GettingStarted/Decorators.md")],
   "b123efe8": [() => import(/* webpackChunkName: "b123efe8" */ "@site/docs/Examples/MultiOlas.md"), "@site/docs/Examples/MultiOlas.md", require.resolveWeak("@site/docs/Examples/MultiOlas.md")],
   "ca428260": [() => import(/* webpackChunkName: "ca428260" */ "@site/docs/GettingStarted/Installation.md"), "@site/docs/GettingStarted/Installation.md", require.resolveWeak("@site/docs/GettingStarted/Installation.md")],
   "cbc3190d": [() => import(/* webpackChunkName: "cbc3190d" */ "@site/docs/Overview.md"), "@site/docs/Overview.md", require.resolveWeak("@site/docs/Overview.md")],

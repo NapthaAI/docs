@@ -1,15 +1,15 @@
 {
-  "/-e3c": {
+  "/-59e": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/-769": {
+  "/-069": {
     "__comp": "a7bd4aaa",
     "__props": "22dd74f7"
   },
-  "/-1d1": {
+  "/-554": {
     "__comp": "a94703ab"
   },
   "/Examples/BabyAGI-15c": {
@@ -55,6 +55,10 @@
   "/GettingStarted/BuildAgent-10a": {
     "__comp": "17896441",
     "content": "79552bf1"
+  },
+  "/GettingStarted/Decorators-30b": {
+    "__comp": "17896441",
+    "content": "ae7f06bd"
   },
   "/GettingStarted/Installation-d37": {
     "__comp": "17896441",

@@ -39,7 +39,7 @@ export default {
     ]
   ],
   "themeConfig": {
-    "image": "img/naptha-social.jpg",
+    "image": "img/naptha-social.png",
     "navbar": {
       "title": "Naptha AI",
       "logo": {
@@ -86,7 +86,7 @@ export default {
           ]
         }
       ],
-      "copyright": "Copyright © 2024 Naptha AI."
+      "copyright": "Copyright © 2024 Naptha AI"
     },
     "prism": {
       "theme": {

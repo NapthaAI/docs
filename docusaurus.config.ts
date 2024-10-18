@@ -46,7 +46,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/naptha-social.jpg',
+    image: 'img/naptha-social.png',
     navbar: {
       title: 'Naptha AI',
       logo: {
@@ -92,7 +92,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Naptha AI.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Naptha AI`,
     },
     prism: {
       theme: prismThemes.github,

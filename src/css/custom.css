@@ -4,27 +4,26 @@
  * work well for content-centric websites.
  */
 
- /* You can override the default Infima variables here. */
+/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #FF6F00; /* Orange from the logo */
-  --ifm-color-primary-dark: #E65100; /* Darker orange */
-  --ifm-color-primary-darker: #BF360C; /* Even darker orange */
-  --ifm-color-primary-darkest: #A52300; /* Darkest orange */
-  --ifm-color-primary-light: #FF8F00; /* Lighter orange */
-  --ifm-color-primary-lighter: #FFA726; /* Lightest orange */
-  --ifm-color-primary-lightest: #FFB74D; /* Lightest tone from the logo */
+  --ifm-color-primary: #F72F3B;
+  --ifm-color-primary-dark: #F01622;
+  --ifm-color-primary-darker: #E30F1A;
+  --ifm-color-primary-darkest: #BB0C15;
+  --ifm-color-primary-light: #F84854;
+  --ifm-color-primary-lighter: #F9616C;
+  --ifm-color-primary-lightest: #FB8B93;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(255, 111, 0, 0.1); /* Highlight color based on the logo's orange */
+  --docusaurus-highlighted-code-line-bg: rgba(247, 47, 59, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #FF9100; /* A brighter orange suitable for dark mode */
-  --ifm-color-primary-dark: #FF6F00; /* Darker bright orange */
-  --ifm-color-primary-darker: #E65100; /* Darkest bright orange */
-  --ifm-color-primary-darkest: #BF360C; /* Darker shade for contrast */
-  --ifm-color-primary-light: #FFA726; /* Brighter light for dark mode */
-  --ifm-color-primary-lighter: #FFB74D; /* Even brighter for lighter highlights */
-  --ifm-color-primary-lightest: #FFD54F; /* Lightest yellow-orange for contrast */
-  --docusaurus-highlighted-code-line-bg: rgba(255, 111, 0, 0.3); /* Dark mode highlight based on the logo's orange */
+  --ifm-color-primary: #F84854;
+  --ifm-color-primary-dark: #F72F3B;
+  --ifm-color-primary-darker: #F01622;
+  --ifm-color-primary-darkest: #E30F1A;
+  --ifm-color-primary-light: #F9616C;
+  --ifm-color-primary-lighter: #FB8B93;
+  --ifm-color-primary-lightest: #FCB4BA;
+  --docusaurus-highlighted-code-line-bg: rgba(247, 47, 59, 0.3);
 }

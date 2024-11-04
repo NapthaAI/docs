@@ -19,7 +19,7 @@ const config: Config = {
   projectName: 'docs', // Usually your repo name.
   deploymentBranch: 'gh-pages', // Branch for deployment
 
-  trailingSlash: true,
+  trailingSlash: false,
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',

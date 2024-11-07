@@ -31,6 +31,10 @@ Update your `pyproject.toml` file:
 [tool.poetry.dependencies]
 naptha-sdk = {git = "https://github.com/NapthaAI/naptha-sdk"}
 ```
+If not using poetry, you can just add `naptha-sdk` to your `requirements.txt` file, then run:
+```bash
+pip install -r requirements.txt
+```
 
 #### 3. Install dependencies:
 Execute via CLI:
@@ -62,14 +66,25 @@ poetry run python <agent>.py
 ```
 *This creates a folder named `agent_pkgs`, which contains your "Napthafied" agent functions. The SDK translates your code into a format compatible with other agents on Naptha.*
 
-#### 7. Publish
+#### 7. Test
+```bash
+cd agent_pkgs/<agent_name>
+```
+```bash
+poetry install
+```
+```bash
+poetry run python <agent_name>/run.py
+```
+*If you're using an agent framework other than CrewAI, you will likely need to change the inputs dict, where `tool_name` is the name of the agent method that you would like to call, `tool_input_type` is the type (e.g. pydantic schema name) of the input for that call, and `tool_input_value` is a dict of the schema parameters and values.*
+
+#### 8. Publish
 Enter this command:
 ```bash
 naptha publish
 ```
 *This command publishes all agents in the `agent_pkgs` folder to the Naptha node specified in your `.env` file.*
 
-#### 8. Test
 Verify the agent is working properly:
 ```bash
 naptha run <agent_name>
@@ -88,7 +103,9 @@ Later, when you enter `naptha publish` via the CLI, those agent packages will be
 
 ## Usage Examples
 
-### Stock Analysis - CrewAI
+### [CrewAI](https://github.com/NapthaAI/crewAI-examples)
+
+#### Stock Analysis
 View the full code sample [here](https://github.com/NapthaAI/crewAI-examples/blob/main/stock_analysis/src/stock_analysis/crew.py).
 ```python
 @naptha_agent("financial_agent")
@@ -97,6 +114,8 @@ View the full code sample [here](https://github.com/NapthaAI/crewAI-examples/blo
             ...
         )
 ```
+
+### Other Frameworks (Coming Soon)
 
 ## Feedback
 

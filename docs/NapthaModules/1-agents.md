@@ -14,6 +14,8 @@ Agent modules come in several forms:
   Belief-Desire-Intention agents for complex autonomous behavior
 - **SOAR Agents**
   State, Operator, And Result agents for cognitive architectures
+- **RL Agents**
+  Reinforcement Learning agents that follow the Perceive-Act-Reflect loop
 
 ## Deploying and Calling an Agent Module
 
@@ -53,7 +55,7 @@ Under the hood, `call_agent_func` makes a call to the worker node via API, which
 You can deploy an agent via CLI using:
 
 ```bash
-# Deploy a new agent instance
+
 # Format: naptha create agent:<agent_type> --agent_node <node_url>
 naptha create agent:simple_chat_agent --agent_node "https://node.naptha.ai"
 ```
@@ -61,7 +63,6 @@ naptha create agent:simple_chat_agent --agent_node "https://node.naptha.ai"
 You can call an agent module via CLI using:
 
 ```bash
-# Run an agent with parameters
 # Format: naptha run agent:<agent_type> -p "<param_name>=<value>"
 naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='What is an AI agent?'"
 ```

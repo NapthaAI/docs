@@ -2,15 +2,18 @@
 
 You can think of the Agent Module as the loop that an agent runs.
 
-Agent modules are things like:
+Agent modules come in several forms:
 
-- Chat agents  
-- Task-solving agents 
-- ReAct Agent (Reason, Act)
-- RL Agent (Perceive, Act, Reflect)
-- BDI Agent
-- SOAR
-
+- **Chat Agents**  
+  Simple conversational agents that can engage in dialogue
+- **Task-Solving Agents** 
+  Agents that can break down and complete specific tasks
+- **ReAct Agents**
+  Agents that follow the Reason-Act pattern for structured problem solving
+- **BDI Agents**
+  Belief-Desire-Intention agents for complex autonomous behavior
+- **SOAR Agents**
+  State, Operator, And Result agents for cognitive architectures
 
 ## Deploying and Calling an Agent Module
 
@@ -47,15 +50,21 @@ Under the hood, `call_agent_func` makes a call to the worker node via API, which
 
 ### From the CLI
 
-You can deploy an via CLI using:
+You can deploy an agent via CLI using:
 
 ```bash
+# Deploy a new agent instance
+# Format: naptha create agent:<agent_type> --agent_node <node_url>
 naptha create agent:simple_chat_agent --agent_node "https://node.naptha.ai"
 ```
 
 You can call an agent module via CLI using:
 
 ```bash
+# Run an agent with parameters
+# Format: naptha run agent:<agent_type> -p "<param_name>=<value>"
 naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='What is an AI agent?'"
 ```
+
+The agent will execute on the specified node, making it easy to integrate with other modules.
 

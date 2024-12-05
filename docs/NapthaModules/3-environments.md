@@ -42,5 +42,15 @@ Under the hood, `call_environment_func` makes a call to the environment node via
 You can run environment modules via CLI using:
 
 ```bash
+# Format: naptha run environment:<env_type> -p "<param_name>=<value>"
 naptha run environment:groupchat_environment -p "function_name='get_global_state'"
 ```
+
+## Examples
+
+Check out this environment implementation:
+- [Group Chat Environment](https://github.com/NapthaAI/groupchat_environment)
+
+## Need Help?
+- Join our [Discord](https://discord.gg/naptha)
+- Submit issues on [GitHub](https://github.com/NapthaAI)

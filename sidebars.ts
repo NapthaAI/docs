@@ -28,6 +28,18 @@ const sidebars: SidebarsConfig = {
         'Examples/BabyAGI',
       ],
     },
+    {
+      type: 'category',
+      label: 'Naptha Modules',
+      items: [
+        'NapthaModules/overview',
+        'NapthaModules/agents',
+        'NapthaModules/orchestrators',
+        'NapthaModules/environments',
+        'NapthaModules/tools',
+        'NapthaModules/personas',
+      ],
+    },
   ],
 };
 

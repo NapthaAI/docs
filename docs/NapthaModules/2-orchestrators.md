@@ -55,3 +55,6 @@ You can call an orchestrator module via CLI using:
 naptha run orchestrator:multiagent_chat -p "function_name='multiagent_chat' tool_input_data='i would like to count up to ten, one number at a time. ill start. one.'"
 ```
 
+## Need Help?
+- Join our [Community](https://naptha.ai/naptha-community)
+- Submit issues on [GitHub](https://github.com/NapthaAI)

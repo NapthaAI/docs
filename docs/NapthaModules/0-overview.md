@@ -71,3 +71,7 @@ naptha tools         # explore available tool modules
 naptha personas      # explore available persona modules
 ```
 
+
+## Need Help?
+- Join our [Community](https://naptha.ai/naptha-community)
+- Submit issues on [GitHub](https://github.com/NapthaAI)

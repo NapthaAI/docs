@@ -2,7 +2,7 @@
 
 You can think of the Agent Module as the loop that an agent runs.
 
-Agent modules come in several forms:
+Agent modules can come in several forms:
 
 - **Chat Agents**  
   Simple conversational agents that can engage in dialogue
@@ -69,3 +69,7 @@ naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='What is
 
 The agent will execute on the specified node, making it easy to integrate with other modules.
 
+
+## Need Help?
+- Join our [Community](https://naptha.ai/naptha-community)
+- Submit issues on [GitHub](https://github.com/NapthaAI)

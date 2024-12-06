@@ -40,6 +40,14 @@ const sidebars: SidebarsConfig = {
         'NapthaModules/personas',
       ],
     },
+    {
+      type: 'category',
+      label: 'Naptha Nodes',
+      items: [
+        'NapthaNodes/what-are-nodes',
+        'NapthaNodes/run',
+      ],
+    },
   ],
 };
 

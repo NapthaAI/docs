@@ -1,4 +1,6 @@
-## Install Node
+---
+title: Install Node
+---
 
 ## Quick Start
 To get started initially, you can run the Naptha SDK using a hosted node. 

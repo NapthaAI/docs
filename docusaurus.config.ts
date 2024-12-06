@@ -60,6 +60,12 @@ const config: Config = {
           label: 'Website',
           href: 'https://naptha.ai',
           position: 'left',
+        },
+        {
+          href: 'https://github.com/NapthaAI',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         }
       ],
     },

@@ -22,10 +22,13 @@ const sidebars: SidebarsConfig = {
       label: 'Examples',
       items: [
         'Examples/HelloWorld',
-        // 'Examples/GenerateImage',
-        // 'Examples/SimpleRAG',
+        'Examples/GenerateImage',
+        'Examples/Image2Image',
+        'Examples/MultiOlas',
         'Examples/MultiplayerChat',
-        'Examples/BabyAGI',
+        'Examples/OlasPrediction', 
+        'Examples/SimpleRAG',
+        'Examples/BabyAGI', 
       ],
     },
     {

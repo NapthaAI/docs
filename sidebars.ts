@@ -24,7 +24,7 @@ const sidebars: SidebarsConfig = {
         'Examples/HelloWorld',
         'Examples/GenerateImage',
         'Examples/Image2Image',
-        'Examples/MultiOlas',
+        // 'Examples/MultiOlas',
         'Examples/MultiplayerChat',
         'Examples/OlasPrediction', 
         'Examples/SimpleRAG',

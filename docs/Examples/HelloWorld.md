@@ -1,10 +1,11 @@
 # Hello World
 
-Hello World is usually used as the first function when using a new framework.
+Start your journey with Naptha by running a simple Hello World example. This introductory example demonstrates the basics of running an agent on a Naptha node.
 
-### Prerequisities
+## Prerequisites
 
-Make sure you have the Naptha SDK installed.
+Before you begin, ensure you have:
+- [Naptha SDK](/GettingStarted/Installation) installed and configured
 
 ### Modules Used
 
@@ -20,4 +21,55 @@ You can run this "Hello World" example using the Naptha CLI with the following c
 naptha run hello_world_agent -p "firstname=Sam surname=Altman"
 ```
 
-This will run the task on one node, whichever you have set as the ```NODE_URL``` in the .env file of the Naptha SDK.
+### Configuration Options:
+- `firstname`: The first name to use in the greeting
+- `surname`: The last name to use in the greeting
+
+:::note
+This will run on whichever node you've configured as `NODE_URL` in the .env file of the Naptha SDK.
+:::
+
+## Expected Output
+
+The agent will respond with a personalized greeting using the provided name parameters.
+
+:::tip
+Try modifying the name parameters to see how the agent responds with different inputs!
+:::
+
+## What's Next?
+
+import CardGrid from '@site/src/components/CardGrid';
+
+export const nextStepsCards = [
+  {
+    title: 'Generate Images',
+    description: 'Create AI-generated images using text prompts',
+    icon: '🎨',
+    link: '/Examples/GenerateImage'
+  },
+  {
+    title: 'Multiplayer Chat',
+    description: 'Experience multi-agent interactions in real-time',
+    icon: '💬',
+    link: '/Examples/MultiplayerChat'
+  },
+  {
+    title: 'Simple RAG',
+    description: 'Run our basic RAG setup',
+    icon: '🔍',
+    link: '/Examples/SimpleRAG'
+  },
+  {
+    title: 'Join Our Community',
+    description: 'Connect with other Naptha developers and builders',
+    icon: '👥',
+    link: 'https://naptha.ai/naptha-community'
+  }
+];
+
+<CardGrid cards={nextStepsCards} />
+
+:::info
+This is just the beginning! Each Naptha example builds on these basics to showcase more advanced features of our distributed AI infrastructure.
+:::

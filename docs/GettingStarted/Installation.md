@@ -16,6 +16,11 @@ Naptha uses a Python dependency management tool called Poetry. Learn more about 
 pipx install poetry
 ```
 
+Verify the installation:
+```bash
+poetry --version
+```
+
 ### 2. Install Naptha SDK
 The best place to start is our [Naptha SDK](https://github.com/NapthaAI/naptha-sdk) code base on GitHub. Follow these steps to install it from source:
 
@@ -23,10 +28,12 @@ The best place to start is our [Naptha SDK](https://github.com/NapthaAI/naptha-s
 ```bash
 git clone https://github.com/NapthaAI/naptha-sdk.git && cd naptha-sdk
 ```
+
 #### Install Dependencies
 ```bash
-poetry install
+poetry install  # This may take a few minutes
 ```
+
 #### Activate Environment
 ```bash
 poetry shell
@@ -38,13 +45,14 @@ Next, create a copy of the .env file:
 ```bash
 cp .env.example .env
 ```
+
 #### Configure ```NODE_URL```
 Choose whether you want to interact with a *local* or *hosted* Naptha node.
 
-##### Local
+##### Local Node
 For a local node, set ```NODE_URL=http://localhost:7001``` in the .env file.
 
-##### Hosted
+##### Hosted Node
 To use a hosted node, set ```NODE_URL=http://node.naptha.ai:7001``` or ```NODE_URL=http://node1.naptha.ai:7001``` in the .env file.
 
 #### Sign Up
@@ -58,6 +66,32 @@ naptha signup
 ### All Systems Go!
 You can check your installation by running:
 
-```bash
-naptha
-```
+### Troubleshooting
+
+<details>
+<summary>Common issues and solutions</summary>
+
+1. **Poetry installation fails**
+   ```bash
+   python -m pip install --user pipx
+   python -m pipx ensurepath
+   ```
+
+2. **Dependencies conflict**
+   ```bash
+   poetry env remove python
+   poetry install --no-cache
+   poetry env use python3.11
+   ```
+
+3. **Node connection issues**
+   - Verify your internet connection
+   - Check if the selected node is operational
+   - Ensure your .env file is properly configured
+
+</details>
+
+### Next Steps
+- Read our [Quick Start Guide](./QuickStart.md)
+- Explore [Example Projects](../Examples/)
+- Join our [Discord Community](https://naptha.ai/naptha-community)

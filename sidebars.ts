@@ -7,14 +7,20 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Getting Started',
       items: [
+        // Installation & Setup
         'GettingStarted/Installation',
+        'GettingStarted/InstallSDK',
+        'GettingStarted/InstallNode',
+        
+        // Core Concepts
+        'GettingStarted/Abstractions',
         'GettingStarted/Architecture',
-        'GettingStarted/Modules',
+        'GettingStarted/BuildAgent',
         'GettingStarted/Decorators',
-        // 'GettingStarted/BuildAgent',
-        // 'GettingStarted/SDK',
-        // 'GettingStarted/UseCases',
-        // 'GettingStarted/Abstractions',
+        'GettingStarted/Modules',
+        'GettingStarted/NapthaCLI',
+        'GettingStarted/SDK',
+        'GettingStarted/UseCases',
       ],
     },
     {
@@ -24,10 +30,7 @@ const sidebars: SidebarsConfig = {
         'Examples/HelloWorld',
         'Examples/GenerateImage',
         'Examples/Image2Image',
-        // 'Examples/MultiOlas',
         'Examples/MultiplayerChat',
-        'Examples/OlasPrediction', 
-        'Examples/SimpleRAG',
         'Examples/BabyAGI', 
       ],
     },

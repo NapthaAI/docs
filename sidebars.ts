@@ -7,20 +7,25 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Getting Started',
       items: [
-        // Installation & Setup
-        'GettingStarted/Installation',
-        'GettingStarted/InstallSDK',
-        'GettingStarted/InstallNode',
-        
-        // Core Concepts
-        'GettingStarted/Abstractions',
-        'GettingStarted/Architecture',
+         // Core Concepts
+         'GettingStarted/Architecture',
+         'GettingStarted/Abstractions',
+         'GettingStarted/UseCases',
+
+         // 'GettingStarted/Modules',
         'GettingStarted/BuildAgent',
         'GettingStarted/Decorators',
-        'GettingStarted/Modules',
-        'GettingStarted/NapthaCLI',
+        
+        // Installation & Setup
+        'GettingStarted/Installation',
         'GettingStarted/SDK',
-        'GettingStarted/UseCases',
+        //'GettingStarted/InstallSDK',
+        'GettingStarted/InstallNode',
+ 
+        
+        // Development
+        'GettingStarted/NapthaCLI',
+        
       ],
     },
     {

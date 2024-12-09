@@ -2,7 +2,7 @@
 
 Visit our [GitHub](https://github.com/napthaai) to discover building blocks for distributed multi-agent systems.
 
-> Also, you can explore Naptha modules on [HuggingFace](https://huggingface.co/NapthaAI).
+> You can also explore Naptha modules on [HuggingFace](https://huggingface.co/NapthaAI).
 
 ### Examples
 * [Hello World](/Examples/HelloWorld)

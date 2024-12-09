@@ -1,4 +1,4 @@
-# Installation
+# Install Naptha SDK
 
 ## Steps
 1. Install Poetry
@@ -44,6 +44,19 @@ Next, create a copy of the .env file:
 
 ```bash
 cp .env.example .env
+```
+
+#### Configure Environment Variables
+To set up your ```PRIVATE_KEY```, generate one using the Naptha CLI:
+
+```bash
+naptha user
+```
+
+Copy the generated private key into your .env file:
+```bash
+PRIVATE_KEY=your_generated_key_here
+NODE_URL=your_chosen_node_url
 ```
 
 #### Configure ```NODE_URL```

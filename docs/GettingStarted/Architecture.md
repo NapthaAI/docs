@@ -25,6 +25,13 @@ There are two types of nodes in our network:
 * **Orchestrators:** server, task queue, and database
 * **Workers:** local LLM and module manager
 
+
+:::info
+Our [node repository](https://github.com/NapthaAI/node) demonstrates how we build and scale multi-agent systems. While currently private, we plan to open source it in early 2025.
+
+Want early access? [Join our Discord](https://naptha.ai/naptha-community).
+:::
+
 ### Naptha Hub
 
 The Hub involves a registry and storage for modules, along with registries for nodes and tasks. This platform handles user authentication and data management, and it provides methods for listing and managing nodes, modules, tasks, and proposals. Also, it leverages SurrealDB for data persistence.

@@ -1,4 +1,4 @@
-## Install Node
+# Install Node
 
 To get started initially, you can run the Naptha SDK using a hosted node. 
 
@@ -17,6 +17,7 @@ Then run the node:
 bash launch.sh
 ```
 
+:::info
 This will install all of the components, including:
 - Python 3.12 (pre-Requirement)
 - Poetry (manages dependencies)
@@ -25,10 +26,16 @@ This will install all of the components, including:
 - Ollama (used to run LLMs)
 - Docker (isolates Modules from the system)
 - Naptha node (orchestrates ML workflows)
+:::
 
-The first time you launch, you will be prompted about whether (i) to generate a private key, and (ii) to input a Stability API key, which is needed if you would like to run the image module examples. If you choose not to, you can always edit the .env file manually later.
+On first launch, you'll be prompted with two options:
 
-After a few minutes you should see,```[System] Setup complete. Applications are running.```
+1. Generate a private key for secure node operation
+2. Input a Stability API key (required for image generation modules)
+
+Don't worry if you skip these steps - you can always configure them later by editing your `.env` file.
+
+After a few minutes you should see, ```[System] Setup complete. Applications are running.```
 
 Then, in a new terminal window run:
 

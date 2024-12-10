@@ -1,4 +1,4 @@
-# Installation
+# Install Naptha SDK
 
 1. Install Poetry with pipx
 2. Install Naptha SDK

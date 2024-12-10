@@ -25,7 +25,12 @@ There are two types of nodes in our network:
 * **Orchestrators:** server, task queue, and database
 * **Workers:** local LLM and module manager
 
-You can explore our [node repository here](https://github.com/NapthaAI/node) to see how we run multi-agent systems at scale.
+
+:::info
+Our [node repository](https://github.com/NapthaAI/node) demonstrates how we build and scale multi-agent systems. While currently private, we plan to open source it in early 2025.
+
+Want early access? [Join our Discord](https://naptha.ai/naptha-community).
+:::
 
 ### Naptha Hub
 

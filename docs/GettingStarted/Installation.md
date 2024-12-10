@@ -46,18 +46,22 @@ Next, create a copy of the .env file:
 cp .env.example .env
 ```
 
-#### Configure Environment Variables
-To set up your ```PRIVATE_KEY```, generate one using the Naptha CLI:
+### 4. Sign Up and Configure Environment Variables
+You can create an account on the Naptha Hub (and generate your ```PRIVATE_KEY```) using the Naptha CLI:
 
 ```bash
-naptha user
+naptha signup
 ```
+:::info
+This command will prompt you to create an account by entering a username and password. It also automatically generates a private key and stores it in your .env file.
+:::
 
-Copy the generated private key into your .env file:
+
+<!-- Copy the generated private key into your .env file:
 ```bash
 PRIVATE_KEY=your_generated_key_here
 NODE_URL=your_chosen_node_url
-```
+``` -->
 
 #### Configure ```NODE_URL```
 Choose whether you want to interact with a *local* or *hosted* Naptha node.
@@ -67,14 +71,6 @@ For a local node, set ```NODE_URL=http://localhost:7001``` in the .env file.
 
 ##### Hosted Node
 To use a hosted node, set ```NODE_URL=http://node.naptha.ai:7001``` or ```NODE_URL=http://node1.naptha.ai:7001``` in the .env file.
-
-#### Sign Up
-
-You can create an account on the Naptha Hub (and generate a public/private keypair) using the command-line tool:
-
-```bash
-naptha signup
-```
 
 ### All Systems Go!
 You can check your installation by running:

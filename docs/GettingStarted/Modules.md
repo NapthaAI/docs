@@ -2,7 +2,7 @@
 
 Visit our [GitHub](https://github.com/napthaai) to discover building blocks for distributed multi-agent systems.
 
-> You can also explore Naptha modules on [HuggingFace](https://huggingface.co/NapthaAI).
+> You can also explore Naptha modules on [GitHub](https://github.com/NapthaAI).
 
 ### Examples
 * [Hello World](/Examples/HelloWorld)
@@ -15,10 +15,10 @@ Visit our [GitHub](https://github.com/napthaai) to discover building blocks for 
 
 #### 1. Clone
 
-Refer to this [minimal example](https://huggingface.co/NapthaAI/template) for how to create basic agents:
+Refer to this [minimal example](https://github.com/NapthaAI/module_template) for how to create basic agent modules:
 
 ```bash
-git clone https://github.com/NapthaAI/agent_template && cd agent_template
+git clone https://github.com/NapthaAI/module_template && cd module_template
 ```
 
 #### 2. Install

@@ -6,21 +6,35 @@ pip install naptha-sdk
 ```
 
 ## Core Concepts
-The Naptha SDK provides a powerful interface for building and managing decentralized AI workflows. Here's how to get started:
+The Naptha SDK provides a powerful client interface for Naptha Hub and Nodes, with core abstractions for building multi-agent AI workflows. It includes Agents, Orchestrators, Tools, Environments, and Personas modules that communicate via API, along with helpful decorators for easy module onboarding. 
+
+Here's how to get started:
 
 ### 1. Initialize the Client
 ```python
 from naptha_sdk.client.naptha import Naptha
 
 naptha_client = await Naptha(
-    user=your_user_dict,               # Your user credentials
-    hub_username="your_username",      # Naptha Hub username
-    hub_password="your_password",      # Naptha Hub password
-    hub_url="https://hub.naptha.ai",   # Hub endpoint
-    node_url="https://node.naptha.ai", # Node endpoint
-    routing_url="https://routing.naptha.ai",
-    indirect_node_id="your_indirect_node_id"
+    user=public_key,                         # Your public key from PRIVATE_KEY env var
+    hub_username="your_username",            # Naptha Hub username
+    hub_url="https://hub.naptha.ai",         # Hub endpoint
+    node_url="https://node.naptha.ai",       # Node endpoint
+    routing_url="https://routing.naptha.ai", # Routing endpoint
+    indirect_node_id="your_indirect_node_id" # Node ID for indirect access
 )
+
+# Client automatically initializes Node with:
+#   node_url="https://node.naptha.ai"
+#   routing_url="https://routing.naptha.ai"
+#   indirect_node_id="your_indirect_node_id"
+
+# Note: These values can be set in your .env file:
+# PRIVATE_KEY=your_private_key (via naptha signup)
+# HUB_USER=your_username
+# HUB_URL=https://hub.naptha.ai
+# NODE_URL=https://node.naptha.ai
+# ROUTING_URL=https://routing.naptha.ai
+# INDIRECT_NODE_ID=your_indirect_node_id
 ```
 
 ### 2. Hub Interactions
@@ -29,14 +43,20 @@ Query available resources on the Naptha network:
 # List available nodes
 nodes = await naptha_client.hub.list_nodes()
 
-# Discover available modules
-modules = await naptha_client.hub.list_modules()
+# List available agents
+agents = await naptha_client.hub.list_agents()
 
-# View active tasks
-tasks = await naptha_client.hub.list_tasks()
+# List available orchestrators 
+orchestrators = await naptha_client.hub.list_orchestrators()
+
+# List available environments
+environments = await naptha_client.hub.list_environments()
+
+# List available personas
+personas = await naptha_client.hub.list_personas()
 ```
 
-### 3. Create and Run Workflows
+<!-- ### 3. Create and Run Workflows
 Build decentralized workflows using the Flow API:
 ```python
 from naptha_sdk.flows import Flow
@@ -51,9 +71,9 @@ flow = Flow(
 
 # Execute the workflow
 result = await flow.run()
-```
+``` -->
 
-### 4. Task Management
+### 3. Task Management
 Create and execute individual tasks:
 ```python
 from naptha_sdk.task import Task
@@ -71,7 +91,7 @@ task = Task(
 result = await task()
 ```
 
-### 5. Service Management
+<!-- ### 5. Service Management
 ```python
 # Check your available credits
 credits = naptha_client.services.show_credits()
@@ -82,9 +102,9 @@ services = naptha_client.services.list_services()
 # Get service details
 service_url = naptha_client.services.get_service_url("service_did")
 service_details = naptha_client.services.get_service_details("service_did")
-```
+``` -->
 
-### 6. Working with Storage
+### 4. Working with Storage
 Read from storage
 ```python
 data = await naptha_client.node.read_storage("module_run_id", "output_dir", ipfs=True)
@@ -96,9 +116,9 @@ result = await naptha_client.node.write_storage("storage_input", ipfs=True, publ
 ```
 
 :::tip Need Help?
-Join our [Discord community](https://discord.gg/naptha) for support and discussions!
+Join our [Discord community](https://naptha.ai/naptha-community) for support and discussions!
 :::
 
-:::info Documentation
-For detailed API reference, visit our [SDK Reference](https://docs.naptha.ai/).
+:::info Modules
+Check out our [Modules](/NapthaModules/overview) for how to leverage Naptha's Agents, Orchestrators, Environments, Tools, and Personas.
 :::

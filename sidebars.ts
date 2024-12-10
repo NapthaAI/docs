@@ -12,15 +12,13 @@ const sidebars: SidebarsConfig = {
          'GettingStarted/Abstractions',
          'GettingStarted/UseCases',
 
-         // 'GettingStarted/Modules',
-        'GettingStarted/BuildAgent',
-        'GettingStarted/Decorators',
+         
         
         // Installation & Setup
         'GettingStarted/Installation',
         'GettingStarted/SDK',
         //'GettingStarted/InstallSDK',
-        'GettingStarted/InstallNode',
+        //'GettingStarted/InstallNode', deprecated
  
         
         // Development
@@ -37,6 +35,7 @@ const sidebars: SidebarsConfig = {
         'Examples/Image2Image',
         'Examples/MultiplayerChat',
         'Examples/BabyAGI', 
+        'Examples/BuildAgent',
       ],
     },
     {

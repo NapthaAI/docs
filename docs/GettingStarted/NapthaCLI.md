@@ -1,13 +1,15 @@
-# CLI Usage
+# Naptha CLI Usage
 
 Here's a list of commands you can use with the Naptha CLI.
 
 ### User Management
 Create or manage your Naptha account:
 ```bash
-naptha signup  # Create new account
-naptha user    # Generate keypair
+naptha signup  # Create new account and generate a private key
 ```
+:::info
+This command will prompt you to create an account by entering a username and password. It also automatically generates a private key and stores it in your .env file.
+:::
 
 ### Nodes
 See a list of available nodes on the network:

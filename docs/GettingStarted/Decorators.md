@@ -10,7 +10,9 @@ Naptha supports a web of multi-agent systems that grow and evolve. This walkthro
 * Poetry package manager
 * Naptha username & password
 
-*See [installation guide](/GettingStarted/Installation) for help.*
+:::tip
+Need help installing? Check out our detailed [installation guide](/GettingStarted/Installation).
+:::
 
 ### Step-by-step Walkthrough
 
@@ -23,7 +25,9 @@ HUB_URL=ws://node.naptha.ai:3001/rpc
 
 NODE_URL=http://node.naptha.ai:7001
 ```
-*These variables are used to connect to the Naptha network.*
+:::info
+These variables are used to connect to the Naptha network.
+:::
 
 #### 2. Add Naptha SDK
 Update your `pyproject.toml` file:
@@ -95,11 +99,11 @@ naptha run <agent_name>
 
 Let's break it down:
 
-`@naptha_agent("<agent_name>")`  with a unique name for the agent. Below that line, agent functionality can be defined normally using various frameworks.
+- `@naptha_agent("<agent_name>")`  with a unique name for the agent. Below that line, agent functionality can be defined normally using various frameworks.
 
-By running Python code that includes our decorator, agent functions are automatically processed and converted into Naptha-compatible packages.
+- By running Python code that includes our decorator, agent functions are automatically processed and converted into Naptha-compatible packages.
 
-Later, when you enter `naptha publish` via the CLI, those agent packages will be added to the Naptha node specified in your `.env` file.
+- Later, when you enter `naptha publish` via the CLI, those agent packages will be added to the Naptha node specified in your `.env` file.
 
 ## Usage Examples
 
@@ -115,8 +119,17 @@ View the full code sample [here](https://github.com/NapthaAI/crewAI-examples/blo
         )
 ```
 
-### Other Frameworks (Coming Soon)
+### Other Frameworks
+:::info
+Support for additional agent frameworks is coming soon! Stay tuned for updates.
+:::
 
 ## Feedback
 
-[Create issues](https://github.com/NapthaAI/naptha-sdk/issues) in the Naptha SDK GitHub repository to let us know any problems, ideas, or questions. We plan to continue adding examples, and your help would be much appreciated!
+We welcome your feedback and contributions! Here's how you can help:
+
+- Report bugs and request features by [creating issues](https://github.com/NapthaAI/naptha-sdk/issues) on GitHub.
+- Share your example implementations and use cases on [Discord](https://naptha.ai/naptha-community).
+- Ask questions and join discussions on [Discord](https://naptha.ai/naptha-community).
+
+Your input helps make Naptha better for everyone. We're actively expanding our examples and documentation based on community feedback.

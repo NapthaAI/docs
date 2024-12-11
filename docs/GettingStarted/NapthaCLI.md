@@ -2,6 +2,31 @@
 
 Here's a list of commands you can use with the Naptha CLI.
 
+### Basic Usage
+```bash
+naptha [command] [options]
+```
+
+### Available Commands
+| Command | Description |
+|---------|-------------|
+| `nodes` | List available nodes |
+| `agents` | List available agents |
+| `orchestrators` | List available orchestrators |
+| `environments` | List available environments |
+| `personas` | List available personas |
+| `run` | Execute run command |
+| `inference` | Run model inference |
+| `read_storage` | Read from storage |
+| `write_storage` | Write to storage |
+| `signup` | Sign up a new user |
+| `publish` | Publish agents |
+
+### Global Options
+```bash
+-h, --help            Show help message and exit
+```
+
 ### User Management
 Create or manage your Naptha account:
 ```bash
@@ -74,6 +99,11 @@ Manage agent personas:
 naptha personas  # List available personas
 naptha personas <name> -p "description='desc' url='ipfs://<hash>' version='0.1'"  # Create a New Persona
 naptha personas -d <name>  # Delete
+```
+
+### Inference 
+```bash
+naptha inference "How can we create scaling laws for multi-agent systems?" -m "phi3:mini"
 ```
 
 

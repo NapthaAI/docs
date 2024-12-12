@@ -6,7 +6,12 @@ pip install naptha-sdk
 ```
 
 ## Core Concepts
-The Naptha SDK provides a powerful client interface for Naptha Hub and Nodes, with core abstractions for building multi-agent AI workflows. It includes Agents, Orchestrators, Tools, Environments, and Personas modules that communicate via API, along with helpful decorators for easy module onboarding. 
+The Naptha SDK provides a powerful client interface for Naptha Hub and Nodes, with core abstractions for building multi-agent AI workflows. It is made up of:
+
+1. A client for interacting with the Naptha Hub (like the huggingface_hug library but for multi-agent apps)
+2. Abstractions for the composable building blocks of multi-agent apps like Agent, Orchestrator, Tool, Environment, Persona (i.e. Naptha Modules). With Naptha, communication between these modules happens via API.
+3. Decorators for easily onboarding modules from agent frameworks like CrewAI.
+3. A CLI for interacting with the Naptha Hub and Node
 
 Here's how to get started:
 

@@ -23,7 +23,14 @@ const sidebars: SidebarsConfig = {
         
         // Development
         'GettingStarted/NapthaCLI',
-        
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Tutorials',
+      items: [
+        'Tutorials/module-guide',
+        // Add more tutorials here
       ],
     },
     {

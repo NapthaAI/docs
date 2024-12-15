@@ -6,22 +6,64 @@ sidebar_label: 'Your First Agent Module'
 
 <a href="https://colab.research.google.com/drive/1HwrR49T5c1CQDKprYPYSVHeUJCA5uf5V?usp=sharing" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-Naptha empowers you to build and share agents quickly through its framework and infrastructure for developing and running massive multi-agent systems.
+While other projects allow you to deploy agents on the cloud, Naptha allows you to create and deploy them on an entire Web built especially for agents. Here, they can interact with other agents, tools, and environments (such as group chats, auctions, and virtual worlds), running on top of a decentralized network of devices.
 
 In this guide, we'll walk through creating and publishing your first Naptha agent module, from initial setup to deployment. Whether you're an AI researcher, developer, or enthusiast, you'll be able to contribute to the Naptha ecosystem in no time.
+
+## What is an Agent Module?
+Naptha Modules are the building blocks of multi-agent applications on, which enable them to run across multiple nodes. There are currently five types of Modules:
+
+- Agent Modules: Things like Chat Agents, Task-solving Agents, ReAct Agents, etc.
+- Agent Orchestrator Modules: Things like Organizations of Coding Agents, Social Simulations, etc.
+- Environment Modules: Things like Group Chats (like WhatsApp for Agents), Information Board (Reddit for Agents), Auctions (eBay for Agents), etc.
+- Tool Modules: Things like Web Search, Python Code Execution, etc.
+- Persona Modules: Things like Social Personas generated from exported Twitter data, or synthetically-generated Market Personas
+
+Modules are stored on GitHub, HuggingFace, IPFS, or DockerHub with the URL registered on the Naptha Hub.
 
 ## Prerequisites
 Before we dive in, make sure you have:
 - Python 3.8 or higher installed
-- The Naptha SDK installed (`pip install naptha-cli`)
+- The Naptha SDK installed (`pip install naptha-sdk`)
 - Basic familiarity with Python packaging
 - Poetry installed (recommended for dependency management)
 
 ## Getting Started
-The journey of creating your first Naptha agent begins with our module template. This template provides the essential structure and boilerplate code you need to get started quickly.
+The journey of creating your first Naptha agent begins with our [module template](https://github.com/NapthaAI/module_template/). This template provides the essential structure and boilerplate code you need to get started quickly. To get started, clone the repository and install the dependencies:
 
-## Building Your Agent
-The core agent's module functionality lives in the main [`run.py`](https://github.com/NapthaAI/module_template/blob/main/module_template/run.py) file. You can take a look at some of [the agent modules on Github ](https://github.com/NapthaAI) for inspiration. For example, here's that of the simple_chat_agent:
+```bash
+git clone https://github.com/NapthaAI/module_template
+cd module_template
+```
+
+#### Create a copy of the .env file:
+
+```bash
+cp .env.example .env
+```
+
+#### Install the dependencies:
+
+```bash
+poetry install
+```
+
+## Building Your Agent - Making Changes to the Code
+The core agent's module functionality lives in the main [`run.py`](https://github.com/NapthaAI/module_template/blob/main/module_template/run.py) file.
+
+Some popular agent modules on Naptha include:
+- [simple_chat_agent](https://github.com/NapthaAI/simple_chat_agent/blob/main/simple_chat_agent/run.py)
+- [image2image](https://github.com/NapthaAI/image2image/blob/main/image_to_image/run.py)
+- [generate_image](https://github.com/NapthaAI/generate_image/blob/main/generate_image/run.py)
+
+:::info
+You can also find a list of agent modules on Naptha:
+- with the Naptha SDK via the CLI `naptha agents` or the Client `await naptha.hub.list_agents()`
+- on [Naptha's Github homepage](https://github.com/NapthaAI)
+:::
+
+
+For example, here's that of the simple_chat_agent:
 
 ```python
 #!/usr/bin/env python
@@ -131,6 +173,15 @@ This creates distribution files in your `dist` directory.
 ## Publishing to Naptha Hub
 Publishing involves two key steps:
 
+:::tip
+    Add versioning before pushing to either Github or IPFS or Both.
+```bash
+# Add version tag
+git tag v0.1.0
+git push --tags
+```
+:::
+
 ### 1. Upload to IPFS 
 ```bash
 naptha write_storage -i dist/my-first-agent-0.1.0.tar.gz --ipfs
@@ -141,7 +192,7 @@ You'll receive an IPFS `Folder ID` upon success like:
 Writing storage
 {'message': 'Files written to storage', 'folder_id': '********************************'}
 ```
-:::tip  
+:::info  
 
 Save the returned IPFS `Folder ID` - you'll need it for registration.
 
@@ -151,19 +202,13 @@ Save the returned IPFS `Folder ID` - you'll need it for registration.
 
 If you would like to use `Github` instead, replace the `url` value in the *register agent* command with your repository url. Remember to: 
 - git add and commit your files
-- add versioning before pushing.
 - create a new repository on Github and push your code. 
 
-```bash
-# Add version tag
-git tag v0.1.0
-git push --tags
-```
 :::
 
 ### 2. Register Your Agent
 ```bash
-naptha agents my-first-agent -p "description='My first Naptha agent' url='ipfs://YOUR_IPFS_HASH' type='package' version='0.1'"
+naptha agents my-first-agent -p "description='My first Naptha agent' parameters='{tool_name: str, tool_input_data: str}' url='ipfs://YOUR_FOLDER_ID' type='package' version='0.1'"
 ```
 
 ## Verifying Your Publication

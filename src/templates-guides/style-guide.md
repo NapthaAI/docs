@@ -10,6 +10,7 @@ This document is a style guide for writing documentation for the Naptha AI platf
 - **Clear**: Write in simple, direct language
 - **Technical**: Maintain professional accuracy
 - **Empowering**: Focus on enabling developers
+- **Collaborative**: Emphasize how modules can be composed and built upon
 
 ### Voice Characteristics
 - Technical but accessible

@@ -1,32 +1,59 @@
-# Contributing to Naptha SDK
+# Contributing to Naptha
 
 Welcome to the Naptha AI community! We're excited to have you contribute to building the future of multi-agent AI systems. This document provides guidelines and information for contributors.
 
 ## 🌟 Ways to Contribute
 
-1. **Develop Modules**
-Modules are building blocks for Naptha's distributed multi-agent ecosystem. Check our [Github page](https://github.com/orgs/NapthaAI/repositories?type=all) for a list of all our modules.
-   - Create new AI modules hosted on Naptha Hub
-   - Improve existing agents modules
+### 1. Exploring Naptha
+Before diving into development, we recommend exploring the platform by:
+- [Setting up and running a Naptha node locally](https://github.com/NapthaAI/node)
+- Testing existing modules and providing feedback
+- Suggesting UX improvements
 
-1. **Build Applications**
-   - Create applications using exisiting modules on Naptha
-   - Share example projects and use cases
-   - Integrate Naptha with other tools and platforms
+:::info
+You can check our [Github repositories](https://github.com/orgs/NapthaAI/repositories?type=all) for existing modules.
+:::
 
-2. **Report Issues**
-   - Submit detailed, reproducible bug reports
-   - Suggest new features
-   - Share feedback on user experience
+### 2. Develop Modules
+Modules are building blocks for Naptha's distributed multi-agent ecosystem. Different types of contributors can help:
+
+**For AI Developers:**
+- Build agent and orchestrator modules
+
+**For Application Developers:**
+- Build environment modules for agents modules to interact with
+
+**For AI Users:**
+- Create a persona module:
+  For example, you can create a persona module by exporting your X (Twitter) data and adding it to the Personas dataset on Naptha's collections. This allows you to create an AI agent that mimics your communication style and preferences. Here's an [example of a persona generated from twitter data](https://huggingface.co/collections/NapthaAI/twitter-personas-673468b711e26ee8df2e36d6).
+
+:::info
+- Check out modules that we need via open issues with the module label on the [module contributor board](https://github.com/orgs/NapthaAI/projects/3/views/1).
+- We also have [weekly module developer calls](https://naptha.ai/events) you can join.
+:::
+
+### 3. Contribute to Naptha Stack
+Help improve our core infrastructure:
+- Add features or integrations to [Naptha Node](https://github.com/NapthaAI/node) and [Naptha SDK](https://github.com/NapthaAI/naptha-sdk)
+- Fix bugs and improve performance
+
+:::info
+- You can track progress and find infrastructure-related tasks on our [Infrastructure Project Board](https://github.com/orgs/NapthaAI/projects/2/views/1).
+:::
+
+<!-- ### 4. Build Applications
+- Create applications using existing modules
+- Share example projects and use cases
+- Integrate Naptha with other tools and platforms -->
 
 ## 💰 Bounties and Microgrants
 
 We offer bounties and microgrants for contributions to the Naptha ecosystem:
 
 1. **Bounty Program**
-   - Build new agents and tools
-   - Implement innovative use cases
+   - Build new modules
    - Improve core SDK functionality
+   - Implement innovative use cases
 
 2. **Microgrants**
    - Available for smaller, focused improvements
@@ -94,9 +121,10 @@ We're particularly interested in contributions in these areas:
 ## 📞 Getting Help
 
 - Join our [Discord community](https://naptha.ai/community)
+- Attend our [weekly workshops](https://naptha.ai/events)
 - Check our [documentation](https://docs.naptha.ai)
 - Email us at [team@naptha.ai](mailto:team@naptha.ai)
-- Open a GitHub discussion
+- Open a [GitHub discussion](https://github.com/NapthaAI/naptha-sdk/issues)
 
 ## 📜 License
 

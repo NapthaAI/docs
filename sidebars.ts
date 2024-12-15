@@ -4,6 +4,11 @@ const sidebars: SidebarsConfig = {
   docs: [
     'Overview',
     {
+      type: 'doc',
+      id: 'CONTRIBUTING',
+      label: 'Contributing to Naptha'
+    },
+    {
       type: 'category',
       label: 'Getting Started',
       items: [

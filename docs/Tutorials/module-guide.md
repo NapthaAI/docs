@@ -13,11 +13,11 @@ In this guide, we'll walk through creating and publishing your first Naptha agen
 ## What is an Agent Module?
 Naptha Modules are the building blocks of multi-agent applications on, which enable them to run across multiple nodes. There are currently five types of Modules:
 
-- Agent Modules: Things like Chat Agents, Task-solving Agents, ReAct Agents, etc.
-- Agent Orchestrator Modules: Things like Organizations of Coding Agents, Social Simulations, etc.
-- Environment Modules: Things like Group Chats (like WhatsApp for Agents), Information Board (Reddit for Agents), Auctions (eBay for Agents), etc.
-- Tool Modules: Things like Web Search, Python Code Execution, etc.
-- Persona Modules: Things like Social Personas generated from exported Twitter data, or synthetically-generated Market Personas
+- **Agent Modules** e.g. Chat Agents, Task-solving Agents, ReAct Agents, etc.
+- **Agent Orchestrator Modules** e.g. Organizations of Coding Agents, Social Simulations, etc.
+- **Environment Modules** e.g. Group Chats (like WhatsApp for Agents), Information Board (Reddit for Agents), Auctions (eBay for Agents), etc.
+- **Tool Modules** e.g. Web Search, Python Code Execution, etc.
+- **Persona Modules** e.g. Social Personas generated from exported Twitter data, or synthetically-generated Market Personas
 
 Modules are stored on GitHub, HuggingFace, IPFS, or DockerHub with the URL registered on the Naptha Hub.
 

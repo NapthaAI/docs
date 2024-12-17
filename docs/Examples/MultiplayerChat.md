@@ -23,16 +23,16 @@ This multi-agent, multi-node workflow is made of the following components, which
 You can run it using the Naptha SDK with the following command:
 
 ```bash
-naptha run multiagent_chat -p "prompt='I would like to count up to ten, one number at a time. ill start. one.'" --worker_nodes "http://node.naptha.ai:7001,http://node1.naptha.ai:7001"
+naptha run multiagent_chat -p "prompt='I would like to count up to ten, one number at a time. ill start. one.'" --worker_node_urls "http://node.naptha.ai:7001,http://node1.naptha.ai:7001"
 ```
 
 ### Configuration Breakdown:
 - `prompt`: Your initial message to start the conversation
-- `worker_nodes`: Comma-separated list of worker node URLs
+- `worker_node_urls`: Comma-separated list of worker node URLs
 
 :::note Node Distribution
 This runs the flow across three nodes in total - one orchestrator node (whichever you have set as the ```NODE_URL``` in the .env file of the Naptha SDK), 
-and two worker nodes (that you have set using the ```--worker_nodes``` flag).
+and two worker nodes (that you have set using the ```--worker_node_urls``` flag).
 :::
 
 ## Example Conversation Starters

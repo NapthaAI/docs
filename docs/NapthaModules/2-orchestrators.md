@@ -46,7 +46,7 @@ Under the hood, `call_orchestrator_func` makes a call to the orchestrator node v
 You can deploy an orchestrator via CLI using:
 
 ```bash
-naptha create orchestrator:multiagent_chat --orchestrator_node "https://node.naptha.ai" --worker_nodes "https://node.naptha.ai:7001,https://node1.naptha.ai:7001" --environment_node "https://node.naptha.ai:7001"
+naptha create orchestrator:multiagent_chat --orchestrator_node "https://node.naptha.ai" --worker_node_urls "https://node.naptha.ai:7001,https://node1.naptha.ai:7001" --environment_node "https://node.naptha.ai:7001"
 ```
 
 You can call an orchestrator module via CLI using:

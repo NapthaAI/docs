@@ -4,6 +4,11 @@ const sidebars: SidebarsConfig = {
   docs: [
     'Overview',
     {
+      type: 'doc',
+      id: 'CONTRIBUTING',
+      label: 'Contributing to Naptha'
+    },
+    {
       type: 'category',
       label: 'Getting Started',
       items: [
@@ -23,7 +28,14 @@ const sidebars: SidebarsConfig = {
         
         // Development
         'GettingStarted/NapthaCLI',
-        
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Tutorials',
+      items: [
+        'Tutorials/module-guide',
+        // Add more tutorials here
       ],
     },
     {

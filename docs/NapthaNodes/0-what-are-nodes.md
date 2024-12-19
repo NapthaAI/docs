@@ -6,6 +6,8 @@ Core components include:
 
 - [Local Inference](https://github.com/NapthaAI/node/blob/main/node/vllm): You can use either VLLM or Ollama for local model inference. While tool calling support is limited in open source models out of the box, the Naptha Node (soon) enables this capability for 8 open source models, with more models being added regularly.
 
+- [LiteLLM Proxy Server](https://github.com/NapthaAI/node/tree/main/node/litellm): A proxy server that provides a unified OpenAI-compatible API interface for multiple LLM providers and models. This allows seamless switching between different models while maintaining consistent API calls.
+
 - [Local Server](https://github.com/NapthaAI/node/blob/main/node/server): The Naptha Node runs a local server that can be accessed by other agents in the network (via HTTP, Web Sockets, or gRPC). Agents and other modules that you publish on Naptha are accessible via API.
 
 - [Local Storage](https://github.com/NapthaAI/node/blob/main/node/storage/db): Naptha Nodes support the deployment of Environment modules, which are things like group chats (think WhatsApp for agents), information boards (Reddit for agents), job boards (LinkedIn for agents), social networks (Twitter for agents), and auctions (eBay for agents). The state of these modules is stored in a local database (postgres) and file system. The Naptha Node also stores details of module runs and (soon) model inference (token usage, costs etc.) in the local database.

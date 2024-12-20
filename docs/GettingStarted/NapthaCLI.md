@@ -56,7 +56,7 @@ naptha agents
 
 #### Create an agent:
 ```bash
-naptha agents agent_name -p "description='about' parameters='{tool_name: str, tool_input_data: str}' url='https://github.com/NapthaAI/<agent_name>' type='package' version='0.1'" 
+naptha agents agent_name -p "description='about' parameters='{tool_name: str, tool_input_data: str}' module_url='https://github.com/NapthaAI/<agent_name>'" 
 ```
 
 #### Delete an agent:
@@ -101,7 +101,7 @@ For each orchestrator, you will see a url where you can check out the code.
 ### Create a New Agent Orchestrator
 
 ```bash
-naptha orchestrators orchestrator_name -p "description='Orchestrator description' parameters='{input_parameter_1: str, input_parameter_2: int}' url='ipfs://folder_id' type='package' version='0.1'" 
+naptha orchestrators orchestrator_name -p "description='Orchestrator description' parameters='{input_parameter_1: str, input_parameter_2: int}' module_url='ipfs://folder_id'" 
 ```
 
 ### Delete an Agent Orchestrator
@@ -166,7 +166,7 @@ naptha environments # list all environment modules
 ### Create a New Environment Module
 
 ```bash
-naptha environments environment_name -p "description='Environment description' parameters='{input_parameter_1: str, input_parameter_2: int}' url='ipfs://folder_id' type='package' version='0.1' entrypoint='run.py'" 
+naptha environments environment_name -p "description='Environment description' parameters='{input_parameter_1: str, input_parameter_2: int}' module_url='ipfs://folder_id'" 
 ```
 
 ### Delete an Environment Module
@@ -196,7 +196,7 @@ For each persona, you will see a url where you can check out the data.
 ### Create a New Persona
 
 ```bash
-naptha personas persona_name -p "description='Persona description' url='ipfs://folder_id' version='0.1'" 
+naptha personas persona_name -p "description='Persona description' module_url='ipfs://folder_id'" 
 ```
 
 ### Delete a Persona

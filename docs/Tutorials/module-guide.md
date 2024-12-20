@@ -200,7 +200,7 @@ Save the returned IPFS `Folder ID` - you'll need it for registration.
 
 :::note
 
-If you would like to use `Github` instead, replace the `url` value in the *register agent* command with your repository url. Remember to: 
+If you would like to use `Github` instead, replace the `module_url` value in the *register agent* command with your repository url. Remember to: 
 - git add and commit your files
 - create a new repository on Github and push your code. 
 
@@ -208,7 +208,7 @@ If you would like to use `Github` instead, replace the `url` value in the *regis
 
 ### 2. Register Your Agent
 ```bash
-naptha agents my-first-agent -p "description='My first Naptha agent' parameters='{tool_name: str, tool_input_data: str}' url='ipfs://YOUR_FOLDER_ID' type='package' version='0.1'"
+naptha agents my-first-agent -p "description='My first Naptha agent' parameters='{tool_name: str, tool_input_data: str}' module_url='ipfs://YOUR_FOLDER_ID'"
 ```
 
 ## Verifying Your Publication

@@ -19,8 +19,8 @@ Need help installing? Check out our detailed [installation guide](/GettingStarte
 #### 1. Setup
 Configure your `.env` file:
 ```
-HUB_USER=<your_naptha_username>
-HUB_PASS=<your_naptha_password>
+HUB_USERNAME=<your_naptha_username>
+HUB_PASSWORD=<your_naptha_password>
 HUB_URL=ws://node.naptha.ai:3001/rpc
 
 NODE_URL=http://node.naptha.ai:7001

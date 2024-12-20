@@ -35,7 +35,7 @@ naptha_client = await Naptha(
 
 # Note: These values can be set in your .env file:
 # PRIVATE_KEY=your_private_key (via naptha signup)
-# HUB_USER=your_username
+# HUB_USERNAME=your_username
 # HUB_URL=https://hub.naptha.ai
 # NODE_URL=https://node.naptha.ai
 # ROUTING_URL=https://routing.naptha.ai

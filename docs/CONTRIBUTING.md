@@ -120,7 +120,7 @@ We're particularly interested in contributions in these areas:
    
 ## 📞 Getting Help
 
-- Join our [Discord community](https://naptha.ai/community)
+- Join our [Discord community](https://naptha.ai/naptha-community)
 - Attend our [weekly workshops](https://naptha.ai/events)
 - Check our [documentation](https://docs.naptha.ai)
 - Email us at [team@naptha.ai](mailto:team@naptha.ai)

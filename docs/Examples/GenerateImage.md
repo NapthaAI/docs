@@ -41,14 +41,12 @@ Your generated image will be saved as `./files/output.png`
 Keep track of your folder ID - you'll need it if you want to use this image with other Naptha agents!
 :::
 
-## Next Steps
-Try transforming your generated image using our [Image-to-Image](/docs/Examples/Image2Image) agent! You can apply different styles and modifications to your creation.
-
 ## Common Issues
 
 - If you haven't set up your Stability API key, you'll be prompted to add it
 - Make sure your prompt is specific and descriptive for better results
 
+## Next Steps
 :::info
-Check out our [Image-to-Image](/docs/Examples/Image2Image) example to learn how to modify and transform your generated images!
+Try transforming your generated image using our [Image-to-Image](/Examples/Image2Image) agent! You can apply different styles and modifications to your creation.
 :::

@@ -7,9 +7,11 @@
 
 ## Guide
 ### 1. Install Poetry with pipx
+:::info
 Naptha uses a Python dependency management tool called Poetry. Learn more about Poetry in their official [docs](https://python-poetry.org/docs).
 
 > Poetry should always be installed in a dedicated virtual environment to isolate it from the rest of your system.
+:::
 
 ##### Run this command:
 ```bash
@@ -101,6 +103,6 @@ You can check your installation by running:
 </details>
 
 ### Next Steps
-- Read our [Quick Start Guide](./QuickStart.md)
+- Read our [Quick Start Guide](./NapthaCLI) on using the Naptha CLI
 - Explore [Example Projects](../Examples/)
 - Join our [Discord Community](https://naptha.ai/naptha-community)

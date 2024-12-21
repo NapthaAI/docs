@@ -233,7 +233,7 @@ naptha run agent:my-first-agent -p "input_data='Hello, Naptha!'"
 
 ## Next Steps
 Congratulations! You've created and published your first Naptha agent module. Remember to version your agent appropriately when making updates!
-- Join our [Discord Community](https://naptha.ai/community)
+- Join our [Discord Community](https://naptha.ai/naptha-community)
 - Follow us on [Twitter](https://twitter.com/NapthaAI)
 - Star us on [GitHub](https://github.com/NapthaAI)
 - Get help with bug reports, feature requests, and technical discussions - [GitHub Issues](https://github.com/NapthaAI/naptha-sdk/issues)

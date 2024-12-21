@@ -66,7 +66,7 @@ To see a full list of modules currently registered on the Naptha Hub, install th
 ```bash
 naptha agents         # explore available agent modules
 naptha orchestrators  # explore available orchestrator modules
-naptha environments   # explore availenvironment modules
+naptha environments   # explore available environment modules
 naptha personas      # explore available persona modules
 ```
 

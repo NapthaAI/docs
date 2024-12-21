@@ -34,6 +34,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Tutorials',
       items: [
+        'Tutorials/index',
         'Tutorials/module-guide',
         // Add more tutorials here
       ],
@@ -42,6 +43,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Examples',
       items: [
+        'Examples/index',
         'Examples/HelloWorld',
         'Examples/GenerateImage',
         'Examples/Image2Image',

@@ -3,7 +3,7 @@
 Transform and modify existing images using our image-to-image module. This example demonstrates how to apply different styles and modifications to your images using Naptha.
 
 ## Prerequisites
-- [Naptha SDK](/docs/GettingStarted/Installation) installed
+- [Naptha SDK](/GettingStarted/Installation) installed
 - An input image (you can generate one using our [Generate Image](/Examples/GenerateImage) example)
 
 ## Quick Start

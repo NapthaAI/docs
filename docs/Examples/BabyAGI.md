@@ -12,7 +12,7 @@ Using the Naptha SDK and node infrastructure, we implemented BabyAGI as a true m
 
 ## Prerequisities
 
-Make sure you have the Naptha SDK [installed](/docs/GettingStarted/Installation). 
+Make sure you have the Naptha SDK [installed](/GettingStarted/Installation). 
 
 ## Modules Used
 

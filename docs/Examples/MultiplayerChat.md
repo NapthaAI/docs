@@ -4,7 +4,7 @@ Using the Naptha SDK and node infrastructure, we implemented a multiplayer chat 
 
 ## Prerequisites
 
-- Make sure you have the [Naptha SDK installed](/docs/GettingStarted/Installation).
+- Make sure you have the [Naptha SDK installed](/GettingStarted/Installation).
 
 ## Modules Used
 

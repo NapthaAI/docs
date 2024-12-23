@@ -85,6 +85,45 @@ You can also run agents from docker images (if running your own node, make sure 
 naptha run docker_hello_world -p "docker_image=hello-world"
 ```
 
+## Tools
+
+### Interact with the Tool Hub
+
+You can also use the CLI to explore available tools that you can use:
+
+```bash
+naptha tools
+```
+
+For each tool, you will see a url where you can check out the code.
+
+### Create a New Tool
+
+```bash
+naptha tools tool_name -p "description='Tool description' parameters='{tool_input_1: str, tool_input_2: str}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
+```
+
+### Delete a Tool
+
+```bash
+naptha tools -d tool_name
+```
+
+### Run a Tool
+
+Now you've found a node and a tool you'd like to run, so let's run it locally! You can use the commandline tool to connect with the node and run the workflow. 
+
+```bash
+# usage: naptha run <tool_name> -p "<tool args>"
+naptha run tool:generate_image_tool -p "tool_name='generate_image_tool' tool_input_data='A beautiful image of a cat'"
+```
+
+### Run an Agent that interacts with the Tool
+
+```bash
+naptha run agent:generate_image_agent -p "tool_name='generate_image_tool' tool_input_data='A beautiful image of a cat'" --tool_node_urls "http://localhost:7001"
+```
+
 
 ## Agent Orchestrators
 
@@ -181,6 +220,64 @@ naptha environments -d environment_name
 naptha run environment:groupchat_environment -p "function_name='get_global_state'"
 ```
 
+## Knowledge Base Modules
+
+### Interact with the Knowledge Base Hub
+
+You can also use the CLI to explore available knowledge bases that you can use with agents:
+
+```bash
+naptha kbs
+```
+
+### Register a New Knowledge Base Module on the Hub
+
+```bash
+naptha kbs kb_name -p "description='Knowledge Base description' parameters='{input_parameter_1: str, input_parameter_2: int}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
+```
+
+### Delete a Knowledge Base Module
+
+```bash
+naptha kbs -d kb_name
+```
+
+### Create a New Knowledge Base on a Node
+
+```bash
+naptha create kb:wikipedia_kb 
+```
+
+### Initialize the content in the Knowledge Base
+
+```bash
+naptha run kb:wikipedia_kb -p "mode='init'"
+```
+
+### List content in the Knowledge Base
+
+```bash
+naptha kbs wikipedia_kb -l
+```
+
+### Add to the Knowledge Base
+
+```bash
+naptha kbs wikipedia_kb -a -c "url='https://en.wikipedia.org/wiki/Socrates' title='Socrates' text='Socrates was a Greek philosopher from Athens who is credited as the founder of Western philosophy and as among the first moral philosophers of the ethical tradition of thought.'" 
+```
+
+### Query the Knowledge Base Module
+
+```bash
+naptha run kb:wikipedia_kb -p "mode='query' query='Socrates'"
+```
+
+### Run an Agent that interacts with the Knowledge Base
+
+```bash
+naptha run agent:wikipedia_agent -p "query='Socrates' question='Who is Socrates?'" --kb_node_urls "http://localhost:7001"
+```
+
 ## Personas
 
 ### Interact with the Persona Hub
@@ -211,8 +308,7 @@ naptha personas -d persona_name
 naptha inference "How can we create scaling laws for multi-agent systems?" -m "phi3:mini"
 ```
 
-
-### Storage Operations 
+## Storage Operations 
 
 #### Interact with Node Storage
 

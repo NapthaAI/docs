@@ -52,5 +52,5 @@ Check out this environment implementation:
 - [Group Chat Environment](https://github.com/NapthaAI/groupchat_environment)
 
 ## Need Help?
-- Join our [Discord](https://discord.gg/naptha)
+- Join our [Discord](https://naptha.ai/naptha-community)
 - Submit issues on [GitHub](https://github.com/NapthaAI)

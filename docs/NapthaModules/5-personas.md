@@ -41,5 +41,5 @@ naptha run agent:tweets_to_character -p "input_dir=twitter-2024-08-19-7604d23503
 ```
 
 ## Need Help?
-- Join our [Discord](https://discord.gg/naptha)
+- Join our [Discord](https://naptha.ai/naptha-community)
 - Submit issues on [GitHub](https://github.com/NapthaAI)

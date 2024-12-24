@@ -22,5 +22,5 @@ As shown in the diagram above, tools play a crucial role in the agent ecosystem:
 
 
 ## Need Help?
-- Join our [Discord](https://discord.gg/naptha)
+- Join our [Discord](https://naptha.ai/naptha-community)
 - Submit issues on [GitHub](https://github.com/NapthaAI)

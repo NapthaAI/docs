@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
@@ -105,6 +106,18 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    algolia: {
+      appId: process.env.ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: 'naptha',
+      contextualSearch: true,
+      searchParameters: {},
+      searchPagePath: 'search',
+      replaceSearchResultPathname: {
+        from: '(https?://docs.naptha.ai|http://localhost:3000)',
+        to: '/',
+      },
     },
   } satisfies Preset.ThemeConfig,
 };

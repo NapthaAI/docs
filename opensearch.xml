@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Naptha Docs</ShortName>
+  <Description>Search Naptha Docs</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="16" height="16" type="image/x-icon">https://docs.naptha.ai/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://docs.naptha.ai/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.naptha.ai/opensearch.xml" />
+  <moz:SearchForm>https://docs.naptha.ai/</moz:SearchForm>
+</OpenSearchDescription>

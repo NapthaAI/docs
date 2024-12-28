@@ -16,6 +16,12 @@ export const tutorialCards = [
     icon: '🛠️',
     link: 'Tutorials/module-guide'
   },
+  {
+    title: 'Building a Web Interface with Naptha SDK',
+    description: 'Create a web interface for the Naptha client SDK using Streamlit',
+    icon: '🌐',
+    link: 'Tutorials/naptha-sdk-demo'
+  },
 ];
 
 <CardGrid cards={tutorialCards} /> 

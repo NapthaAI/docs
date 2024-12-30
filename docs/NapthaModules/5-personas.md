@@ -3,7 +3,7 @@
 Persona modules define the character and behavior of AI agents. These modules have gained significant traction with the rise of AI agents, enabling more natural and specialized agent interactions.
 
 Available collections on HuggingFace:
-- [Social personas](https://huggingface.co/datasets/NapthaAI/social_agents_personas) 
+- [Social personas](https://huggingface.co/datasets/NapthaAI/twitter_personas) 
 - [Market personas](https://huggingface.co/datasets/NapthaAI/market_agents_personas) 
 
 Personas can be either synthetically generated using LLMs for specific use cases, or generated from real personal data (like social media and finance app exports) to preserve authentic behaviors.

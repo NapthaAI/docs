@@ -1,12 +1,14 @@
 # What are Naptha Modules?
 
-Naptha Modules are the building blocks of Naptha multi-agent applications, which enable them to run across multiple nodes. There are currently five types of modules:
+Naptha Modules are the building blocks of Naptha multi-agent applications, which enable them to run across multiple nodes. There are currently seven types of modules:
 
 - Agent modules  
 - Agent orchestrator modules
 - Environment modules
 - Tool modules
 - Persona modules
+- Knowledge Base modules
+- Memory modules
 
 Modules are stored on GitHub, HuggingFace, IPFS, or DockerHub with the URL registered on the Naptha Hub.
 
@@ -56,18 +58,25 @@ The [Naptha Module template](https://github.com/NapthaAI/module_template) provid
 - Agent orchestrator modules
 - Environment modules
 - Tool modules
+- Knowledge Base modules
+- Memory modules
+- Persona modules
 
 ### Explore Examples
-You can also browse our [GitHub repositories](https://github.com/orgs/NapthaAI/repositories) for real-world examples e.g. The [simple chat agent](https://github.com/NapthaAI/simple_chat_agent) for running simple chat with LLMs.
+You can also browse our [GitHub repositories](https://github.com/orgs/NapthaAI/repositories) for real-world examples e.g. The [simple chat agent module](https://github.com/NapthaAI/simple_chat_agent) for running simple chat with LLMs.
 
 
 ### Discover Available Modules
 To see a full list of modules currently registered on the Naptha Hub, install the [Naptha SDK](https://github.com/NapthaAI/naptha-sdk) and use these CLI commands:
 ```bash
 naptha agents         # explore available agent modules
+naptha tools          # explore available tool modules
 naptha orchestrators  # explore available orchestrator modules
 naptha environments   # explore available environment modules
-naptha personas      # explore available persona modules
+naptha kbs            # explore available knowledge base modules
+naptha memories       # explore available memory modules
+naptha personas       # explore available personas to use with your agents
+
 ```
 
 

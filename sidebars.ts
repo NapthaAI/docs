@@ -62,6 +62,7 @@ const sidebars: SidebarsConfig = {
         'NapthaModules/environments',
         'NapthaModules/tools',
         'NapthaModules/personas',
+        'NapthaModules/knowledge-bases',
       ],
     },
     {

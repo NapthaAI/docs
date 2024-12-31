@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'Tutorials/index',
         'Tutorials/module-guide',
+        'Tutorials/naptha-sdk-demo',
         // Add more tutorials here
       ],
     },

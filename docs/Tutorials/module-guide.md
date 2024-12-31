@@ -6,8 +6,6 @@ sidebar_label: 'Your First Agent Module'
 
 <a href="https://colab.research.google.com/drive/1HwrR49T5c1CQDKprYPYSVHeUJCA5uf5V?usp=sharing" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-While other projects allow you to deploy agents on the cloud, Naptha allows you to create and deploy them on an entire Web built especially for agents. Here, they can interact with other agents, tools, and environments (such as group chats, auctions, and virtual worlds), running on top of a decentralized network of devices.
-
 In this guide, we'll walk through creating and publishing your first Naptha agent module, from initial setup to deployment. Whether you're an AI researcher, developer, or enthusiast, you'll be able to contribute to the Naptha ecosystem in no time.
 
 ## What is an Agent Module?

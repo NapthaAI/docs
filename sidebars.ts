@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'Tutorials/index',
         'Tutorials/module-guide',
+        'Tutorials/quick-persona-guide',
         // Add more tutorials here
       ],
     },

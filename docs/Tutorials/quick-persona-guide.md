@@ -4,14 +4,14 @@ sidebar_label: 'Create Your First AI Persona'
 
 # Create and Use Your First AI Persona on Naptha in 5 Minutes
 
-Want to give your AI agent a unique personality? This guide shows you the fastest way to create and use a persona module on Naptha.
+Want to give your AI agent a unique personality? This guide shows you how to quickly create and use a persona module on Naptha.
 
 <details>
 <summary>Using Existing Personas</summary>
 
-The fastest way to understand how persona modules work on Naptha is to use an existing persona from our collections:
+The easiest way to understand how persona modules work on Naptha is to use an existing persona from our collections:
 
->You can run `naptha personas` to see the list of available personas you can use.
+>Run `naptha personas` to see all available personas.
 
 For example, to use the "interstellarninja_twitter" persona:
 ```bash
@@ -22,7 +22,7 @@ naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are
 ## Creating Your Own Persona
 
 ### 1. Generate Character Data
-The fastest way to create a persona is by converting your social media data:
+The fastest way to create a persona is by converting your social media data into a structured character profile:
 
 1. Download your X (Twitter) data archive from [X Settings](https://twitter.com/settings/download_your_data)
    :::note
@@ -35,13 +35,13 @@ The fastest way to create a persona is by converting your social media data:
 npx tweets2character
 ```
 
-This will generate a `character.json` file using claude or openai which you can rename to your persona name.
+This will generate a `character.json` file containing your persona's traits and characteristics, generated using either Claude or OpenAI's API. You can rename this file to match your desired persona name.
 
 ### 2. Register Your Persona
 
-- Next, request access and upload your `character.json` to the [Twitter personas collection ](https://huggingface.co/datasets/NapthaAI/twitter_personas) from community members.
+- Next, follow and request to join the [Naptha organization on Hugging Face](https://huggingface.co/NapthaAI), then create a PR to upload your `character.json` to the [Twitter personas collection](https://huggingface.co/datasets/NapthaAI/twitter_personas/tree/main).
 
-- Once merged, register your persona like this:
+- Once your PR is merged, you can register your persona module using:
 ```bash
 naptha personas my-persona -p "description='My custom persona' parameters='{name: str, bio: str, openness: int}' module_url='https://huggingface.co/datasets/NapthaAI/twitter_personas' module_entrypoint='my-persona.json'"
 ```

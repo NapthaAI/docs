@@ -67,13 +67,20 @@ Output:  [{"role": "user", "content": "who are you?"}, {"role": "assistant", "co
 <details>
 <summary>Alternative Registration Methods</summary>
 
-If you don't want to upload your persona to HuggingFace, you can register it directly:
+You can also register your persona without uploading to HuggingFace by following these steps:
 
-- Create a Personal Module structure similar to the example here: https://huggingface.co/datasets/NapthaAI/market_agents_personas/tree/main 
+1. Clone the [persona template](https://github.com/NapthaAI/persona_template)
+2. Place your `character.json` file in the template's `data` folder
+:::info
+The template contains all the necessary files and structure for a persona module, with examples. You can also find it on [HuggingFace](https://huggingface.co/datasets/NapthaAI/persona_template/tree/main).
+:::
 
-- Push it to Github as an accessible public repo or on IPFS via our node storage, `naptha write_storage -i folder_name`
+3. Make the files accessible by either:
+   - Pushing to a public GitHub repository
+   - Uploading to IPFS using: `naptha write_storage -i folder_name`
+   - or both
 
-- Register it like this:
+4. Register it like this:
 ```bash
 naptha personas my-persona -p "description='My custom persona' parameters='{name: str, bio: list, lore: list, adjectives: list}' module_url='github://YOUR_GITHUB_USERNAME/REPO_NAME or ipfs://FOLDER_ID' module_type='persona' module_version='0.1' module_entrypoint='data/character.json'"
 ```

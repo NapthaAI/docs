@@ -1,6 +1,8 @@
 # Storage Provider
 
-Naptha Modules often need to store and retreive data locally with the Naptha Nodes that they are running on, and do so via the Naptha Storage API. The Naptha Nodes support several types of storage, including filesystem storage, database storage, and IPFS storage. When building a module, you can import the `StorageProvider` class to interact with storage providers. For example, to create a table in a database storage provider, you can use the following code:
+Naptha Modules often need to store and retreive data locally with the Naptha Nodes that they are running on, and do so via the Naptha Storage API. The Naptha Nodes support several types of storage, including filesystem storage, database storage, and IPFS storage. The advantage of using Naptha Storage is that the data is local and private. 
+
+When building a module, you can import the `StorageProvider` class to interact with storage providers. For example, to create a table in a database storage provider, you can use the following code:
 
 ```
 from naptha_sdk.schemas import NodeConfigUser

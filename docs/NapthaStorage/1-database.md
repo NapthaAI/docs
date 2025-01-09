@@ -1,8 +1,6 @@
 # Database Storage
 
-Naptha's database storage offers a powerful way to manage structured data.
-
-You can interact with it using [Naptha's SDK](https://github.com/NapthaAI/naptha-sdk/), either via CLI or the Python client.
+We also offer a powerful way to manage structured data via our database storage provider. You can interact with it using Naptha's SDK, either via [CLI](https://github.com/NapthaAI/naptha-sdk) or the [Python client](https://pypi.org/project/naptha-sdk/).
 
 For the `CLI` option, the database storage provider commands start with `naptha storage db`.
 

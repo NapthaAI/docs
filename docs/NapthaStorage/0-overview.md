@@ -1,6 +1,6 @@
 # Storage Provider
 
-Naptha Modules often need to store and retreive data locally with the Naptha Nodes that they are running on, and do so via the Naptha Storage API. The advantage of using Naptha Storage is that the data is local and private. 
+Naptha Modules often need to store and retrieve data locally on their Naptha Nodes. This can be done via the Naptha Storage API, which provides a secure way to store and manage data locally and privately.
 
 ## Core Features
 
@@ -9,6 +9,7 @@ Naptha Modules often need to store and retreive data locally with the Naptha Nod
 - **Extensible**: Easy to add new storage providers by implementing the StorageProvider interface
 
 ## Available Storage Types
+
 Naptha Nodes support several types of storage, including filesystem storage, database storage, and IPFS storage.
 
 - **Database Storage**: For structured data and efficient queries

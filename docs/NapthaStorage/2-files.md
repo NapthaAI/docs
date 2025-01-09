@@ -96,8 +96,6 @@ print("List directory result:", list_result)
 
 ## Delete a File
 
-Remove files from your storage.
-
 **Via CLI:**
 
 ```

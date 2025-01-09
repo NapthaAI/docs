@@ -35,7 +35,7 @@ print("Basic IPFS upload result:", upload_result)
 
 ## Download a File
 
-Retrieve files from IPFS using their unique content hash.
+Retrieve files from IPFS using their unique hash.
 
 **Via CLI:**
 

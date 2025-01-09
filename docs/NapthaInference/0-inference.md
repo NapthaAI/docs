@@ -4,13 +4,9 @@ sidebar_label: 'Inference Client'
 
 # Inference Client
 
-One of the main functions of a Naptha Module is to access model inference. Naptha Nodes can run inference locally , and do so via the Naptha Inference API. The advantage of using Naptha Nodes for inference is that the inference runs locally and is private.
+One of the main functions of a Naptha Module is to access model inference. Naptha Nodes run inference locally on your hardware, and can also do so via the Naptha Inference API. The key advantage of using Naptha Nodes for inference is that the inference runs locally and is completely private.
 
-The Naptha SDK provides an `InferenceClient` class that allows modules to interact with inference providers in a simple and consistent way:
-
-:::note
-    Install the Naptha SDK using the [instructions here](https://github.com/NapthaAI/naptha-sdk).
-:::
+Naptha Modules can import the `InferenceClient` class from the `naptha_sdk.inference` module to interact with the inference provider.
 
 ```python
 import asyncio

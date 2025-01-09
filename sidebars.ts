@@ -70,15 +70,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Tutorials',
-      items: [
-        'Tutorials/index',
-        'Tutorials/module-guide',
-        // Add more tutorials here
-      ],
-    },
-    {
-      type: 'category',
       label: 'Examples',
       items: [
         'Examples/index',
@@ -89,7 +80,17 @@ const sidebars: SidebarsConfig = {
         'Examples/BabyAGI', 
         'Examples/BuildAgent',
       ],
-    }
+    },
+    {
+      type: 'category',
+      label: 'Tutorials',
+      items: [
+        'Tutorials/index',
+        'Tutorials/module-guide',
+        'Tutorials/quick-persona-guide',
+        // Add more tutorials here
+      ],
+    },
   ],
 };
 

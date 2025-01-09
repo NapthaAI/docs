@@ -1,45 +1,76 @@
 # Persona Modules
 
-Persona modules define the character and behavior of AI agents. These modules have gained significant traction with the rise of AI agents, enabling more natural and specialized agent interactions.
+Persona modules define the character and behavior of AI agents. These modules enable more natural and specialized agent interactions by providing personality traits, communication styles, and behavioral patterns.
 
-Available collections on HuggingFace:
-- [Social personas](https://huggingface.co/datasets/NapthaAI/social_agents_personas) 
-- [Market personas](https://huggingface.co/datasets/NapthaAI/market_agents_personas) 
+## Using Persona Modules on Naptha
 
-Personas can be either synthetically generated using LLMs for specific use cases, or generated from real personal data (like social media and finance app exports) to preserve authentic behaviors.
+### Prerequisites
 
-## Generate a Persona from your X Data
+Install the Naptha SDK using the [instructions here](https://github.com/NapthaAI/naptha-sdk).
 
-1. Download an archive of your X data [here](https://twitter.com/settings/download_your_data).
+### List Available Personas
 
-2. Run tweets2character directly from your command line:
+You can explore available personas using the CLI:
 ```bash
-npx tweets2character
+naptha personas
 ```
+
+Or using the Python SDK:
+```python
+from naptha_sdk.client.naptha import Naptha
+
+async def list_personas():
+    """List personas with new client"""
+    try:
+        async with Naptha() as naptha:
+            await naptha.hub.signin(os.getenv("HUB_USER"), os.getenv("HUB_PASS"))
+            personas = await naptha.hub.list_personas()
+            return personas
+    except Exception as e:
+        print(f"Failed to list personas: {str(e)}")
+        return None
+```
+
+### Create a New Persona
+
+Via CLI:
+```bash
+naptha personas sam_altman_twitter -p "description='Persona for Sam Altman' parameters='{name: str, bio: str, openness: int}' module_url='https://huggingface.co/datasets/OpenAI/twitter_personas' module_entrypoint='data/sam.json'"
+```
+
 :::note
-You need an API key to use Claude or OpenAI.
+Make sure that the `module_url` points to the main repo (e.g., HuggingFace dataset, GitHub repo, or IPFS) and the `module_entrypoint` specifies the path to the file (JSON or YAML format).
 :::
 
-3. If everything is correct, you'll see a loading bar as the script processes your data and generates a character file.
-:::info
-It will be output as `character.json` in the directory where you run `npx tweets2character`.
-:::
-
-4. Finally, submit a pull request to add your persona to this dataset on HuggingFace.
-
-5. You can follow and request to join the Naptha organization on Hugging Face [here](https://huggingface.co/NapthaAI) (this could take 24 hours or more)
+### Delete a Persona
 
 ```bash
-unzip twitter-2024-08-19-7604d23503c4857295c24edc2a13ec3d6d972639076041cc58eedefa8b439e62.zip twitter-2024-08-19-7604d23503c4857295c24edc2a13ec3d6d972639076041cc58eedefa8b439e62
+naptha personas -d persona_name
 ```
+
+### Run an Agent with a Persona
+
+Via CLI:
 ```bash
-naptha write_storage -i /Users/arshath/play/tweets_to_character/twitter-2024-11-14-ebb9578b384ebab9a263b7621eb86794462f7f5fa47d51d2e33a7607ed0d8f70
+# Using interstellarninja persona
+naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are you?'" --persona_modules "interstellarninja_twitter"
+
+# Using market agent persona
+naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are you?'" --persona_modules "marketagents_aileenmay"
 ```
-```bash
-# usage: naptha run <agent_name> <agent args>
-naptha run agent:tweets_to_character -p "input_dir=twitter-2024-08-19-7604d23503c4857295c24edc2a13ec3d6d972639076041cc58eedefa8b439e62"
-```
+
+
+
+## Available Collections
+
+Browse our curated persona collections:
+- [Social personas](https://huggingface.co/datasets/NapthaAI/twitter_personas)
+- [Market personas](https://huggingface.co/datasets/NapthaAI/market_agents_personas)
+
+## Creating Your Own
+
+Want to create your own persona? Check out our [Quick Persona Guide](../Tutorials/quick-persona-guide.md) for step-by-step instructions.
 
 ## Need Help?
-- Join our [Discord](https://naptha.ai/naptha-community)
+- Join our [Discord Community](https://naptha.ai/naptha-community)
 - Submit issues on [GitHub](https://github.com/NapthaAI)

@@ -1,14 +1,18 @@
 # Database Storage
 
-To interact with the database 
+Naptha's database storage offers a powerful way to manage structured data.
 
-For CLI, the database storage provider commands start with `naptha storage db`.
+You can interact with it using [Naptha's SDK](https://github.com/NapthaAI/naptha-sdk/), either via CLI or the Python client.
+
+For the `CLI` option, the database storage provider commands start with `naptha storage db`.
+
+Here are some examples of how to interact with the database storage:
 
 ## Create a Table
 
-To create a table you need to specify a dict with a schema field.
+To create a table in Naptha's database storage, you need to specify a dict with a schema field that specifies the structure and data types of your table. The schema is provided as a JSON object where each field defines a column's properties.
 
-Via CLI:
+**Via CLI:**
 
 ```
 naptha storage db create test_embeddings -d '{
@@ -20,7 +24,7 @@ naptha storage db create test_embeddings -d '{
 }'
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -51,9 +55,9 @@ print("Create Table Result:", create_table_result)
 
 ## Create a Row
 
-To create a row you need to specify a dict with a data field.
+Similarly, to create a row you need to specify a dict with a data field.
 
-Via CLI:
+**Via CLI:**
 
 ```
 naptha storage db create test_embeddings -d '{
@@ -65,7 +69,7 @@ naptha storage db create test_embeddings -d '{
 }'
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -96,7 +100,7 @@ print("Create Row Result:", create_row_result)
 
 ## Update a Row
 
-Via CLI:
+**Via CLI:**
 
 ```
 naptha storage db update test_embeddings -d '{
@@ -106,7 +110,7 @@ naptha storage db update test_embeddings -d '{
 }' -o '{"condition": {"text": "Document 1"}}'
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -136,7 +140,9 @@ print("Update Result:", update_result)
 
 ## Query a Table
 
-Via CLI:
+Fetch exactly what you need with flexible query options. You can select specific columns or perform vector similarity searches.
+
+**Via CLI:**
 
 ```
 naptha storage db read test_embeddings -o '{
@@ -144,7 +150,7 @@ naptha storage db read test_embeddings -o '{
 }'
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -167,9 +173,11 @@ query_result = asyncio.run(storage_provider.execute(query_request))
 print("Query Result:", query_result)
 ```
 
-Vector similarity search
+### Vector similarity search
 
-Via CLI:
+Leverage vector embeddings for semantic search and AI-powered queries. Perfect for finding similar content or nearest-neighbor searches.
+
+**Via CLI:**
 
 ```
 naptha storage db read test_embeddings -o '{
@@ -181,7 +189,7 @@ naptha storage db read test_embeddings -o '{
 }'
 ```
 
-In Python:
+**In Python:**  
 
 ```
 import asyncio
@@ -210,7 +218,7 @@ print("Vector Similarity Search Result:", vector_result)
 
 ## List Rows
 
-Via CLI:
+**Via CLI:**
 
 ```
 naptha storage db list test_embeddings -o '{
@@ -219,7 +227,7 @@ naptha storage db list test_embeddings -o '{
 }'
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -245,7 +253,7 @@ print("List Rows Result:", list_result)
 
 ## Delete a Row
 
-Via CLI:
+**Via CLI:**
 
 ```
 naptha storage db delete test_embeddings -o '{
@@ -253,7 +261,7 @@ naptha storage db delete test_embeddings -o '{
 }'
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -276,13 +284,13 @@ print("Delete Rows Result:", delete_rows_result)
 
 ## Delete a Table
 
-Via CLI:
+**Via CLI:**
 
 ```
 naptha storage db delete test_embeddings
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio

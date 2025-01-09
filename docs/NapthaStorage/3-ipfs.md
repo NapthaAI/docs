@@ -1,14 +1,18 @@
 # IPFS Storage
 
+Naptha's storage provider also provides decentralized file storage via the IPFS network.
+
 ## Upload a File
 
-Via CLI:
+Store files on the IPFS network
+
+**Via CLI:**
 
 ```
 naptha storage ipfs create test -f README.md
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -31,13 +35,15 @@ print("Basic IPFS upload result:", upload_result)
 
 ## Download a File
 
-Via CLI:
+Retrieve files from IPFS using their unique content hash.
+
+**Via CLI:**
 
 ```
 naptha storage ipfs read <IPFS_HASH>
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -59,13 +65,14 @@ print("IPFS read result:", read_result)
 
 ## Upload a File with IPNS
 
-Via CLI:
+
+**Via CLI:**
 
 ```
 naptha storage ipfs create test -f README.md -o '{"ipns_operation": "create"}'
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -90,13 +97,15 @@ print("IPNS upload result:", ipns_result)
 
 ## Download a File with IPNS
 
-Via CLI:
+Retrieve the latest version of a file using its IPNS name.
+
+**Via CLI:**
 
 ```
 naptha storage ipfs read <IPNS_NAME>
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -121,8 +130,13 @@ print("IPNS read result:", ipns_read_result)
 
 ## Update a File with IPNS
 
-Via CLI:
+**Via CLI:**
 
 ```
-naptha storage ipfs create test -f pyproject.toml -o '{"ipns_operation":"update", "ipns_name":"k51qzi5uqu5djw7nqlbxf6smmx51vksu1pes119ooomwd7h4swpg0d5iyjcdp5", "unpin_previous":"True", "previous_hash":"QmPKjW53SLwb2YAoPV47Guvva4bGBgynhVa91M9MwSjLj9"}'
+naptha storage ipfs create test -f pyproject.toml -o '{
+    "ipns_operation": "update",
+    "ipns_name": "k51qzi5uqu5djw7nqlbxf6smmx51vksu1pes119ooomwd7h4swpg0d5iyjcdp5",
+    "unpin_previous": "True",
+    "previous_hash": "QmPKjW53SLwb2YAoPV47Guvva4bGBgynhVa91M9MwSjLj9"
+}'
 ```

@@ -32,28 +32,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Tutorials',
-      items: [
-        'Tutorials/index',
-        'Tutorials/module-guide',
-        // Add more tutorials here
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Examples',
-      items: [
-        'Examples/index',
-        'Examples/HelloWorld',
-        'Examples/GenerateImage',
-        'Examples/Image2Image',
-        'Examples/MultiplayerChat',
-        'Examples/BabyAGI', 
-        'Examples/BuildAgent',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Naptha Modules',
       items: [
         'NapthaModules/overview',
@@ -73,6 +51,45 @@ const sidebars: SidebarsConfig = {
         'NapthaNodes/run',
       ],
     },
+    {
+      type: 'category',
+      label: 'Naptha Storage',
+      items: [
+        'NapthaStorage/overview',
+        'NapthaStorage/database',
+        'NapthaStorage/files',
+        'NapthaStorage/ipfs',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Naptha Inference',
+      items: [
+        'NapthaInference/inference',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Tutorials',
+      items: [
+        'Tutorials/index',
+        'Tutorials/module-guide',
+        // Add more tutorials here
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Examples',
+      items: [
+        'Examples/index',
+        'Examples/HelloWorld',
+        'Examples/GenerateImage',
+        'Examples/Image2Image',
+        'Examples/MultiplayerChat',
+        'Examples/BabyAGI', 
+        'Examples/BuildAgent',
+      ],
+    }
   ],
 };
 

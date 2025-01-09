@@ -1,14 +1,18 @@
 # File System Storage
 
+Naptha's file system storage offers a straightforward way to manage files. Here are some examples of how to interact with the file system storage:
+
 ## Upload a File
 
-Via CLI:
+Store files directly on your Naptha node with a simple command.
+
+**Via CLI:**
 
 ```
 naptha storage fs create test_upload -f README.md
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -30,13 +34,15 @@ print("Single file upload result:", upload_result)
 
 ## Download a File
 
-Via CLI:
+Retrieve your stored files easily when needed.
 
-``` 
+**Via CLI:**
+
+```
 naptha storage fs read test_upload
 ```
 
-In Python:
+**In Python:**
 
 ```
 from naptha_sdk.schemas import NodeConfigUser
@@ -58,13 +64,13 @@ print("Read file result:", read_result)
 
 List files in a directory.
 
-Via CLI:
+**Via CLI:**
 
 ```
 naptha storage fs list test_upload
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio
@@ -90,13 +96,15 @@ print("List directory result:", list_result)
 
 ## Delete a File
 
-Via CLI:
+Remove files from your storage.
+
+**Via CLI:**
 
 ```
 naptha storage fs delete test_upload/README.md
 ```
 
-In Python:
+**In Python:**
 
 ```
 import asyncio

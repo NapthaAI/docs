@@ -53,19 +53,19 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Naptha Inference',
+      items: [
+        'NapthaInference/inference',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Naptha Storage',
       items: [
         'NapthaStorage/overview',
         'NapthaStorage/database',
         'NapthaStorage/files',
         'NapthaStorage/ipfs',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Naptha Inference',
-      items: [
-        'NapthaInference/inference',
       ],
     },
     {

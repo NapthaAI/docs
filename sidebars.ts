@@ -22,8 +22,6 @@ const sidebars: SidebarsConfig = {
         // Installation & Setup
         'GettingStarted/Installation',
         'GettingStarted/SDK',
-        //'GettingStarted/InstallSDK',
-        //'GettingStarted/InstallNode', deprecated
  
         
         // Development

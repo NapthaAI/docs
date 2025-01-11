@@ -35,10 +35,22 @@ export const featureCards = [
     link: 'NapthaModules/overview'
   },
   {
-    title: 'Naptha Nodes',
-    description: 'Run your own node and join the decentralized AI network',
-    icon: '🌐',
-    link: '/NapthaNodes/what-are-nodes'
+  title: 'Naptha Nodes',
+  description: 'Run your own node and join the decentralized AI network',
+  icon: '🌐',
+  link: '/NapthaNodes/what-are-nodes'
+  },
+  {
+    title: 'Naptha Inference',
+    description: 'Access AI model inference on Naptha Nodes',
+    icon: '🧠',
+    link: 'NapthaInference/inference'
+  },
+  {
+    title: 'Naptha Storage',
+    description: 'Manage data with our flexible storage solutions',
+    icon: '💾',
+    link: 'NapthaStorage/overview'
   },
   {
     title: 'Documentation',

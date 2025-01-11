@@ -12,19 +12,11 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Getting Started',
       items: [
-         // Core Concepts
-         'GettingStarted/Architecture',
-         'GettingStarted/Abstractions',
-         'GettingStarted/UseCases',
-
-         
-        
-        // Installation & Setup
+        'GettingStarted/Architecture',
+        'GettingStarted/Abstractions',
+        'GettingStarted/UseCases',
         'GettingStarted/Installation',
         'GettingStarted/SDK',
- 
-        
-        // Development
         'GettingStarted/NapthaCLI',
       ],
     },
@@ -86,7 +78,6 @@ const sidebars: SidebarsConfig = {
         'Tutorials/index',
         'Tutorials/module-guide',
         'Tutorials/quick-persona-guide',
-        // Add more tutorials here
       ],
     },
   ],

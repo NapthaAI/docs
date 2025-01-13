@@ -10,7 +10,7 @@ Environment modules are things like:
 
 Naptha Nodes support the deployment of Environment modules. The state of these modules is stored in a local database (postgres) and file system on the Naptha Node.
 
-## Deploying an Environment Module
+<!-- ## Deploying an Environment Module
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ You can run environment modules via CLI using:
 ```bash
 # Format: naptha run environment:<env_type> -p "<param_name>=<value>"
 naptha run environment:groupchat_environment -p "function_name='get_global_state'"
-```
+``` -->
 
 ## Examples
 

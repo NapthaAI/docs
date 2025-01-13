@@ -21,7 +21,7 @@ Agent modules can come in several forms:
 
 ### Prerequisites
 
-Install the Naptha SDK using the [instructions here](https://github.com/NapthaAI/naptha-sdk).
+Install the Naptha SDK using the [instructions here](https://github.com/NapthaAI/naptha-sdk/?tab=readme-ov-file#install).
 
 ### In Python
 
@@ -52,22 +52,48 @@ Under the hood, `call_agent_func` makes a call to the worker node via API, which
 
 ### From the CLI
 
-You can deploy an agent via CLI using:
+#### Interact with the Agent Hub
+
+You can also use the CLI to explore available agents that you can run on a node:
 
 ```bash
-
-# Format: naptha create agent:<agent_type> --agent_node <node_url>
-naptha create agent:simple_chat_agent --agent_node "https://node.naptha.ai"
+naptha agents
 ```
 
-You can call an agent module via CLI using:
+For each agent, you will see a url where you can check out the code.
+
+#### Create a New Agent
 
 ```bash
-# Format: naptha run agent:<agent_type> -p "<param_name>=<value>"
-naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='What is an AI agent?'"
+naptha agents agent_name -p "description='Agent description' parameters='{tool_name: str, tool_input_data: str}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
 ```
 
-The agent will execute on the specified node, making it easy to integrate with other modules.
+#### Delete an Agent
+
+```bash
+naptha agents -d agent_name
+```
+
+#### Run an Agent
+
+Now you've found a node and a agent you'd like to run, so let's run it locally! You can use the commandline tool to connect with the node and run the workflow. 
+
+```bash
+# usage: naptha run <agent_name> <agent args>
+naptha run agent:hello_world_agent -p "firstname=sam surname=altman"
+```
+
+Try an agent that uses the local LLM running on your node:
+
+```bash
+naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='what is an ai agent?'"
+```
+
+You can also run agents from docker images (if running your own node, make sure the `DOCKER_JOBS=True` in the config):
+
+```bash
+naptha run docker_hello_world -p "docker_image=hello-world"
+```
 
 
 ## Need Help?

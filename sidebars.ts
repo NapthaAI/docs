@@ -26,11 +26,11 @@ const sidebars: SidebarsConfig = {
       items: [
         'NapthaModules/overview',
         'NapthaModules/agents',
-        'NapthaModules/orchestrators',
-        'NapthaModules/environments',
         'NapthaModules/tools',
+        'NapthaModules/orchestrators',
         'NapthaModules/personas',
         'NapthaModules/knowledge-bases',
+        'NapthaModules/environments',
       ],
     },
     {

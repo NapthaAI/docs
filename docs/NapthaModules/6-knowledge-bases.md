@@ -9,11 +9,12 @@ Knowledge Base modules can be used for:
 - **Documentation**:  Reference technical or procedural information
 - **Training Data**: Provide examples and patterns for learning
 
-## Prerequisites
-
-Install the Naptha SDK using the [instructions from source](https://github.com/NapthaAI/naptha-sdk/) or [`pip install naptha-sdk`](https://pypi.org/project/naptha-sdk/)
-
 ## Managing Knowledge Bases via CLI
+
+### Prerequisites
+
+Install the Naptha SDK using the [instructions from source](https://github.com/NapthaAI/naptha-sdk/)
+
 
 ### Interact with the Knowledge Base Hub
 

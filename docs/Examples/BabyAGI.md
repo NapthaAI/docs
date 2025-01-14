@@ -30,7 +30,7 @@ The BabyAGI multi-node workflow is made up of the following components, which yo
 You can run the BabyAGI flow from the SDK using the following command:
 
 ```bash
-naptha run babyagi -p "objective='Research the history of football'" --worker_nodes "http://node.naptha.ai:7001,http://node1.naptha.ai:7001"
+naptha run orchestrator:babyagi -p "objective='Research the history of football'" --agent_nodes "node.naptha.ai,node1.naptha.ai"
 ```
 
 ### Configuration Breakdown:

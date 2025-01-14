@@ -10,7 +10,7 @@ Generate stunning images using our text-to-image agent. This example demonstrate
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/NapthaAI/generate_image.git
+git clone https://github.com/NapthaAI/generate_image_tool
 cd generate_image
 ```
 

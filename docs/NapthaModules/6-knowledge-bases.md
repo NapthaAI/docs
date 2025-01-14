@@ -117,6 +117,8 @@ naptha run agent:wikipedia_agent -p "function_name='run_query' query='Elon Musk'
 
 Check out these knowledge base implementations:
 - [Wikipedia Knowledge Base](https://github.com/NapthaAI/wikipedia_kb)
+- [Group Chat Between Agents Knowledge Base](https://github.com/NapthaAI/groupchat_kb)
+- [Embedding Knowledge Base](https://github.com/NapthaAI/embedding_kb)
 
 ## Need Help?
 - Join our [Community](https://naptha.ai/naptha-community)

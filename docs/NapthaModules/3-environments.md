@@ -36,7 +36,7 @@ response = await environment.call_environment_func(
 ```
 
 Under the hood, `call_environment_func` makes a call to the environment node via API, which executes the environment module. 
-
+-->
 ### From the CLI
 
 You can run environment modules via CLI using:
@@ -44,7 +44,7 @@ You can run environment modules via CLI using:
 ```bash
 # Format: naptha run environment:<env_type> -p "<param_name>=<value>"
 naptha run environment:groupchat_environment -p "function_name='get_global_state'"
-``` -->
+``` 
 
 ## Examples
 

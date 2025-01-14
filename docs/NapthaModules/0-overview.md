@@ -36,9 +36,10 @@ my_module/
 │   ├── __init__.py
 │   ├── configs/
 │   │   ├── agent_deployments.json
-│   │   ├── environment_deployments.json
+│   │   ├── deployment.json
+│   │   ├── kb_deployments.json
 │   │   ├── llm_configs.json
-│   │   └── orchestrator_configs.json
+│   │   └── tool_deployments.json
 │   ├── run.py
 │   └── schemas.py
 ├── tests/
@@ -52,6 +53,10 @@ my_module/
 └── Dockerfile
 ```
 
+:::info
+You can make changes to the configs in the `configs` folder. The `deployment.json` file is the main config file for the module. You may also have other config files for subdeployments such as `agent_deployments.json`, `tool_deployments.json`, `kb_deployments.json`, `memory_deployments.json`, and `environment_deployments.json`.
+:::
+
 
 The [Naptha Module template](https://github.com/NapthaAI/module_template) provides the basic structure for creating new:
 - Agent modules
@@ -59,8 +64,9 @@ The [Naptha Module template](https://github.com/NapthaAI/module_template) provid
 - Tool modules
 - Knowledge Base modules
 - Persona modules
-<!-- - Memory modules -->
 - Environment modules
+<!-- - Memory modules -->
+
 
 ### Explore Examples
 You can also browse our [GitHub repositories](https://github.com/orgs/NapthaAI/repositories) for real-world examples e.g. The [simple chat agent module](https://github.com/NapthaAI/simple_chat_agent) for running simple chat with LLMs.

@@ -18,7 +18,8 @@ This basic, single-node workflow is made of the following component, which you c
 You can run this "Hello World" example using the Naptha CLI with the following command:
 
 ```bash
-naptha run hello_world_agent -p "firstname=Sam surname=Altman"
+# usage: naptha run <agent_name> <agent args>
+naptha run agent:hello_world_agent -p "firstname=sam surname=altman"
 ```
 
 ### Configuration Options:
@@ -28,6 +29,13 @@ naptha run hello_world_agent -p "firstname=Sam surname=Altman"
 :::note
 This will run on whichever node you've configured as `NODE_URL` in the .env file of the Naptha SDK.
 :::
+
+You can also run agents from docker images (if running your own node, make sure the DOCKER_JOBS=True in the config):
+
+```bash
+naptha run docker_hello_world -p "docker_image=hello-world"
+```
+
 
 ## Expected Output
 

@@ -35,10 +35,9 @@ naptha run orchestrator:babyagi -p "objective='Research the history of football'
 
 ### Configuration Breakdown:
 - `objective`: Your desired research or task objective
-- `worker_nodes`: Comma-separated list of worker node URLs
+- `agent_nodes`: Comma-separated list of agent node URLs
 
-This runs the flow across three nodes in total - one orchestrator node (whichever you have set as the ```NODE_URL``` in the .env file of the Naptha SDK), 
-and two worker nodes (that you have set using the ```--worker_nodes``` flag).
+This runs the flow across three nodes in total - one orchestrator node (whichever you have set as the ```NODE_URL``` in the .env file of the Naptha SDK), and two agent nodes (that you have set using the ```--agent_nodes``` flag).
 
 :::tip
 Start with simple objectives to understand the workflow, then gradually increase complexity as you become familiar with the system.

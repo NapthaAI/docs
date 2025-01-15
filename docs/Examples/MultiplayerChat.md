@@ -20,19 +20,28 @@ This multi-agent, multi-node workflow is made of the following components, which
 
 ## Run
 
-You can run it using the Naptha SDK with the following command:
+You can run it using the Naptha SDK on hosted nodes using the following command:
 
 ```bash
-naptha run orchestrator:multiagent_chat -p "prompt='i would like to count up to ten, one number at a time. ill start. one.'" --worker_nodes "http://node.naptha.ai:7001,http://node1.naptha.ai:7001" --environment_nodes "http://node.naptha.ai:7001"
+naptha run orchestrator:multiagent_chat -p "prompt='i would like to count up to ten, one number at a time. ill start. one.'" --agent_nodes "node.naptha.ai,node1.naptha.ai" --kb_nodes "node.naptha.ai"
+```
+
+Or on local nodes:
+
+```bash
+naptha run orchestrator:multiagent_chat -p "prompt='i would like to count up to ten, one number at a time. ill start. one.'" --agent_nodes "localhost,localhost" --kb_nodes "localhost"
 ```
 
 ### Configuration Breakdown:
 - `prompt`: Your initial message to start the conversation
-- `worker_nodes`: Comma-separated list of worker node URLs
+- `agent_nodes`: Comma-separated list of agent node URLs where chat agents will run
+- `kb_nodes`: Comma-separated list of knowledge base node URLs for storing chat history
 
 :::note Node Distribution
-This runs the flow across three nodes in total - one orchestrator node (whichever you have set as the ```NODE_URL``` in the .env file of the Naptha SDK), 
-and two worker nodes (that you have set using the ```--worker_nodes``` flag).
+This runs the flow across multiple nodes:
+- One orchestrator node (set as `NODE_URL` in your .env file) that coordinates the chat
+- Two agent nodes (specified via `--agent_nodes`) that run the chat agents
+- One knowledge base node (specified via `--kb_nodes`) that stores the chat history
 :::
 
 ## Example Conversation Starters

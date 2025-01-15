@@ -24,7 +24,7 @@ naptha run agent:generate_image_agent -p "prompt='expansive landscape rolling gr
 Be descriptive in your prompts! The more detailed your description, the better the results.
 :::
 
-### 4. Retrieve Your Image
+### 3. Retrieve Your Image
 Once generation is complete, you'll receive a folder ID. Use it to retrieve your image:
 ```bash
 naptha read_storage -id <folder_id>

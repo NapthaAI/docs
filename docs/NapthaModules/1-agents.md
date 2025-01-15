@@ -102,6 +102,7 @@ Check out these sample agent modules:
 - [Hello World Agent](https://github.com/NapthaAI/hello_world_agent)
 - [Random Number Agent](https://github.com/NapthaAI/random_number_agent)
 - [Debate Agent](https://github.com/NapthaAI/debate_agent)
+- [Wikipedia Agent](https://github.com/NapthaAI/wikipedia_agent)
 
 ## Need Help?
 - Join our [Community](https://naptha.ai/naptha-community)

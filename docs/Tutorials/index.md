@@ -16,6 +16,12 @@ export const tutorialCards = [
     icon: '🛠️',
     link: 'Tutorials/module-guide'
   },
+  {
+    title: 'Create Your First AI Persona',
+    description: 'Learn how to create and use persona modules in 5 minutes',
+    icon: '🎭',
+    link: 'Tutorials/quick-persona-guide'
+  }
 ];
 
 <CardGrid cards={tutorialCards} /> 

@@ -100,6 +100,13 @@ Tesla faces growing competition and softening demand, impacting its stock price 
 '" --agent_nodes "node.naptha.ai,node1.naptha.ai"
 ```
 
+## Examples
+
+Check out these sample agent orchestrator modules:
+- [Multiagent Chat](https://github.com/NapthaAI/multiagent_chat)
+- [BabyAGI](https://github.com/NapthaAI/babyagi)
+- [Multiagent Debate](https://github.com/NapthaAI/multiagent_debate)
+
 ## Need Help?
 - Join our [Community](https://naptha.ai/naptha-community)
 - Submit issues on [GitHub](https://github.com/NapthaAI)

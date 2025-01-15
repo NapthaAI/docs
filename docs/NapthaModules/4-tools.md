@@ -62,6 +62,12 @@ naptha run tool:generate_image_tool -p "tool_name='generate_image_tool' tool_inp
 naptha run agent:generate_image_agent -p "tool_name='generate_image_tool' tool_input_data='A beautiful image of a cat'" --tool_nodes "localhost"
 ```
 
+## Examples
+
+Check out these sample tool modules:
+- [Generate Image Tool](https://github.com/NapthaAI/generate_image_tool)
+- [Image2Image Tool](https://github.com/NapthaAI/image2image)
+
 ## Need Help?
 - Join our [Discord](https://naptha.ai/naptha-community)
 - Submit issues on [GitHub](https://github.com/NapthaAI)

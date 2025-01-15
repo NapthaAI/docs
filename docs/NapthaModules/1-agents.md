@@ -95,6 +95,13 @@ You can also run agents from docker images (if running your own node, make sure 
 naptha run docker_hello_world -p "docker_image=hello-world"
 ```
 
+## Examples
+
+Check out these sample agent modules:
+- [Simple Chat Agent](https://github.com/NapthaAI/simple_chat_agent)
+- [Hello World Agent](https://github.com/NapthaAI/hello_world_agent)
+- [Random Number Agent](https://github.com/NapthaAI/random_number_agent)
+- [Debate Agent](https://github.com/NapthaAI/debate_agent)
 
 ## Need Help?
 - Join our [Community](https://naptha.ai/naptha-community)

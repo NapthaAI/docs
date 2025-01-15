@@ -1,6 +1,6 @@
 # Generate Image
 
-Generate stunning images using our text-to-image agent. This example demonstrates how to create images from text descriptions using Naptha and Stable Diffusion.
+Generate stunning images using our text-to-image tool module. This tool demonstrates how to create images from text descriptions using Naptha and Stable Diffusion and can be used independently or as part of a multi-agent system.
 
 ## Prerequisites
 - [Naptha SDK](/GettingStarted/Installation) installed
@@ -8,28 +8,23 @@ Generate stunning images using our text-to-image agent. This example demonstrate
 
 ## Quick Start
 
-### 1. Clone Repository
+### 1. Run as a Tool Module
+You can run the image generation tool directly:
 ```bash
-git clone https://github.com/NapthaAI/generate_image.git
-cd generate_image
+naptha run tool:generate_image_tool -p "tool_name='generate_image_tool', tool_input_data='expansive landscape rolling greens with gargantuan yggdrasil, intricate world-spanning roots towering under a blue alien sky, masterful, ghibli'"
 ```
 
-### 2. Install Dependencies
+### 2. Run via an Agent
+Use the Generate Image Agent which wraps the tool with additional capabilities:
 ```bash
-poetry install
-```
-
-### 3. Generate Your Image
-Run the image generation agent with your prompt:
-```bash
-naptha run generate_image -p "prompt='wolf running through a field'"
+naptha run agent:generate_image_agent -p "prompt='expansive landscape rolling greens with gargantuan yggdrasil, intricate world-spanning roots towering under a blue alien sky, masterful, ghibli'" --tool_node_urls "http://localhost:7001"
 ```
 
 :::tip
 Be descriptive in your prompts! The more detailed your description, the better the results.
 :::
 
-### 4. Retrieve Your Image
+### 3. Retrieve Your Image
 Once generation is complete, you'll receive a folder ID. Use it to retrieve your image:
 ```bash
 naptha read_storage -id <folder_id>
@@ -42,7 +37,6 @@ Keep track of your folder ID - you'll need it if you want to use this image with
 :::
 
 ## Common Issues
-
 - If you haven't set up your Stability API key, you'll be prompted to add it
 - Make sure your prompt is specific and descriptive for better results
 

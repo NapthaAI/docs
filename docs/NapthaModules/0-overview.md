@@ -4,11 +4,11 @@ Naptha Modules are the building blocks of Naptha multi-agent applications, which
 
 - Agent modules  
 - Agent orchestrator modules
-- Environment modules
 - Tool modules
 - Persona modules
 - Knowledge Base modules
 <!-- - Memory modules -->
+- Environment modules
 
 Modules are stored on GitHub, HuggingFace, IPFS, or DockerHub with the URL registered on the Naptha Hub.
 
@@ -36,9 +36,10 @@ my_module/
 │   ├── __init__.py
 │   ├── configs/
 │   │   ├── agent_deployments.json
-│   │   ├── environment_deployments.json
+│   │   ├── deployment.json
+│   │   ├── kb_deployments.json
 │   │   ├── llm_configs.json
-│   │   └── orchestrator_configs.json
+│   │   └── tool_deployments.json
 │   ├── run.py
 │   └── schemas.py
 ├── tests/
@@ -52,15 +53,20 @@ my_module/
 └── Dockerfile
 ```
 
+:::info
+You can make changes to the configs in the `configs` folder. The `deployment.json` file is the main config file for the module. You may also have other config files for subdeployments such as `agent_deployments.json`, `tool_deployments.json`, `kb_deployments.json`, `memory_deployments.json`, and `environment_deployments.json`.
+:::
+
 
 The [Naptha Module template](https://github.com/NapthaAI/module_template) provides the basic structure for creating new:
 - Agent modules
 - Agent orchestrator modules
-- Environment modules
 - Tool modules
 - Knowledge Base modules
 - Persona modules
+- Environment modules
 <!-- - Memory modules -->
+
 
 ### Explore Examples
 You can also browse our [GitHub repositories](https://github.com/orgs/NapthaAI/repositories) for real-world examples e.g. The [simple chat agent module](https://github.com/NapthaAI/simple_chat_agent) for running simple chat with LLMs.
@@ -72,11 +78,10 @@ To see a full list of modules currently registered on the Naptha Hub, install th
 naptha agents         # explore available agent modules
 naptha tools          # explore available tool modules
 naptha orchestrators  # explore available orchestrator modules
-naptha environments   # explore available environment modules
 naptha kbs            # explore available knowledge base modules
 #naptha memories       # explore available memory modules
 naptha personas       # explore available personas to use with your agents
-
+naptha environments   # explore available environment modules
 ```
 
 

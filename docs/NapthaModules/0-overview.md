@@ -1,13 +1,13 @@
 # What are Naptha Modules?
 
-Naptha Modules are the building blocks of Naptha multi-agent applications, which enable them to run across multiple nodes. There are currently six types of modules:
+Naptha Modules are the building blocks of Naptha multi-agent applications, which enable them to run across multiple nodes. There are currently seven types of modules:
 
 - Agent modules  
 - Agent orchestrator modules
 - Tool modules
 - Persona modules
 - Knowledge Base modules
-<!-- - Memory modules -->
+- Memory modules
 - Environment modules
 
 Modules are stored on GitHub, HuggingFace, IPFS, or DockerHub with the URL registered on the Naptha Hub.
@@ -65,7 +65,7 @@ The [Naptha Module template](https://github.com/NapthaAI/module_template) provid
 - Knowledge Base modules
 - Persona modules
 - Environment modules
-<!-- - Memory modules -->
+- Memory modules
 
 
 ### Explore Examples
@@ -79,7 +79,7 @@ naptha agents         # explore available agent modules
 naptha tools          # explore available tool modules
 naptha orchestrators  # explore available orchestrator modules
 naptha kbs            # explore available knowledge base modules
-#naptha memories       # explore available memory modules
+naptha memories       # explore available memory modules
 naptha personas       # explore available personas to use with your agents
 naptha environments   # explore available environment modules
 ```

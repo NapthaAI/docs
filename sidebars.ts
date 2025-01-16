@@ -30,6 +30,7 @@ const sidebars: SidebarsConfig = {
         'NapthaModules/orchestrators',
         'NapthaModules/personas',
         'NapthaModules/knowledge-bases',
+        'NapthaModules/memories',
         'NapthaModules/environments',
       ],
     },

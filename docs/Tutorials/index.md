@@ -27,6 +27,12 @@ export const tutorialCards = [
     description: 'Learn how to create and use persona modules in 5 minutes',
     icon: '🎭',
     link: 'Tutorials/quick-persona-guide'
+  },
+  {
+    title: 'Create Your First Tool Module',
+    description: 'Learn how to create and use tool modules in 5 minutes',
+    icon: '🛠️',
+    link: 'Tutorials/tool-module-tutorial'
   }
 ];
 

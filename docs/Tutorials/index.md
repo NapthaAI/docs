@@ -11,6 +11,12 @@ import CardGrid from '@site/src/components/CardGrid';
 
 export const tutorialCards = [
   {
+    title: 'Create a New User',
+    description: 'Learn how to create a new user on Naptha',
+    icon: '👤',
+    link: 'Tutorials/create-a-new-user'
+  },
+  {
     title: 'Your First Agent Module',
     description: 'Create and publish your first Naptha agent module',
     icon: '🛠️',

@@ -77,6 +77,7 @@ const sidebars: SidebarsConfig = {
       label: 'Tutorials',
       items: [
         'Tutorials/index',
+        'Tutorials/create-a-new-user',
         'Tutorials/module-guide',
         'Tutorials/quick-persona-guide',
       ],

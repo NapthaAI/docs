@@ -1,4 +1,10 @@
-# Infrastructure Contributor
+---
+sidebar_label: 'Infrastructure Contributor'
+---
+
+# Contributing to Naptha Infrastructure
+
+Welcome to the Naptha AI community! We're excited to have you contribute to building the future of multi-agent AI systems.
 
 Agents and other AI modules typically require many infrastructure components to run. This guide will help you become a contributor to Naptha's infrastructure through these steps:
 
@@ -21,7 +27,6 @@ For comprehensive information about the Naptha Node, see the [Naptha Node Overvi
 ## Run a Naptha Node
 
 To run a Naptha Node locally, follow the instructions in the [Naptha Node README](https://github.com/NapthaAI/node).
-
 
 ## Create your first contribution to the Naptha Node
 
@@ -77,3 +82,10 @@ We recognize contributors through:
 ## Become a core contributor to the Naptha Node
 
 We're actively hiring core team members and contractors to work on Naptha infrastructure. If interested, please reach out!
+
+- Check our open positions at [naptha.ai/careers](https://naptha.ai/careers)
+- Join our [Discord community](https://naptha.ai/naptha-community) to connect with the team
+
+:::tip
+Even if you don't see a perfect role match, reach out! We're always looking for talented contributors who share our vision.
+:::

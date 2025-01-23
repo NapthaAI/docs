@@ -1,4 +1,8 @@
-# Module Builder
+---
+sidebar_label: 'Module Builder'
+---
+
+# Contributing as a Module Builder
 
 Modules are the fundamental building blocks of Naptha multi-agent applications. This guide will help you become a module builder in the Naptha community through these steps:
 
@@ -63,14 +67,16 @@ Naptha supports seven distinct module types:
   - Test and validate the persona with sample conversations
   - Enable AI agents to represent you in automated interactions
 
-Use our interactive tutorials to transform your data into a persona module.
+  :::tip
+  Use our [interactive tutorial](/docs/Tutorials/quick-persona-guide.md) to transform your data into a persona module.
+  :::
 
 For comprehensive information about module types, see the [Naptha Modules Overview](/docs/NapthaModules/0-overview.md).
 
 ## Run Existing Modules
 
 1. Start with the [Naptha SDK README](https://github.com/NapthaAI/naptha-sdk/)
-2. Explore examples of modules in the Examples section of the docs.
+2. Explore examples of modules in the [Examples section](/docs/Examples/index.md) of the docs.
 3. Browse available modules on Naptha Hub using these commands:
    ```bash
    naptha agents
@@ -92,12 +98,12 @@ Browse our [Github repositories](https://github.com/orgs/NapthaAI/repositories?t
 
 To build your first module manually, you can:
 
-1. Follow the [module template README](https://github.com/NapthaAI/module-template/) 
-2. Follow our interactive tutorial "Your First Agent Module" in the docs or as a [notebook](https://github.com/NapthaAI/module-template/blob/main/cookbook.ipynb)
+1. Follow the [module template README](https://github.com/NapthaAI/module_template) 
+2. Follow our interactive tutorial ["Your First Agent Module"](/docs/Tutorials/module-guide.md) in the docs.
 
 To automatically convert an existing agent application from frameworks like CrewAI, you should:
 
-1. Read the documentation on [Naptha decorators](/docs/NapthaSDK/decorators.md) 
+1. Read the documentation on [Naptha Decorators](/docs/GettingStarted/Decorators.md) 
 2. Inspect examples of decorated agents e.g. [crewAI-examples](https://github.com/NapthaAI/crewAI-examples)
 
 To get up to speed with building more complex applications, composed of many modules, check out the tutorials in the Naptha Learn Hub.
@@ -138,6 +144,8 @@ We provide grants for advanced module development, particularly focusing on:
 Simple agent, tool, or persona modules typically don't qualify for funding. We prioritize innovative, complex implementations.
 :::
 
+:::info
 View successful funded projects in our [Discord community](https://naptha.ai/naptha-community) #projects channel.
+:::
 
 Have an innovative module idea? Contact us at [team@naptha.ai](mailto:team@naptha.ai)

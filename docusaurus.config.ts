@@ -30,6 +30,9 @@ const config: Config = {
     locales: ['en'],
   },
 
+  // Add staticDirectories config
+  staticDirectories: ['static'],
+
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -67,7 +70,12 @@ const config: Config = {
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
-        }
+        },
+        {
+          label: 'API Reference',
+          to: '/api-reference',
+          position: 'left',
+        },
       ],
     },
     footer: {

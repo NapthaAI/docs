@@ -1,0 +1,2123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>naptha_sdk.client.node API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>naptha_sdk.client.node</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="naptha_sdk.client.node.prepare_files"><code class="name flex">
+<span>def <span class="ident">prepare_files</span></span>(<span>file_path: str) ‑> List[Tuple[str, str]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def prepare_files(file_path: str) -&gt; List[Tuple[str, str]]:
+    &#34;&#34;&#34;Prepare files for upload.&#34;&#34;&#34;
+    if os.path.isdir(file_path):
+        with tempfile.NamedTemporaryFile(delete=False, suffix=&#39;.zip&#39;) as tmpfile:
+            zip_directory(file_path, tmpfile.name)
+            tmpfile.close()  
+            file = {&#39;file&#39;: open(tmpfile.name, &#39;rb&#39;)}
+    else:
+        file = {&#39;file&#39;: open(file_path, &#39;rb&#39;)}
+    
+    return file</code></pre>
+</details>
+<div class="desc"><p>Prepare files for upload.</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.zip_directory"><code class="name flex">
+<span>def <span class="ident">zip_directory</span></span>(<span>file_path, zip_path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def zip_directory(file_path, zip_path):
+    &#34;&#34;&#34;Utility function to zip the content of a directory while preserving the folder structure.&#34;&#34;&#34;
+    with zipfile.ZipFile(zip_path, &#39;w&#39;, zipfile.ZIP_DEFLATED) as zipf:
+        for root, dirs, files in os.walk(file_path):
+            for file in files:
+                file_path = os.path.join(root, file)
+                arcname = os.path.relpath(file_path, start=os.path.abspath(file_path).split(os.sep)[0])
+                zipf.write(file_path, arcname)</code></pre>
+</details>
+<div class="desc"><p>Utility function to zip the content of a directory while preserving the folder structure.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="naptha_sdk.client.node.NodeClient"><code class="flex name class">
+<span>class <span class="ident">NodeClient</span></span>
+<span>(</span><span>node: <a title="naptha_sdk.schemas.NodeConfig" href="../schemas.html#naptha_sdk.schemas.NodeConfig">NodeConfig</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class NodeClient:
+    def __init__(self, node: NodeConfig):
+        self.node = node
+        self.server_type = node.server_type
+        self.node_url = self.node_to_url(node)
+        self.connections = {}
+
+        self.access_token = None
+        logger.info(f&#34;Node URL: {self.node_url}&#34;)
+
+    def node_to_url(self, node: NodeConfig):
+        ports = node.ports
+        if len(ports) == 0:
+            raise ValueError(&#34;No ports found for node&#34;)
+        if node.server_type == &#39;ws&#39;:
+            return f&#34;ws://{node.ip}:{random.choice(ports)}&#34;
+        elif node.server_type == &#39;grpc&#39;:
+            return f&#34;{node.ip}:{random.choice(ports)}&#34;
+        else:
+            raise ValueError(&#34;Invalid server type. Server type must be either &#39;ws&#39; or &#39;grpc&#39;.&#34;)
+
+    async def check_user(self, user_input: Dict[str, str]) -&gt; Dict[str, Any]:
+        if self.node.server_type == &#39;ws&#39;:
+            return await self.check_user_ws(user_input)
+        elif self.node.server_type == &#39;grpc&#39;:
+            return await self.check_user_grpc(user_input)
+        else:
+            raise ValueError(&#34;Invalid server type. Server type must be either &#39;ws&#39; or &#39;grpc&#39;.&#34;)
+
+    async def check_user_ws(self, user_input: Dict[str, str]):
+        response = await self.send_receive_ws(user_input, &#34;user/check&#34;)
+        logger.info(f&#34;Check user response: {response}&#34;)
+        return response
+
+    async def check_user_grpc(self, user_input: Dict[str, str]):
+        async with grpc.aio.insecure_channel(self.node_url) as channel:
+            stub = grpc_server_pb2_grpc.GrpcServerStub(channel)
+            request = grpc_server_pb2.CheckUserRequest(
+                user_id=user_input.get(&#39;user_id&#39;, &#39;&#39;),
+                public_key=user_input.get(&#39;public_key&#39;, &#39;&#39;)
+            )
+            response = await stub.CheckUser(request)
+            logger.info(f&#34;Check user response: {response}&#34;)
+            return MessageToDict(response, preserving_proto_field_name=True)
+
+    async def register_user(self, user_input: Dict[str, str]) -&gt; Dict[str, Any]:
+        if self.node.server_type == &#39;ws&#39;:
+            return await self.register_user_ws(user_input)
+        elif self.node.server_type == &#39;grpc&#39;:
+            return await self.register_user_grpc(user_input)
+        else:
+            raise ValueError(&#34;Invalid server type. Server type must be either &#39;ws&#39; or &#39;grpc&#39;.&#34;)
+        
+    async def register_user_ws(self, user_input: Dict[str, str]):
+        response = await self.send_receive_ws(user_input, &#34;user/register&#34;)
+        logger.info(f&#34;Register user response: {response}&#34;)
+        return response
+
+    async def register_user_grpc(self, user_input: Dict[str, str]):
+        async with grpc.aio.insecure_channel(self.node_url) as channel:
+            stub = grpc_server_pb2_grpc.GrpcServerStub(channel)
+            request = grpc_server_pb2.RegisterUserRequest(
+                public_key=user_input.get(&#39;public_key&#39;, &#39;&#39;)
+            )
+            response = await stub.RegisterUser(request)
+            return {
+                &#39;id&#39;: response.id,
+                &#39;public_key&#39;: response.public_key,
+            }
+
+    async def run_module(self, module_type: str, run_input: Union[AgentRunInput, KBRunInput, ToolRunInput, EnvironmentRunInput]):
+        if self.node.server_type == &#39;ws&#39;:
+            return await self.run_module_ws(module_type, run_input)
+        elif self.node.server_type == &#39;grpc&#39;:
+            return await self.run_module_grpc(module_type, run_input)
+        else:
+            raise ValueError(&#34;Invalid server type. Server type must be either &#39;ws&#39; or &#39;grpc&#39;.&#34;)
+
+    async def run_module_ws(self, module_type: str, run_input):
+        response = await self.send_receive_ws(run_input, f&#34;{module_type}/run&#34;)
+        
+        output_types = {
+            &#34;agent&#34;: AgentRun,
+            &#34;kb&#34;: KBRun,
+            &#34;tool&#34;: ToolRun,
+            &#34;environment&#34;: EnvironmentRun
+        }
+        
+        if response[&#39;status&#39;] == &#39;success&#39;:
+            return output_types[module_type](**response[&#39;data&#39;])
+        else:
+            logger.error(f&#34;Error running {module_type}: {response[&#39;message&#39;]}&#34;)
+            logger.error(f&#34;Full traceback: {traceback.format_exc()}&#34;)
+            raise Exception(response[&#39;message&#39;])
+
+    async def run_module_grpc(self, module_type: str, run_input):
+        async with grpc.aio.insecure_channel(self.node_url) as channel:
+            stub = grpc_server_pb2_grpc.GrpcServerStub(channel)
+
+            # Convert inputs to Struct
+            input_struct = struct_pb2.Struct()
+            if run_input.inputs:
+                if isinstance(run_input.inputs, dict):
+                    input_data = run_input.inputs.dict() if hasattr(run_input.inputs, &#39;dict&#39;) else run_input.inputs
+                    input_struct.update(input_data)
+
+            # Create node config
+            node_config = grpc_server_pb2.NodeConfigUser(
+                ip=run_input.deployment.node.ip,
+                http_port=run_input.deployment.node.http_port,
+                server_type=run_input.deployment.node.server_type
+            )
+
+            # Create module
+            module = grpc_server_pb2.Module(
+                id=run_input.deployment.module.get(&#39;id&#39;, &#39;&#39;),
+                name=run_input.deployment.module.get(&#39;name&#39;, &#39;&#39;),
+                description=run_input.deployment.module.get(&#39;description&#39;, &#39;&#39;),
+                author=run_input.deployment.module.get(&#39;author&#39;, &#39;&#39;),
+                module_url=run_input.deployment.module.get(&#39;module_url&#39;, &#39;&#39;),
+                module_type=module_type,
+                module_version=run_input.deployment.module.get(&#39;module_version&#39;, &#39;&#39;),
+                module_entrypoint=run_input.deployment.module.get(&#39;module_entrypoint&#39;, &#39;&#39;)
+            )
+
+            # Create config struct
+            config_struct = struct_pb2.Struct()
+            if run_input.deployment.config:
+                if isinstance(run_input.deployment.config, dict):
+                    config_struct.update(run_input.deployment.config)
+                else:
+                    config_struct.update(run_input.deployment.config.dict())
+
+            # Create deployment based on module type
+            deployment_classes = {
+                &#34;agent&#34;: grpc_server_pb2.AgentDeployment,
+                &#34;kb&#34;: grpc_server_pb2.BaseDeployment,
+                &#34;tool&#34;: grpc_server_pb2.ToolDeployment,
+                &#34;environment&#34;: grpc_server_pb2.BaseDeployment
+            }
+            
+            DeploymentClass = deployment_classes[module_type]
+            deployment = DeploymentClass(
+                node_input=node_config,
+                name=run_input.deployment.name,
+                module=module,
+                config=config_struct,
+                initialized=False
+            )
+
+            # Create request with appropriate deployment field
+            request_args = {
+                &#34;module_type&#34;: module_type,
+                &#34;consumer_id&#34;: run_input.consumer_id,
+                &#34;inputs&#34;: input_struct,
+                f&#34;{module_type}_deployment&#34;: deployment
+            }
+            
+            request = grpc_server_pb2.ModuleRunRequest(**request_args)
+
+            final_response = None
+            async for response in stub.RunModule(request):
+                final_response = response
+                logger.info(f&#34;Got response: {response}&#34;)
+
+            output_types = {
+                &#34;agent&#34;: AgentRun,
+                &#34;kb&#34;: KBRun,
+                &#34;tool&#34;: ToolRun,
+                &#34;environment&#34;: EnvironmentRun
+            }
+
+            return output_types[module_type](
+                consumer_id=run_input.consumer_id,
+                inputs=run_input.inputs,
+                deployment=run_input.deployment,
+                orchestrator_runs=[],
+                status=final_response.status,
+                error=final_response.error,
+                id=final_response.id,
+                results=list(final_response.results),
+                error_message=final_response.error_message,
+                created_time=final_response.created_time,
+                start_processing_time=final_response.start_processing_time,
+                completed_time=final_response.completed_time,
+                duration=final_response.duration
+            )
+    
+    async def connect_ws(self, action: str):
+        client_id = str(uuid.uuid4())
+        full_url = f&#34;{self.node_url}/ws/{action}/{client_id}&#34;
+        logger.info(f&#34;Connecting to WebSocket: {full_url}&#34;)
+        ws = await websockets.connect(full_url)
+        self.connections[client_id] = ws
+        self.current_client_id = client_id
+        return client_id
+
+    async def disconnect_ws(self, client_id: str):
+        if client_id in self.connections:
+            await self.connections[client_id].close()
+            del self.connections[client_id]
+        if self.current_client_id == client_id:
+            self.current_client_id = None
+
+    async def send_receive_ws(self, data, action: str):
+        client_id = await self.connect_ws(action)
+        
+        try:
+            if isinstance(data, AgentRunInput) or isinstance(data, OrchestratorRunInput):
+                message = data.model_dump()
+            else:
+                message = data
+            await self.connections[client_id].send(json.dumps(message))
+            
+            response = await self.connections[client_id].recv()
+            return json.loads(response)
+        finally:
+            await self.disconnect_ws(client_id)</code></pre>
+</details>
+<div class="desc"></div>
+<h3>Methods</h3>
+<dl>
+<dt id="naptha_sdk.client.node.NodeClient.check_user"><code class="name flex">
+<span>async def <span class="ident">check_user</span></span>(<span>self, user_input: Dict[str, str]) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_user(self, user_input: Dict[str, str]) -&gt; Dict[str, Any]:
+    if self.node.server_type == &#39;ws&#39;:
+        return await self.check_user_ws(user_input)
+    elif self.node.server_type == &#39;grpc&#39;:
+        return await self.check_user_grpc(user_input)
+    else:
+        raise ValueError(&#34;Invalid server type. Server type must be either &#39;ws&#39; or &#39;grpc&#39;.&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.check_user_grpc"><code class="name flex">
+<span>async def <span class="ident">check_user_grpc</span></span>(<span>self, user_input: Dict[str, str])</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_user_grpc(self, user_input: Dict[str, str]):
+    async with grpc.aio.insecure_channel(self.node_url) as channel:
+        stub = grpc_server_pb2_grpc.GrpcServerStub(channel)
+        request = grpc_server_pb2.CheckUserRequest(
+            user_id=user_input.get(&#39;user_id&#39;, &#39;&#39;),
+            public_key=user_input.get(&#39;public_key&#39;, &#39;&#39;)
+        )
+        response = await stub.CheckUser(request)
+        logger.info(f&#34;Check user response: {response}&#34;)
+        return MessageToDict(response, preserving_proto_field_name=True)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.check_user_ws"><code class="name flex">
+<span>async def <span class="ident">check_user_ws</span></span>(<span>self, user_input: Dict[str, str])</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_user_ws(self, user_input: Dict[str, str]):
+    response = await self.send_receive_ws(user_input, &#34;user/check&#34;)
+    logger.info(f&#34;Check user response: {response}&#34;)
+    return response</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.connect_ws"><code class="name flex">
+<span>async def <span class="ident">connect_ws</span></span>(<span>self, action: str)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def connect_ws(self, action: str):
+    client_id = str(uuid.uuid4())
+    full_url = f&#34;{self.node_url}/ws/{action}/{client_id}&#34;
+    logger.info(f&#34;Connecting to WebSocket: {full_url}&#34;)
+    ws = await websockets.connect(full_url)
+    self.connections[client_id] = ws
+    self.current_client_id = client_id
+    return client_id</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.disconnect_ws"><code class="name flex">
+<span>async def <span class="ident">disconnect_ws</span></span>(<span>self, client_id: str)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def disconnect_ws(self, client_id: str):
+    if client_id in self.connections:
+        await self.connections[client_id].close()
+        del self.connections[client_id]
+    if self.current_client_id == client_id:
+        self.current_client_id = None</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.node_to_url"><code class="name flex">
+<span>def <span class="ident">node_to_url</span></span>(<span>self,<br>node: <a title="naptha_sdk.schemas.NodeConfig" href="../schemas.html#naptha_sdk.schemas.NodeConfig">NodeConfig</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def node_to_url(self, node: NodeConfig):
+    ports = node.ports
+    if len(ports) == 0:
+        raise ValueError(&#34;No ports found for node&#34;)
+    if node.server_type == &#39;ws&#39;:
+        return f&#34;ws://{node.ip}:{random.choice(ports)}&#34;
+    elif node.server_type == &#39;grpc&#39;:
+        return f&#34;{node.ip}:{random.choice(ports)}&#34;
+    else:
+        raise ValueError(&#34;Invalid server type. Server type must be either &#39;ws&#39; or &#39;grpc&#39;.&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.register_user"><code class="name flex">
+<span>async def <span class="ident">register_user</span></span>(<span>self, user_input: Dict[str, str]) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def register_user(self, user_input: Dict[str, str]) -&gt; Dict[str, Any]:
+    if self.node.server_type == &#39;ws&#39;:
+        return await self.register_user_ws(user_input)
+    elif self.node.server_type == &#39;grpc&#39;:
+        return await self.register_user_grpc(user_input)
+    else:
+        raise ValueError(&#34;Invalid server type. Server type must be either &#39;ws&#39; or &#39;grpc&#39;.&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.register_user_grpc"><code class="name flex">
+<span>async def <span class="ident">register_user_grpc</span></span>(<span>self, user_input: Dict[str, str])</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def register_user_grpc(self, user_input: Dict[str, str]):
+    async with grpc.aio.insecure_channel(self.node_url) as channel:
+        stub = grpc_server_pb2_grpc.GrpcServerStub(channel)
+        request = grpc_server_pb2.RegisterUserRequest(
+            public_key=user_input.get(&#39;public_key&#39;, &#39;&#39;)
+        )
+        response = await stub.RegisterUser(request)
+        return {
+            &#39;id&#39;: response.id,
+            &#39;public_key&#39;: response.public_key,
+        }</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.register_user_ws"><code class="name flex">
+<span>async def <span class="ident">register_user_ws</span></span>(<span>self, user_input: Dict[str, str])</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def register_user_ws(self, user_input: Dict[str, str]):
+    response = await self.send_receive_ws(user_input, &#34;user/register&#34;)
+    logger.info(f&#34;Register user response: {response}&#34;)
+    return response</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.run_module"><code class="name flex">
+<span>async def <span class="ident">run_module</span></span>(<span>self,<br>module_type: str,<br>run_input: <a title="naptha_sdk.schemas.AgentRunInput" href="../schemas.html#naptha_sdk.schemas.AgentRunInput">AgentRunInput</a> | <a title="naptha_sdk.schemas.KBRunInput" href="../schemas.html#naptha_sdk.schemas.KBRunInput">KBRunInput</a> | <a title="naptha_sdk.schemas.ToolRunInput" href="../schemas.html#naptha_sdk.schemas.ToolRunInput">ToolRunInput</a> | <a title="naptha_sdk.schemas.EnvironmentRunInput" href="../schemas.html#naptha_sdk.schemas.EnvironmentRunInput">EnvironmentRunInput</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_module(self, module_type: str, run_input: Union[AgentRunInput, KBRunInput, ToolRunInput, EnvironmentRunInput]):
+    if self.node.server_type == &#39;ws&#39;:
+        return await self.run_module_ws(module_type, run_input)
+    elif self.node.server_type == &#39;grpc&#39;:
+        return await self.run_module_grpc(module_type, run_input)
+    else:
+        raise ValueError(&#34;Invalid server type. Server type must be either &#39;ws&#39; or &#39;grpc&#39;.&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.run_module_grpc"><code class="name flex">
+<span>async def <span class="ident">run_module_grpc</span></span>(<span>self, module_type: str, run_input)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_module_grpc(self, module_type: str, run_input):
+    async with grpc.aio.insecure_channel(self.node_url) as channel:
+        stub = grpc_server_pb2_grpc.GrpcServerStub(channel)
+
+        # Convert inputs to Struct
+        input_struct = struct_pb2.Struct()
+        if run_input.inputs:
+            if isinstance(run_input.inputs, dict):
+                input_data = run_input.inputs.dict() if hasattr(run_input.inputs, &#39;dict&#39;) else run_input.inputs
+                input_struct.update(input_data)
+
+        # Create node config
+        node_config = grpc_server_pb2.NodeConfigUser(
+            ip=run_input.deployment.node.ip,
+            http_port=run_input.deployment.node.http_port,
+            server_type=run_input.deployment.node.server_type
+        )
+
+        # Create module
+        module = grpc_server_pb2.Module(
+            id=run_input.deployment.module.get(&#39;id&#39;, &#39;&#39;),
+            name=run_input.deployment.module.get(&#39;name&#39;, &#39;&#39;),
+            description=run_input.deployment.module.get(&#39;description&#39;, &#39;&#39;),
+            author=run_input.deployment.module.get(&#39;author&#39;, &#39;&#39;),
+            module_url=run_input.deployment.module.get(&#39;module_url&#39;, &#39;&#39;),
+            module_type=module_type,
+            module_version=run_input.deployment.module.get(&#39;module_version&#39;, &#39;&#39;),
+            module_entrypoint=run_input.deployment.module.get(&#39;module_entrypoint&#39;, &#39;&#39;)
+        )
+
+        # Create config struct
+        config_struct = struct_pb2.Struct()
+        if run_input.deployment.config:
+            if isinstance(run_input.deployment.config, dict):
+                config_struct.update(run_input.deployment.config)
+            else:
+                config_struct.update(run_input.deployment.config.dict())
+
+        # Create deployment based on module type
+        deployment_classes = {
+            &#34;agent&#34;: grpc_server_pb2.AgentDeployment,
+            &#34;kb&#34;: grpc_server_pb2.BaseDeployment,
+            &#34;tool&#34;: grpc_server_pb2.ToolDeployment,
+            &#34;environment&#34;: grpc_server_pb2.BaseDeployment
+        }
+        
+        DeploymentClass = deployment_classes[module_type]
+        deployment = DeploymentClass(
+            node_input=node_config,
+            name=run_input.deployment.name,
+            module=module,
+            config=config_struct,
+            initialized=False
+        )
+
+        # Create request with appropriate deployment field
+        request_args = {
+            &#34;module_type&#34;: module_type,
+            &#34;consumer_id&#34;: run_input.consumer_id,
+            &#34;inputs&#34;: input_struct,
+            f&#34;{module_type}_deployment&#34;: deployment
+        }
+        
+        request = grpc_server_pb2.ModuleRunRequest(**request_args)
+
+        final_response = None
+        async for response in stub.RunModule(request):
+            final_response = response
+            logger.info(f&#34;Got response: {response}&#34;)
+
+        output_types = {
+            &#34;agent&#34;: AgentRun,
+            &#34;kb&#34;: KBRun,
+            &#34;tool&#34;: ToolRun,
+            &#34;environment&#34;: EnvironmentRun
+        }
+
+        return output_types[module_type](
+            consumer_id=run_input.consumer_id,
+            inputs=run_input.inputs,
+            deployment=run_input.deployment,
+            orchestrator_runs=[],
+            status=final_response.status,
+            error=final_response.error,
+            id=final_response.id,
+            results=list(final_response.results),
+            error_message=final_response.error_message,
+            created_time=final_response.created_time,
+            start_processing_time=final_response.start_processing_time,
+            completed_time=final_response.completed_time,
+            duration=final_response.duration
+        )</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.run_module_ws"><code class="name flex">
+<span>async def <span class="ident">run_module_ws</span></span>(<span>self, module_type: str, run_input)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_module_ws(self, module_type: str, run_input):
+    response = await self.send_receive_ws(run_input, f&#34;{module_type}/run&#34;)
+    
+    output_types = {
+        &#34;agent&#34;: AgentRun,
+        &#34;kb&#34;: KBRun,
+        &#34;tool&#34;: ToolRun,
+        &#34;environment&#34;: EnvironmentRun
+    }
+    
+    if response[&#39;status&#39;] == &#39;success&#39;:
+        return output_types[module_type](**response[&#39;data&#39;])
+    else:
+        logger.error(f&#34;Error running {module_type}: {response[&#39;message&#39;]}&#34;)
+        logger.error(f&#34;Full traceback: {traceback.format_exc()}&#34;)
+        raise Exception(response[&#39;message&#39;])</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.NodeClient.send_receive_ws"><code class="name flex">
+<span>async def <span class="ident">send_receive_ws</span></span>(<span>self, data, action: str)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def send_receive_ws(self, data, action: str):
+    client_id = await self.connect_ws(action)
+    
+    try:
+        if isinstance(data, AgentRunInput) or isinstance(data, OrchestratorRunInput):
+            message = data.model_dump()
+        else:
+            message = data
+        await self.connections[client_id].send(json.dumps(message))
+        
+        response = await self.connections[client_id].recv()
+        return json.loads(response)
+    finally:
+        await self.disconnect_ws(client_id)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient"><code class="flex name class">
+<span>class <span class="ident">UserClient</span></span>
+<span>(</span><span>node: <a title="naptha_sdk.schemas.NodeConfigUser" href="../schemas.html#naptha_sdk.schemas.NodeConfigUser">NodeConfigUser</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UserClient:
+    def __init__(self, node: NodeConfigUser):
+        self.node = node
+        self.node_url = node_to_url(node)
+        self.connections = {}
+        
+        self.access_token = None
+        logger.info(f&#34;Node URL: {self.node_url}&#34;)
+
+    async def create(self, module_type: str,
+                     module_request: Union[AgentDeployment, EnvironmentDeployment, KBDeployment, OrchestratorDeployment, ToolDeployment]):
+        &#34;&#34;&#34;Generic method to create either an agent, orchestrator, environment, tool, kb or memory.
+
+        Args:
+            module_type: Either agent, orchestrator, environment, tool, kb or memory
+            module_request: Either AgentDeployment, EnvironmentDeployment, OrchestratorDeployment, ToolDeployment, KBDeployment or MemoryDeployment
+        &#34;&#34;&#34;
+
+        print(f&#34;Creating {module_type}...&#34;)
+
+        endpoint = f&#34;{self.node_url}/{module_type}/create&#34;
+        try:
+            async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+                headers = {
+                    &#39;Content-Type&#39;: &#39;application/json&#39;,
+                    &#39;Authorization&#39;: f&#39;Bearer {self.access_token}&#39;,
+                }
+                response = await client.post(
+                    endpoint,
+                    json=module_request.model_dump(),
+                    headers=headers
+                )
+                response.raise_for_status()
+
+                # Convert response to appropriate return type
+                return response.json()
+        except HTTPStatusError as e:
+            logger.info(f&#34;HTTP error occurred: {e}&#34;)
+            raise
+        except RemoteProtocolError as e:
+            error_msg = f&#34;Run {module_type} failed to connect to the server at {self.node_url}. Please check if the server URL is correct and the server is running. Error details: {str(e)}&#34;
+            logger.error(error_msg)
+            raise
+        except Exception as e:
+            print(f&#34;An unexpected error occurred: {e}&#34;)
+            raise
+
+    async def _run_and_poll(self, run_input: Union[AgentRunInput, EnvironmentRunInput, OrchestratorRunInput, KBRunInput, ToolRunInput, Dict], module_type: str) -&gt; Union[AgentRun, EnvironmentRun, OrchestratorRun, KBRun, ToolRun, Dict]:
+        &#34;&#34;&#34;Generic method to run and poll either an agent, orchestrator, environment, tool or KB.
+        
+        Args:
+            run_input: Either AgentRunInput, OrchestratorRunInput, EnvironmentRunInput, KBRunInput, ToolRunInput or Dict
+            module_type: Either &#39;agent&#39;, &#39;orchestrator&#39;, &#39;environment&#39;, &#39;tool&#39; or &#39;kb&#39;
+        &#34;&#34;&#34;
+        print(f&#34;Run input: {run_input}&#34;)
+        print(f&#34;Module type: {module_type}&#34;)
+        # Start the run
+        run = await getattr(self, f&#39;run_{module_type}&#39;)(run_input)
+        print(f&#34;{module_type.title()} run started: {run}&#34;)
+
+        current_results_len = 0
+        while True:
+            run = await getattr(self, f&#39;check_{module_type}_run&#39;)(run)
+
+            output = f&#34;{run.status} {getattr(run, f&#39;deployment&#39;).module[&#39;module_type&#39;]} {getattr(run, f&#39;deployment&#39;).module[&#39;name&#39;]}&#34;
+            print(output)
+
+            results = run.results
+            status = run.status
+
+            if len(results) &gt; current_results_len:
+                print(&#34;Output: &#34;, results[-1])
+                current_results_len += 1
+
+            if status in [&#39;completed&#39;, &#39;error&#39;]:
+                break
+
+            time.sleep(3)
+
+        if status == &#39;completed&#39;:
+            print(results)
+        else:
+            error_msg = run.error_message
+            print(error_msg)
+        return run
+
+    async def run_agent_and_poll(self, agent_run_input: AgentRunInput) -&gt; AgentRun:
+        &#34;&#34;&#34;Run an agent module and poll for results until completion.&#34;&#34;&#34;
+        return await self._run_and_poll(agent_run_input, &#39;agent&#39;)
+
+    async def run_tool_and_poll(self, tool_run_input: ToolRunInput) -&gt; ToolRun:
+        &#34;&#34;&#34;Run a tool module and poll for results until completion.&#34;&#34;&#34;
+
+        return await self._run_and_poll(tool_run_input, &#39;tool&#39;)
+
+    async def run_orchestrator_and_poll(self, orchestrator_run_input: OrchestratorRunInput) -&gt; OrchestratorRun:
+        &#34;&#34;&#34;Run an orchestrator module and poll for results until completion.&#34;&#34;&#34;
+        return await self._run_and_poll(orchestrator_run_input, &#39;orchestrator&#39;)
+
+    async def run_environment_and_poll(self, environment_input: EnvironmentRunInput) -&gt; EnvironmentRun:
+        &#34;&#34;&#34;Run an environment module and poll for results until completion.&#34;&#34;&#34;
+        return await self._run_and_poll(environment_input, &#39;environment&#39;)
+    
+    async def run_kb_and_poll(self, kb_input: KBDeployment) -&gt; KBDeployment:
+        &#34;&#34;&#34;Run a knowledge base module and poll for results until completion.&#34;&#34;&#34;
+        return await self._run_and_poll(kb_input, &#39;kb&#39;)
+
+    async def run_memory_and_poll(self, memory_input: MemoryDeployment) -&gt; MemoryDeployment:
+        &#34;&#34;&#34;Run a memory module and poll for results until completion.&#34;&#34;&#34;
+        return await self._run_and_poll(memory_input, &#39;memory&#39;)
+
+    async def check_user(self, user_input: Dict[str, Any]) -&gt; Dict[str, Any]:
+        &#34;&#34;&#34;
+        Check if a user exists on a node
+        &#34;&#34;&#34;
+        endpoint = self.node_url + &#34;/user/check&#34;
+        try:
+            async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+                headers = {
+                    &#39;Content-Type&#39;: &#39;application/json&#39;, 
+                }
+                response = await client.post(
+                    endpoint, 
+                    json=user_input,
+                    headers=headers
+                )
+                response.raise_for_status()
+            return json.loads(response.text)
+        except HTTPStatusError as e:
+            logger.info(f&#34;HTTP error occurred: {e}&#34;)
+            raise  
+        except RemoteProtocolError as e:
+            error_msg = f&#34;Check user failed to connect to the server at {self.node_url}. Please check if the server URL is correct and the server is running. Error details: {str(e)}&#34;
+            logger.info(error_msg)
+            raise 
+        except Exception as e:
+            logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+            raise
+
+    async def register_user(self, user_input: Dict[str, Any]) -&gt; Dict[str, Any]:
+        &#34;&#34;&#34;
+        Register a user on a node
+        &#34;&#34;&#34;
+        endpoint = self.node_url + &#34;/user/register&#34;
+        try:
+            async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+                headers = {
+                    &#39;Content-Type&#39;: &#39;application/json&#39;, 
+                }
+                response = await client.post(
+                    endpoint, 
+                    json=user_input,
+                    headers=headers
+                )
+                response.raise_for_status()
+            return json.loads(response.text)
+        except HTTPStatusError as e:
+            logger.info(f&#34;HTTP error occurred: {e}&#34;)
+            raise  
+        except RemoteProtocolError as e:
+            error_msg = f&#34;Register user failed to connect to the server at {self.node_url}. Please check if the server URL is correct and the server is running. Error details: {str(e)}&#34;
+            logger.error(error_msg)
+            raise 
+        except Exception as e:
+            logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+            raise
+
+    async def _run_module(self, run_input: Union[AgentRunInput, OrchestratorRunInput, EnvironmentRunInput, ToolRunInput], module_type: str) -&gt; Union[AgentRun, OrchestratorRun, EnvironmentRun, ToolRun]:
+        &#34;&#34;&#34;
+        Generic method to run either an agent, orchestrator, environment, or tool on a node
+        
+        Args:
+            run_input: Either AgentRunInput, OrchestratorRunInput, EnvironmentRunInput, or ToolRunInput
+            module_type: Either &#39;agent&#39;, &#39;orchestrator&#39;, &#39;environment&#39;, or &#39;tool&#39;
+        &#34;&#34;&#34;
+        print(f&#34;Running {module_type}...&#34;)
+        print(f&#34;Run input: {run_input}&#34;)
+        print(f&#34;Node URL: {self.node_url}&#34;)
+
+        endpoint = f&#34;{self.node_url}/{module_type}/run&#34;
+        
+        # Convert dict to appropriate input type if needed
+        input_class = {
+            &#39;agent&#39;: AgentRunInput,
+            &#39;orchestrator&#39;: OrchestratorRunInput,
+            &#39;environment&#39;: EnvironmentRunInput,
+            &#39;kb&#39;: KBRunInput,
+            &#39;memory&#39;: MemoryRunInput,
+            &#39;tool&#39;: ToolRunInput
+        }[module_type]
+        
+        if isinstance(run_input, dict):
+            run_input = input_class(**run_input)
+
+        try:
+            async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+                headers = {
+                    &#39;Content-Type&#39;: &#39;application/json&#39;,
+                    &#39;Authorization&#39;: f&#39;Bearer {self.access_token}&#39;,
+                }
+                response = await client.post(
+                    endpoint,
+                    json=run_input.model_dict(),
+                    headers=headers
+                )
+
+                # Try to get error details even for error responses
+                if response.status_code &gt;= 400:
+                    error_detail = response.json() if response.text else str(response)
+                    logger.error(f&#34;Server error response: {error_detail}&#34;)
+                    raise Exception(f&#34;Server returned error response: {error_detail}&#34;)
+                    
+                response.raise_for_status()
+                
+                # Convert response to appropriate return type
+                return_class = {
+                    &#39;agent&#39;: AgentRun,
+                    &#39;orchestrator&#39;: OrchestratorRun,
+                    &#39;environment&#39;: EnvironmentRun,
+                    &#39;kb&#39;: KBRun,
+                    &#39;memory&#39;: MemoryRun,
+                    &#39;tool&#39;: ToolRun
+                }[module_type]
+                return return_class(**json.loads(response.text))
+        except HTTPStatusError as e:
+            logger.info(f&#34;HTTP error occurred: {e}&#34;)
+            raise
+        except RemoteProtocolError as e:
+            error_msg = f&#34;Run {module_type} failed to connect to the server at {self.node_url}. Please check if the server URL is correct and the server is running. Error details: {str(e)}&#34;
+            logger.error(error_msg)
+            raise
+        except Exception as e:
+            print(f&#34;An unexpected error occurred: {e}&#34;)
+            raise
+
+    async def run_inference(self, inference_input: Union[ChatCompletionRequest, Dict]) -&gt; ModelResponse:
+        &#34;&#34;&#34;
+        Run inference on a node
+        
+        Args:
+            inference_input: The inference input to run inference on
+        &#34;&#34;&#34;
+        if isinstance(inference_input, dict):
+            inference_input = ChatCompletionRequest(**inference_input)
+
+        endpoint = f&#34;{self.node_url}/inference/chat&#34;
+
+        try:
+            async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+                headers = {
+                    &#39;Content-Type&#39;: &#39;application/json&#39;,
+                    &#39;Authorization&#39;: f&#39;Bearer {self.access_token}&#39;,
+                }
+                response = await client.post(
+                    endpoint,
+                    json=inference_input.model_dump(),
+                    headers=headers
+                )
+                print(&#34;Response: &#34;, response.text)
+                response.raise_for_status()
+                return ModelResponse(**json.loads(response.text))
+        except HTTPStatusError as e:
+            logger.info(f&#34;HTTP error occurred: {e}&#34;)
+            raise
+        except RemoteProtocolError as e:
+            error_msg = f&#34;Inference failed to connect to the server at {self.node_url}. Please check if the server URL is correct and the server is running. Error details: {str(e)}&#34;
+            logger.error(error_msg)
+            raise
+        except Exception as e:
+            print(f&#34;An unexpected error occurred: {e}&#34;)
+            raise
+
+    async def run_agent(self, agent_run_input: AgentRunInput) -&gt; AgentRun:
+        &#34;&#34;&#34;Run an agent module on a node&#34;&#34;&#34;
+        return await self._run_module(agent_run_input, &#39;agent&#39;)
+
+    async def run_tool(self, tool_run_input: ToolRunInput) -&gt; ToolRun:
+        &#34;&#34;&#34;Run a tool module on a node&#34;&#34;&#34;
+        return await self._run_module(tool_run_input, &#39;tool&#39;)
+
+    async def run_orchestrator(self, orchestrator_run_input: OrchestratorRunInput) -&gt; OrchestratorRun:
+        &#34;&#34;&#34;Run an orchestrator module on a node&#34;&#34;&#34;
+        return await self._run_module(orchestrator_run_input, &#39;orchestrator&#39;)
+    
+    async def run_environment(self, environment_run_input: EnvironmentRunInput) -&gt; EnvironmentRun:
+        &#34;&#34;&#34;Run an environment module on a node&#34;&#34;&#34;
+        return await self._run_module(environment_run_input, &#39;environment&#39;)
+
+    async def run_kb(self, kb_run_input: KBRunInput) -&gt; KBRun:
+        &#34;&#34;&#34;Run a knowledge base module on a node&#34;&#34;&#34;
+        return await self._run_module(kb_run_input, &#39;kb&#39;)
+
+    async def run_memory(self, memory_run_input: MemoryRunInput) -&gt; MemoryRun:
+        &#34;&#34;&#34;Run a memory module on a node&#34;&#34;&#34;
+        return await self._run_module(memory_run_input, &#39;memory&#39;)
+
+    async def check_run(
+        self, 
+        module_run: Union[AgentRun, OrchestratorRun, EnvironmentRun, KBRun, MemoryRun, ToolRun], 
+        module_type: str
+    ) -&gt; Union[AgentRun, OrchestratorRun, EnvironmentRun, KBRun, MemoryRun, ToolRun]:
+        &#34;&#34;&#34;Generic method to check the status of a module run.
+        
+        Args:
+            module_run: Either AgentRun, OrchestratorRun, EnvironmentRun, ToolRun, KBRun or MemoryRun object
+            module_type: Either &#39;agent&#39;, &#39;orchestrator&#39;, &#39;environment&#39;, &#39;tool&#39;, &#39;kb&#39; or &#39;memory&#39;
+        &#34;&#34;&#34;
+        try:
+            async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+                response = await client.post(
+                    f&#34;{self.node_url}/{module_type}/check&#34;, 
+                    json=module_run.model_dump()
+                )
+                response.raise_for_status()
+            
+            return_class = {
+                &#39;agent&#39;: AgentRun,
+                &#39;orchestrator&#39;: OrchestratorRun,
+                &#39;environment&#39;: EnvironmentRun,
+                &#39;kb&#39;: KBRun,
+                &#39;memory&#39;: MemoryRun,
+                &#39;tool&#39;: ToolRun
+            }[module_type]
+            return return_class(**json.loads(response.text))
+        except HTTPStatusError as e:
+            logger.info(f&#34;HTTP error occurred: {e}&#34;)
+            raise  
+        except Exception as e:
+            logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+
+    # Update existing methods to use the new generic one
+    async def check_agent_run(self, agent_run: AgentRun) -&gt; AgentRun:
+        return await self.check_run(agent_run, &#39;agent&#39;)
+
+    async def check_tool_run(self, tool_run: ToolRun) -&gt; ToolRun:
+        return await self.check_run(tool_run, &#39;tool&#39;)
+
+    async def check_orchestrator_run(self, orchestrator_run: OrchestratorRun) -&gt; OrchestratorRun:
+        return await self.check_run(orchestrator_run, &#39;orchestrator&#39;)
+
+    async def check_environment_run(self, environment_run: EnvironmentRun) -&gt; EnvironmentRun:
+        return await self.check_run(environment_run, &#39;environment&#39;)
+
+    async def check_kb_run(self, kb_run: KBRun) -&gt; KBRun:
+        return await self.check_run(kb_run, &#39;kb&#39;)
+
+    async def check_memory_run(self, memory_run: MemoryRun) -&gt; MemoryRun:
+        return await self.check_run(memory_run, &#39;memory&#39;)
+
+    async def create_agent_run(self, agent_run_input: AgentRunInput) -&gt; AgentRun:
+        try:
+            async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+                response = await client.post(
+                    f&#34;{self.node_url}/monitor/create_agent_run&#34;, json=agent_run_input.model_dump()
+                )
+                response.raise_for_status()
+            return AgentRun(**json.loads(response.text))
+        except HTTPStatusError as e:
+            logger.info(f&#34;HTTP error occurred: {e}&#34;)
+            raise  
+        except Exception as e:
+            logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+            logger.info(f&#34;Full traceback: {traceback.format_exc()}&#34;)
+
+    async def update_agent_run(self, agent_run: AgentRun):
+        try:
+            async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+                response = await client.post(
+                    f&#34;{self.node_url}/monitor/update_agent_run&#34;, json=agent_run.model_dump()
+                )
+                response.raise_for_status()
+            return AgentRun(**json.loads(response.text))
+        except HTTPStatusError as e:
+            logger.info(f&#34;HTTP error occurred: {e}&#34;)
+            raise  
+        except Exception as e:
+            print(f&#34;An unexpected error occurred: {e}&#34;)
+            error_details = traceback.format_exc()
+            print(f&#34;Full traceback: {error_details}&#34;)
+
+    async def read_storage(self, agent_run_id: str, output_dir: str, ipfs: bool = False) -&gt; str:
+        print(&#34;Reading from storage...&#34;)
+        try:
+            endpoint = f&#34;{self.node_url}/{&#39;storage/read_ipfs&#39; if ipfs else &#39;storage/read&#39;}/{agent_run_id}&#34;
+
+            async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+                response = await client.get(endpoint)
+                response.raise_for_status()
+                storage = response.content  
+                print(&#34;Retrieved storage.&#34;)
+            
+                # Temporary file handling
+                temp_file_name = None
+                with tempfile.NamedTemporaryFile(delete=False, mode=&#39;wb&#39;) as tmp_file:
+                    tmp_file.write(storage)  # storage is a bytes-like object
+                    temp_file_name = tmp_file.name
+        
+                # Ensure output directory exists
+                output_path = Path(output_dir)
+                output_path.mkdir(parents=True, exist_ok=True)
+        
+                # Check if the file is a zip file and extract if true
+                if zipfile.is_zipfile(temp_file_name):
+                    with zipfile.ZipFile(temp_file_name, &#39;r&#39;) as zip_ref:
+                        zip_ref.extractall(output_path)
+                    print(f&#34;Extracted storage to {output_dir}.&#34;)
+                else:
+                    shutil.copy(temp_file_name, output_path)
+                    print(f&#34;Copied storage to {output_dir}.&#34;)
+
+                # Cleanup temporary file
+                Path(temp_file_name).unlink(missing_ok=True)
+        
+                return output_dir         
+        except HTTPStatusError as e:
+            logger.info(f&#34;HTTP error occurred: {e}&#34;)
+            raise  
+        except Exception as e:
+            logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+            logger.info(f&#34;Full traceback: {traceback.format_exc()}&#34;)
+
+    async def write_storage(self, storage_input: str, ipfs: bool = False, publish_to_ipns: bool = False, update_ipns_name: str = None) -&gt; Dict[str, Any]:
+        &#34;&#34;&#34;Write storage to the node.&#34;&#34;&#34;
+        print(&#34;Writing storage&#34;)
+        try:
+            file = prepare_files(storage_input)
+            endpoint = f&#34;{self.node_url}/storage/write_ipfs&#34; if ipfs else f&#34;{self.node_url}/storage/write&#34;
+            
+            if update_ipns_name:
+                publish_to_ipns = True
+
+            data = {
+                &#34;publish_to_ipns&#34;: publish_to_ipns,
+                &#34;update_ipns_name&#34;: update_ipns_name
+            }
+            async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+                response = await client.post(
+                    endpoint, 
+                    files=file,
+                    data=data,
+                    timeout=600
+                )
+                response.raise_for_status()
+                return response.json()
+        except HTTPStatusError as e:
+            logger.info(f&#34;HTTP error occurred: {e}&#34;)
+            raise  
+        except Exception as e:
+            logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+            logger.info(f&#34;Full traceback: {traceback.format_exc()}&#34;)
+            return {}
+
+    async def create_table(self, table_name: str, schema: Dict[str, Dict[str, Any]]) -&gt; Dict[str, Any]:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.post(
+                f&#34;{self.node_url}/local-db/create-table&#34;,
+                json={&#34;table_name&#34;: table_name, &#34;schema&#34;: schema}
+            )
+            response.raise_for_status()
+            return response.json()
+
+    async def add_row(self, table_name: str, data: Dict[str, Any], schema: Optional[Dict[str, Dict[str, Any]]] = None) -&gt; Dict[str, Any]:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.post(
+                f&#34;{self.node_url}/local-db/add-row&#34;,
+                json={&#34;table_name&#34;: table_name, &#34;data&#34;: data, &#34;schema&#34;: schema}
+            )
+            response.raise_for_status()
+            return response.json()
+
+    async def update_row(self, table_name: str, data: Dict[str, Any], condition: Dict[str, Any], schema: Optional[Dict[str, Dict[str, Any]]] = None) -&gt; Dict[str, Any]:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.post(
+                f&#34;{self.node_url}/local-db/update-row&#34;,
+                json={
+                    &#34;table_name&#34;: table_name,
+                    &#34;data&#34;: data,
+                    &#34;condition&#34;: condition,
+                    &#34;schema&#34;: schema
+                }
+            )
+            response.raise_for_status()
+            return response.json()
+
+    async def delete_row(self, table_name: str, condition: Dict[str, Any]) -&gt; Dict[str, Any]:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.post(
+                f&#34;{self.node_url}/local-db/delete-row&#34;,
+                json={&#34;table_name&#34;: table_name, &#34;condition&#34;: condition}
+            )
+            response.raise_for_status()
+            return response.json()
+
+    async def list_tables(self) -&gt; Dict[str, Any]:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.get(f&#34;{self.node_url}/local-db/tables&#34;)
+            response.raise_for_status()
+            return response.json()
+
+    async def get_table_schema(self, table_name: str) -&gt; Dict[str, Any]:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.get(f&#34;{self.node_url}/local-db/table/{table_name}&#34;)
+            response.raise_for_status()
+            return response.json()
+
+    async def query_table(self, table_name: str, columns: Optional[str] = None, condition: Optional[Union[str, Dict]] = None, order_by: Optional[str] = None, limit: Optional[int] = None) -&gt; Dict[str, Any]:
+        params = {&#34;table_name&#34;: table_name}
+        if columns:
+            params[&#34;columns&#34;] = columns
+        if condition:
+            params[&#34;condition&#34;] = json.dumps(condition) if isinstance(condition, dict) else condition
+        if order_by:
+            params[&#34;order_by&#34;] = order_by
+        if limit:
+            params[&#34;limit&#34;] = limit
+
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.get(
+                f&#34;{self.node_url}/local-db/table/{table_name}/rows&#34;,
+                params=params
+            )
+            response.raise_for_status()
+            return response.json()
+
+    async def vector_search(
+        self,
+        table_name: str,
+        vector_column: str,
+        query_vector: List[float],
+        columns: Optional[List[str]] = None,
+        top_k: int = 5,
+        include_similarity: bool = True
+    ) -&gt; Dict[str, Any]:
+        &#34;&#34;&#34;
+        Perform a pgvector-based similarity search on a table&#39;s vector column.
+        &#34;&#34;&#34;
+        payload = {
+            &#34;table_name&#34;: table_name,
+            &#34;vector_column&#34;: vector_column,
+            &#34;query_vector&#34;: query_vector,
+            &#34;columns&#34;: columns or [&#34;text&#34;],
+            &#34;top_k&#34;: top_k,
+            &#34;include_similarity&#34;: include_similarity,
+        }
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.post(
+                f&#34;{self.node_url}/local-db/vector_search&#34;,
+                json=payload
+            )
+            response.raise_for_status()
+            return response.json()</code></pre>
+</details>
+<div class="desc"></div>
+<h3>Methods</h3>
+<dl>
+<dt id="naptha_sdk.client.node.UserClient.add_row"><code class="name flex">
+<span>async def <span class="ident">add_row</span></span>(<span>self,<br>table_name: str,<br>data: Dict[str, Any],<br>schema: Dict[str, Dict[str, Any]] | None = None) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def add_row(self, table_name: str, data: Dict[str, Any], schema: Optional[Dict[str, Dict[str, Any]]] = None) -&gt; Dict[str, Any]:
+    async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+        response = await client.post(
+            f&#34;{self.node_url}/local-db/add-row&#34;,
+            json={&#34;table_name&#34;: table_name, &#34;data&#34;: data, &#34;schema&#34;: schema}
+        )
+        response.raise_for_status()
+        return response.json()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.check_agent_run"><code class="name flex">
+<span>async def <span class="ident">check_agent_run</span></span>(<span>self,<br>agent_run: <a title="naptha_sdk.schemas.AgentRun" href="../schemas.html#naptha_sdk.schemas.AgentRun">AgentRun</a>) ‑> <a title="naptha_sdk.schemas.AgentRun" href="../schemas.html#naptha_sdk.schemas.AgentRun">AgentRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_agent_run(self, agent_run: AgentRun) -&gt; AgentRun:
+    return await self.check_run(agent_run, &#39;agent&#39;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.check_environment_run"><code class="name flex">
+<span>async def <span class="ident">check_environment_run</span></span>(<span>self,<br>environment_run: <a title="naptha_sdk.schemas.EnvironmentRun" href="../schemas.html#naptha_sdk.schemas.EnvironmentRun">EnvironmentRun</a>) ‑> <a title="naptha_sdk.schemas.EnvironmentRun" href="../schemas.html#naptha_sdk.schemas.EnvironmentRun">EnvironmentRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_environment_run(self, environment_run: EnvironmentRun) -&gt; EnvironmentRun:
+    return await self.check_run(environment_run, &#39;environment&#39;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.check_kb_run"><code class="name flex">
+<span>async def <span class="ident">check_kb_run</span></span>(<span>self,<br>kb_run: <a title="naptha_sdk.schemas.KBRun" href="../schemas.html#naptha_sdk.schemas.KBRun">KBRun</a>) ‑> <a title="naptha_sdk.schemas.KBRun" href="../schemas.html#naptha_sdk.schemas.KBRun">KBRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_kb_run(self, kb_run: KBRun) -&gt; KBRun:
+    return await self.check_run(kb_run, &#39;kb&#39;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.check_memory_run"><code class="name flex">
+<span>async def <span class="ident">check_memory_run</span></span>(<span>self,<br>memory_run: <a title="naptha_sdk.schemas.MemoryRun" href="../schemas.html#naptha_sdk.schemas.MemoryRun">MemoryRun</a>) ‑> <a title="naptha_sdk.schemas.MemoryRun" href="../schemas.html#naptha_sdk.schemas.MemoryRun">MemoryRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_memory_run(self, memory_run: MemoryRun) -&gt; MemoryRun:
+    return await self.check_run(memory_run, &#39;memory&#39;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.check_orchestrator_run"><code class="name flex">
+<span>async def <span class="ident">check_orchestrator_run</span></span>(<span>self,<br>orchestrator_run: <a title="naptha_sdk.schemas.OrchestratorRun" href="../schemas.html#naptha_sdk.schemas.OrchestratorRun">OrchestratorRun</a>) ‑> <a title="naptha_sdk.schemas.OrchestratorRun" href="../schemas.html#naptha_sdk.schemas.OrchestratorRun">OrchestratorRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_orchestrator_run(self, orchestrator_run: OrchestratorRun) -&gt; OrchestratorRun:
+    return await self.check_run(orchestrator_run, &#39;orchestrator&#39;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.check_run"><code class="name flex">
+<span>async def <span class="ident">check_run</span></span>(<span>self,<br>module_run: <a title="naptha_sdk.schemas.AgentRun" href="../schemas.html#naptha_sdk.schemas.AgentRun">AgentRun</a> | <a title="naptha_sdk.schemas.OrchestratorRun" href="../schemas.html#naptha_sdk.schemas.OrchestratorRun">OrchestratorRun</a> | <a title="naptha_sdk.schemas.EnvironmentRun" href="../schemas.html#naptha_sdk.schemas.EnvironmentRun">EnvironmentRun</a> | <a title="naptha_sdk.schemas.KBRun" href="../schemas.html#naptha_sdk.schemas.KBRun">KBRun</a> | <a title="naptha_sdk.schemas.MemoryRun" href="../schemas.html#naptha_sdk.schemas.MemoryRun">MemoryRun</a> | <a title="naptha_sdk.schemas.ToolRun" href="../schemas.html#naptha_sdk.schemas.ToolRun">ToolRun</a>,<br>module_type: str) ‑> <a title="naptha_sdk.schemas.AgentRun" href="../schemas.html#naptha_sdk.schemas.AgentRun">AgentRun</a> | <a title="naptha_sdk.schemas.OrchestratorRun" href="../schemas.html#naptha_sdk.schemas.OrchestratorRun">OrchestratorRun</a> | <a title="naptha_sdk.schemas.EnvironmentRun" href="../schemas.html#naptha_sdk.schemas.EnvironmentRun">EnvironmentRun</a> | <a title="naptha_sdk.schemas.KBRun" href="../schemas.html#naptha_sdk.schemas.KBRun">KBRun</a> | <a title="naptha_sdk.schemas.MemoryRun" href="../schemas.html#naptha_sdk.schemas.MemoryRun">MemoryRun</a> | <a title="naptha_sdk.schemas.ToolRun" href="../schemas.html#naptha_sdk.schemas.ToolRun">ToolRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_run(
+    self, 
+    module_run: Union[AgentRun, OrchestratorRun, EnvironmentRun, KBRun, MemoryRun, ToolRun], 
+    module_type: str
+) -&gt; Union[AgentRun, OrchestratorRun, EnvironmentRun, KBRun, MemoryRun, ToolRun]:
+    &#34;&#34;&#34;Generic method to check the status of a module run.
+    
+    Args:
+        module_run: Either AgentRun, OrchestratorRun, EnvironmentRun, ToolRun, KBRun or MemoryRun object
+        module_type: Either &#39;agent&#39;, &#39;orchestrator&#39;, &#39;environment&#39;, &#39;tool&#39;, &#39;kb&#39; or &#39;memory&#39;
+    &#34;&#34;&#34;
+    try:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.post(
+                f&#34;{self.node_url}/{module_type}/check&#34;, 
+                json=module_run.model_dump()
+            )
+            response.raise_for_status()
+        
+        return_class = {
+            &#39;agent&#39;: AgentRun,
+            &#39;orchestrator&#39;: OrchestratorRun,
+            &#39;environment&#39;: EnvironmentRun,
+            &#39;kb&#39;: KBRun,
+            &#39;memory&#39;: MemoryRun,
+            &#39;tool&#39;: ToolRun
+        }[module_type]
+        return return_class(**json.loads(response.text))
+    except HTTPStatusError as e:
+        logger.info(f&#34;HTTP error occurred: {e}&#34;)
+        raise  
+    except Exception as e:
+        logger.info(f&#34;An unexpected error occurred: {e}&#34;)</code></pre>
+</details>
+<div class="desc"><p>Generic method to check the status of a module run.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>module_run</code></strong></dt>
+<dd>Either AgentRun, OrchestratorRun, EnvironmentRun, ToolRun, KBRun or MemoryRun object</dd>
+<dt><strong><code>module_type</code></strong></dt>
+<dd>Either 'agent', 'orchestrator', 'environment', 'tool', 'kb' or 'memory'</dd>
+</dl></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.check_tool_run"><code class="name flex">
+<span>async def <span class="ident">check_tool_run</span></span>(<span>self,<br>tool_run: <a title="naptha_sdk.schemas.ToolRun" href="../schemas.html#naptha_sdk.schemas.ToolRun">ToolRun</a>) ‑> <a title="naptha_sdk.schemas.ToolRun" href="../schemas.html#naptha_sdk.schemas.ToolRun">ToolRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_tool_run(self, tool_run: ToolRun) -&gt; ToolRun:
+    return await self.check_run(tool_run, &#39;tool&#39;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.check_user"><code class="name flex">
+<span>async def <span class="ident">check_user</span></span>(<span>self, user_input: Dict[str, Any]) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def check_user(self, user_input: Dict[str, Any]) -&gt; Dict[str, Any]:
+    &#34;&#34;&#34;
+    Check if a user exists on a node
+    &#34;&#34;&#34;
+    endpoint = self.node_url + &#34;/user/check&#34;
+    try:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            headers = {
+                &#39;Content-Type&#39;: &#39;application/json&#39;, 
+            }
+            response = await client.post(
+                endpoint, 
+                json=user_input,
+                headers=headers
+            )
+            response.raise_for_status()
+        return json.loads(response.text)
+    except HTTPStatusError as e:
+        logger.info(f&#34;HTTP error occurred: {e}&#34;)
+        raise  
+    except RemoteProtocolError as e:
+        error_msg = f&#34;Check user failed to connect to the server at {self.node_url}. Please check if the server URL is correct and the server is running. Error details: {str(e)}&#34;
+        logger.info(error_msg)
+        raise 
+    except Exception as e:
+        logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+        raise</code></pre>
+</details>
+<div class="desc"><p>Check if a user exists on a node</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.create"><code class="name flex">
+<span>async def <span class="ident">create</span></span>(<span>self,<br>module_type: str,<br>module_request: <a title="naptha_sdk.schemas.AgentDeployment" href="../schemas.html#naptha_sdk.schemas.AgentDeployment">AgentDeployment</a> | <a title="naptha_sdk.schemas.EnvironmentDeployment" href="../schemas.html#naptha_sdk.schemas.EnvironmentDeployment">EnvironmentDeployment</a> | <a title="naptha_sdk.schemas.KBDeployment" href="../schemas.html#naptha_sdk.schemas.KBDeployment">KBDeployment</a> | <a title="naptha_sdk.schemas.OrchestratorDeployment" href="../schemas.html#naptha_sdk.schemas.OrchestratorDeployment">OrchestratorDeployment</a> | <a title="naptha_sdk.schemas.ToolDeployment" href="../schemas.html#naptha_sdk.schemas.ToolDeployment">ToolDeployment</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create(self, module_type: str,
+                 module_request: Union[AgentDeployment, EnvironmentDeployment, KBDeployment, OrchestratorDeployment, ToolDeployment]):
+    &#34;&#34;&#34;Generic method to create either an agent, orchestrator, environment, tool, kb or memory.
+
+    Args:
+        module_type: Either agent, orchestrator, environment, tool, kb or memory
+        module_request: Either AgentDeployment, EnvironmentDeployment, OrchestratorDeployment, ToolDeployment, KBDeployment or MemoryDeployment
+    &#34;&#34;&#34;
+
+    print(f&#34;Creating {module_type}...&#34;)
+
+    endpoint = f&#34;{self.node_url}/{module_type}/create&#34;
+    try:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            headers = {
+                &#39;Content-Type&#39;: &#39;application/json&#39;,
+                &#39;Authorization&#39;: f&#39;Bearer {self.access_token}&#39;,
+            }
+            response = await client.post(
+                endpoint,
+                json=module_request.model_dump(),
+                headers=headers
+            )
+            response.raise_for_status()
+
+            # Convert response to appropriate return type
+            return response.json()
+    except HTTPStatusError as e:
+        logger.info(f&#34;HTTP error occurred: {e}&#34;)
+        raise
+    except RemoteProtocolError as e:
+        error_msg = f&#34;Run {module_type} failed to connect to the server at {self.node_url}. Please check if the server URL is correct and the server is running. Error details: {str(e)}&#34;
+        logger.error(error_msg)
+        raise
+    except Exception as e:
+        print(f&#34;An unexpected error occurred: {e}&#34;)
+        raise</code></pre>
+</details>
+<div class="desc"><p>Generic method to create either an agent, orchestrator, environment, tool, kb or memory.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>module_type</code></strong></dt>
+<dd>Either agent, orchestrator, environment, tool, kb or memory</dd>
+<dt><strong><code>module_request</code></strong></dt>
+<dd>Either AgentDeployment, EnvironmentDeployment, OrchestratorDeployment, ToolDeployment, KBDeployment or MemoryDeployment</dd>
+</dl></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.create_agent_run"><code class="name flex">
+<span>async def <span class="ident">create_agent_run</span></span>(<span>self,<br>agent_run_input: <a title="naptha_sdk.schemas.AgentRunInput" href="../schemas.html#naptha_sdk.schemas.AgentRunInput">AgentRunInput</a>) ‑> <a title="naptha_sdk.schemas.AgentRun" href="../schemas.html#naptha_sdk.schemas.AgentRun">AgentRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_agent_run(self, agent_run_input: AgentRunInput) -&gt; AgentRun:
+    try:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.post(
+                f&#34;{self.node_url}/monitor/create_agent_run&#34;, json=agent_run_input.model_dump()
+            )
+            response.raise_for_status()
+        return AgentRun(**json.loads(response.text))
+    except HTTPStatusError as e:
+        logger.info(f&#34;HTTP error occurred: {e}&#34;)
+        raise  
+    except Exception as e:
+        logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+        logger.info(f&#34;Full traceback: {traceback.format_exc()}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.create_table"><code class="name flex">
+<span>async def <span class="ident">create_table</span></span>(<span>self, table_name: str, schema: Dict[str, Dict[str, Any]]) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_table(self, table_name: str, schema: Dict[str, Dict[str, Any]]) -&gt; Dict[str, Any]:
+    async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+        response = await client.post(
+            f&#34;{self.node_url}/local-db/create-table&#34;,
+            json={&#34;table_name&#34;: table_name, &#34;schema&#34;: schema}
+        )
+        response.raise_for_status()
+        return response.json()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.delete_row"><code class="name flex">
+<span>async def <span class="ident">delete_row</span></span>(<span>self, table_name: str, condition: Dict[str, Any]) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_row(self, table_name: str, condition: Dict[str, Any]) -&gt; Dict[str, Any]:
+    async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+        response = await client.post(
+            f&#34;{self.node_url}/local-db/delete-row&#34;,
+            json={&#34;table_name&#34;: table_name, &#34;condition&#34;: condition}
+        )
+        response.raise_for_status()
+        return response.json()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.get_table_schema"><code class="name flex">
+<span>async def <span class="ident">get_table_schema</span></span>(<span>self, table_name: str) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_table_schema(self, table_name: str) -&gt; Dict[str, Any]:
+    async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+        response = await client.get(f&#34;{self.node_url}/local-db/table/{table_name}&#34;)
+        response.raise_for_status()
+        return response.json()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.list_tables"><code class="name flex">
+<span>async def <span class="ident">list_tables</span></span>(<span>self) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_tables(self) -&gt; Dict[str, Any]:
+    async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+        response = await client.get(f&#34;{self.node_url}/local-db/tables&#34;)
+        response.raise_for_status()
+        return response.json()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.query_table"><code class="name flex">
+<span>async def <span class="ident">query_table</span></span>(<span>self,<br>table_name: str,<br>columns: str | None = None,<br>condition: str | Dict | None = None,<br>order_by: str | None = None,<br>limit: int | None = None) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def query_table(self, table_name: str, columns: Optional[str] = None, condition: Optional[Union[str, Dict]] = None, order_by: Optional[str] = None, limit: Optional[int] = None) -&gt; Dict[str, Any]:
+    params = {&#34;table_name&#34;: table_name}
+    if columns:
+        params[&#34;columns&#34;] = columns
+    if condition:
+        params[&#34;condition&#34;] = json.dumps(condition) if isinstance(condition, dict) else condition
+    if order_by:
+        params[&#34;order_by&#34;] = order_by
+    if limit:
+        params[&#34;limit&#34;] = limit
+
+    async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+        response = await client.get(
+            f&#34;{self.node_url}/local-db/table/{table_name}/rows&#34;,
+            params=params
+        )
+        response.raise_for_status()
+        return response.json()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.read_storage"><code class="name flex">
+<span>async def <span class="ident">read_storage</span></span>(<span>self, agent_run_id: str, output_dir: str, ipfs: bool = False) ‑> str</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def read_storage(self, agent_run_id: str, output_dir: str, ipfs: bool = False) -&gt; str:
+    print(&#34;Reading from storage...&#34;)
+    try:
+        endpoint = f&#34;{self.node_url}/{&#39;storage/read_ipfs&#39; if ipfs else &#39;storage/read&#39;}/{agent_run_id}&#34;
+
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.get(endpoint)
+            response.raise_for_status()
+            storage = response.content  
+            print(&#34;Retrieved storage.&#34;)
+        
+            # Temporary file handling
+            temp_file_name = None
+            with tempfile.NamedTemporaryFile(delete=False, mode=&#39;wb&#39;) as tmp_file:
+                tmp_file.write(storage)  # storage is a bytes-like object
+                temp_file_name = tmp_file.name
+    
+            # Ensure output directory exists
+            output_path = Path(output_dir)
+            output_path.mkdir(parents=True, exist_ok=True)
+    
+            # Check if the file is a zip file and extract if true
+            if zipfile.is_zipfile(temp_file_name):
+                with zipfile.ZipFile(temp_file_name, &#39;r&#39;) as zip_ref:
+                    zip_ref.extractall(output_path)
+                print(f&#34;Extracted storage to {output_dir}.&#34;)
+            else:
+                shutil.copy(temp_file_name, output_path)
+                print(f&#34;Copied storage to {output_dir}.&#34;)
+
+            # Cleanup temporary file
+            Path(temp_file_name).unlink(missing_ok=True)
+    
+            return output_dir         
+    except HTTPStatusError as e:
+        logger.info(f&#34;HTTP error occurred: {e}&#34;)
+        raise  
+    except Exception as e:
+        logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+        logger.info(f&#34;Full traceback: {traceback.format_exc()}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.register_user"><code class="name flex">
+<span>async def <span class="ident">register_user</span></span>(<span>self, user_input: Dict[str, Any]) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def register_user(self, user_input: Dict[str, Any]) -&gt; Dict[str, Any]:
+    &#34;&#34;&#34;
+    Register a user on a node
+    &#34;&#34;&#34;
+    endpoint = self.node_url + &#34;/user/register&#34;
+    try:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            headers = {
+                &#39;Content-Type&#39;: &#39;application/json&#39;, 
+            }
+            response = await client.post(
+                endpoint, 
+                json=user_input,
+                headers=headers
+            )
+            response.raise_for_status()
+        return json.loads(response.text)
+    except HTTPStatusError as e:
+        logger.info(f&#34;HTTP error occurred: {e}&#34;)
+        raise  
+    except RemoteProtocolError as e:
+        error_msg = f&#34;Register user failed to connect to the server at {self.node_url}. Please check if the server URL is correct and the server is running. Error details: {str(e)}&#34;
+        logger.error(error_msg)
+        raise 
+    except Exception as e:
+        logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+        raise</code></pre>
+</details>
+<div class="desc"><p>Register a user on a node</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_agent"><code class="name flex">
+<span>async def <span class="ident">run_agent</span></span>(<span>self,<br>agent_run_input: <a title="naptha_sdk.schemas.AgentRunInput" href="../schemas.html#naptha_sdk.schemas.AgentRunInput">AgentRunInput</a>) ‑> <a title="naptha_sdk.schemas.AgentRun" href="../schemas.html#naptha_sdk.schemas.AgentRun">AgentRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_agent(self, agent_run_input: AgentRunInput) -&gt; AgentRun:
+    &#34;&#34;&#34;Run an agent module on a node&#34;&#34;&#34;
+    return await self._run_module(agent_run_input, &#39;agent&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run an agent module on a node</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_agent_and_poll"><code class="name flex">
+<span>async def <span class="ident">run_agent_and_poll</span></span>(<span>self,<br>agent_run_input: <a title="naptha_sdk.schemas.AgentRunInput" href="../schemas.html#naptha_sdk.schemas.AgentRunInput">AgentRunInput</a>) ‑> <a title="naptha_sdk.schemas.AgentRun" href="../schemas.html#naptha_sdk.schemas.AgentRun">AgentRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_agent_and_poll(self, agent_run_input: AgentRunInput) -&gt; AgentRun:
+    &#34;&#34;&#34;Run an agent module and poll for results until completion.&#34;&#34;&#34;
+    return await self._run_and_poll(agent_run_input, &#39;agent&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run an agent module and poll for results until completion.</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_environment"><code class="name flex">
+<span>async def <span class="ident">run_environment</span></span>(<span>self,<br>environment_run_input: <a title="naptha_sdk.schemas.EnvironmentRunInput" href="../schemas.html#naptha_sdk.schemas.EnvironmentRunInput">EnvironmentRunInput</a>) ‑> <a title="naptha_sdk.schemas.EnvironmentRun" href="../schemas.html#naptha_sdk.schemas.EnvironmentRun">EnvironmentRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_environment(self, environment_run_input: EnvironmentRunInput) -&gt; EnvironmentRun:
+    &#34;&#34;&#34;Run an environment module on a node&#34;&#34;&#34;
+    return await self._run_module(environment_run_input, &#39;environment&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run an environment module on a node</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_environment_and_poll"><code class="name flex">
+<span>async def <span class="ident">run_environment_and_poll</span></span>(<span>self,<br>environment_input: <a title="naptha_sdk.schemas.EnvironmentRunInput" href="../schemas.html#naptha_sdk.schemas.EnvironmentRunInput">EnvironmentRunInput</a>) ‑> <a title="naptha_sdk.schemas.EnvironmentRun" href="../schemas.html#naptha_sdk.schemas.EnvironmentRun">EnvironmentRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_environment_and_poll(self, environment_input: EnvironmentRunInput) -&gt; EnvironmentRun:
+    &#34;&#34;&#34;Run an environment module and poll for results until completion.&#34;&#34;&#34;
+    return await self._run_and_poll(environment_input, &#39;environment&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run an environment module and poll for results until completion.</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_inference"><code class="name flex">
+<span>async def <span class="ident">run_inference</span></span>(<span>self,<br>inference_input: <a title="naptha_sdk.schemas.ChatCompletionRequest" href="../schemas.html#naptha_sdk.schemas.ChatCompletionRequest">ChatCompletionRequest</a> | Dict) ‑> <a title="naptha_sdk.schemas.ModelResponse" href="../schemas.html#naptha_sdk.schemas.ModelResponse">ModelResponse</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_inference(self, inference_input: Union[ChatCompletionRequest, Dict]) -&gt; ModelResponse:
+    &#34;&#34;&#34;
+    Run inference on a node
+    
+    Args:
+        inference_input: The inference input to run inference on
+    &#34;&#34;&#34;
+    if isinstance(inference_input, dict):
+        inference_input = ChatCompletionRequest(**inference_input)
+
+    endpoint = f&#34;{self.node_url}/inference/chat&#34;
+
+    try:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            headers = {
+                &#39;Content-Type&#39;: &#39;application/json&#39;,
+                &#39;Authorization&#39;: f&#39;Bearer {self.access_token}&#39;,
+            }
+            response = await client.post(
+                endpoint,
+                json=inference_input.model_dump(),
+                headers=headers
+            )
+            print(&#34;Response: &#34;, response.text)
+            response.raise_for_status()
+            return ModelResponse(**json.loads(response.text))
+    except HTTPStatusError as e:
+        logger.info(f&#34;HTTP error occurred: {e}&#34;)
+        raise
+    except RemoteProtocolError as e:
+        error_msg = f&#34;Inference failed to connect to the server at {self.node_url}. Please check if the server URL is correct and the server is running. Error details: {str(e)}&#34;
+        logger.error(error_msg)
+        raise
+    except Exception as e:
+        print(f&#34;An unexpected error occurred: {e}&#34;)
+        raise</code></pre>
+</details>
+<div class="desc"><p>Run inference on a node</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>inference_input</code></strong></dt>
+<dd>The inference input to run inference on</dd>
+</dl></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_kb"><code class="name flex">
+<span>async def <span class="ident">run_kb</span></span>(<span>self,<br>kb_run_input: <a title="naptha_sdk.schemas.KBRunInput" href="../schemas.html#naptha_sdk.schemas.KBRunInput">KBRunInput</a>) ‑> <a title="naptha_sdk.schemas.KBRun" href="../schemas.html#naptha_sdk.schemas.KBRun">KBRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_kb(self, kb_run_input: KBRunInput) -&gt; KBRun:
+    &#34;&#34;&#34;Run a knowledge base module on a node&#34;&#34;&#34;
+    return await self._run_module(kb_run_input, &#39;kb&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run a knowledge base module on a node</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_kb_and_poll"><code class="name flex">
+<span>async def <span class="ident">run_kb_and_poll</span></span>(<span>self,<br>kb_input: <a title="naptha_sdk.schemas.KBDeployment" href="../schemas.html#naptha_sdk.schemas.KBDeployment">KBDeployment</a>) ‑> <a title="naptha_sdk.schemas.KBDeployment" href="../schemas.html#naptha_sdk.schemas.KBDeployment">KBDeployment</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_kb_and_poll(self, kb_input: KBDeployment) -&gt; KBDeployment:
+    &#34;&#34;&#34;Run a knowledge base module and poll for results until completion.&#34;&#34;&#34;
+    return await self._run_and_poll(kb_input, &#39;kb&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run a knowledge base module and poll for results until completion.</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_memory"><code class="name flex">
+<span>async def <span class="ident">run_memory</span></span>(<span>self,<br>memory_run_input: <a title="naptha_sdk.schemas.MemoryRunInput" href="../schemas.html#naptha_sdk.schemas.MemoryRunInput">MemoryRunInput</a>) ‑> <a title="naptha_sdk.schemas.MemoryRun" href="../schemas.html#naptha_sdk.schemas.MemoryRun">MemoryRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_memory(self, memory_run_input: MemoryRunInput) -&gt; MemoryRun:
+    &#34;&#34;&#34;Run a memory module on a node&#34;&#34;&#34;
+    return await self._run_module(memory_run_input, &#39;memory&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run a memory module on a node</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_memory_and_poll"><code class="name flex">
+<span>async def <span class="ident">run_memory_and_poll</span></span>(<span>self,<br>memory_input: <a title="naptha_sdk.schemas.MemoryDeployment" href="../schemas.html#naptha_sdk.schemas.MemoryDeployment">MemoryDeployment</a>) ‑> <a title="naptha_sdk.schemas.MemoryDeployment" href="../schemas.html#naptha_sdk.schemas.MemoryDeployment">MemoryDeployment</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_memory_and_poll(self, memory_input: MemoryDeployment) -&gt; MemoryDeployment:
+    &#34;&#34;&#34;Run a memory module and poll for results until completion.&#34;&#34;&#34;
+    return await self._run_and_poll(memory_input, &#39;memory&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run a memory module and poll for results until completion.</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_orchestrator"><code class="name flex">
+<span>async def <span class="ident">run_orchestrator</span></span>(<span>self,<br>orchestrator_run_input: <a title="naptha_sdk.schemas.OrchestratorRunInput" href="../schemas.html#naptha_sdk.schemas.OrchestratorRunInput">OrchestratorRunInput</a>) ‑> <a title="naptha_sdk.schemas.OrchestratorRun" href="../schemas.html#naptha_sdk.schemas.OrchestratorRun">OrchestratorRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_orchestrator(self, orchestrator_run_input: OrchestratorRunInput) -&gt; OrchestratorRun:
+    &#34;&#34;&#34;Run an orchestrator module on a node&#34;&#34;&#34;
+    return await self._run_module(orchestrator_run_input, &#39;orchestrator&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run an orchestrator module on a node</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_orchestrator_and_poll"><code class="name flex">
+<span>async def <span class="ident">run_orchestrator_and_poll</span></span>(<span>self,<br>orchestrator_run_input: <a title="naptha_sdk.schemas.OrchestratorRunInput" href="../schemas.html#naptha_sdk.schemas.OrchestratorRunInput">OrchestratorRunInput</a>) ‑> <a title="naptha_sdk.schemas.OrchestratorRun" href="../schemas.html#naptha_sdk.schemas.OrchestratorRun">OrchestratorRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_orchestrator_and_poll(self, orchestrator_run_input: OrchestratorRunInput) -&gt; OrchestratorRun:
+    &#34;&#34;&#34;Run an orchestrator module and poll for results until completion.&#34;&#34;&#34;
+    return await self._run_and_poll(orchestrator_run_input, &#39;orchestrator&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run an orchestrator module and poll for results until completion.</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_tool"><code class="name flex">
+<span>async def <span class="ident">run_tool</span></span>(<span>self,<br>tool_run_input: <a title="naptha_sdk.schemas.ToolRunInput" href="../schemas.html#naptha_sdk.schemas.ToolRunInput">ToolRunInput</a>) ‑> <a title="naptha_sdk.schemas.ToolRun" href="../schemas.html#naptha_sdk.schemas.ToolRun">ToolRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_tool(self, tool_run_input: ToolRunInput) -&gt; ToolRun:
+    &#34;&#34;&#34;Run a tool module on a node&#34;&#34;&#34;
+    return await self._run_module(tool_run_input, &#39;tool&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run a tool module on a node</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.run_tool_and_poll"><code class="name flex">
+<span>async def <span class="ident">run_tool_and_poll</span></span>(<span>self,<br>tool_run_input: <a title="naptha_sdk.schemas.ToolRunInput" href="../schemas.html#naptha_sdk.schemas.ToolRunInput">ToolRunInput</a>) ‑> <a title="naptha_sdk.schemas.ToolRun" href="../schemas.html#naptha_sdk.schemas.ToolRun">ToolRun</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_tool_and_poll(self, tool_run_input: ToolRunInput) -&gt; ToolRun:
+    &#34;&#34;&#34;Run a tool module and poll for results until completion.&#34;&#34;&#34;
+
+    return await self._run_and_poll(tool_run_input, &#39;tool&#39;)</code></pre>
+</details>
+<div class="desc"><p>Run a tool module and poll for results until completion.</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.update_agent_run"><code class="name flex">
+<span>async def <span class="ident">update_agent_run</span></span>(<span>self,<br>agent_run: <a title="naptha_sdk.schemas.AgentRun" href="../schemas.html#naptha_sdk.schemas.AgentRun">AgentRun</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def update_agent_run(self, agent_run: AgentRun):
+    try:
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.post(
+                f&#34;{self.node_url}/monitor/update_agent_run&#34;, json=agent_run.model_dump()
+            )
+            response.raise_for_status()
+        return AgentRun(**json.loads(response.text))
+    except HTTPStatusError as e:
+        logger.info(f&#34;HTTP error occurred: {e}&#34;)
+        raise  
+    except Exception as e:
+        print(f&#34;An unexpected error occurred: {e}&#34;)
+        error_details = traceback.format_exc()
+        print(f&#34;Full traceback: {error_details}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.update_row"><code class="name flex">
+<span>async def <span class="ident">update_row</span></span>(<span>self,<br>table_name: str,<br>data: Dict[str, Any],<br>condition: Dict[str, Any],<br>schema: Dict[str, Dict[str, Any]] | None = None) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def update_row(self, table_name: str, data: Dict[str, Any], condition: Dict[str, Any], schema: Optional[Dict[str, Dict[str, Any]]] = None) -&gt; Dict[str, Any]:
+    async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+        response = await client.post(
+            f&#34;{self.node_url}/local-db/update-row&#34;,
+            json={
+                &#34;table_name&#34;: table_name,
+                &#34;data&#34;: data,
+                &#34;condition&#34;: condition,
+                &#34;schema&#34;: schema
+            }
+        )
+        response.raise_for_status()
+        return response.json()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.vector_search"><code class="name flex">
+<span>async def <span class="ident">vector_search</span></span>(<span>self,<br>table_name: str,<br>vector_column: str,<br>query_vector: List[float],<br>columns: List[str] | None = None,<br>top_k: int = 5,<br>include_similarity: bool = True) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def vector_search(
+    self,
+    table_name: str,
+    vector_column: str,
+    query_vector: List[float],
+    columns: Optional[List[str]] = None,
+    top_k: int = 5,
+    include_similarity: bool = True
+) -&gt; Dict[str, Any]:
+    &#34;&#34;&#34;
+    Perform a pgvector-based similarity search on a table&#39;s vector column.
+    &#34;&#34;&#34;
+    payload = {
+        &#34;table_name&#34;: table_name,
+        &#34;vector_column&#34;: vector_column,
+        &#34;query_vector&#34;: query_vector,
+        &#34;columns&#34;: columns or [&#34;text&#34;],
+        &#34;top_k&#34;: top_k,
+        &#34;include_similarity&#34;: include_similarity,
+    }
+    async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+        response = await client.post(
+            f&#34;{self.node_url}/local-db/vector_search&#34;,
+            json=payload
+        )
+        response.raise_for_status()
+        return response.json()</code></pre>
+</details>
+<div class="desc"><p>Perform a pgvector-based similarity search on a table's vector column.</p></div>
+</dd>
+<dt id="naptha_sdk.client.node.UserClient.write_storage"><code class="name flex">
+<span>async def <span class="ident">write_storage</span></span>(<span>self,<br>storage_input: str,<br>ipfs: bool = False,<br>publish_to_ipns: bool = False,<br>update_ipns_name: str = None) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def write_storage(self, storage_input: str, ipfs: bool = False, publish_to_ipns: bool = False, update_ipns_name: str = None) -&gt; Dict[str, Any]:
+    &#34;&#34;&#34;Write storage to the node.&#34;&#34;&#34;
+    print(&#34;Writing storage&#34;)
+    try:
+        file = prepare_files(storage_input)
+        endpoint = f&#34;{self.node_url}/storage/write_ipfs&#34; if ipfs else f&#34;{self.node_url}/storage/write&#34;
+        
+        if update_ipns_name:
+            publish_to_ipns = True
+
+        data = {
+            &#34;publish_to_ipns&#34;: publish_to_ipns,
+            &#34;update_ipns_name&#34;: update_ipns_name
+        }
+        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
+            response = await client.post(
+                endpoint, 
+                files=file,
+                data=data,
+                timeout=600
+            )
+            response.raise_for_status()
+            return response.json()
+    except HTTPStatusError as e:
+        logger.info(f&#34;HTTP error occurred: {e}&#34;)
+        raise  
+    except Exception as e:
+        logger.info(f&#34;An unexpected error occurred: {e}&#34;)
+        logger.info(f&#34;Full traceback: {traceback.format_exc()}&#34;)
+        return {}</code></pre>
+</details>
+<div class="desc"><p>Write storage to the node.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="naptha_sdk.client" href="index.html">naptha_sdk.client</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="naptha_sdk.client.node.prepare_files" href="#naptha_sdk.client.node.prepare_files">prepare_files</a></code></li>
+<li><code><a title="naptha_sdk.client.node.zip_directory" href="#naptha_sdk.client.node.zip_directory">zip_directory</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="naptha_sdk.client.node.NodeClient" href="#naptha_sdk.client.node.NodeClient">NodeClient</a></code></h4>
+<ul class="two-column">
+<li><code><a title="naptha_sdk.client.node.NodeClient.check_user" href="#naptha_sdk.client.node.NodeClient.check_user">check_user</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.check_user_grpc" href="#naptha_sdk.client.node.NodeClient.check_user_grpc">check_user_grpc</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.check_user_ws" href="#naptha_sdk.client.node.NodeClient.check_user_ws">check_user_ws</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.connect_ws" href="#naptha_sdk.client.node.NodeClient.connect_ws">connect_ws</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.disconnect_ws" href="#naptha_sdk.client.node.NodeClient.disconnect_ws">disconnect_ws</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.node_to_url" href="#naptha_sdk.client.node.NodeClient.node_to_url">node_to_url</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.register_user" href="#naptha_sdk.client.node.NodeClient.register_user">register_user</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.register_user_grpc" href="#naptha_sdk.client.node.NodeClient.register_user_grpc">register_user_grpc</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.register_user_ws" href="#naptha_sdk.client.node.NodeClient.register_user_ws">register_user_ws</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.run_module" href="#naptha_sdk.client.node.NodeClient.run_module">run_module</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.run_module_grpc" href="#naptha_sdk.client.node.NodeClient.run_module_grpc">run_module_grpc</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.run_module_ws" href="#naptha_sdk.client.node.NodeClient.run_module_ws">run_module_ws</a></code></li>
+<li><code><a title="naptha_sdk.client.node.NodeClient.send_receive_ws" href="#naptha_sdk.client.node.NodeClient.send_receive_ws">send_receive_ws</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.client.node.UserClient" href="#naptha_sdk.client.node.UserClient">UserClient</a></code></h4>
+<ul class="">
+<li><code><a title="naptha_sdk.client.node.UserClient.add_row" href="#naptha_sdk.client.node.UserClient.add_row">add_row</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.check_agent_run" href="#naptha_sdk.client.node.UserClient.check_agent_run">check_agent_run</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.check_environment_run" href="#naptha_sdk.client.node.UserClient.check_environment_run">check_environment_run</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.check_kb_run" href="#naptha_sdk.client.node.UserClient.check_kb_run">check_kb_run</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.check_memory_run" href="#naptha_sdk.client.node.UserClient.check_memory_run">check_memory_run</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.check_orchestrator_run" href="#naptha_sdk.client.node.UserClient.check_orchestrator_run">check_orchestrator_run</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.check_run" href="#naptha_sdk.client.node.UserClient.check_run">check_run</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.check_tool_run" href="#naptha_sdk.client.node.UserClient.check_tool_run">check_tool_run</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.check_user" href="#naptha_sdk.client.node.UserClient.check_user">check_user</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.create" href="#naptha_sdk.client.node.UserClient.create">create</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.create_agent_run" href="#naptha_sdk.client.node.UserClient.create_agent_run">create_agent_run</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.create_table" href="#naptha_sdk.client.node.UserClient.create_table">create_table</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.delete_row" href="#naptha_sdk.client.node.UserClient.delete_row">delete_row</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.get_table_schema" href="#naptha_sdk.client.node.UserClient.get_table_schema">get_table_schema</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.list_tables" href="#naptha_sdk.client.node.UserClient.list_tables">list_tables</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.query_table" href="#naptha_sdk.client.node.UserClient.query_table">query_table</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.read_storage" href="#naptha_sdk.client.node.UserClient.read_storage">read_storage</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.register_user" href="#naptha_sdk.client.node.UserClient.register_user">register_user</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_agent" href="#naptha_sdk.client.node.UserClient.run_agent">run_agent</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_agent_and_poll" href="#naptha_sdk.client.node.UserClient.run_agent_and_poll">run_agent_and_poll</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_environment" href="#naptha_sdk.client.node.UserClient.run_environment">run_environment</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_environment_and_poll" href="#naptha_sdk.client.node.UserClient.run_environment_and_poll">run_environment_and_poll</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_inference" href="#naptha_sdk.client.node.UserClient.run_inference">run_inference</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_kb" href="#naptha_sdk.client.node.UserClient.run_kb">run_kb</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_kb_and_poll" href="#naptha_sdk.client.node.UserClient.run_kb_and_poll">run_kb_and_poll</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_memory" href="#naptha_sdk.client.node.UserClient.run_memory">run_memory</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_memory_and_poll" href="#naptha_sdk.client.node.UserClient.run_memory_and_poll">run_memory_and_poll</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_orchestrator" href="#naptha_sdk.client.node.UserClient.run_orchestrator">run_orchestrator</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_orchestrator_and_poll" href="#naptha_sdk.client.node.UserClient.run_orchestrator_and_poll">run_orchestrator_and_poll</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_tool" href="#naptha_sdk.client.node.UserClient.run_tool">run_tool</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.run_tool_and_poll" href="#naptha_sdk.client.node.UserClient.run_tool_and_poll">run_tool_and_poll</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.update_agent_run" href="#naptha_sdk.client.node.UserClient.update_agent_run">update_agent_run</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.update_row" href="#naptha_sdk.client.node.UserClient.update_row">update_row</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.vector_search" href="#naptha_sdk.client.node.UserClient.vector_search">vector_search</a></code></li>
+<li><code><a title="naptha_sdk.client.node.UserClient.write_storage" href="#naptha_sdk.client.node.UserClient.write_storage">write_storage</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+
+</footer>
+</body>
+</html>

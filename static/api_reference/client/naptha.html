@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>naptha_sdk.client.naptha API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>naptha_sdk.client.naptha</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="naptha_sdk.client.naptha.agent"><code class="name flex">
+<span>def <span class="ident">agent</span></span>(<span>name)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def agent(name):
+    def decorator(func):
+        frame = inspect.currentframe()
+        caller_frame = frame.f_back
+        instantiation_file = caller_frame.f_code.co_filename
+        variables = scrape_init(instantiation_file)
+        params = scrape_func_params(func)
+        agent_code, obj_name, local_modules, selective_import_modules, standard_import_modules, variable_modules, union_modules = scrape_func(func, variables)
+        agent_code = render_agent_code(name, agent_code, obj_name, local_modules, selective_import_modules, standard_import_modules, variable_modules, union_modules, params)
+        init_agent_package(name)
+        write_code_to_package(name, agent_code)
+        add_dependencies_to_pyproject(name, selective_import_modules + standard_import_modules)
+        add_files_to_package(name, params, os.getenv(&#34;HUB_USERNAME&#34;))
+
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            asyncio.ensure_future(Naptha().create_agent(name))
+        else:
+            loop.run_until_complete(Naptha().create_agent(name))
+
+        return func
+    return decorator</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="naptha_sdk.client.naptha.Agent"><code class="flex name class">
+<span>class <span class="ident">Agent</span></span>
+<span>(</span><span>name, fn, agent_node_url)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Agent:
+    def __init__(self, 
+        name, 
+        fn, 
+        agent_node_url, 
+    ):
+        self.name = name
+        self.fn = fn
+        self.agent_node_url = agent_node_url
+        self.repo_id = name</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.naptha.Naptha"><code class="flex name class">
+<span>class <span class="ident">Naptha</span></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Naptha:
+    &#34;&#34;&#34;The entry point into Naptha.&#34;&#34;&#34;
+
+    def __init__(self):
+        self.public_key = get_public_key(os.getenv(&#34;PRIVATE_KEY&#34;)) if os.getenv(&#34;PRIVATE_KEY&#34;) else None
+        self.user = User(id=f&#34;user:{self.public_key}&#34;)
+        self.hub_username = os.getenv(&#34;HUB_USERNAME&#34;, None)
+        self.hub_url = os.getenv(&#34;HUB_URL&#34;, None)
+
+        node_url = os.getenv(&#34;NODE_URL&#34;)
+
+        if node_url is None:
+            raise ValueError(&#34;NODE_URL is not set. Make sure your project has a .env file with a NODE_URL variable.&#34;)
+
+        self.node = UserClient(url_to_node(node_url))
+        self.inference_client = InferenceClient(url_to_node(node_url))
+        self.hub = Hub(self.hub_url, self.public_key)  
+
+    async def __aenter__(self):
+        &#34;&#34;&#34;Async enter method for context manager&#34;&#34;&#34;
+        await self.hub.connect()
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        &#34;&#34;&#34;Async exit method for context manager&#34;&#34;&#34;
+        await self.hub.close()
+
+    async def create_agent(self, name):
+        async with self.hub:
+            _, _, user_id = await self.hub.signin(self.hub_username, os.getenv(&#34;HUB_PASSWORD&#34;))
+            agent_config = {
+                &#34;id&#34;: f&#34;agent:{name}&#34;,
+                &#34;name&#34;: name,
+                &#34;description&#34;: name,
+                &#34;author&#34;: self.hub.user_id,
+                &#34;module_url&#34;: &#34;None&#34;,
+                &#34;module_type&#34;: &#34;agent&#34;,
+                &#34;module_version&#34;: &#34;0.1&#34;,
+                &#34;execution_type&#34;: &#34;agent&#34;
+            }
+            logger.info(f&#34;Registering Agent {agent_config}&#34;)
+            agent = await self.hub.create_or_update_agent(agent_config)
+            if agent:
+                logger.info(f&#34;Agent {name} created successfully&#34;)
+            else:
+                logger.error(f&#34;Failed to create agent {name}&#34;)
+
+    async def publish_modules(self, decorator = False, register = None, subdeployments = False):
+        logger.info(f&#34;Publishing Agent Packages...&#34;)
+        start_time = time.time()
+
+        if not decorator:
+            module_path = Path.cwd()
+            deployment_path = module_path / module_path.name / &#39;configs/deployment.json&#39;
+            with open(deployment_path, &#39;r&#39;) as f:
+                deployment = json.load(f)
+            module = deployment[0][&#39;module&#39;]
+            modules = [module]
+            if subdeployments:
+                deployment = await setup_module_deployment(module[&#39;module_type&#39;], deployment_path)
+                for module_type in [&#39;agent&#39;, &#39;kb&#39;, &#39;tool&#39;, &#39;environment&#39;]:
+                    subdeployment = module_type + &#39;_deployments&#39;
+                    if hasattr(deployment, subdeployment) and getattr(deployment, subdeployment):
+                        for submodule in getattr(deployment, subdeployment):
+                            modules.append(submodule.module)
+        else:
+            path = Path.cwd() / AGENT_DIR
+            modules = [item.name for item in path.iterdir() if item.is_dir()]
+            for module in modules:
+                git_add_commit(module)
+                module = {
+                    &#34;name&#34;: module,
+                    &#34;description&#34;: module,
+                    &#34;parameters&#34;: &#34;None&#34;,
+                    &#34;module_type&#34;: &#34;agent&#34;,
+                    &#34;module_url&#34;: &#34;None&#34;,
+                    &#34;module_version&#34;: &#34;v0.1&#34;,
+                    &#34;module_entrypoint&#34;: &#34;run.py&#34;,
+                    &#34;execution_type&#34;: &#34;package&#34;
+                }
+        for module in modules:
+            if &#34;module_url&#34; in module and module[&#39;module_url&#39;] is not &#34;None&#34;:
+                module_url = module[&#39;module_url&#39;]
+            # For decorator=False, only the main module should not have a module_url
+            else:
+                # If register is a string, use it as the URL
+                if isinstance(register, str):
+                    module_url = register
+                    logger.info(f&#34;Using provided URL for {module[&#39;module_type&#39;]} {module[&#39;name&#39;]}: {module_url}&#34;)
+                # Otherwise, publish to IPFS
+                else:
+                    _, response = await publish_ipfs_package(module[&#39;name&#39;], decorator)
+                    module_url = f&#39;ipfs://{response[&#34;ipfs_hash&#34;]}&#39;
+                    logger.info(f&#34;Storing {module[&#39;module_type&#39;]} {module[&#39;name&#39;]} on IPFS&#34;)
+                    logger.info(f&#34;IPFS Hash: {response[&#39;ipfs_hash&#39;]}. You can download it from http://provider.akash.pro:30584/ipfs/{response[&#39;ipfs_hash&#39;]}&#34;)
+
+            if register:
+                # Register module with hub
+                async with self.hub:
+                    _, _, user_id = await self.hub.signin(self.hub_username, os.getenv(&#34;HUB_PASSWORD&#34;))
+                    module_config = {
+                        &#34;id&#34;: f&#34;{module[&#39;module_type&#39;]}:{module[&#39;name&#39;]}&#34;,
+                        &#34;name&#34;: module[&#39;name&#39;],
+                        &#34;description&#34;: module[&#39;description&#39;],
+                        &#34;parameters&#34;: module[&#39;parameters&#39;],
+                        &#34;author&#34;: self.hub.user_id,
+                        &#34;module_url&#34;: module_url,
+                        &#34;module_type&#34;: module[&#39;module_type&#39;],
+                        &#34;module_version&#34;: module[&#39;module_version&#39;],
+                        &#34;module_entrypoint&#34;: module[&#39;module_entrypoint&#39;],
+                        &#34;execution_type&#34;: module[&#39;execution_type&#39;],
+                    }
+                    logger.info(f&#34;Registering {module[&#39;module_type&#39;]} {module[&#39;name&#39;]} on Naptha Hub {module_config}&#34;)
+                    module = await self.hub.create_or_update_module(module[&#39;module_type&#39;], module_config)
+
+        end_time = time.time()
+        total_time = end_time - start_time
+        logger.info(f&#34;Total time taken to publish {len(modules)} modules: {total_time:.2f} seconds&#34;)
+
+    def build(self):
+        asyncio.run(self.build_agents())
+
+    async def connect_publish(self):
+        await self.hub.connect()
+        await self.hub.signin(os.getenv(&#34;HUB_USERNAME&#34;), os.getenv(&#34;HUB_PASSWORD&#34;))
+        await self.publish_agents()
+        await self.hub.close()
+
+    def publish(self):
+        asyncio.run(self.connect_publish())</code></pre>
+</details>
+<div class="desc"><p>The entry point into Naptha.</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="naptha_sdk.client.naptha.Naptha.build"><code class="name flex">
+<span>def <span class="ident">build</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def build(self):
+    asyncio.run(self.build_agents())</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.naptha.Naptha.connect_publish"><code class="name flex">
+<span>async def <span class="ident">connect_publish</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def connect_publish(self):
+    await self.hub.connect()
+    await self.hub.signin(os.getenv(&#34;HUB_USERNAME&#34;), os.getenv(&#34;HUB_PASSWORD&#34;))
+    await self.publish_agents()
+    await self.hub.close()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.naptha.Naptha.create_agent"><code class="name flex">
+<span>async def <span class="ident">create_agent</span></span>(<span>self, name)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_agent(self, name):
+    async with self.hub:
+        _, _, user_id = await self.hub.signin(self.hub_username, os.getenv(&#34;HUB_PASSWORD&#34;))
+        agent_config = {
+            &#34;id&#34;: f&#34;agent:{name}&#34;,
+            &#34;name&#34;: name,
+            &#34;description&#34;: name,
+            &#34;author&#34;: self.hub.user_id,
+            &#34;module_url&#34;: &#34;None&#34;,
+            &#34;module_type&#34;: &#34;agent&#34;,
+            &#34;module_version&#34;: &#34;0.1&#34;,
+            &#34;execution_type&#34;: &#34;agent&#34;
+        }
+        logger.info(f&#34;Registering Agent {agent_config}&#34;)
+        agent = await self.hub.create_or_update_agent(agent_config)
+        if agent:
+            logger.info(f&#34;Agent {name} created successfully&#34;)
+        else:
+            logger.error(f&#34;Failed to create agent {name}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.naptha.Naptha.publish"><code class="name flex">
+<span>def <span class="ident">publish</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def publish(self):
+    asyncio.run(self.connect_publish())</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.naptha.Naptha.publish_modules"><code class="name flex">
+<span>async def <span class="ident">publish_modules</span></span>(<span>self, decorator=False, register=None, subdeployments=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def publish_modules(self, decorator = False, register = None, subdeployments = False):
+    logger.info(f&#34;Publishing Agent Packages...&#34;)
+    start_time = time.time()
+
+    if not decorator:
+        module_path = Path.cwd()
+        deployment_path = module_path / module_path.name / &#39;configs/deployment.json&#39;
+        with open(deployment_path, &#39;r&#39;) as f:
+            deployment = json.load(f)
+        module = deployment[0][&#39;module&#39;]
+        modules = [module]
+        if subdeployments:
+            deployment = await setup_module_deployment(module[&#39;module_type&#39;], deployment_path)
+            for module_type in [&#39;agent&#39;, &#39;kb&#39;, &#39;tool&#39;, &#39;environment&#39;]:
+                subdeployment = module_type + &#39;_deployments&#39;
+                if hasattr(deployment, subdeployment) and getattr(deployment, subdeployment):
+                    for submodule in getattr(deployment, subdeployment):
+                        modules.append(submodule.module)
+    else:
+        path = Path.cwd() / AGENT_DIR
+        modules = [item.name for item in path.iterdir() if item.is_dir()]
+        for module in modules:
+            git_add_commit(module)
+            module = {
+                &#34;name&#34;: module,
+                &#34;description&#34;: module,
+                &#34;parameters&#34;: &#34;None&#34;,
+                &#34;module_type&#34;: &#34;agent&#34;,
+                &#34;module_url&#34;: &#34;None&#34;,
+                &#34;module_version&#34;: &#34;v0.1&#34;,
+                &#34;module_entrypoint&#34;: &#34;run.py&#34;,
+                &#34;execution_type&#34;: &#34;package&#34;
+            }
+    for module in modules:
+        if &#34;module_url&#34; in module and module[&#39;module_url&#39;] is not &#34;None&#34;:
+            module_url = module[&#39;module_url&#39;]
+        # For decorator=False, only the main module should not have a module_url
+        else:
+            # If register is a string, use it as the URL
+            if isinstance(register, str):
+                module_url = register
+                logger.info(f&#34;Using provided URL for {module[&#39;module_type&#39;]} {module[&#39;name&#39;]}: {module_url}&#34;)
+            # Otherwise, publish to IPFS
+            else:
+                _, response = await publish_ipfs_package(module[&#39;name&#39;], decorator)
+                module_url = f&#39;ipfs://{response[&#34;ipfs_hash&#34;]}&#39;
+                logger.info(f&#34;Storing {module[&#39;module_type&#39;]} {module[&#39;name&#39;]} on IPFS&#34;)
+                logger.info(f&#34;IPFS Hash: {response[&#39;ipfs_hash&#39;]}. You can download it from http://provider.akash.pro:30584/ipfs/{response[&#39;ipfs_hash&#39;]}&#34;)
+
+        if register:
+            # Register module with hub
+            async with self.hub:
+                _, _, user_id = await self.hub.signin(self.hub_username, os.getenv(&#34;HUB_PASSWORD&#34;))
+                module_config = {
+                    &#34;id&#34;: f&#34;{module[&#39;module_type&#39;]}:{module[&#39;name&#39;]}&#34;,
+                    &#34;name&#34;: module[&#39;name&#39;],
+                    &#34;description&#34;: module[&#39;description&#39;],
+                    &#34;parameters&#34;: module[&#39;parameters&#39;],
+                    &#34;author&#34;: self.hub.user_id,
+                    &#34;module_url&#34;: module_url,
+                    &#34;module_type&#34;: module[&#39;module_type&#39;],
+                    &#34;module_version&#34;: module[&#39;module_version&#39;],
+                    &#34;module_entrypoint&#34;: module[&#39;module_entrypoint&#39;],
+                    &#34;execution_type&#34;: module[&#39;execution_type&#39;],
+                }
+                logger.info(f&#34;Registering {module[&#39;module_type&#39;]} {module[&#39;name&#39;]} on Naptha Hub {module_config}&#34;)
+                module = await self.hub.create_or_update_module(module[&#39;module_type&#39;], module_config)
+
+    end_time = time.time()
+    total_time = end_time - start_time
+    logger.info(f&#34;Total time taken to publish {len(modules)} modules: {total_time:.2f} seconds&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="naptha_sdk.client" href="index.html">naptha_sdk.client</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="naptha_sdk.client.naptha.agent" href="#naptha_sdk.client.naptha.agent">agent</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="naptha_sdk.client.naptha.Agent" href="#naptha_sdk.client.naptha.Agent">Agent</a></code></h4>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.client.naptha.Naptha" href="#naptha_sdk.client.naptha.Naptha">Naptha</a></code></h4>
+<ul class="">
+<li><code><a title="naptha_sdk.client.naptha.Naptha.build" href="#naptha_sdk.client.naptha.Naptha.build">build</a></code></li>
+<li><code><a title="naptha_sdk.client.naptha.Naptha.connect_publish" href="#naptha_sdk.client.naptha.Naptha.connect_publish">connect_publish</a></code></li>
+<li><code><a title="naptha_sdk.client.naptha.Naptha.create_agent" href="#naptha_sdk.client.naptha.Naptha.create_agent">create_agent</a></code></li>
+<li><code><a title="naptha_sdk.client.naptha.Naptha.publish" href="#naptha_sdk.client.naptha.Naptha.publish">publish</a></code></li>
+<li><code><a title="naptha_sdk.client.naptha.Naptha.publish_modules" href="#naptha_sdk.client.naptha.Naptha.publish_modules">publish_modules</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+
+</footer>
+</body>
+</html>

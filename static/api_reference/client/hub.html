@@ -1,0 +1,1315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>naptha_sdk.client.hub API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>naptha_sdk.client.hub</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="naptha_sdk.client.hub.list_nodes"><code class="name flex">
+<span>async def <span class="ident">list_nodes</span></span>(<span>node_ip: str) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_nodes(node_ip: str) -&gt; List:
+
+    hub_username = os.getenv(&#34;HUB_USERNAME&#34;)
+    hub_password = os.getenv(&#34;HUB_PASSWORD&#34;)
+    hub_url = os.getenv(&#34;HUB_URL&#34;)
+    
+    async with Hub(hub_url) as hub:
+        try:
+            _, _, _ = await hub.signin(hub_username, hub_password)
+        except Exception as auth_error:
+            raise ConnectionError(f&#34;Failed to authenticate with Hub: {str(auth_error)}&#34;)
+
+        node = await hub.list_nodes(node_ip=node_ip)
+        return node</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.user_setup_flow"><code class="name flex">
+<span>async def <span class="ident">user_setup_flow</span></span>(<span>hub_url, public_key)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def user_setup_flow(hub_url, public_key):
+    async with Hub(hub_url, public_key) as hub:
+        username, password = os.getenv(&#34;HUB_USERNAME&#34;), os.getenv(&#34;HUB_PASSWORD&#34;)
+        username_exists, password_exists = len(username) &gt; 1, len(password) &gt; 1
+        public_key = get_public_key(os.getenv(&#34;PRIVATE_KEY&#34;)) if os.getenv(&#34;PRIVATE_KEY&#34;) else None
+        logger.info(f&#34;Checking if user exists... User: {username}&#34;)
+        user = await hub.get_user_by_username(username)
+        user_public_key = await hub.get_user_by_public_key(public_key)
+        existing_public_key_user = user_public_key is not None and user_public_key.get(&#39;username&#39;) != username
+
+        match user, username_exists, password_exists, existing_public_key_user:
+            case _, True, _, True:
+                # Public key exists and doesn&#39;t match the provided username and password
+                raise Exception(f&#34;Using user credentials in .env. User with public key {public_key} already exists but doesn&#39;t match the provided username and password. Please use a different private key (or set blank in the .env file to randomly generate with launch.sh).&#34;)
+
+            case _, False, False, True:
+                # Public key exists and no username/password provided
+                raise Exception(f&#34;Using private key in .env. User with public key {public_key} already exists. Cannot create new user. Please use a different private key (or set blank in the .env file to randomly generate with launch.sh).&#34;)
+
+            case None, False, _, False:
+                # User doesn&#39;t exist and credentials are missing
+                logger.info(&#34;No credentials provided in .env.&#34;)
+                create_new = input(&#34;Would you like to create a new user? (yes/no): &#34;).lower()
+                if create_new != &#39;yes&#39;:
+                    raise Exception(&#34;User does not exist and new user creation was declined.&#34;)
+                logger.info(&#34;Creating new user...&#34;)
+                while True:
+                    username = input(&#34;Enter username: &#34;)
+                    existing_user = await hub.get_user_by_username(username)
+                    if existing_user:
+                        print(f&#34;Username &#39;{username}&#39; already exists. Please choose a different username.&#34;)
+                        continue
+                    password = input(&#34;Enter password: &#34;)
+                    public_key, private_key_path = generate_keypair(f&#34;{username}.pem&#34;)
+                    print(f&#34;Signing up user: {username} with public key: {public_key}&#34;)
+                    success, token, user_id = await hub.signup(username, password, public_key)
+                    if success:
+                        add_credentials_to_env(username, password, private_key_path)
+                        logger.info(&#34;Sign up successful!&#34;)
+                        return token, user_id
+                    else:
+                        logger.error(&#34;Sign up failed. Please try again.&#34;)
+
+            case None, True, True, False:
+                logger.info(&#34;User doesn&#39;t exist but some credentials are provided in .env. Using them to create new user.&#34;)
+                private_key_path = None
+                if not public_key:
+                    logger.info(&#34;No public key provided. Generating new keypair...&#34;)
+                    public_key, private_key_path = generate_keypair(f&#34;{username}.pem&#34;)
+
+                print(f&#34;Signing up user: {username} with public key: {public_key}&#34;)
+                success, token, user_id = await hub.signup(username, password, public_key)
+                if success:
+                    if private_key_path:
+                        add_credentials_to_env(username, password, private_key_path)
+                    logger.info(&#34;Sign up successful!&#34;)
+                    return token, user_id
+                else:
+                    logger.error(&#34;Sign up failed.&#34;)
+                    raise Exception(&#34;Sign up failed.&#34;)
+
+            case dict(), True, True, False:
+                # User exists, attempt to sign in
+                logger.info(&#34;Using user credentials in .env. User exists. Attempting to sign in...&#34;)
+                if os.getenv(&#34;PRIVATE_KEY&#34;) and is_hex(os.getenv(&#34;PRIVATE_KEY&#34;)):
+                    write_private_key_to_file(os.getenv(&#34;PRIVATE_KEY&#34;), username)
+
+                success, token, user_id = await hub.signin(username, password)
+                if success:
+                    logger.info(&#34;Sign in successful!&#34;)
+                    return token, user_id
+                else:
+                    logger.error(&#34;Sign in failed. Please check your credentials in the .env file.&#34;)
+                    raise Exception(&#34;Sign in failed. Please check your credentials in the .env file.&#34;)
+
+            case _:
+                logger.error(&#34;Unexpected case encountered in user setup flow.&#34;)
+                raise Exception(&#34;Unexpected error in user setup. Please check your configuration and try again.&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="naptha_sdk.client.hub.Hub"><code class="flex name class">
+<span>class <span class="ident">Hub</span></span>
+<span>(</span><span>hub_url, public_key=None, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Hub:
+    &#34;&#34;&#34;The Hub class is the entry point into Naptha AI Hub.&#34;&#34;&#34;
+
+    def __init__(self, hub_url, public_key=None, *args, **kwargs):
+        self.hub_url = hub_url
+        self.public_key = public_key
+        self.ns = &#34;naptha&#34;
+        self.db = &#34;naptha&#34;
+        self.surrealdb = Surreal(hub_url)
+        self.is_authenticated = False
+        self.user_id = None
+        self.token = None
+        
+        logger.info(f&#34;Hub URL: {hub_url}&#34;)
+
+    async def connect(self):
+        &#34;&#34;&#34;Connect to the database and authenticate&#34;&#34;&#34;
+        if not self.is_authenticated:
+            try:
+                await self.surrealdb.connect()
+                await self.surrealdb.use(namespace=self.ns, database=self.db)
+            except Exception as e:
+                logger.error(f&#34;Connection failed: {e}&#34;)
+                raise
+
+    def _decode_token(self, token: str) -&gt; str:
+        return jwt.decode(token, options={&#34;verify_signature&#34;: False})[&#34;ID&#34;]
+
+    async def signin(self, username: str, password: str) -&gt; Tuple[bool, Optional[str], Optional[str]]:
+        logger.info(f&#34;Attempting authentication for user: {username}&#34;)
+        
+        try:
+            user = await self.surrealdb.signin({
+                &#34;NS&#34;: self.ns,
+                &#34;DB&#34;: self.db,
+                &#34;AC&#34;: &#34;user&#34;,
+                &#34;username&#34;: username,
+                &#34;password&#34;: password,
+            })
+            
+            self.user_id = self._decode_token(user)
+            local_public_key = self.public_key or get_public_key(os.getenv(&#34;PRIVATE_KEY&#34;))
+            hub_public_key = self.user_id.split(&#34;:&#34;)[1]
+            
+            if local_public_key != hub_public_key:
+                logger.error(&#34;Public key mismatch&#34;, extra={
+                    &#34;local_key&#34;: local_public_key,
+                    &#34;hub_key&#34;: hub_public_key
+                })
+                raise Exception(
+                    &#34;Public key mismatch. Please verify your private key in .env file. &#34;
+                    f&#34;Local key: {local_public_key}, Hub key: {hub_public_key}&#34;
+                )
+            
+            self.token = user
+            self.is_authenticated = True
+            
+            logger.info(f&#34;Successfully authenticated user: {username}&#34;)
+            return True, user, self.user_id
+            
+        except Exception as e:
+            raise Exception(f&#34;Authentication failed: {str(e)}. Please ensure you have set HUB_URL, HUB_USERNAME, and HUB_PASSWORD in the .env file, and that you have run `naptha signup` for this user.&#34;)
+    
+    async def signup(self, username: str, password: str, public_key: str) -&gt; Tuple[bool, Optional[str], Optional[str]]:
+        user = await self.surrealdb.signup({
+            &#34;NS&#34;: self.ns,
+            &#34;DB&#34;: self.db,
+            &#34;AC&#34;: &#34;user&#34;,
+            &#34;name&#34;: username,
+            &#34;username&#34;: username,
+            &#34;password&#34;: password,
+            &#34;public_key&#34;: public_key,
+        })
+        if not user:
+            return False, None, None
+        self.user_id = self._decode_token(user)
+        return True, user, self.user_id
+
+
+    async def get_user(self, user_id: str) -&gt; Optional[Dict]:
+        return await self.surrealdb.select(user_id)
+
+    async def get_user_by_username(self, username: str) -&gt; Optional[Dict]:
+        result = await self.surrealdb.query(
+            &#34;SELECT * FROM user WHERE username = $username LIMIT 1&#34;,
+            {&#34;username&#34;: username}
+        )
+        
+        if result and result[0][&#34;result&#34;]:
+            return result[0][&#34;result&#34;][0]
+        
+        return None
+
+    async def get_user_by_public_key(self, public_key: str) -&gt; Optional[Dict]:
+        result = await self.surrealdb.query(
+            &#34;SELECT * FROM user WHERE public_key = $public_key LIMIT 1&#34;,
+            {&#34;public_key&#34;: public_key}
+        )
+
+        if result and result[0][&#34;result&#34;]:
+            return result[0][&#34;result&#34;][0]
+        return None
+
+    async def get_credits(self) -&gt; List:
+        user = await self.get_user(self.user_id)
+        return user[&#39;credits&#39;]
+
+    async def get_node(self, node_id: str) -&gt; Optional[Dict]:
+        return await self.surrealdb.select(node_id)
+
+    async def list_servers(self) -&gt; List:
+        servers = await self.surrealdb.query(&#34;SELECT * FROM server;&#34;)
+        return servers[0][&#39;result&#39;]
+
+    async def list_nodes(self, node_ip=None) -&gt; List:
+        if not node_ip:
+            nodes = await self.surrealdb.query(&#34;SELECT * FROM node;&#34;)
+            return nodes[0][&#39;result&#39;]
+        else:
+            nodes = await self.surrealdb.query(&#34;SELECT * FROM node WHERE ip=$node_ip;&#34;, {&#34;node_ip&#34;: node_ip})
+            node = nodes[0][&#39;result&#39;][0]
+            server_ids = node[&#39;servers&#39;]
+            servers = []
+            for server_id in server_ids:
+                server = await self.surrealdb.select(server_id)
+                servers.append(server)
+            node[&#39;servers&#39;] = servers
+
+            alt_ports = [
+                server[&#39;port&#39;] 
+                for server in servers
+                if server[&#39;server_type&#39;] in [&#39;ws&#39;, &#39;grpc&#39;]
+            ]
+            node[&#39;ports&#39;] = alt_ports
+            return node
+
+    async def list_agents(self, agent_name=None) -&gt; List:
+        if not agent_name:
+            agents = await self.surrealdb.query(&#34;SELECT * FROM agent;&#34;)
+            return agents[0][&#39;result&#39;]
+        else:
+            agent = await self.surrealdb.query(&#34;SELECT * FROM agent WHERE id=$agent_name;&#34;, {&#34;agent_name&#34;: agent_name})
+            return agent[0][&#39;result&#39;]
+
+    async def list_tools(self, tool_name=None) -&gt; List:
+        if not tool_name:
+            tools = await self.surrealdb.query(&#34;SELECT * FROM tool;&#34;)
+            return tools[0][&#39;result&#39;]
+        else:
+            tool = await self.surrealdb.query(&#34;SELECT * FROM tool WHERE name=$tool_name;&#34;, {&#34;tool_name&#34;: tool_name})
+            return tool[0][&#39;result&#39;]
+
+    async def list_orchestrators(self, orchestrator_name=None) -&gt; List:
+        if not orchestrator_name:
+            orchestrators = await self.surrealdb.query(&#34;SELECT * FROM orchestrator;&#34;)
+            return orchestrators[0][&#39;result&#39;]
+        else:
+            orchestrator = await self.surrealdb.query(&#34;SELECT * FROM orchestrator WHERE id=$orchestrator_name;&#34;, {&#34;orchestrator_name&#34;: orchestrator_name})
+            return orchestrator[0][&#39;result&#39;]
+
+    async def list_environments(self, environment_name=None) -&gt; List:
+        if not environment_name:
+            environments = await self.surrealdb.query(&#34;SELECT * FROM environment;&#34;)
+            return environments[0][&#39;result&#39;]
+        else:
+            environment = await self.surrealdb.query(&#34;SELECT * FROM environment WHERE id=$environment_name;&#34;, {&#34;environment_name&#34;: environment_name})
+            return environment[0][&#39;result&#39;]
+
+    async def list_personas(self, persona_name=None) -&gt; List:
+        if not persona_name:
+            personas = await self.surrealdb.query(&#34;SELECT * FROM persona;&#34;)
+            return personas[0][&#39;result&#39;]
+        else:
+            if not &#34;persona:&#34; in persona_name:
+                persona_name = f&#34;persona:{persona_name}&#34;
+            persona = await self.surrealdb.query(&#34;SELECT * FROM persona WHERE id=$persona_name;&#34;, {&#34;persona_name&#34;: persona_name})
+            return persona[0][&#39;result&#39;]
+    
+    async def list_memories(self, memory_name=None) -&gt; List:
+        if not memory_name:
+            memories = await self.surrealdb.query(&#34;SELECT * FROM memory;&#34;)
+            return memories[0][&#39;result&#39;]
+        else:
+            memory = await self.surrealdb.query(&#34;SELECT * FROM memory WHERE id=$memory_name;&#34;, {&#34;memory_name&#34;: memory_name})
+            return memory[0][&#39;result&#39;]
+
+    async def list_kbs(self, kb_name=None) -&gt; List:
+        if not kb_name:
+            kbs = await self.surrealdb.query(&#34;SELECT * FROM kb;&#34;)
+            return kbs[0][&#39;result&#39;]
+        else:
+            kb = await self.surrealdb.query(&#34;SELECT * FROM kb WHERE name=$kb_name;&#34;, {&#34;kb_name&#34;: kb_name})
+            return kb[0][&#39;result&#39;]
+
+    async def list_modules(self, module_type, module_name) -&gt; List:
+        if module_type == &#39;agent&#39;:
+            modules = await self.surrealdb.query(&#34;SELECT * FROM agent WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+        elif module_type == &#39;tool&#39;:
+            modules = await self.surrealdb.query(&#34;SELECT * FROM tool WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+        elif module_type == &#39;orchestrator&#39;:
+            modules = await self.surrealdb.query(&#34;SELECT * FROM orchestrator WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+        elif module_type == &#39;environment&#39;:
+            modules = await self.surrealdb.query(&#34;SELECT * FROM environment WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+        elif module_type == &#39;persona&#39;:
+            modules = await self.surrealdb.query(&#34;SELECT * FROM persona WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+        elif module_type == &#39;memory&#39;:
+            modules = await self.surrealdb.query(&#34;SELECT * FROM memory WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+        elif module_type == &#39;kb&#39;:
+            modules = await self.surrealdb.query(&#34;SELECT * FROM kb WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+        return modules[0][&#39;result&#39;]
+
+    async def list_kb_content(self, kb_name: str) -&gt; List:
+        kb_content = await self.surrealdb.query(&#34;SELECT * FROM kb_content WHERE kb_id=$kb_id;&#34;, {&#34;kb_id&#34;: f&#34;kb:{kb_name}&#34;})
+        return kb_content[0][&#39;result&#39;]
+
+    async def delete_agent(self, agent_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+        if &#34;:&#34; not in agent_id:
+            agent_id = f&#34;agent:{agent_id}&#34;.strip()
+        print(f&#34;Deleting agent: {agent_id}&#34;)
+        success = await self.surrealdb.delete(agent_id)
+        if success:
+            print(&#34;Deleted agent&#34;)
+        else:
+            print(&#34;Failed to delete agent&#34;)
+        return success
+
+    async def delete_tool(self, tool_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+        if &#34;:&#34; not in tool_id:
+            tool_id = f&#34;tool:{tool_id}&#34;.strip()
+        print(f&#34;Deleting tool: {tool_id}&#34;)
+        success = await self.surrealdb.delete(tool_id)
+        if success:
+            print(&#34;Deleted tool&#34;)
+        else:
+            print(&#34;Failed to delete tool&#34;)
+        return success
+
+    async def delete_orchestrator(self, orchestrator_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+        if &#34;:&#34; not in orchestrator_id:
+            orchestrator_id = f&#34;orchestrator:{orchestrator_id}&#34;.strip()
+        print(f&#34;Deleting orchestrator: {orchestrator_id}&#34;)
+        success = await self.surrealdb.delete(orchestrator_id)
+        if success:
+            print(&#34;Deleted orchestrator&#34;)
+        else:
+            print(&#34;Failed to delete orchestrator&#34;)
+        return success
+
+    async def delete_environment(self, environment_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+        if &#34;:&#34; not in environment_id:
+            environment_id = f&#34;environment:{environment_id}&#34;.strip()
+        print(f&#34;Deleting environment: {environment_id}&#34;)
+        success = await self.surrealdb.delete(environment_id)
+        if success:
+            print(&#34;Deleted environment&#34;)
+        else:
+            print(&#34;Failed to delete environment&#34;)
+        return success
+
+    async def delete_persona(self, persona_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+        if &#34;:&#34; not in persona_id:
+            persona_id = f&#34;persona:{persona_id}&#34;.strip()
+        print(f&#34;Deleting persona: {persona_id}&#34;)
+        success = await self.surrealdb.delete(persona_id)
+        if success:
+            print(&#34;Deleted persona&#34;)
+        else:
+            print(&#34;Failed to delete persona&#34;)
+        return success
+    
+    async def delete_memory(self, memory_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+        if &#34;:&#34; not in memory_id:
+            memory_id = f&#34;memory:{memory_id}&#34;.strip()
+        print(f&#34;Deleting memory: {memory_id}&#34;)
+        success = await self.surrealdb.delete(memory_id)
+        if success:
+            print(&#34;Deleted memory&#34;)
+        else:
+            print(&#34;Failed to delete memory&#34;)
+        return success
+
+    async def delete_kb(self, kb_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+        if &#34;:&#34; not in kb_id:
+            kb_id = f&#34;kb:{kb_id}&#34;.strip()
+        print(f&#34;Deleting knowledge base: {kb_id}&#34;)
+        success = await self.surrealdb.delete(kb_id)
+        if success:
+            print(&#34;Deleted knowledge base&#34;)
+        else:
+            print(&#34;Failed to delete knowledge base&#34;)
+        return success
+
+    async def create_agent(self, agent_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+        if not agent_config.get(&#39;id&#39;):
+            return await self.surrealdb.create(&#34;agent&#34;, agent_config)
+        else:
+            return await self.surrealdb.create(agent_config.pop(&#39;id&#39;), agent_config)
+
+    async def create_tool(self, tool_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+        if not tool_config.get(&#39;id&#39;):
+            return await self.surrealdb.create(&#34;tool&#34;, tool_config)
+        else:
+            return await self.surrealdb.create(tool_config.pop(&#39;id&#39;), tool_config)
+
+    async def create_orchestrator(self, orchestrator_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+        if not orchestrator_config.get(&#39;id&#39;):
+            return await self.surrealdb.create(&#34;orchestrator&#34;, orchestrator_config)
+        else:
+            return await self.surrealdb.create(orchestrator_config.pop(&#39;id&#39;), orchestrator_config)
+
+    async def create_environment(self, environment_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+        if not environment_config.get(&#39;id&#39;):
+            return await self.surrealdb.create(&#34;environment&#34;, environment_config)
+        else:
+            return await self.surrealdb.create(environment_config.pop(&#39;id&#39;), environment_config)
+
+    async def create_persona(self, persona_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+        if not persona_config.get(&#39;id&#39;):
+            return await self.surrealdb.create(&#34;persona&#34;, persona_config)
+        else:
+            return await self.surrealdb.create(persona_config.pop(&#39;id&#39;), persona_config)
+        
+    async def create_memory(self, memory_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+        if not memory_config.get(&#39;id&#39;):
+            return await self.surrealdb.create(&#34;memory&#34;, memory_config)
+        else:
+            return await self.surrealdb.create(memory_config.pop(&#39;id&#39;), memory_config)
+
+    async def create_kb(self, kb_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+        if not kb_config.get(&#39;id&#39;):
+            return await self.surrealdb.create(&#34;kb&#34;, kb_config)
+        else:
+            return await self.surrealdb.create(kb_config.pop(&#39;id&#39;), kb_config)
+
+    async def update_agent(self, agent_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+        return await self.surrealdb.update(&#34;agent&#34;, agent_config)
+
+    async def create_or_update_module(self, module_type, module_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+        list_modules = await self.list_modules(module_type, module_config.get(&#39;id&#39;))
+        if not list_modules:
+            logger.info(f&#34;Module does not exist. Registering new module: {module_config.get(&#39;id&#39;)}&#34;)
+            return await self.surrealdb.create(module_type, module_config)
+        else:
+            logger.info(f&#34;Module already exists. Updating existing module: {module_config.get(&#39;id&#39;)}&#34;)
+            return await self.surrealdb.update(module_config.pop(&#39;id&#39;), module_config)
+
+    async def close(self):
+        &#34;&#34;&#34;Close the database connection&#34;&#34;&#34;
+        try:
+            await self.surrealdb.close()
+        except Exception as e:
+            logger.error(f&#34;Error closing database connection: {e}&#34;)
+        finally:
+            self.is_authenticated = False
+            self.user_id = None
+            self.token = None
+
+    async def __aenter__(self):
+        &#34;&#34;&#34;Async enter method for context manager&#34;&#34;&#34;
+        await self.connect()
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        &#34;&#34;&#34;Async exit method for context manager&#34;&#34;&#34;
+        await self.close()</code></pre>
+</details>
+<div class="desc"><p>The Hub class is the entry point into Naptha AI Hub.</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="naptha_sdk.client.hub.Hub.close"><code class="name flex">
+<span>async def <span class="ident">close</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def close(self):
+    &#34;&#34;&#34;Close the database connection&#34;&#34;&#34;
+    try:
+        await self.surrealdb.close()
+    except Exception as e:
+        logger.error(f&#34;Error closing database connection: {e}&#34;)
+    finally:
+        self.is_authenticated = False
+        self.user_id = None
+        self.token = None</code></pre>
+</details>
+<div class="desc"><p>Close the database connection</p></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.connect"><code class="name flex">
+<span>async def <span class="ident">connect</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def connect(self):
+    &#34;&#34;&#34;Connect to the database and authenticate&#34;&#34;&#34;
+    if not self.is_authenticated:
+        try:
+            await self.surrealdb.connect()
+            await self.surrealdb.use(namespace=self.ns, database=self.db)
+        except Exception as e:
+            logger.error(f&#34;Connection failed: {e}&#34;)
+            raise</code></pre>
+</details>
+<div class="desc"><p>Connect to the database and authenticate</p></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.create_agent"><code class="name flex">
+<span>async def <span class="ident">create_agent</span></span>(<span>self, agent_config: Dict) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_agent(self, agent_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+    if not agent_config.get(&#39;id&#39;):
+        return await self.surrealdb.create(&#34;agent&#34;, agent_config)
+    else:
+        return await self.surrealdb.create(agent_config.pop(&#39;id&#39;), agent_config)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.create_environment"><code class="name flex">
+<span>async def <span class="ident">create_environment</span></span>(<span>self, environment_config: Dict) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_environment(self, environment_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+    if not environment_config.get(&#39;id&#39;):
+        return await self.surrealdb.create(&#34;environment&#34;, environment_config)
+    else:
+        return await self.surrealdb.create(environment_config.pop(&#39;id&#39;), environment_config)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.create_kb"><code class="name flex">
+<span>async def <span class="ident">create_kb</span></span>(<span>self, kb_config: Dict) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_kb(self, kb_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+    if not kb_config.get(&#39;id&#39;):
+        return await self.surrealdb.create(&#34;kb&#34;, kb_config)
+    else:
+        return await self.surrealdb.create(kb_config.pop(&#39;id&#39;), kb_config)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.create_memory"><code class="name flex">
+<span>async def <span class="ident">create_memory</span></span>(<span>self, memory_config: Dict) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_memory(self, memory_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+    if not memory_config.get(&#39;id&#39;):
+        return await self.surrealdb.create(&#34;memory&#34;, memory_config)
+    else:
+        return await self.surrealdb.create(memory_config.pop(&#39;id&#39;), memory_config)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.create_or_update_module"><code class="name flex">
+<span>async def <span class="ident">create_or_update_module</span></span>(<span>self, module_type, module_config: Dict) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_or_update_module(self, module_type, module_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+    list_modules = await self.list_modules(module_type, module_config.get(&#39;id&#39;))
+    if not list_modules:
+        logger.info(f&#34;Module does not exist. Registering new module: {module_config.get(&#39;id&#39;)}&#34;)
+        return await self.surrealdb.create(module_type, module_config)
+    else:
+        logger.info(f&#34;Module already exists. Updating existing module: {module_config.get(&#39;id&#39;)}&#34;)
+        return await self.surrealdb.update(module_config.pop(&#39;id&#39;), module_config)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.create_orchestrator"><code class="name flex">
+<span>async def <span class="ident">create_orchestrator</span></span>(<span>self, orchestrator_config: Dict) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_orchestrator(self, orchestrator_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+    if not orchestrator_config.get(&#39;id&#39;):
+        return await self.surrealdb.create(&#34;orchestrator&#34;, orchestrator_config)
+    else:
+        return await self.surrealdb.create(orchestrator_config.pop(&#39;id&#39;), orchestrator_config)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.create_persona"><code class="name flex">
+<span>async def <span class="ident">create_persona</span></span>(<span>self, persona_config: Dict) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_persona(self, persona_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+    if not persona_config.get(&#39;id&#39;):
+        return await self.surrealdb.create(&#34;persona&#34;, persona_config)
+    else:
+        return await self.surrealdb.create(persona_config.pop(&#39;id&#39;), persona_config)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.create_tool"><code class="name flex">
+<span>async def <span class="ident">create_tool</span></span>(<span>self, tool_config: Dict) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_tool(self, tool_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+    if not tool_config.get(&#39;id&#39;):
+        return await self.surrealdb.create(&#34;tool&#34;, tool_config)
+    else:
+        return await self.surrealdb.create(tool_config.pop(&#39;id&#39;), tool_config)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.delete_agent"><code class="name flex">
+<span>async def <span class="ident">delete_agent</span></span>(<span>self, agent_id: str) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_agent(self, agent_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+    if &#34;:&#34; not in agent_id:
+        agent_id = f&#34;agent:{agent_id}&#34;.strip()
+    print(f&#34;Deleting agent: {agent_id}&#34;)
+    success = await self.surrealdb.delete(agent_id)
+    if success:
+        print(&#34;Deleted agent&#34;)
+    else:
+        print(&#34;Failed to delete agent&#34;)
+    return success</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.delete_environment"><code class="name flex">
+<span>async def <span class="ident">delete_environment</span></span>(<span>self, environment_id: str) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_environment(self, environment_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+    if &#34;:&#34; not in environment_id:
+        environment_id = f&#34;environment:{environment_id}&#34;.strip()
+    print(f&#34;Deleting environment: {environment_id}&#34;)
+    success = await self.surrealdb.delete(environment_id)
+    if success:
+        print(&#34;Deleted environment&#34;)
+    else:
+        print(&#34;Failed to delete environment&#34;)
+    return success</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.delete_kb"><code class="name flex">
+<span>async def <span class="ident">delete_kb</span></span>(<span>self, kb_id: str) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_kb(self, kb_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+    if &#34;:&#34; not in kb_id:
+        kb_id = f&#34;kb:{kb_id}&#34;.strip()
+    print(f&#34;Deleting knowledge base: {kb_id}&#34;)
+    success = await self.surrealdb.delete(kb_id)
+    if success:
+        print(&#34;Deleted knowledge base&#34;)
+    else:
+        print(&#34;Failed to delete knowledge base&#34;)
+    return success</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.delete_memory"><code class="name flex">
+<span>async def <span class="ident">delete_memory</span></span>(<span>self, memory_id: str) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_memory(self, memory_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+    if &#34;:&#34; not in memory_id:
+        memory_id = f&#34;memory:{memory_id}&#34;.strip()
+    print(f&#34;Deleting memory: {memory_id}&#34;)
+    success = await self.surrealdb.delete(memory_id)
+    if success:
+        print(&#34;Deleted memory&#34;)
+    else:
+        print(&#34;Failed to delete memory&#34;)
+    return success</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.delete_orchestrator"><code class="name flex">
+<span>async def <span class="ident">delete_orchestrator</span></span>(<span>self, orchestrator_id: str) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_orchestrator(self, orchestrator_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+    if &#34;:&#34; not in orchestrator_id:
+        orchestrator_id = f&#34;orchestrator:{orchestrator_id}&#34;.strip()
+    print(f&#34;Deleting orchestrator: {orchestrator_id}&#34;)
+    success = await self.surrealdb.delete(orchestrator_id)
+    if success:
+        print(&#34;Deleted orchestrator&#34;)
+    else:
+        print(&#34;Failed to delete orchestrator&#34;)
+    return success</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.delete_persona"><code class="name flex">
+<span>async def <span class="ident">delete_persona</span></span>(<span>self, persona_id: str) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_persona(self, persona_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+    if &#34;:&#34; not in persona_id:
+        persona_id = f&#34;persona:{persona_id}&#34;.strip()
+    print(f&#34;Deleting persona: {persona_id}&#34;)
+    success = await self.surrealdb.delete(persona_id)
+    if success:
+        print(&#34;Deleted persona&#34;)
+    else:
+        print(&#34;Failed to delete persona&#34;)
+    return success</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.delete_tool"><code class="name flex">
+<span>async def <span class="ident">delete_tool</span></span>(<span>self, tool_id: str) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_tool(self, tool_id: str) -&gt; Tuple[bool, Optional[Dict]]:
+    if &#34;:&#34; not in tool_id:
+        tool_id = f&#34;tool:{tool_id}&#34;.strip()
+    print(f&#34;Deleting tool: {tool_id}&#34;)
+    success = await self.surrealdb.delete(tool_id)
+    if success:
+        print(&#34;Deleted tool&#34;)
+    else:
+        print(&#34;Failed to delete tool&#34;)
+    return success</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.get_credits"><code class="name flex">
+<span>async def <span class="ident">get_credits</span></span>(<span>self) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_credits(self) -&gt; List:
+    user = await self.get_user(self.user_id)
+    return user[&#39;credits&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.get_node"><code class="name flex">
+<span>async def <span class="ident">get_node</span></span>(<span>self, node_id: str) ‑> Dict | None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_node(self, node_id: str) -&gt; Optional[Dict]:
+    return await self.surrealdb.select(node_id)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.get_user"><code class="name flex">
+<span>async def <span class="ident">get_user</span></span>(<span>self, user_id: str) ‑> Dict | None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_user(self, user_id: str) -&gt; Optional[Dict]:
+    return await self.surrealdb.select(user_id)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.get_user_by_public_key"><code class="name flex">
+<span>async def <span class="ident">get_user_by_public_key</span></span>(<span>self, public_key: str) ‑> Dict | None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_user_by_public_key(self, public_key: str) -&gt; Optional[Dict]:
+    result = await self.surrealdb.query(
+        &#34;SELECT * FROM user WHERE public_key = $public_key LIMIT 1&#34;,
+        {&#34;public_key&#34;: public_key}
+    )
+
+    if result and result[0][&#34;result&#34;]:
+        return result[0][&#34;result&#34;][0]
+    return None</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.get_user_by_username"><code class="name flex">
+<span>async def <span class="ident">get_user_by_username</span></span>(<span>self, username: str) ‑> Dict | None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_user_by_username(self, username: str) -&gt; Optional[Dict]:
+    result = await self.surrealdb.query(
+        &#34;SELECT * FROM user WHERE username = $username LIMIT 1&#34;,
+        {&#34;username&#34;: username}
+    )
+    
+    if result and result[0][&#34;result&#34;]:
+        return result[0][&#34;result&#34;][0]
+    
+    return None</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_agents"><code class="name flex">
+<span>async def <span class="ident">list_agents</span></span>(<span>self, agent_name=None) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_agents(self, agent_name=None) -&gt; List:
+    if not agent_name:
+        agents = await self.surrealdb.query(&#34;SELECT * FROM agent;&#34;)
+        return agents[0][&#39;result&#39;]
+    else:
+        agent = await self.surrealdb.query(&#34;SELECT * FROM agent WHERE id=$agent_name;&#34;, {&#34;agent_name&#34;: agent_name})
+        return agent[0][&#39;result&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_environments"><code class="name flex">
+<span>async def <span class="ident">list_environments</span></span>(<span>self, environment_name=None) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_environments(self, environment_name=None) -&gt; List:
+    if not environment_name:
+        environments = await self.surrealdb.query(&#34;SELECT * FROM environment;&#34;)
+        return environments[0][&#39;result&#39;]
+    else:
+        environment = await self.surrealdb.query(&#34;SELECT * FROM environment WHERE id=$environment_name;&#34;, {&#34;environment_name&#34;: environment_name})
+        return environment[0][&#39;result&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_kb_content"><code class="name flex">
+<span>async def <span class="ident">list_kb_content</span></span>(<span>self, kb_name: str) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_kb_content(self, kb_name: str) -&gt; List:
+    kb_content = await self.surrealdb.query(&#34;SELECT * FROM kb_content WHERE kb_id=$kb_id;&#34;, {&#34;kb_id&#34;: f&#34;kb:{kb_name}&#34;})
+    return kb_content[0][&#39;result&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_kbs"><code class="name flex">
+<span>async def <span class="ident">list_kbs</span></span>(<span>self, kb_name=None) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_kbs(self, kb_name=None) -&gt; List:
+    if not kb_name:
+        kbs = await self.surrealdb.query(&#34;SELECT * FROM kb;&#34;)
+        return kbs[0][&#39;result&#39;]
+    else:
+        kb = await self.surrealdb.query(&#34;SELECT * FROM kb WHERE name=$kb_name;&#34;, {&#34;kb_name&#34;: kb_name})
+        return kb[0][&#39;result&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_memories"><code class="name flex">
+<span>async def <span class="ident">list_memories</span></span>(<span>self, memory_name=None) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_memories(self, memory_name=None) -&gt; List:
+    if not memory_name:
+        memories = await self.surrealdb.query(&#34;SELECT * FROM memory;&#34;)
+        return memories[0][&#39;result&#39;]
+    else:
+        memory = await self.surrealdb.query(&#34;SELECT * FROM memory WHERE id=$memory_name;&#34;, {&#34;memory_name&#34;: memory_name})
+        return memory[0][&#39;result&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_modules"><code class="name flex">
+<span>async def <span class="ident">list_modules</span></span>(<span>self, module_type, module_name) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_modules(self, module_type, module_name) -&gt; List:
+    if module_type == &#39;agent&#39;:
+        modules = await self.surrealdb.query(&#34;SELECT * FROM agent WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+    elif module_type == &#39;tool&#39;:
+        modules = await self.surrealdb.query(&#34;SELECT * FROM tool WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+    elif module_type == &#39;orchestrator&#39;:
+        modules = await self.surrealdb.query(&#34;SELECT * FROM orchestrator WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+    elif module_type == &#39;environment&#39;:
+        modules = await self.surrealdb.query(&#34;SELECT * FROM environment WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+    elif module_type == &#39;persona&#39;:
+        modules = await self.surrealdb.query(&#34;SELECT * FROM persona WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+    elif module_type == &#39;memory&#39;:
+        modules = await self.surrealdb.query(&#34;SELECT * FROM memory WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+    elif module_type == &#39;kb&#39;:
+        modules = await self.surrealdb.query(&#34;SELECT * FROM kb WHERE id=$module_name;&#34;, {&#34;module_name&#34;: module_name})
+    return modules[0][&#39;result&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_nodes"><code class="name flex">
+<span>async def <span class="ident">list_nodes</span></span>(<span>self, node_ip=None) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_nodes(self, node_ip=None) -&gt; List:
+    if not node_ip:
+        nodes = await self.surrealdb.query(&#34;SELECT * FROM node;&#34;)
+        return nodes[0][&#39;result&#39;]
+    else:
+        nodes = await self.surrealdb.query(&#34;SELECT * FROM node WHERE ip=$node_ip;&#34;, {&#34;node_ip&#34;: node_ip})
+        node = nodes[0][&#39;result&#39;][0]
+        server_ids = node[&#39;servers&#39;]
+        servers = []
+        for server_id in server_ids:
+            server = await self.surrealdb.select(server_id)
+            servers.append(server)
+        node[&#39;servers&#39;] = servers
+
+        alt_ports = [
+            server[&#39;port&#39;] 
+            for server in servers
+            if server[&#39;server_type&#39;] in [&#39;ws&#39;, &#39;grpc&#39;]
+        ]
+        node[&#39;ports&#39;] = alt_ports
+        return node</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_orchestrators"><code class="name flex">
+<span>async def <span class="ident">list_orchestrators</span></span>(<span>self, orchestrator_name=None) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_orchestrators(self, orchestrator_name=None) -&gt; List:
+    if not orchestrator_name:
+        orchestrators = await self.surrealdb.query(&#34;SELECT * FROM orchestrator;&#34;)
+        return orchestrators[0][&#39;result&#39;]
+    else:
+        orchestrator = await self.surrealdb.query(&#34;SELECT * FROM orchestrator WHERE id=$orchestrator_name;&#34;, {&#34;orchestrator_name&#34;: orchestrator_name})
+        return orchestrator[0][&#39;result&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_personas"><code class="name flex">
+<span>async def <span class="ident">list_personas</span></span>(<span>self, persona_name=None) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_personas(self, persona_name=None) -&gt; List:
+    if not persona_name:
+        personas = await self.surrealdb.query(&#34;SELECT * FROM persona;&#34;)
+        return personas[0][&#39;result&#39;]
+    else:
+        if not &#34;persona:&#34; in persona_name:
+            persona_name = f&#34;persona:{persona_name}&#34;
+        persona = await self.surrealdb.query(&#34;SELECT * FROM persona WHERE id=$persona_name;&#34;, {&#34;persona_name&#34;: persona_name})
+        return persona[0][&#39;result&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_servers"><code class="name flex">
+<span>async def <span class="ident">list_servers</span></span>(<span>self) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_servers(self) -&gt; List:
+    servers = await self.surrealdb.query(&#34;SELECT * FROM server;&#34;)
+    return servers[0][&#39;result&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.list_tools"><code class="name flex">
+<span>async def <span class="ident">list_tools</span></span>(<span>self, tool_name=None) ‑> List</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_tools(self, tool_name=None) -&gt; List:
+    if not tool_name:
+        tools = await self.surrealdb.query(&#34;SELECT * FROM tool;&#34;)
+        return tools[0][&#39;result&#39;]
+    else:
+        tool = await self.surrealdb.query(&#34;SELECT * FROM tool WHERE name=$tool_name;&#34;, {&#34;tool_name&#34;: tool_name})
+        return tool[0][&#39;result&#39;]</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.signin"><code class="name flex">
+<span>async def <span class="ident">signin</span></span>(<span>self, username: str, password: str) ‑> Tuple[bool, str | None, str | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def signin(self, username: str, password: str) -&gt; Tuple[bool, Optional[str], Optional[str]]:
+    logger.info(f&#34;Attempting authentication for user: {username}&#34;)
+    
+    try:
+        user = await self.surrealdb.signin({
+            &#34;NS&#34;: self.ns,
+            &#34;DB&#34;: self.db,
+            &#34;AC&#34;: &#34;user&#34;,
+            &#34;username&#34;: username,
+            &#34;password&#34;: password,
+        })
+        
+        self.user_id = self._decode_token(user)
+        local_public_key = self.public_key or get_public_key(os.getenv(&#34;PRIVATE_KEY&#34;))
+        hub_public_key = self.user_id.split(&#34;:&#34;)[1]
+        
+        if local_public_key != hub_public_key:
+            logger.error(&#34;Public key mismatch&#34;, extra={
+                &#34;local_key&#34;: local_public_key,
+                &#34;hub_key&#34;: hub_public_key
+            })
+            raise Exception(
+                &#34;Public key mismatch. Please verify your private key in .env file. &#34;
+                f&#34;Local key: {local_public_key}, Hub key: {hub_public_key}&#34;
+            )
+        
+        self.token = user
+        self.is_authenticated = True
+        
+        logger.info(f&#34;Successfully authenticated user: {username}&#34;)
+        return True, user, self.user_id
+        
+    except Exception as e:
+        raise Exception(f&#34;Authentication failed: {str(e)}. Please ensure you have set HUB_URL, HUB_USERNAME, and HUB_PASSWORD in the .env file, and that you have run `naptha signup` for this user.&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.signup"><code class="name flex">
+<span>async def <span class="ident">signup</span></span>(<span>self, username: str, password: str, public_key: str) ‑> Tuple[bool, str | None, str | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def signup(self, username: str, password: str, public_key: str) -&gt; Tuple[bool, Optional[str], Optional[str]]:
+    user = await self.surrealdb.signup({
+        &#34;NS&#34;: self.ns,
+        &#34;DB&#34;: self.db,
+        &#34;AC&#34;: &#34;user&#34;,
+        &#34;name&#34;: username,
+        &#34;username&#34;: username,
+        &#34;password&#34;: password,
+        &#34;public_key&#34;: public_key,
+    })
+    if not user:
+        return False, None, None
+    self.user_id = self._decode_token(user)
+    return True, user, self.user_id</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.client.hub.Hub.update_agent"><code class="name flex">
+<span>async def <span class="ident">update_agent</span></span>(<span>self, agent_config: Dict) ‑> Tuple[bool, Dict | None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def update_agent(self, agent_config: Dict) -&gt; Tuple[bool, Optional[Dict]]:
+    return await self.surrealdb.update(&#34;agent&#34;, agent_config)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="naptha_sdk.client" href="index.html">naptha_sdk.client</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="naptha_sdk.client.hub.list_nodes" href="#naptha_sdk.client.hub.list_nodes">list_nodes</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.user_setup_flow" href="#naptha_sdk.client.hub.user_setup_flow">user_setup_flow</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="naptha_sdk.client.hub.Hub" href="#naptha_sdk.client.hub.Hub">Hub</a></code></h4>
+<ul class="">
+<li><code><a title="naptha_sdk.client.hub.Hub.close" href="#naptha_sdk.client.hub.Hub.close">close</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.connect" href="#naptha_sdk.client.hub.Hub.connect">connect</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.create_agent" href="#naptha_sdk.client.hub.Hub.create_agent">create_agent</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.create_environment" href="#naptha_sdk.client.hub.Hub.create_environment">create_environment</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.create_kb" href="#naptha_sdk.client.hub.Hub.create_kb">create_kb</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.create_memory" href="#naptha_sdk.client.hub.Hub.create_memory">create_memory</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.create_or_update_module" href="#naptha_sdk.client.hub.Hub.create_or_update_module">create_or_update_module</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.create_orchestrator" href="#naptha_sdk.client.hub.Hub.create_orchestrator">create_orchestrator</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.create_persona" href="#naptha_sdk.client.hub.Hub.create_persona">create_persona</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.create_tool" href="#naptha_sdk.client.hub.Hub.create_tool">create_tool</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.delete_agent" href="#naptha_sdk.client.hub.Hub.delete_agent">delete_agent</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.delete_environment" href="#naptha_sdk.client.hub.Hub.delete_environment">delete_environment</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.delete_kb" href="#naptha_sdk.client.hub.Hub.delete_kb">delete_kb</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.delete_memory" href="#naptha_sdk.client.hub.Hub.delete_memory">delete_memory</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.delete_orchestrator" href="#naptha_sdk.client.hub.Hub.delete_orchestrator">delete_orchestrator</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.delete_persona" href="#naptha_sdk.client.hub.Hub.delete_persona">delete_persona</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.delete_tool" href="#naptha_sdk.client.hub.Hub.delete_tool">delete_tool</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.get_credits" href="#naptha_sdk.client.hub.Hub.get_credits">get_credits</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.get_node" href="#naptha_sdk.client.hub.Hub.get_node">get_node</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.get_user" href="#naptha_sdk.client.hub.Hub.get_user">get_user</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.get_user_by_public_key" href="#naptha_sdk.client.hub.Hub.get_user_by_public_key">get_user_by_public_key</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.get_user_by_username" href="#naptha_sdk.client.hub.Hub.get_user_by_username">get_user_by_username</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_agents" href="#naptha_sdk.client.hub.Hub.list_agents">list_agents</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_environments" href="#naptha_sdk.client.hub.Hub.list_environments">list_environments</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_kb_content" href="#naptha_sdk.client.hub.Hub.list_kb_content">list_kb_content</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_kbs" href="#naptha_sdk.client.hub.Hub.list_kbs">list_kbs</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_memories" href="#naptha_sdk.client.hub.Hub.list_memories">list_memories</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_modules" href="#naptha_sdk.client.hub.Hub.list_modules">list_modules</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_nodes" href="#naptha_sdk.client.hub.Hub.list_nodes">list_nodes</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_orchestrators" href="#naptha_sdk.client.hub.Hub.list_orchestrators">list_orchestrators</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_personas" href="#naptha_sdk.client.hub.Hub.list_personas">list_personas</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_servers" href="#naptha_sdk.client.hub.Hub.list_servers">list_servers</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.list_tools" href="#naptha_sdk.client.hub.Hub.list_tools">list_tools</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.signin" href="#naptha_sdk.client.hub.Hub.signin">signin</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.signup" href="#naptha_sdk.client.hub.Hub.signup">signup</a></code></li>
+<li><code><a title="naptha_sdk.client.hub.Hub.update_agent" href="#naptha_sdk.client.hub.Hub.update_agent">update_agent</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+
+</footer>
+</body>
+</html>

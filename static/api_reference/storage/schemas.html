@@ -1,0 +1,1439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>naptha_sdk.storage.schemas API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>naptha_sdk.storage.schemas</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="naptha_sdk.storage.schemas.BaseStorageRequest"><code class="flex name class">
+<span>class <span class="ident">BaseStorageRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BaseStorageRequest(BaseModel):
+    request_type: StorageRequestType
+    storage_type: StorageType
+    path: str
+    options: Union[Dict[str, Any], DatabaseReadOptions] = Field(default_factory=dict)
+
+    def model_dict(self):
+        model_dict = self.dict()
+        if isinstance(self.options, BaseModel):
+            options = self.options.model_dump()
+            model_dict[&#39;options&#39;] = options
+        model_dict[&#39;storage_type&#39;] = self.storage_type.value
+        model_dict[&#39;request_type&#39;] = self.request_type.value
+        return model_dict
+
+    class Config:
+        arbitrary_types_allowed = True</code></pre>
+</details>
+<div class="desc"><p>Usage docs: <a href="https://docs.pydantic.dev/2.10/concepts/models/">https://docs.pydantic.dev/2.10/concepts/models/</a></p>
+<p>A base class for creating Pydantic models.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>__class_vars__</code></strong></dt>
+<dd>The names of the class variables defined on the model.</dd>
+<dt><strong><code>__private_attributes__</code></strong></dt>
+<dd>Metadata about the private attributes of the model.</dd>
+<dt><strong><code>__signature__</code></strong></dt>
+<dd>The synthesized <code>__init__</code> [<code>Signature</code>][inspect.Signature] of the model.</dd>
+<dt><strong><code>__pydantic_complete__</code></strong></dt>
+<dd>Whether model building is completed, or if there are still undefined fields.</dd>
+<dt><strong><code>__pydantic_core_schema__</code></strong></dt>
+<dd>The core schema of the model.</dd>
+<dt><strong><code>__pydantic_custom_init__</code></strong></dt>
+<dd>Whether the model has a custom <code>__init__</code> function.</dd>
+<dt><strong><code>__pydantic_decorators__</code></strong></dt>
+<dd>Metadata containing the decorators defined on the model.
+This replaces <code>Model.__validators__</code> and <code>Model.__root_validators__</code> from Pydantic V1.</dd>
+<dt><strong><code>__pydantic_generic_metadata__</code></strong></dt>
+<dd>Metadata for generic models; contains data used for a similar purpose to
+<strong>args</strong>, <strong>origin</strong>, <strong>parameters</strong> in typing-module generics. May eventually be replaced by these.</dd>
+<dt><strong><code>__pydantic_parent_namespace__</code></strong></dt>
+<dd>Parent namespace of the model, used for automatic rebuilding of models.</dd>
+<dt><strong><code>__pydantic_post_init__</code></strong></dt>
+<dd>The name of the post-init method for the model, if defined.</dd>
+<dt><strong><code>__pydantic_root_model__</code></strong></dt>
+<dd>Whether the model is a [<code>RootModel</code>][pydantic.root_model.RootModel].</dd>
+<dt><strong><code>__pydantic_serializer__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaSerializer</code> used to dump instances of the model.</dd>
+<dt><strong><code>__pydantic_validator__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaValidator</code> used to validate instances of the model.</dd>
+<dt><strong><code>__pydantic_fields__</code></strong></dt>
+<dd>A dictionary of field names and their corresponding [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_computed_fields__</code></strong></dt>
+<dd>A dictionary of computed field names and their corresponding [<code>ComputedFieldInfo</code>][pydantic.fields.ComputedFieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_extra__</code></strong></dt>
+<dd>A dictionary containing extra values, if [<code>extra</code>][pydantic.config.ConfigDict.extra]
+is set to <code>'allow'</code>.</dd>
+<dt><strong><code>__pydantic_fields_set__</code></strong></dt>
+<dd>The names of fields explicitly set during instantiation.</dd>
+<dt><strong><code>__pydantic_private__</code></strong></dt>
+<dd>Values of private attributes set on the model instance.</dd>
+</dl>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="naptha_sdk.storage.schemas.CreateStorageRequest" href="#naptha_sdk.storage.schemas.CreateStorageRequest">CreateStorageRequest</a></li>
+<li><a title="naptha_sdk.storage.schemas.DeleteStorageRequest" href="#naptha_sdk.storage.schemas.DeleteStorageRequest">DeleteStorageRequest</a></li>
+<li><a title="naptha_sdk.storage.schemas.ListStorageRequest" href="#naptha_sdk.storage.schemas.ListStorageRequest">ListStorageRequest</a></li>
+<li><a title="naptha_sdk.storage.schemas.ReadStorageRequest" href="#naptha_sdk.storage.schemas.ReadStorageRequest">ReadStorageRequest</a></li>
+<li><a title="naptha_sdk.storage.schemas.SearchStorageRequest" href="#naptha_sdk.storage.schemas.SearchStorageRequest">SearchStorageRequest</a></li>
+<li><a title="naptha_sdk.storage.schemas.UpdateStorageRequest" href="#naptha_sdk.storage.schemas.UpdateStorageRequest">UpdateStorageRequest</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.BaseStorageRequest.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.BaseStorageRequest.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.BaseStorageRequest.options"><code class="name">var <span class="ident">options</span> : Dict[str, Any] | <a title="naptha_sdk.storage.schemas.DatabaseReadOptions" href="#naptha_sdk.storage.schemas.DatabaseReadOptions">DatabaseReadOptions</a></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.BaseStorageRequest.path"><code class="name">var <span class="ident">path</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.BaseStorageRequest.request_type"><code class="name">var <span class="ident">request_type</span> : <a title="naptha_sdk.storage.schemas.StorageRequestType" href="#naptha_sdk.storage.schemas.StorageRequestType">StorageRequestType</a></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.BaseStorageRequest.storage_type"><code class="name">var <span class="ident">storage_type</span> : <a title="naptha_sdk.storage.schemas.StorageType" href="#naptha_sdk.storage.schemas.StorageType">StorageType</a></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.BaseStorageRequest.model_dict"><code class="name flex">
+<span>def <span class="ident">model_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def model_dict(self):
+    model_dict = self.dict()
+    if isinstance(self.options, BaseModel):
+        options = self.options.model_dump()
+        model_dict[&#39;options&#39;] = options
+    model_dict[&#39;storage_type&#39;] = self.storage_type.value
+    model_dict[&#39;request_type&#39;] = self.request_type.value
+    return model_dict</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="naptha_sdk.storage.schemas.CreateStorageRequest"><code class="flex name class">
+<span>class <span class="ident">CreateStorageRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CreateStorageRequest(BaseStorageRequest):
+    request_type: StorageRequestType = Field(default=StorageRequestType.CREATE, literal=True)
+    data: Optional[Dict[str, Any]] = None
+    file: Optional[IOBase] = None </code></pre>
+</details>
+<div class="desc"><p>Usage docs: <a href="https://docs.pydantic.dev/2.10/concepts/models/">https://docs.pydantic.dev/2.10/concepts/models/</a></p>
+<p>A base class for creating Pydantic models.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>__class_vars__</code></strong></dt>
+<dd>The names of the class variables defined on the model.</dd>
+<dt><strong><code>__private_attributes__</code></strong></dt>
+<dd>Metadata about the private attributes of the model.</dd>
+<dt><strong><code>__signature__</code></strong></dt>
+<dd>The synthesized <code>__init__</code> [<code>Signature</code>][inspect.Signature] of the model.</dd>
+<dt><strong><code>__pydantic_complete__</code></strong></dt>
+<dd>Whether model building is completed, or if there are still undefined fields.</dd>
+<dt><strong><code>__pydantic_core_schema__</code></strong></dt>
+<dd>The core schema of the model.</dd>
+<dt><strong><code>__pydantic_custom_init__</code></strong></dt>
+<dd>Whether the model has a custom <code>__init__</code> function.</dd>
+<dt><strong><code>__pydantic_decorators__</code></strong></dt>
+<dd>Metadata containing the decorators defined on the model.
+This replaces <code>Model.__validators__</code> and <code>Model.__root_validators__</code> from Pydantic V1.</dd>
+<dt><strong><code>__pydantic_generic_metadata__</code></strong></dt>
+<dd>Metadata for generic models; contains data used for a similar purpose to
+<strong>args</strong>, <strong>origin</strong>, <strong>parameters</strong> in typing-module generics. May eventually be replaced by these.</dd>
+<dt><strong><code>__pydantic_parent_namespace__</code></strong></dt>
+<dd>Parent namespace of the model, used for automatic rebuilding of models.</dd>
+<dt><strong><code>__pydantic_post_init__</code></strong></dt>
+<dd>The name of the post-init method for the model, if defined.</dd>
+<dt><strong><code>__pydantic_root_model__</code></strong></dt>
+<dd>Whether the model is a [<code>RootModel</code>][pydantic.root_model.RootModel].</dd>
+<dt><strong><code>__pydantic_serializer__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaSerializer</code> used to dump instances of the model.</dd>
+<dt><strong><code>__pydantic_validator__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaValidator</code> used to validate instances of the model.</dd>
+<dt><strong><code>__pydantic_fields__</code></strong></dt>
+<dd>A dictionary of field names and their corresponding [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_computed_fields__</code></strong></dt>
+<dd>A dictionary of computed field names and their corresponding [<code>ComputedFieldInfo</code>][pydantic.fields.ComputedFieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_extra__</code></strong></dt>
+<dd>A dictionary containing extra values, if [<code>extra</code>][pydantic.config.ConfigDict.extra]
+is set to <code>'allow'</code>.</dd>
+<dt><strong><code>__pydantic_fields_set__</code></strong></dt>
+<dd>The names of fields explicitly set during instantiation.</dd>
+<dt><strong><code>__pydantic_private__</code></strong></dt>
+<dd>Values of private attributes set on the model instance.</dd>
+</dl>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.CreateStorageRequest.data"><code class="name">var <span class="ident">data</span> : Dict[str, Any] | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.CreateStorageRequest.file"><code class="name">var <span class="ident">file</span> : io.IOBase | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></b></code>:
+<ul class="hlist">
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.Config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.Config">Config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.model_config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.options" href="#naptha_sdk.storage.schemas.BaseStorageRequest.options">options</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.path" href="#naptha_sdk.storage.schemas.BaseStorageRequest.path">path</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.request_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.request_type">request_type</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.storage_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.storage_type">storage_type</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions"><code class="flex name class">
+<span>class <span class="ident">DatabaseReadOptions</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DatabaseReadOptions(BaseModel):
+    &#34;&#34;&#34;Options specific to database reads&#34;&#34;&#34;
+    columns: Optional[List[str]] = None
+    conditions: Optional[List[Dict[str, Any]]] = None
+    order_by: Optional[str] = None
+    order_direction: Optional[str] = &#34;asc&#34;
+    limit: Optional[int] = None
+    offset: Optional[int] = None
+    # Added fields for QA/vector search
+    query_vector: Optional[List[float]] = None
+    query_col: Optional[str] = None  # Column to search against
+    answer_col: Optional[str] = None  # Column to return as answer
+    vector_col: Optional[str] = None  # Column containing vectors
+    top_k: Optional[int] = Field(default=5, ge=1)  # Number of results for vector search
+    include_similarity: Optional[bool] = Field(default=True)  # Include similarity scores</code></pre>
+</details>
+<div class="desc"><p>Options specific to database reads</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.answer_col"><code class="name">var <span class="ident">answer_col</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.columns"><code class="name">var <span class="ident">columns</span> : List[str] | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.conditions"><code class="name">var <span class="ident">conditions</span> : List[Dict[str, Any]] | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.include_similarity"><code class="name">var <span class="ident">include_similarity</span> : bool | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.limit"><code class="name">var <span class="ident">limit</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.offset"><code class="name">var <span class="ident">offset</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.order_by"><code class="name">var <span class="ident">order_by</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.order_direction"><code class="name">var <span class="ident">order_direction</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.query_col"><code class="name">var <span class="ident">query_col</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.query_vector"><code class="name">var <span class="ident">query_vector</span> : List[float] | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.top_k"><code class="name">var <span class="ident">top_k</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DatabaseReadOptions.vector_col"><code class="name">var <span class="ident">vector_col</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="naptha_sdk.storage.schemas.DeleteStorageRequest"><code class="flex name class">
+<span>class <span class="ident">DeleteStorageRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeleteStorageRequest(BaseStorageRequest):
+    request_type: StorageRequestType = Field(default=StorageRequestType.DELETE, literal=True)
+    condition: Optional[Dict[str, Any]] = None</code></pre>
+</details>
+<div class="desc"><p>Usage docs: <a href="https://docs.pydantic.dev/2.10/concepts/models/">https://docs.pydantic.dev/2.10/concepts/models/</a></p>
+<p>A base class for creating Pydantic models.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>__class_vars__</code></strong></dt>
+<dd>The names of the class variables defined on the model.</dd>
+<dt><strong><code>__private_attributes__</code></strong></dt>
+<dd>Metadata about the private attributes of the model.</dd>
+<dt><strong><code>__signature__</code></strong></dt>
+<dd>The synthesized <code>__init__</code> [<code>Signature</code>][inspect.Signature] of the model.</dd>
+<dt><strong><code>__pydantic_complete__</code></strong></dt>
+<dd>Whether model building is completed, or if there are still undefined fields.</dd>
+<dt><strong><code>__pydantic_core_schema__</code></strong></dt>
+<dd>The core schema of the model.</dd>
+<dt><strong><code>__pydantic_custom_init__</code></strong></dt>
+<dd>Whether the model has a custom <code>__init__</code> function.</dd>
+<dt><strong><code>__pydantic_decorators__</code></strong></dt>
+<dd>Metadata containing the decorators defined on the model.
+This replaces <code>Model.__validators__</code> and <code>Model.__root_validators__</code> from Pydantic V1.</dd>
+<dt><strong><code>__pydantic_generic_metadata__</code></strong></dt>
+<dd>Metadata for generic models; contains data used for a similar purpose to
+<strong>args</strong>, <strong>origin</strong>, <strong>parameters</strong> in typing-module generics. May eventually be replaced by these.</dd>
+<dt><strong><code>__pydantic_parent_namespace__</code></strong></dt>
+<dd>Parent namespace of the model, used for automatic rebuilding of models.</dd>
+<dt><strong><code>__pydantic_post_init__</code></strong></dt>
+<dd>The name of the post-init method for the model, if defined.</dd>
+<dt><strong><code>__pydantic_root_model__</code></strong></dt>
+<dd>Whether the model is a [<code>RootModel</code>][pydantic.root_model.RootModel].</dd>
+<dt><strong><code>__pydantic_serializer__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaSerializer</code> used to dump instances of the model.</dd>
+<dt><strong><code>__pydantic_validator__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaValidator</code> used to validate instances of the model.</dd>
+<dt><strong><code>__pydantic_fields__</code></strong></dt>
+<dd>A dictionary of field names and their corresponding [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_computed_fields__</code></strong></dt>
+<dd>A dictionary of computed field names and their corresponding [<code>ComputedFieldInfo</code>][pydantic.fields.ComputedFieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_extra__</code></strong></dt>
+<dd>A dictionary containing extra values, if [<code>extra</code>][pydantic.config.ConfigDict.extra]
+is set to <code>'allow'</code>.</dd>
+<dt><strong><code>__pydantic_fields_set__</code></strong></dt>
+<dd>The names of fields explicitly set during instantiation.</dd>
+<dt><strong><code>__pydantic_private__</code></strong></dt>
+<dd>Values of private attributes set on the model instance.</dd>
+</dl>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.DeleteStorageRequest.condition"><code class="name">var <span class="ident">condition</span> : Dict[str, Any] | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></b></code>:
+<ul class="hlist">
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.Config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.Config">Config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.model_config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.options" href="#naptha_sdk.storage.schemas.BaseStorageRequest.options">options</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.path" href="#naptha_sdk.storage.schemas.BaseStorageRequest.path">path</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.request_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.request_type">request_type</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.storage_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.storage_type">storage_type</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="naptha_sdk.storage.schemas.IPFSOptions"><code class="flex name class">
+<span>class <span class="ident">IPFSOptions</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class IPFSOptions(BaseModel):
+    &#34;&#34;&#34;Options specific to IPFS operations&#34;&#34;&#34;
+    # IPNS options
+    ipns_operation: Optional[Literal[&#34;create&#34;, &#34;update&#34;, &#34;none&#34;]] = Field(
+        default=&#34;none&#34;, 
+        description=&#34;Whether to create new IPNS record, update existing, or skip IPNS&#34;
+    )
+    ipns_name: Optional[str] = Field(
+        None, 
+        description=&#34;IPNS name to update when ipns_operation is &#39;update&#39;&#34;
+    )
+    
+    # Pinning options
+    unpin_previous: bool = Field(
+        default=False, 
+        description=&#34;Unpin previous hash when updating&#34;
+    )
+    previous_hash: Optional[str] = Field(
+        None,
+        description=&#34;Previous IPFS hash to unpin when unpin_previous is True&#34;
+    )
+    
+    # Read options 
+    resolve_ipns: bool = Field(
+        default=False, 
+        description=&#34;Resolve IPNS name to IPFS hash&#34;
+    )</code></pre>
+</details>
+<div class="desc"><p>Options specific to IPFS operations</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.IPFSOptions.ipns_name"><code class="name">var <span class="ident">ipns_name</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.IPFSOptions.ipns_operation"><code class="name">var <span class="ident">ipns_operation</span> : Literal['create', 'update', 'none'] | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.IPFSOptions.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.IPFSOptions.previous_hash"><code class="name">var <span class="ident">previous_hash</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.IPFSOptions.resolve_ipns"><code class="name">var <span class="ident">resolve_ipns</span> : bool</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.IPFSOptions.unpin_previous"><code class="name">var <span class="ident">unpin_previous</span> : bool</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="naptha_sdk.storage.schemas.ListStorageRequest"><code class="flex name class">
+<span>class <span class="ident">ListStorageRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ListStorageRequest(BaseStorageRequest):
+    request_type: StorageRequestType = Field(default=StorageRequestType.LIST, literal=True)</code></pre>
+</details>
+<div class="desc"><p>Usage docs: <a href="https://docs.pydantic.dev/2.10/concepts/models/">https://docs.pydantic.dev/2.10/concepts/models/</a></p>
+<p>A base class for creating Pydantic models.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>__class_vars__</code></strong></dt>
+<dd>The names of the class variables defined on the model.</dd>
+<dt><strong><code>__private_attributes__</code></strong></dt>
+<dd>Metadata about the private attributes of the model.</dd>
+<dt><strong><code>__signature__</code></strong></dt>
+<dd>The synthesized <code>__init__</code> [<code>Signature</code>][inspect.Signature] of the model.</dd>
+<dt><strong><code>__pydantic_complete__</code></strong></dt>
+<dd>Whether model building is completed, or if there are still undefined fields.</dd>
+<dt><strong><code>__pydantic_core_schema__</code></strong></dt>
+<dd>The core schema of the model.</dd>
+<dt><strong><code>__pydantic_custom_init__</code></strong></dt>
+<dd>Whether the model has a custom <code>__init__</code> function.</dd>
+<dt><strong><code>__pydantic_decorators__</code></strong></dt>
+<dd>Metadata containing the decorators defined on the model.
+This replaces <code>Model.__validators__</code> and <code>Model.__root_validators__</code> from Pydantic V1.</dd>
+<dt><strong><code>__pydantic_generic_metadata__</code></strong></dt>
+<dd>Metadata for generic models; contains data used for a similar purpose to
+<strong>args</strong>, <strong>origin</strong>, <strong>parameters</strong> in typing-module generics. May eventually be replaced by these.</dd>
+<dt><strong><code>__pydantic_parent_namespace__</code></strong></dt>
+<dd>Parent namespace of the model, used for automatic rebuilding of models.</dd>
+<dt><strong><code>__pydantic_post_init__</code></strong></dt>
+<dd>The name of the post-init method for the model, if defined.</dd>
+<dt><strong><code>__pydantic_root_model__</code></strong></dt>
+<dd>Whether the model is a [<code>RootModel</code>][pydantic.root_model.RootModel].</dd>
+<dt><strong><code>__pydantic_serializer__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaSerializer</code> used to dump instances of the model.</dd>
+<dt><strong><code>__pydantic_validator__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaValidator</code> used to validate instances of the model.</dd>
+<dt><strong><code>__pydantic_fields__</code></strong></dt>
+<dd>A dictionary of field names and their corresponding [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_computed_fields__</code></strong></dt>
+<dd>A dictionary of computed field names and their corresponding [<code>ComputedFieldInfo</code>][pydantic.fields.ComputedFieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_extra__</code></strong></dt>
+<dd>A dictionary containing extra values, if [<code>extra</code>][pydantic.config.ConfigDict.extra]
+is set to <code>'allow'</code>.</dd>
+<dt><strong><code>__pydantic_fields_set__</code></strong></dt>
+<dd>The names of fields explicitly set during instantiation.</dd>
+<dt><strong><code>__pydantic_private__</code></strong></dt>
+<dd>Values of private attributes set on the model instance.</dd>
+</dl>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></b></code>:
+<ul class="hlist">
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.Config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.Config">Config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.model_config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.options" href="#naptha_sdk.storage.schemas.BaseStorageRequest.options">options</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.path" href="#naptha_sdk.storage.schemas.BaseStorageRequest.path">path</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.request_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.request_type">request_type</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.storage_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.storage_type">storage_type</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="naptha_sdk.storage.schemas.ReadStorageRequest"><code class="flex name class">
+<span>class <span class="ident">ReadStorageRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ReadStorageRequest(BaseStorageRequest):
+    request_type: StorageRequestType = Field(default=StorageRequestType.READ, literal=True)</code></pre>
+</details>
+<div class="desc"><p>Usage docs: <a href="https://docs.pydantic.dev/2.10/concepts/models/">https://docs.pydantic.dev/2.10/concepts/models/</a></p>
+<p>A base class for creating Pydantic models.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>__class_vars__</code></strong></dt>
+<dd>The names of the class variables defined on the model.</dd>
+<dt><strong><code>__private_attributes__</code></strong></dt>
+<dd>Metadata about the private attributes of the model.</dd>
+<dt><strong><code>__signature__</code></strong></dt>
+<dd>The synthesized <code>__init__</code> [<code>Signature</code>][inspect.Signature] of the model.</dd>
+<dt><strong><code>__pydantic_complete__</code></strong></dt>
+<dd>Whether model building is completed, or if there are still undefined fields.</dd>
+<dt><strong><code>__pydantic_core_schema__</code></strong></dt>
+<dd>The core schema of the model.</dd>
+<dt><strong><code>__pydantic_custom_init__</code></strong></dt>
+<dd>Whether the model has a custom <code>__init__</code> function.</dd>
+<dt><strong><code>__pydantic_decorators__</code></strong></dt>
+<dd>Metadata containing the decorators defined on the model.
+This replaces <code>Model.__validators__</code> and <code>Model.__root_validators__</code> from Pydantic V1.</dd>
+<dt><strong><code>__pydantic_generic_metadata__</code></strong></dt>
+<dd>Metadata for generic models; contains data used for a similar purpose to
+<strong>args</strong>, <strong>origin</strong>, <strong>parameters</strong> in typing-module generics. May eventually be replaced by these.</dd>
+<dt><strong><code>__pydantic_parent_namespace__</code></strong></dt>
+<dd>Parent namespace of the model, used for automatic rebuilding of models.</dd>
+<dt><strong><code>__pydantic_post_init__</code></strong></dt>
+<dd>The name of the post-init method for the model, if defined.</dd>
+<dt><strong><code>__pydantic_root_model__</code></strong></dt>
+<dd>Whether the model is a [<code>RootModel</code>][pydantic.root_model.RootModel].</dd>
+<dt><strong><code>__pydantic_serializer__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaSerializer</code> used to dump instances of the model.</dd>
+<dt><strong><code>__pydantic_validator__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaValidator</code> used to validate instances of the model.</dd>
+<dt><strong><code>__pydantic_fields__</code></strong></dt>
+<dd>A dictionary of field names and their corresponding [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_computed_fields__</code></strong></dt>
+<dd>A dictionary of computed field names and their corresponding [<code>ComputedFieldInfo</code>][pydantic.fields.ComputedFieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_extra__</code></strong></dt>
+<dd>A dictionary containing extra values, if [<code>extra</code>][pydantic.config.ConfigDict.extra]
+is set to <code>'allow'</code>.</dd>
+<dt><strong><code>__pydantic_fields_set__</code></strong></dt>
+<dd>The names of fields explicitly set during instantiation.</dd>
+<dt><strong><code>__pydantic_private__</code></strong></dt>
+<dd>Values of private attributes set on the model instance.</dd>
+</dl>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></b></code>:
+<ul class="hlist">
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.Config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.Config">Config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.model_config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.options" href="#naptha_sdk.storage.schemas.BaseStorageRequest.options">options</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.path" href="#naptha_sdk.storage.schemas.BaseStorageRequest.path">path</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.request_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.request_type">request_type</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.storage_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.storage_type">storage_type</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="naptha_sdk.storage.schemas.SearchStorageRequest"><code class="flex name class">
+<span>class <span class="ident">SearchStorageRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SearchStorageRequest(BaseStorageRequest):
+    request_type: StorageRequestType = Field(default=StorageRequestType.SEARCH, literal=True)
+    query: Any
+    query_type: str = &#34;text&#34;
+    limit: Optional[int] = None</code></pre>
+</details>
+<div class="desc"><p>Usage docs: <a href="https://docs.pydantic.dev/2.10/concepts/models/">https://docs.pydantic.dev/2.10/concepts/models/</a></p>
+<p>A base class for creating Pydantic models.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>__class_vars__</code></strong></dt>
+<dd>The names of the class variables defined on the model.</dd>
+<dt><strong><code>__private_attributes__</code></strong></dt>
+<dd>Metadata about the private attributes of the model.</dd>
+<dt><strong><code>__signature__</code></strong></dt>
+<dd>The synthesized <code>__init__</code> [<code>Signature</code>][inspect.Signature] of the model.</dd>
+<dt><strong><code>__pydantic_complete__</code></strong></dt>
+<dd>Whether model building is completed, or if there are still undefined fields.</dd>
+<dt><strong><code>__pydantic_core_schema__</code></strong></dt>
+<dd>The core schema of the model.</dd>
+<dt><strong><code>__pydantic_custom_init__</code></strong></dt>
+<dd>Whether the model has a custom <code>__init__</code> function.</dd>
+<dt><strong><code>__pydantic_decorators__</code></strong></dt>
+<dd>Metadata containing the decorators defined on the model.
+This replaces <code>Model.__validators__</code> and <code>Model.__root_validators__</code> from Pydantic V1.</dd>
+<dt><strong><code>__pydantic_generic_metadata__</code></strong></dt>
+<dd>Metadata for generic models; contains data used for a similar purpose to
+<strong>args</strong>, <strong>origin</strong>, <strong>parameters</strong> in typing-module generics. May eventually be replaced by these.</dd>
+<dt><strong><code>__pydantic_parent_namespace__</code></strong></dt>
+<dd>Parent namespace of the model, used for automatic rebuilding of models.</dd>
+<dt><strong><code>__pydantic_post_init__</code></strong></dt>
+<dd>The name of the post-init method for the model, if defined.</dd>
+<dt><strong><code>__pydantic_root_model__</code></strong></dt>
+<dd>Whether the model is a [<code>RootModel</code>][pydantic.root_model.RootModel].</dd>
+<dt><strong><code>__pydantic_serializer__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaSerializer</code> used to dump instances of the model.</dd>
+<dt><strong><code>__pydantic_validator__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaValidator</code> used to validate instances of the model.</dd>
+<dt><strong><code>__pydantic_fields__</code></strong></dt>
+<dd>A dictionary of field names and their corresponding [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_computed_fields__</code></strong></dt>
+<dd>A dictionary of computed field names and their corresponding [<code>ComputedFieldInfo</code>][pydantic.fields.ComputedFieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_extra__</code></strong></dt>
+<dd>A dictionary containing extra values, if [<code>extra</code>][pydantic.config.ConfigDict.extra]
+is set to <code>'allow'</code>.</dd>
+<dt><strong><code>__pydantic_fields_set__</code></strong></dt>
+<dd>The names of fields explicitly set during instantiation.</dd>
+<dt><strong><code>__pydantic_private__</code></strong></dt>
+<dd>Values of private attributes set on the model instance.</dd>
+</dl>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.SearchStorageRequest.limit"><code class="name">var <span class="ident">limit</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.SearchStorageRequest.query"><code class="name">var <span class="ident">query</span> : Any</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.SearchStorageRequest.query_type"><code class="name">var <span class="ident">query_type</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></b></code>:
+<ul class="hlist">
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.Config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.Config">Config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.model_config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.options" href="#naptha_sdk.storage.schemas.BaseStorageRequest.options">options</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.path" href="#naptha_sdk.storage.schemas.BaseStorageRequest.path">path</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.request_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.request_type">request_type</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.storage_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.storage_type">storage_type</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageLocation"><code class="flex name class">
+<span>class <span class="ident">StorageLocation</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StorageLocation(BaseModel):
+    storage_type: StorageType
+    path: str
+    options: Dict[str, Any] = Field(default_factory=dict)
+
+    @property
+    def uri(self) -&gt; str:
+        &#34;&#34;&#34;Get URI representation of location&#34;&#34;&#34;
+        return f&#34;{self.storage_type.value}://{self.path}&#34;
+    
+    @classmethod
+    def from_uri(cls, uri: str) -&gt; &#34;StorageLocation&#34;:
+        &#34;&#34;&#34;Create StorageLocation from URI string&#34;&#34;&#34;
+        scheme, path = uri.split(&#34;://&#34;, 1)
+        return cls(storage_type=StorageType(scheme), path=path)</code></pre>
+</details>
+<div class="desc"><p>Usage docs: <a href="https://docs.pydantic.dev/2.10/concepts/models/">https://docs.pydantic.dev/2.10/concepts/models/</a></p>
+<p>A base class for creating Pydantic models.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>__class_vars__</code></strong></dt>
+<dd>The names of the class variables defined on the model.</dd>
+<dt><strong><code>__private_attributes__</code></strong></dt>
+<dd>Metadata about the private attributes of the model.</dd>
+<dt><strong><code>__signature__</code></strong></dt>
+<dd>The synthesized <code>__init__</code> [<code>Signature</code>][inspect.Signature] of the model.</dd>
+<dt><strong><code>__pydantic_complete__</code></strong></dt>
+<dd>Whether model building is completed, or if there are still undefined fields.</dd>
+<dt><strong><code>__pydantic_core_schema__</code></strong></dt>
+<dd>The core schema of the model.</dd>
+<dt><strong><code>__pydantic_custom_init__</code></strong></dt>
+<dd>Whether the model has a custom <code>__init__</code> function.</dd>
+<dt><strong><code>__pydantic_decorators__</code></strong></dt>
+<dd>Metadata containing the decorators defined on the model.
+This replaces <code>Model.__validators__</code> and <code>Model.__root_validators__</code> from Pydantic V1.</dd>
+<dt><strong><code>__pydantic_generic_metadata__</code></strong></dt>
+<dd>Metadata for generic models; contains data used for a similar purpose to
+<strong>args</strong>, <strong>origin</strong>, <strong>parameters</strong> in typing-module generics. May eventually be replaced by these.</dd>
+<dt><strong><code>__pydantic_parent_namespace__</code></strong></dt>
+<dd>Parent namespace of the model, used for automatic rebuilding of models.</dd>
+<dt><strong><code>__pydantic_post_init__</code></strong></dt>
+<dd>The name of the post-init method for the model, if defined.</dd>
+<dt><strong><code>__pydantic_root_model__</code></strong></dt>
+<dd>Whether the model is a [<code>RootModel</code>][pydantic.root_model.RootModel].</dd>
+<dt><strong><code>__pydantic_serializer__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaSerializer</code> used to dump instances of the model.</dd>
+<dt><strong><code>__pydantic_validator__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaValidator</code> used to validate instances of the model.</dd>
+<dt><strong><code>__pydantic_fields__</code></strong></dt>
+<dd>A dictionary of field names and their corresponding [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_computed_fields__</code></strong></dt>
+<dd>A dictionary of computed field names and their corresponding [<code>ComputedFieldInfo</code>][pydantic.fields.ComputedFieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_extra__</code></strong></dt>
+<dd>A dictionary containing extra values, if [<code>extra</code>][pydantic.config.ConfigDict.extra]
+is set to <code>'allow'</code>.</dd>
+<dt><strong><code>__pydantic_fields_set__</code></strong></dt>
+<dd>The names of fields explicitly set during instantiation.</dd>
+<dt><strong><code>__pydantic_private__</code></strong></dt>
+<dd>Values of private attributes set on the model instance.</dd>
+</dl>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.StorageLocation.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageLocation.options"><code class="name">var <span class="ident">options</span> : Dict[str, Any]</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageLocation.path"><code class="name">var <span class="ident">path</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageLocation.storage_type"><code class="name">var <span class="ident">storage_type</span> : <a title="naptha_sdk.storage.schemas.StorageType" href="#naptha_sdk.storage.schemas.StorageType">StorageType</a></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.StorageLocation.from_uri"><code class="name flex">
+<span>def <span class="ident">from_uri</span></span>(<span>uri: str) ‑> <a title="naptha_sdk.storage.schemas.StorageLocation" href="#naptha_sdk.storage.schemas.StorageLocation">StorageLocation</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create StorageLocation from URI string</p></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.StorageLocation.uri"><code class="name">prop <span class="ident">uri</span> : str</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def uri(self) -&gt; str:
+    &#34;&#34;&#34;Get URI representation of location&#34;&#34;&#34;
+    return f&#34;{self.storage_type.value}://{self.path}&#34;</code></pre>
+</details>
+<div class="desc"><p>Get URI representation of location</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageMetadata"><code class="flex name class">
+<span>class <span class="ident">StorageMetadata</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StorageMetadata(BaseModel):
+    content_type: Optional[str] = None
+    created_at: Optional[str] = None
+    modified_at: Optional[str] = None
+    size: Optional[int] = None
+    checksum: Optional[str] = None
+    tags: Dict[str, str] = Field(default_factory=dict)
+    custom: Dict[str, Any] = Field(default_factory=dict)</code></pre>
+</details>
+<div class="desc"><p>Usage docs: <a href="https://docs.pydantic.dev/2.10/concepts/models/">https://docs.pydantic.dev/2.10/concepts/models/</a></p>
+<p>A base class for creating Pydantic models.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>__class_vars__</code></strong></dt>
+<dd>The names of the class variables defined on the model.</dd>
+<dt><strong><code>__private_attributes__</code></strong></dt>
+<dd>Metadata about the private attributes of the model.</dd>
+<dt><strong><code>__signature__</code></strong></dt>
+<dd>The synthesized <code>__init__</code> [<code>Signature</code>][inspect.Signature] of the model.</dd>
+<dt><strong><code>__pydantic_complete__</code></strong></dt>
+<dd>Whether model building is completed, or if there are still undefined fields.</dd>
+<dt><strong><code>__pydantic_core_schema__</code></strong></dt>
+<dd>The core schema of the model.</dd>
+<dt><strong><code>__pydantic_custom_init__</code></strong></dt>
+<dd>Whether the model has a custom <code>__init__</code> function.</dd>
+<dt><strong><code>__pydantic_decorators__</code></strong></dt>
+<dd>Metadata containing the decorators defined on the model.
+This replaces <code>Model.__validators__</code> and <code>Model.__root_validators__</code> from Pydantic V1.</dd>
+<dt><strong><code>__pydantic_generic_metadata__</code></strong></dt>
+<dd>Metadata for generic models; contains data used for a similar purpose to
+<strong>args</strong>, <strong>origin</strong>, <strong>parameters</strong> in typing-module generics. May eventually be replaced by these.</dd>
+<dt><strong><code>__pydantic_parent_namespace__</code></strong></dt>
+<dd>Parent namespace of the model, used for automatic rebuilding of models.</dd>
+<dt><strong><code>__pydantic_post_init__</code></strong></dt>
+<dd>The name of the post-init method for the model, if defined.</dd>
+<dt><strong><code>__pydantic_root_model__</code></strong></dt>
+<dd>Whether the model is a [<code>RootModel</code>][pydantic.root_model.RootModel].</dd>
+<dt><strong><code>__pydantic_serializer__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaSerializer</code> used to dump instances of the model.</dd>
+<dt><strong><code>__pydantic_validator__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaValidator</code> used to validate instances of the model.</dd>
+<dt><strong><code>__pydantic_fields__</code></strong></dt>
+<dd>A dictionary of field names and their corresponding [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_computed_fields__</code></strong></dt>
+<dd>A dictionary of computed field names and their corresponding [<code>ComputedFieldInfo</code>][pydantic.fields.ComputedFieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_extra__</code></strong></dt>
+<dd>A dictionary containing extra values, if [<code>extra</code>][pydantic.config.ConfigDict.extra]
+is set to <code>'allow'</code>.</dd>
+<dt><strong><code>__pydantic_fields_set__</code></strong></dt>
+<dd>The names of fields explicitly set during instantiation.</dd>
+<dt><strong><code>__pydantic_private__</code></strong></dt>
+<dd>Values of private attributes set on the model instance.</dd>
+</dl>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.StorageMetadata.checksum"><code class="name">var <span class="ident">checksum</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageMetadata.content_type"><code class="name">var <span class="ident">content_type</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageMetadata.created_at"><code class="name">var <span class="ident">created_at</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageMetadata.custom"><code class="name">var <span class="ident">custom</span> : Dict[str, Any]</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageMetadata.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageMetadata.modified_at"><code class="name">var <span class="ident">modified_at</span> : str | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageMetadata.size"><code class="name">var <span class="ident">size</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageMetadata.tags"><code class="name">var <span class="ident">tags</span> : Dict[str, str]</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageObject"><code class="flex name class">
+<span>class <span class="ident">StorageObject</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StorageObject(BaseModel):
+    location: StorageLocation
+    data: Optional[Any] = None
+    metadata: StorageMetadata = Field(default_factory=StorageMetadata)</code></pre>
+</details>
+<div class="desc"><p>Usage docs: <a href="https://docs.pydantic.dev/2.10/concepts/models/">https://docs.pydantic.dev/2.10/concepts/models/</a></p>
+<p>A base class for creating Pydantic models.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>__class_vars__</code></strong></dt>
+<dd>The names of the class variables defined on the model.</dd>
+<dt><strong><code>__private_attributes__</code></strong></dt>
+<dd>Metadata about the private attributes of the model.</dd>
+<dt><strong><code>__signature__</code></strong></dt>
+<dd>The synthesized <code>__init__</code> [<code>Signature</code>][inspect.Signature] of the model.</dd>
+<dt><strong><code>__pydantic_complete__</code></strong></dt>
+<dd>Whether model building is completed, or if there are still undefined fields.</dd>
+<dt><strong><code>__pydantic_core_schema__</code></strong></dt>
+<dd>The core schema of the model.</dd>
+<dt><strong><code>__pydantic_custom_init__</code></strong></dt>
+<dd>Whether the model has a custom <code>__init__</code> function.</dd>
+<dt><strong><code>__pydantic_decorators__</code></strong></dt>
+<dd>Metadata containing the decorators defined on the model.
+This replaces <code>Model.__validators__</code> and <code>Model.__root_validators__</code> from Pydantic V1.</dd>
+<dt><strong><code>__pydantic_generic_metadata__</code></strong></dt>
+<dd>Metadata for generic models; contains data used for a similar purpose to
+<strong>args</strong>, <strong>origin</strong>, <strong>parameters</strong> in typing-module generics. May eventually be replaced by these.</dd>
+<dt><strong><code>__pydantic_parent_namespace__</code></strong></dt>
+<dd>Parent namespace of the model, used for automatic rebuilding of models.</dd>
+<dt><strong><code>__pydantic_post_init__</code></strong></dt>
+<dd>The name of the post-init method for the model, if defined.</dd>
+<dt><strong><code>__pydantic_root_model__</code></strong></dt>
+<dd>Whether the model is a [<code>RootModel</code>][pydantic.root_model.RootModel].</dd>
+<dt><strong><code>__pydantic_serializer__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaSerializer</code> used to dump instances of the model.</dd>
+<dt><strong><code>__pydantic_validator__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaValidator</code> used to validate instances of the model.</dd>
+<dt><strong><code>__pydantic_fields__</code></strong></dt>
+<dd>A dictionary of field names and their corresponding [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_computed_fields__</code></strong></dt>
+<dd>A dictionary of computed field names and their corresponding [<code>ComputedFieldInfo</code>][pydantic.fields.ComputedFieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_extra__</code></strong></dt>
+<dd>A dictionary containing extra values, if [<code>extra</code>][pydantic.config.ConfigDict.extra]
+is set to <code>'allow'</code>.</dd>
+<dt><strong><code>__pydantic_fields_set__</code></strong></dt>
+<dd>The names of fields explicitly set during instantiation.</dd>
+<dt><strong><code>__pydantic_private__</code></strong></dt>
+<dd>Values of private attributes set on the model instance.</dd>
+</dl>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.StorageObject.data"><code class="name">var <span class="ident">data</span> : Any | None</code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageObject.location"><code class="name">var <span class="ident">location</span> : <a title="naptha_sdk.storage.schemas.StorageLocation" href="#naptha_sdk.storage.schemas.StorageLocation">StorageLocation</a></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageObject.metadata"><code class="name">var <span class="ident">metadata</span> : <a title="naptha_sdk.storage.schemas.StorageMetadata" href="#naptha_sdk.storage.schemas.StorageMetadata">StorageMetadata</a></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageObject.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageRequestType"><code class="flex name class">
+<span>class <span class="ident">StorageRequestType</span></span>
+<span>(</span><span>*args, **kwds)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StorageRequestType(str, Enum):
+    CREATE = &#34;create&#34;
+    READ = &#34;read&#34;
+    UPDATE = &#34;update&#34;
+    DELETE = &#34;delete&#34;
+    LIST = &#34;list&#34;
+    SEARCH = &#34;search&#34;</code></pre>
+</details>
+<div class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to 'utf-8'.
+errors defaults to 'strict'.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.StorageRequestType.CREATE"><code class="name">var <span class="ident">CREATE</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageRequestType.DELETE"><code class="name">var <span class="ident">DELETE</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageRequestType.LIST"><code class="name">var <span class="ident">LIST</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageRequestType.READ"><code class="name">var <span class="ident">READ</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageRequestType.SEARCH"><code class="name">var <span class="ident">SEARCH</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageRequestType.UPDATE"><code class="name">var <span class="ident">UPDATE</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageType"><code class="flex name class">
+<span>class <span class="ident">StorageType</span></span>
+<span>(</span><span>*args, **kwds)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StorageType(str, Enum):
+    DATABASE = &#34;db&#34;
+    FILESYSTEM = &#34;fs&#34;
+    IPFS = &#34;ipfs&#34;</code></pre>
+</details>
+<div class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to 'utf-8'.
+errors defaults to 'strict'.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.StorageType.DATABASE"><code class="name">var <span class="ident">DATABASE</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageType.FILESYSTEM"><code class="name">var <span class="ident">FILESYSTEM</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+<dt id="naptha_sdk.storage.schemas.StorageType.IPFS"><code class="name">var <span class="ident">IPFS</span></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="naptha_sdk.storage.schemas.UpdateStorageRequest"><code class="flex name class">
+<span>class <span class="ident">UpdateStorageRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UpdateStorageRequest(BaseStorageRequest):
+    request_type: StorageRequestType = Field(default=StorageRequestType.UPDATE, literal=True)
+    data: Union[Dict[str, Any], bytes, BinaryIO]</code></pre>
+</details>
+<div class="desc"><p>Usage docs: <a href="https://docs.pydantic.dev/2.10/concepts/models/">https://docs.pydantic.dev/2.10/concepts/models/</a></p>
+<p>A base class for creating Pydantic models.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>__class_vars__</code></strong></dt>
+<dd>The names of the class variables defined on the model.</dd>
+<dt><strong><code>__private_attributes__</code></strong></dt>
+<dd>Metadata about the private attributes of the model.</dd>
+<dt><strong><code>__signature__</code></strong></dt>
+<dd>The synthesized <code>__init__</code> [<code>Signature</code>][inspect.Signature] of the model.</dd>
+<dt><strong><code>__pydantic_complete__</code></strong></dt>
+<dd>Whether model building is completed, or if there are still undefined fields.</dd>
+<dt><strong><code>__pydantic_core_schema__</code></strong></dt>
+<dd>The core schema of the model.</dd>
+<dt><strong><code>__pydantic_custom_init__</code></strong></dt>
+<dd>Whether the model has a custom <code>__init__</code> function.</dd>
+<dt><strong><code>__pydantic_decorators__</code></strong></dt>
+<dd>Metadata containing the decorators defined on the model.
+This replaces <code>Model.__validators__</code> and <code>Model.__root_validators__</code> from Pydantic V1.</dd>
+<dt><strong><code>__pydantic_generic_metadata__</code></strong></dt>
+<dd>Metadata for generic models; contains data used for a similar purpose to
+<strong>args</strong>, <strong>origin</strong>, <strong>parameters</strong> in typing-module generics. May eventually be replaced by these.</dd>
+<dt><strong><code>__pydantic_parent_namespace__</code></strong></dt>
+<dd>Parent namespace of the model, used for automatic rebuilding of models.</dd>
+<dt><strong><code>__pydantic_post_init__</code></strong></dt>
+<dd>The name of the post-init method for the model, if defined.</dd>
+<dt><strong><code>__pydantic_root_model__</code></strong></dt>
+<dd>Whether the model is a [<code>RootModel</code>][pydantic.root_model.RootModel].</dd>
+<dt><strong><code>__pydantic_serializer__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaSerializer</code> used to dump instances of the model.</dd>
+<dt><strong><code>__pydantic_validator__</code></strong></dt>
+<dd>The <code>pydantic-core</code> <code>SchemaValidator</code> used to validate instances of the model.</dd>
+<dt><strong><code>__pydantic_fields__</code></strong></dt>
+<dd>A dictionary of field names and their corresponding [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_computed_fields__</code></strong></dt>
+<dd>A dictionary of computed field names and their corresponding [<code>ComputedFieldInfo</code>][pydantic.fields.ComputedFieldInfo] objects.</dd>
+<dt><strong><code>__pydantic_extra__</code></strong></dt>
+<dd>A dictionary containing extra values, if [<code>extra</code>][pydantic.config.ConfigDict.extra]
+is set to <code>'allow'</code>.</dd>
+<dt><strong><code>__pydantic_fields_set__</code></strong></dt>
+<dd>The names of fields explicitly set during instantiation.</dd>
+<dt><strong><code>__pydantic_private__</code></strong></dt>
+<dd>Values of private attributes set on the model instance.</dd>
+</dl>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="naptha_sdk.storage.schemas.UpdateStorageRequest.data"><code class="name">var <span class="ident">data</span> : Dict[str, Any] | bytes | <class 'BinaryIO'></code></dt>
+<dd>
+<div class="desc"><p>The type of the None singleton.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></b></code>:
+<ul class="hlist">
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.Config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.Config">Config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.model_config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.options" href="#naptha_sdk.storage.schemas.BaseStorageRequest.options">options</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.path" href="#naptha_sdk.storage.schemas.BaseStorageRequest.path">path</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.request_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.request_type">request_type</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.storage_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.storage_type">storage_type</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="naptha_sdk.storage" href="index.html">naptha_sdk.storage</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a></code></h4>
+<ul class="two-column">
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.Config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.Config">Config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.model_config" href="#naptha_sdk.storage.schemas.BaseStorageRequest.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.model_dict" href="#naptha_sdk.storage.schemas.BaseStorageRequest.model_dict">model_dict</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.options" href="#naptha_sdk.storage.schemas.BaseStorageRequest.options">options</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.path" href="#naptha_sdk.storage.schemas.BaseStorageRequest.path">path</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.request_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.request_type">request_type</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.BaseStorageRequest.storage_type" href="#naptha_sdk.storage.schemas.BaseStorageRequest.storage_type">storage_type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.CreateStorageRequest" href="#naptha_sdk.storage.schemas.CreateStorageRequest">CreateStorageRequest</a></code></h4>
+<ul class="">
+<li><code><a title="naptha_sdk.storage.schemas.CreateStorageRequest.data" href="#naptha_sdk.storage.schemas.CreateStorageRequest.data">data</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.CreateStorageRequest.file" href="#naptha_sdk.storage.schemas.CreateStorageRequest.file">file</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions" href="#naptha_sdk.storage.schemas.DatabaseReadOptions">DatabaseReadOptions</a></code></h4>
+<ul class="two-column">
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.answer_col" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.answer_col">answer_col</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.columns" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.columns">columns</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.conditions" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.conditions">conditions</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.include_similarity" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.include_similarity">include_similarity</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.limit" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.limit">limit</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.model_config" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.offset" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.offset">offset</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.order_by" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.order_by">order_by</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.order_direction" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.order_direction">order_direction</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.query_col" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.query_col">query_col</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.query_vector" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.query_vector">query_vector</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.top_k" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.top_k">top_k</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.DatabaseReadOptions.vector_col" href="#naptha_sdk.storage.schemas.DatabaseReadOptions.vector_col">vector_col</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.DeleteStorageRequest" href="#naptha_sdk.storage.schemas.DeleteStorageRequest">DeleteStorageRequest</a></code></h4>
+<ul class="">
+<li><code><a title="naptha_sdk.storage.schemas.DeleteStorageRequest.condition" href="#naptha_sdk.storage.schemas.DeleteStorageRequest.condition">condition</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.IPFSOptions" href="#naptha_sdk.storage.schemas.IPFSOptions">IPFSOptions</a></code></h4>
+<ul class="two-column">
+<li><code><a title="naptha_sdk.storage.schemas.IPFSOptions.ipns_name" href="#naptha_sdk.storage.schemas.IPFSOptions.ipns_name">ipns_name</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.IPFSOptions.ipns_operation" href="#naptha_sdk.storage.schemas.IPFSOptions.ipns_operation">ipns_operation</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.IPFSOptions.model_config" href="#naptha_sdk.storage.schemas.IPFSOptions.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.IPFSOptions.previous_hash" href="#naptha_sdk.storage.schemas.IPFSOptions.previous_hash">previous_hash</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.IPFSOptions.resolve_ipns" href="#naptha_sdk.storage.schemas.IPFSOptions.resolve_ipns">resolve_ipns</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.IPFSOptions.unpin_previous" href="#naptha_sdk.storage.schemas.IPFSOptions.unpin_previous">unpin_previous</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.ListStorageRequest" href="#naptha_sdk.storage.schemas.ListStorageRequest">ListStorageRequest</a></code></h4>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.ReadStorageRequest" href="#naptha_sdk.storage.schemas.ReadStorageRequest">ReadStorageRequest</a></code></h4>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.SearchStorageRequest" href="#naptha_sdk.storage.schemas.SearchStorageRequest">SearchStorageRequest</a></code></h4>
+<ul class="">
+<li><code><a title="naptha_sdk.storage.schemas.SearchStorageRequest.limit" href="#naptha_sdk.storage.schemas.SearchStorageRequest.limit">limit</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.SearchStorageRequest.query" href="#naptha_sdk.storage.schemas.SearchStorageRequest.query">query</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.SearchStorageRequest.query_type" href="#naptha_sdk.storage.schemas.SearchStorageRequest.query_type">query_type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.StorageLocation" href="#naptha_sdk.storage.schemas.StorageLocation">StorageLocation</a></code></h4>
+<ul class="two-column">
+<li><code><a title="naptha_sdk.storage.schemas.StorageLocation.from_uri" href="#naptha_sdk.storage.schemas.StorageLocation.from_uri">from_uri</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageLocation.model_config" href="#naptha_sdk.storage.schemas.StorageLocation.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageLocation.options" href="#naptha_sdk.storage.schemas.StorageLocation.options">options</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageLocation.path" href="#naptha_sdk.storage.schemas.StorageLocation.path">path</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageLocation.storage_type" href="#naptha_sdk.storage.schemas.StorageLocation.storage_type">storage_type</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageLocation.uri" href="#naptha_sdk.storage.schemas.StorageLocation.uri">uri</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.StorageMetadata" href="#naptha_sdk.storage.schemas.StorageMetadata">StorageMetadata</a></code></h4>
+<ul class="two-column">
+<li><code><a title="naptha_sdk.storage.schemas.StorageMetadata.checksum" href="#naptha_sdk.storage.schemas.StorageMetadata.checksum">checksum</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageMetadata.content_type" href="#naptha_sdk.storage.schemas.StorageMetadata.content_type">content_type</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageMetadata.created_at" href="#naptha_sdk.storage.schemas.StorageMetadata.created_at">created_at</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageMetadata.custom" href="#naptha_sdk.storage.schemas.StorageMetadata.custom">custom</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageMetadata.model_config" href="#naptha_sdk.storage.schemas.StorageMetadata.model_config">model_config</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageMetadata.modified_at" href="#naptha_sdk.storage.schemas.StorageMetadata.modified_at">modified_at</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageMetadata.size" href="#naptha_sdk.storage.schemas.StorageMetadata.size">size</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageMetadata.tags" href="#naptha_sdk.storage.schemas.StorageMetadata.tags">tags</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.StorageObject" href="#naptha_sdk.storage.schemas.StorageObject">StorageObject</a></code></h4>
+<ul class="">
+<li><code><a title="naptha_sdk.storage.schemas.StorageObject.data" href="#naptha_sdk.storage.schemas.StorageObject.data">data</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageObject.location" href="#naptha_sdk.storage.schemas.StorageObject.location">location</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageObject.metadata" href="#naptha_sdk.storage.schemas.StorageObject.metadata">metadata</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageObject.model_config" href="#naptha_sdk.storage.schemas.StorageObject.model_config">model_config</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.StorageRequestType" href="#naptha_sdk.storage.schemas.StorageRequestType">StorageRequestType</a></code></h4>
+<ul class="two-column">
+<li><code><a title="naptha_sdk.storage.schemas.StorageRequestType.CREATE" href="#naptha_sdk.storage.schemas.StorageRequestType.CREATE">CREATE</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageRequestType.DELETE" href="#naptha_sdk.storage.schemas.StorageRequestType.DELETE">DELETE</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageRequestType.LIST" href="#naptha_sdk.storage.schemas.StorageRequestType.LIST">LIST</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageRequestType.READ" href="#naptha_sdk.storage.schemas.StorageRequestType.READ">READ</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageRequestType.SEARCH" href="#naptha_sdk.storage.schemas.StorageRequestType.SEARCH">SEARCH</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageRequestType.UPDATE" href="#naptha_sdk.storage.schemas.StorageRequestType.UPDATE">UPDATE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.StorageType" href="#naptha_sdk.storage.schemas.StorageType">StorageType</a></code></h4>
+<ul class="">
+<li><code><a title="naptha_sdk.storage.schemas.StorageType.DATABASE" href="#naptha_sdk.storage.schemas.StorageType.DATABASE">DATABASE</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageType.FILESYSTEM" href="#naptha_sdk.storage.schemas.StorageType.FILESYSTEM">FILESYSTEM</a></code></li>
+<li><code><a title="naptha_sdk.storage.schemas.StorageType.IPFS" href="#naptha_sdk.storage.schemas.StorageType.IPFS">IPFS</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.schemas.UpdateStorageRequest" href="#naptha_sdk.storage.schemas.UpdateStorageRequest">UpdateStorageRequest</a></code></h4>
+<ul class="">
+<li><code><a title="naptha_sdk.storage.schemas.UpdateStorageRequest.data" href="#naptha_sdk.storage.schemas.UpdateStorageRequest.data">data</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+
+</footer>
+</body>
+</html>

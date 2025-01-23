@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>naptha_sdk.utils API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>naptha_sdk.utils</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="naptha_sdk.utils.add_credentials_to_env"><code class="name flex">
+<span>def <span class="ident">add_credentials_to_env</span></span>(<span>username, password, private_key_path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_credentials_to_env(username, password, private_key_path):
+    env_file_path = os.path.join(os.getcwd(), &#39;.env&#39;)
+    updated_lines = []
+    hub_user_found = False
+    hub_pass_found = False
+    private_key_found = False
+
+    # Read the existing .env file
+    with open(env_file_path, &#39;r&#39;) as env_file:
+        for line in env_file:
+            if line.startswith(&#39;HUB_USERNAME=&#39;):
+                updated_lines.append(f&#34;HUB_USERNAME={username}\n&#34;)
+                hub_user_found = True
+            elif line.startswith(&#39;HUB_PASSWORD=&#39;):
+                updated_lines.append(f&#34;HUB_PASSWORD={password}\n&#34;)
+                hub_pass_found = True
+            elif line.startswith(&#39;PRIVATE_KEY=&#39;):
+                updated_lines.append(f&#34;PRIVATE_KEY={private_key_path}\n&#34;)
+                private_key_found = True
+            else:
+                updated_lines.append(line)
+
+    # Append new credentials if not found
+    if not hub_user_found:
+        updated_lines.append(f&#34;HUB_USERNAME={username}\n&#34;)
+    if not hub_pass_found:
+        updated_lines.append(f&#34;HUB_PASSWORD={password}\n&#34;)
+    if not private_key_found:
+        updated_lines.append(f&#34;PRIVATE_KEY={private_key_path}\n&#34;)
+
+    # Write the updated content back to the .env file
+    with open(env_file_path, &#39;w&#39;) as env_file:
+        env_file.writelines(updated_lines)
+
+    print(&#34;Your credentials have been updated in the .env file. You can now use these credentials to authenticate in future sessions.&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.utils.get_logger"><code class="name flex">
+<span>def <span class="ident">get_logger</span></span>(<span>name)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_logger(name):
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.DEBUG)
+    handler = logging.StreamHandler()
+    handler.setLevel(logging.DEBUG)
+    formatter = logging.Formatter(
+        &#34;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#34;
+    )
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    return logger</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.utils.load_yaml"><code class="name flex">
+<span>def <span class="ident">load_yaml</span></span>(<span>cfg_path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_yaml(cfg_path):
+    with open(cfg_path, &#34;r&#34;) as file:
+        cfg = yaml.load(file, Loader=yaml.FullLoader)
+    return cfg</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.utils.node_to_url"><code class="name flex">
+<span>def <span class="ident">node_to_url</span></span>(<span>node_schema: <a title="naptha_sdk.schemas.NodeConfigUser" href="schemas.html#naptha_sdk.schemas.NodeConfigUser">NodeConfigUser</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def node_to_url(node_schema: NodeConfigUser):
+    return f&#34;http://{node_schema.ip}:{node_schema.http_port}&#34;</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.utils.update_private_key_in_env"><code class="name flex">
+<span>def <span class="ident">update_private_key_in_env</span></span>(<span>private_key_path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_private_key_in_env(private_key_path):
+    env_file_path = os.path.join(os.getcwd(), &#39;.env&#39;)
+    updated_lines = []
+    private_key_found = False
+
+    with open(env_file_path, &#39;r&#39;) as env_file:
+        for line in env_file:
+            if line.startswith(&#39;PRIVATE_KEY=&#39;):
+                updated_lines.append(f&#34;PRIVATE_KEY={private_key_path}\n&#34;)
+                private_key_found = True
+            else:
+                updated_lines.append(line)
+
+    if not private_key_found:
+        updated_lines.append(f&#34;PRIVATE_KEY={private_key_path}\n&#34;)
+
+    with open(env_file_path, &#39;w&#39;) as env_file:
+        env_file.writelines(updated_lines)
+
+    print(&#34;Your private key have been updated in the .env file&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.utils.url_to_node"><code class="name flex">
+<span>def <span class="ident">url_to_node</span></span>(<span>url: str)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def url_to_node(url: str):
+    protocol = url.split(&#39;://&#39;)[0]
+    host = url.split(&#39;://&#39;)[1].split(&#39;:&#39;)[0] 
+    http_port = int(url.split(&#39;:&#39;)[-1])
+    return NodeConfigUser(ip=host, http_port=http_port, server_type=protocol)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.utils.write_private_key_to_file"><code class="name flex">
+<span>def <span class="ident">write_private_key_to_file</span></span>(<span>private_key, username)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_private_key_to_file(private_key, username):
+    private_key_file_path = os.path.join(os.getcwd(), f&#39;{username}.pem&#39;)
+    with open(private_key_file_path, &#39;w&#39;) as file:
+        file.write(private_key)
+    
+    update_private_key_in_env(private_key_file_path)    </code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="naptha_sdk.utils.AsyncMixin"><code class="flex name class">
+<span>class <span class="ident">AsyncMixin</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AsyncMixin:
+    def __init__(self, *args, **kwargs):
+        &#34;&#34;&#34;
+        Standard constructor used for arguments pass
+        Do not override. Use __ainit__ instead
+        &#34;&#34;&#34;
+        self.__storedargs = args, kwargs
+        self.async_initialized = False
+
+    async def __ainit__(self, *args, **kwargs):
+        &#34;&#34;&#34;Async constructor, you should implement this&#34;&#34;&#34;
+
+    async def __initobj(self):
+        &#34;&#34;&#34;Crutch used for __await__ after spawning&#34;&#34;&#34;
+        assert not self.async_initialized
+        self.async_initialized = True
+        # pass the parameters to __ainit__ that passed to __init__
+        await self.__ainit__(*self.__storedargs[0], **self.__storedargs[1])
+        return self
+
+    def __await__(self):
+        return self.__initobj().__await__()</code></pre>
+</details>
+<div class="desc"><p>Standard constructor used for arguments pass
+Do not override. Use <strong>ainit</strong> instead</p></div>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="naptha_sdk" href="index.html">naptha_sdk</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="naptha_sdk.utils.add_credentials_to_env" href="#naptha_sdk.utils.add_credentials_to_env">add_credentials_to_env</a></code></li>
+<li><code><a title="naptha_sdk.utils.get_logger" href="#naptha_sdk.utils.get_logger">get_logger</a></code></li>
+<li><code><a title="naptha_sdk.utils.load_yaml" href="#naptha_sdk.utils.load_yaml">load_yaml</a></code></li>
+<li><code><a title="naptha_sdk.utils.node_to_url" href="#naptha_sdk.utils.node_to_url">node_to_url</a></code></li>
+<li><code><a title="naptha_sdk.utils.update_private_key_in_env" href="#naptha_sdk.utils.update_private_key_in_env">update_private_key_in_env</a></code></li>
+<li><code><a title="naptha_sdk.utils.url_to_node" href="#naptha_sdk.utils.url_to_node">url_to_node</a></code></li>
+<li><code><a title="naptha_sdk.utils.write_private_key_to_file" href="#naptha_sdk.utils.write_private_key_to_file">write_private_key_to_file</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="naptha_sdk.utils.AsyncMixin" href="#naptha_sdk.utils.AsyncMixin">AsyncMixin</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+
+</footer>
+</body>
+</html>

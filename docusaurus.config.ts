@@ -71,11 +71,6 @@ const config: Config = {
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
         },
-        {
-          label: 'API Reference',
-          to: '/api-reference',
-          position: 'left',
-        },
       ],
     },
     footer: {

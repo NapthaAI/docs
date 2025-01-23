@@ -4,9 +4,12 @@ const sidebars: SidebarsConfig = {
   docs: [
     'Overview',
     {
-      type: 'doc',
-      id: 'CONTRIBUTING',
-      label: 'Contributing to Naptha'
+      type: 'category',
+      label: 'Contributing',
+      items: [
+        'Contributing/infrastructure-contributor',
+        'Contributing/module-builder',
+      ],
     },
     {
       type: 'category',
@@ -14,6 +17,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'GettingStarted/Architecture',
         'GettingStarted/Abstractions',
+        'GettingStarted/Decorators',
         'GettingStarted/UseCases',
         'GettingStarted/Installation',
         'GettingStarted/SDK',

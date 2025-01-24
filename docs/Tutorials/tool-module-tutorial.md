@@ -285,9 +285,7 @@ Alternatively, you can publish your module to IPFS:
 poetry build
 ```
 
-
-
-3. Publish to IPFS:
+2. Publish to IPFS:
 ```bash
 naptha publish -r
 ```
@@ -298,10 +296,6 @@ Successfully published to IPFS!
 IPFS Hash: QmX...
 Test download: http://provider.akash.pro:30584/ipfs/QmX...
 ```
-
-:::info
-Save the IPFS hash - you can use it to verify your module is accessible
-:::
 
 ## 5. Verify Your Publication
 

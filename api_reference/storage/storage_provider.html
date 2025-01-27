@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>naptha_sdk.storage.storage_provider API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>naptha_sdk.storage.storage_provider</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="naptha_sdk.storage.storage_provider.StorageError"><code class="flex name class">
+<span>class <span class="ident">StorageError</span></span>
+<span>(</span><span>message: str, status_code: int | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StorageError(Exception):
+    &#34;&#34;&#34;Custom exception for storage operations&#34;&#34;&#34;
+    def __init__(self, message: str, status_code: Optional[int] = None):
+        self.message = message
+        self.status_code = status_code
+        super().__init__(self.message)</code></pre>
+</details>
+<div class="desc"><p>Custom exception for storage operations</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="naptha_sdk.storage.storage_provider.StorageProvider"><code class="flex name class">
+<span>class <span class="ident">StorageProvider</span></span>
+<span>(</span><span>node: <a title="naptha_sdk.schemas.NodeConfigUser" href="../schemas.html#naptha_sdk.schemas.NodeConfigUser">NodeConfigUser</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StorageProvider:
+    def __init__(self, node: NodeConfigUser):
+        self.node = node
+        self.node_url = node_to_url(node)
+        self.client = httpx.AsyncClient(timeout=HTTP_TIMEOUT)
+        logger.info(f&#34;Storage Provider URL: {self.node_url}&#34;)
+
+
+    async def _make_request(
+        self,
+        request: BaseStorageRequest,
+        files: Optional[Dict] = None
+    ) -&gt; Any:
+        &#34;&#34;&#34;Make HTTP request to storage endpoint&#34;&#34;&#34;
+        endpoint = f&#34;{self.node_url}/storage/{request.storage_type.value}/{request.request_type.value}/{request.path}&#34;
+        print(f&#34;Request: {request}&#34;)
+        try:
+            response = None
+            match request:
+                case CreateStorageRequest():
+                    form_data = {}
+                    if not request.data:
+                        request.data = {}
+                    if not request.options:
+                        request.options = {}
+                    form_data[&#39;data&#39;] = json.dumps({**request.data, **request.options})
+                    print(f&#34;Form data: {form_data}&#34;)
+                    files = files if files is not None else {}
+                    response = await self.client.post(endpoint, data=form_data, files=files)
+
+                case ReadStorageRequest():
+                    if request.storage_type in [StorageType.FILESYSTEM, StorageType.IPFS]:
+                        response = await self.client.get(endpoint)
+                        response.raise_for_status()
+                        # Check content type to determine response handling
+                        content_type = response.headers.get(&#39;content-type&#39;, &#39;&#39;)
+                        if &#39;json&#39; in content_type:
+                            return response.json()
+                        return response.content
+                    else:
+                        params = {&#34;options&#34;: json.dumps(request.options)} if request.options else None
+                        response = await self.client.get(endpoint, params=params)
+                                        
+                case UpdateStorageRequest():
+                    # Extract condition from options if present
+                    condition = request.options.get(&#34;condition&#34;) if request.options else None
+                    form_data = {
+                        &#39;data&#39;: json.dumps(request.data)
+                    }
+                    params = {
+                        &#39;condition&#39;: json.dumps(condition) if condition else None
+                    }
+                    response = await self.client.put(endpoint, data=form_data, params=params)
+                    
+                case ListStorageRequest():
+                    params = {&#34;options&#34;: json.dumps(request.options)} if request.options else None
+                    response = await self.client.get(endpoint, params=params)
+                    
+                case DeleteStorageRequest():
+                    params = {}
+                    if request.storage_type == StorageType.DATABASE:
+                        if request.condition:
+                            params[&#34;condition&#34;] = json.dumps(request.condition)
+                    elif request.storage_type == StorageType.FILESYSTEM:
+                        if request.options:
+                            params[&#34;options&#34;] = json.dumps(request.options)
+                    response = await self.client.delete(endpoint, params=params)
+                    
+                case SearchStorageRequest():
+                    search_data = {
+                        &#34;query&#34;: request.query,
+                        &#34;query_type&#34;: request.query_type,
+                        &#34;limit&#34;: request.limit
+                    }
+                    response = await self.client.post(endpoint, json=search_data)
+            
+            if response:
+                response.raise_for_status()
+                content_type = response.headers.get(&#39;content-type&#39;, &#39;&#39;)
+                if &#39;json&#39; in content_type:
+                    return response.json()
+                return response.content
+                
+        except httpx.HTTPStatusError as e:
+            logger.error(f&#34;HTTP error occurred: {e.response.text}&#34;)
+            raise StorageError(f&#34;HTTP error occurred: {str(e)}&#34;, status_code=e.response.status_code)
+        except Exception as e:
+            logger.error(f&#34;Storage operation failed: {str(e)}&#34;)
+            raise StorageError(f&#34;Storage operation failed: {str(e)}&#34;)
+
+    async def execute(self, request: BaseStorageRequest) -&gt; Union[StorageObject, List[StorageObject], bool]:
+        &#34;&#34;&#34;Execute storage request and return appropriate response&#34;&#34;&#34;
+        files = None
+        if isinstance(request, CreateStorageRequest) and request.file:
+            files = {&#34;file&#34;: request.file}
+            
+        result = await self._make_request(request, files=files)
+
+        match request:
+            case DeleteStorageRequest():
+                return True
+                
+            case ListStorageRequest():
+                # Handle list response which might be a simple array
+                if isinstance(result, list):
+                    return [
+                        StorageObject(
+                            location=StorageLocation(
+                                storage_type=request.storage_type,
+                                path=request.path
+                            ),
+                            data=item
+                        )
+                        for item in result
+                    ]
+                return StorageObject(
+                    location=StorageLocation(storage_type=request.storage_type, path=request.path),
+                    data=result
+                )
+                
+            case SearchStorageRequest():
+                # Handle search response which returns objects with path
+                return [
+                    StorageObject(
+                        location=StorageLocation(
+                            storage_type=request.storage_type,
+                            path=obj.get(&#34;path&#34;, &#34;&#34;)
+                        ),
+                        data=obj.get(&#34;data&#34;),
+                        metadata=obj.get(&#34;metadata&#34;)
+                    )
+                    for obj in result
+                ]
+                
+            case _:
+                return StorageObject(
+                    location=StorageLocation(
+                        storage_type=request.storage_type,
+                        path=request.path
+                    ),
+                    data=result
+                )
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        await self.client.aclose()</code></pre>
+</details>
+<div class="desc"></div>
+<h3>Methods</h3>
+<dl>
+<dt id="naptha_sdk.storage.storage_provider.StorageProvider.execute"><code class="name flex">
+<span>async def <span class="ident">execute</span></span>(<span>self,<br>request: <a title="naptha_sdk.storage.schemas.BaseStorageRequest" href="schemas.html#naptha_sdk.storage.schemas.BaseStorageRequest">BaseStorageRequest</a>) ‑> <a title="naptha_sdk.storage.schemas.StorageObject" href="schemas.html#naptha_sdk.storage.schemas.StorageObject">StorageObject</a> | List[<a title="naptha_sdk.storage.schemas.StorageObject" href="schemas.html#naptha_sdk.storage.schemas.StorageObject">StorageObject</a>] | bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def execute(self, request: BaseStorageRequest) -&gt; Union[StorageObject, List[StorageObject], bool]:
+    &#34;&#34;&#34;Execute storage request and return appropriate response&#34;&#34;&#34;
+    files = None
+    if isinstance(request, CreateStorageRequest) and request.file:
+        files = {&#34;file&#34;: request.file}
+        
+    result = await self._make_request(request, files=files)
+
+    match request:
+        case DeleteStorageRequest():
+            return True
+            
+        case ListStorageRequest():
+            # Handle list response which might be a simple array
+            if isinstance(result, list):
+                return [
+                    StorageObject(
+                        location=StorageLocation(
+                            storage_type=request.storage_type,
+                            path=request.path
+                        ),
+                        data=item
+                    )
+                    for item in result
+                ]
+            return StorageObject(
+                location=StorageLocation(storage_type=request.storage_type, path=request.path),
+                data=result
+            )
+            
+        case SearchStorageRequest():
+            # Handle search response which returns objects with path
+            return [
+                StorageObject(
+                    location=StorageLocation(
+                        storage_type=request.storage_type,
+                        path=obj.get(&#34;path&#34;, &#34;&#34;)
+                    ),
+                    data=obj.get(&#34;data&#34;),
+                    metadata=obj.get(&#34;metadata&#34;)
+                )
+                for obj in result
+            ]
+            
+        case _:
+            return StorageObject(
+                location=StorageLocation(
+                    storage_type=request.storage_type,
+                    path=request.path
+                ),
+                data=result
+            )</code></pre>
+</details>
+<div class="desc"><p>Execute storage request and return appropriate response</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="naptha_sdk.storage" href="/api_reference/storage/index.html">naptha_sdk.storage</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="naptha_sdk.storage.storage_provider.StorageError" href="#naptha_sdk.storage.storage_provider.StorageError">StorageError</a></code></h4>
+</li>
+<li>
+<h4><code><a title="naptha_sdk.storage.storage_provider.StorageProvider" href="#naptha_sdk.storage.storage_provider.StorageProvider">StorageProvider</a></code></h4>
+<ul class="">
+<li><code><a title="naptha_sdk.storage.storage_provider.StorageProvider.execute" href="#naptha_sdk.storage.storage_provider.StorageProvider.execute">execute</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+</body>
+</html>

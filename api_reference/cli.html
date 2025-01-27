@@ -1,0 +1,1593 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>naptha_sdk.cli API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>naptha_sdk.cli</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="naptha_sdk.cli.add_data_to_memory"><code class="name flex">
+<span>async def <span class="ident">add_data_to_memory</span></span>(<span>naptha, memory_name, data, user_id=None, memory_node_url='http://localhost:7001')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def add_data_to_memory(naptha, memory_name, data, user_id=None, memory_node_url=&#34;http://localhost:7001&#34;):
+    try:
+        # Parse the data string into a dictionary
+        data_dict = {}
+        # Split by spaces, but keep quoted strings together
+        parts = shlex.split(data)
+        
+        for part in parts:
+            if &#39;=&#39; in part:
+                key, value = part.split(&#39;=&#39;, 1)
+                # Remove quotes if they exist
+                value = value.strip(&#34;&#39;\&#34;&#34;)
+                data_dict[key] = value
+
+        data_dict = [data_dict]
+        
+        memory_run_input = {
+            &#34;consumer_id&#34;: user_id,
+            &#34;inputs&#34;: {
+                &#34;mode&#34;: &#34;add_data&#34;,
+                &#34;data&#34;: json.dumps(data_dict)
+            },
+            &#34;memory_deployment&#34;: {
+                &#34;name&#34;: memory_name,
+                &#34;module&#34;: {
+                    &#34;name&#34;: memory_name
+                },
+                &#34;memory_node_url&#34;: memory_node_url
+            }
+        }
+
+        memory_run = await naptha.node.run_memory_and_poll(memory_run_input)
+        console = Console()
+        console.print(f&#34;\n[green]Successfully added data to memory:[/green] {memory_name}&#34;)
+        console.print(memory_run)
+        
+    except Exception as e:
+        console = Console()
+        console.print(f&#34;\n[red]Error adding data to memory:[/red] {str(e)}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.cli"><code class="name flex">
+<span>def <span class="ident">cli</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cli():
+    import sys
+    import traceback
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print(&#34;\nOperation cancelled by user&#34;)
+        sys.exit(1)
+    except Exception as e:
+        print(f&#34;Error: {str(e)}&#34;)
+        print(f&#34;Full traceback: {traceback.format_exc()}&#34;)
+        sys.exit(1)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.create"><code class="name flex">
+<span>async def <span class="ident">create</span></span>(<span>naptha,<br>module_name,<br>agent_modules=None,<br>agent_nodes=None,<br>environment_modules=None,<br>environment_nodes=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create(
+        naptha,
+        module_name,
+        agent_modules = None,
+        agent_nodes = None,
+        environment_modules = None,
+        environment_nodes = None
+):
+    module_type = module_name.split(&#34;:&#34;)[0] if &#34;:&#34; in module_name else &#34;agent&#34;
+    module_name = module_name.split(&#34;:&#34;)[-1]  # Remove prefix if exists
+
+    user = await naptha.node.check_user(user_input={&#34;public_key&#34;: naptha.hub.public_key})
+
+    if user[&#39;is_registered&#39;]:
+        print(&#34;Found user...&#34;, user)
+    else:
+        print(&#34;No user found. Registering user...&#34;)
+        user = await naptha.node.register_user(user_input=user)
+        print(f&#34;User registered: {user}.&#34;)
+
+    # Create auxiliary deployments if needed
+    aux_deployments = {
+        &#34;agent_deployments&#34;: [
+            AgentDeployment(
+                name=agent_module,
+                module={&#34;name&#34;: agent_module},
+                node=url_to_node(agent_node)
+            ) for agent_module, agent_node in zip(agent_modules or [], agent_nodes or [])
+        ],
+        &#34;environment_deployments&#34;: [
+            EnvironmentDeployment(
+                name=env_module,
+                module={&#34;name&#34;: env_module},
+                node=url_to_node(env_node)
+            ) for env_module, env_node in zip(environment_modules or [], environment_nodes or [])
+        ]
+    }
+
+    # Define deployment configurations for each module type
+    deployment_configs = {
+        &#34;agent&#34;: lambda: AgentDeployment(
+            name=module_name,
+            module={&#34;name&#34;: module_name},
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;)),
+        ),
+        &#34;tool&#34;: lambda: ToolDeployment(
+            name=module_name,
+            module={&#34;name&#34;: module_name},
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;))
+        ),
+        &#34;orchestrator&#34;: lambda: OrchestratorDeployment(
+            name=module_name,
+            module={&#34;name&#34;: module_name},
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;)),
+            **aux_deployments
+        ),
+        &#34;environment&#34;: lambda: EnvironmentDeployment(
+            name=module_name,
+            module={&#34;name&#34;: module_name},
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;))
+        ),
+        &#34;kb&#34;: lambda: KBDeployment(
+            name=module_name,
+            module={&#34;name&#34;: module_name},
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;))
+        ),
+        &#34;memory&#34;: lambda: MemoryDeployment(
+            name=module_name,
+            module={&#34;name&#34;: module_name},
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;))
+        )
+    }
+
+    # Get deployment configuration for module type
+    if module_type not in deployment_configs:
+        raise ValueError(f&#34;Unsupported module type: {module_type}&#34;)
+
+    print(f&#34;Creating {module_type.title()}...&#34;)
+    deployment = deployment_configs[module_type]()
+    result = await naptha.node.create(module_type, deployment)
+    print(f&#34;{module_type.title()} creation result: {result}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.create_agent"><code class="name flex">
+<span>async def <span class="ident">create_agent</span></span>(<span>naptha, agent_config)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_agent(naptha, agent_config):
+    print(f&#34;Agent Config: {agent_config}&#34;)
+    agent = await naptha.hub.create_agent(agent_config)
+    if isinstance(agent, dict):
+        print(f&#34;Agent created: {agent}&#34;)
+    elif isinstance(agent, list):
+        print(f&#34;Agent created: {agent[0]}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.create_environment"><code class="name flex">
+<span>async def <span class="ident">create_environment</span></span>(<span>naptha, environment_config)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_environment(naptha, environment_config):
+    print(f&#34;Environment Config: {environment_config}&#34;)
+    environment = await naptha.hub.create_environment(environment_config)
+    if isinstance(environment, dict):
+        print(f&#34;Environment created: {environment}&#34;)
+    elif isinstance(environment, list):
+        print(f&#34;Environment created: {environment[0]}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.create_orchestrator"><code class="name flex">
+<span>async def <span class="ident">create_orchestrator</span></span>(<span>naptha, orchestrator_config)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_orchestrator(naptha, orchestrator_config):
+    print(f&#34;Orchestrator Config: {orchestrator_config}&#34;)
+    orchestrator = await naptha.hub.create_orchestrator(orchestrator_config)
+    if isinstance(orchestrator, dict):
+        print(f&#34;Orchestrator created: {orchestrator}&#34;)
+    elif isinstance(orchestrator, list):
+        print(f&#34;Orchestrator created: {orchestrator[0]}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.create_persona"><code class="name flex">
+<span>async def <span class="ident">create_persona</span></span>(<span>naptha, persona_config)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_persona(naptha, persona_config):
+    print(f&#34;Persona Config: {persona_config}&#34;)
+    persona = await naptha.hub.create_persona(persona_config)
+    if isinstance(persona, dict):
+        print(f&#34;Persona created: {persona}&#34;)
+    elif isinstance(persona, list):
+        print(f&#34;Persona created: {persona[0]}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.list_agents"><code class="name flex">
+<span>async def <span class="ident">list_agents</span></span>(<span>naptha)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_agents(naptha):
+    agents = await naptha.hub.list_agents()
+    
+    if not agents:
+        console = Console()
+        console.print(&#34;[red]No agents found.[/red]&#34;)
+        return
+
+    console = Console()
+    table = Table(
+        box=box.ROUNDED,
+        show_lines=True,
+        title=&#34;Available Agents&#34;,
+        title_style=&#34;bold cyan&#34;,
+        header_style=&#34;bold blue&#34;,
+        row_styles=[&#34;&#34;, &#34;dim&#34;]  # Alternating row styles
+    )
+
+    # Define columns with specific formatting
+    table.add_column(&#34;Name&#34;, justify=&#34;left&#34;, style=&#34;green&#34;)
+    table.add_column(&#34;ID&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Author&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Description&#34;, justify=&#34;left&#34;, max_width=50)
+    table.add_column(&#34;Parameters&#34;, justify=&#34;left&#34;, max_width=30)
+    table.add_column(&#34;Module URL&#34;, justify=&#34;left&#34;, max_width=30)
+    table.add_column(&#34;Module Version&#34;, justify=&#34;center&#34;)
+
+    # Add rows
+    for agent in agents:
+        table.add_row(
+            agent[&#39;name&#39;],
+            agent[&#39;id&#39;],
+            agent[&#39;author&#39;],
+            agent[&#39;description&#39;],
+            str(agent[&#39;parameters&#39;]),
+            agent[&#39;module_url&#39;],
+            agent[&#39;module_version&#39;],
+        )
+
+    # Print table and summary
+    console.print()
+    console.print(table)
+    console.print(f&#34;\n[green]Total agents:[/green] {len(agents)}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.list_environments"><code class="name flex">
+<span>async def <span class="ident">list_environments</span></span>(<span>naptha)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_environments(naptha):
+    environments = await naptha.hub.list_environments()
+    
+    if not environments:
+        console = Console()
+        console.print(&#34;[red]No environments found.[/red]&#34;)
+        return
+
+    console = Console()
+    table = Table(
+        box=box.ROUNDED,
+        show_lines=True,
+        title=&#34;Available Environments&#34;,
+        title_style=&#34;bold cyan&#34;,
+        header_style=&#34;bold blue&#34;,
+        row_styles=[&#34;&#34;, &#34;dim&#34;]  # Alternating row styles
+    )
+
+    # Define columns with specific formatting
+    table.add_column(&#34;Name&#34;, justify=&#34;left&#34;, style=&#34;green&#34;)
+    table.add_column(&#34;ID&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Author&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Description&#34;, justify=&#34;left&#34;, max_width=50)
+    table.add_column(&#34;Parameters&#34;, justify=&#34;left&#34;, max_width=30)
+    table.add_column(&#34;Module URL&#34;, justify=&#34;left&#34;, max_width=30)
+    table.add_column(&#34;Module Version&#34;, justify=&#34;center&#34;)
+
+    # Add rows
+    for environment in environments:
+        table.add_row(
+            environment[&#39;name&#39;],
+            environment[&#39;id&#39;],
+            environment[&#39;author&#39;],
+            environment[&#39;description&#39;],
+            str(environment[&#39;parameters&#39;]),
+            environment[&#39;module_url&#39;],
+            environment[&#39;module_version&#39;],
+        )
+
+    # Print table and summary
+    console.print()
+    console.print(table)
+    console.print(f&#34;\n[green]Total environments:[/green] {len(environments)}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.list_kbs"><code class="name flex">
+<span>async def <span class="ident">list_kbs</span></span>(<span>naptha, kb_name=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_kbs(naptha, kb_name=None):
+    kbs = await naptha.hub.list_kbs(kb_name=kb_name)
+    
+    if not kbs:
+        console = Console()
+        console.print(&#34;[red]No knowledge bases found.[/red]&#34;)
+        return
+
+    console = Console()
+    table = Table(
+        box=box.ROUNDED,
+        show_lines=True,
+        title=&#34;Available Knowledge Bases&#34;,
+        title_style=&#34;bold cyan&#34;, 
+        header_style=&#34;bold blue&#34;,
+        row_styles=[&#34;&#34;, &#34;dim&#34;]  # Alternating row styles
+    )
+
+    # Define columns with specific formatting
+    table.add_column(&#34;Name&#34;, justify=&#34;left&#34;, style=&#34;green&#34;)
+    table.add_column(&#34;ID&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Author&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Description&#34;, justify=&#34;left&#34;, max_width=50)
+    table.add_column(&#34;Parameters&#34;, justify=&#34;left&#34;, max_width=40)
+    table.add_column(&#34;Module URL&#34;, justify=&#34;left&#34;, max_width=40)
+    table.add_column(&#34;Module Type&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Module Version&#34;, justify=&#34;center&#34;)
+
+    # Add rows
+    for kb in kbs:
+        table.add_row(
+            kb[&#39;name&#39;],
+            kb[&#39;id&#39;],
+            kb[&#39;author&#39;],
+            kb[&#39;description&#39;],
+            kb[&#39;parameters&#39;],
+            kb[&#39;module_url&#39;],
+            kb[&#39;module_type&#39;],
+            kb[&#39;module_version&#39;]
+        )
+
+    # Print table and summary
+    console.print()
+    console.print(table)
+    console.print(f&#34;\n[green]Total knowledge bases:[/green] {len(kbs)}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.list_memories"><code class="name flex">
+<span>async def <span class="ident">list_memories</span></span>(<span>naptha, memory_name=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_memories(naptha, memory_name=None):
+    memories = await naptha.hub.list_memories(memory_name=memory_name)
+
+    if not memories:
+        console = Console()
+        console.print(&#34;[red]No memories found.[/red]&#34;)
+        return
+    
+    console = Console()
+    table = Table(
+        box=box.ROUNDED,
+        show_lines=True,
+        title=&#34;Available memories&#34;,
+        title_style=&#34;bold cyan&#34;,
+        header_style=&#34;bold blue&#34;,
+        row_styles=[&#34;&#34;, &#34;dim&#34;]
+    )
+
+    table.add_column(&#34;Name&#34;, justify=&#34;left&#34;, style=&#34;green&#34;)
+    table.add_column(&#34;ID&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Author&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Description&#34;, justify=&#34;left&#34;, max_width=50)
+    table.add_column(&#34;Parameters&#34;, justify=&#34;left&#34;, max_width=40)
+    table.add_column(&#34;Module URL&#34;, justify=&#34;left&#34;, max_width=40)
+    table.add_column(&#34;Module Version&#34;, justify=&#34;center&#34;)
+
+    # Add rows
+    for memory in memories:
+        table.add_row(
+            memory[&#39;name&#39;],
+            memory[&#39;id&#39;],
+            memory[&#39;author&#39;],
+            memory[&#39;description&#39;],
+            memory[&#39;parameters&#39;],
+            memory[&#39;module_url&#39;],
+            memory[&#39;module_version&#39;]
+        )
+
+    # Print table and summary
+    console.print()
+    console.print(table)
+    console.print(f&#34;\n[green]Total memories:[/green] {len(memories)}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.list_memory_content"><code class="name flex">
+<span>async def <span class="ident">list_memory_content</span></span>(<span>naptha, memory_name)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_memory_content(naptha, memory_name):
+    rows = await naptha.node.query_table(
+        table_name=memory_name,   
+        columns=&#34;*&#34;,
+        condition=None,
+        order_by=None,
+        limit=None
+    )
+    
+    if not rows.get(&#39;rows&#39;):
+        console = Console()
+        console.print(&#34;[red]No content found in memory.[/red]&#34;)
+        return
+
+    console = Console()
+    table = Table(
+        box=box.ROUNDED,
+        show_lines=True,
+        title=f&#34;Memory Content: {memory_name}&#34;,
+        title_style=&#34;bold cyan&#34;,
+        header_style=&#34;bold blue&#34;,
+        row_styles=[&#34;&#34;, &#34;dim&#34;]
+    )
+
+    # Add headers
+    headers = list(rows[&#39;rows&#39;][0].keys())
+    for header in headers:
+        if header.lower() in [&#39;id&#39;, &#39;module_url&#39;]:
+            table.add_column(header, justify=&#34;left&#34;, max_width=40)
+        elif header.lower() in [&#39;title&#39;, &#39;name&#39;]:
+            table.add_column(header, justify=&#34;left&#34;, style=&#34;green&#34;, max_width=40)
+        elif header.lower() in [&#39;text&#39;, &#39;description&#39;, &#39;content&#39;]:
+            table.add_column(header, justify=&#34;left&#34;, max_width=60)
+        else:
+            table.add_column(header, justify=&#34;left&#34;, max_width=30)
+
+    # Add rows
+    for row in rows[&#39;rows&#39;]:
+        table.add_row(*[str(row.get(key, &#39;&#39;)) for key in headers])
+
+    # Print table and summary
+    console.print()
+    console.print(table)
+    console.print(f&#34;\n[green]Total rows:[/green] {len(rows[&#39;rows&#39;])}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.list_nodes"><code class="name flex">
+<span>async def <span class="ident">list_nodes</span></span>(<span>naptha)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_nodes(naptha):
+    nodes = await naptha.hub.list_nodes()
+    
+    if not nodes:
+        console = Console()
+        console.print(&#34;[red]No nodes found.[/red]&#34;)
+        return
+
+    console = Console()
+    table = Table(
+        box=box.ROUNDED,
+        show_lines=True,
+        title=&#34;Available Nodes&#34;,
+        title_style=&#34;bold cyan&#34;,
+        header_style=&#34;bold blue&#34;,
+        row_styles=[&#34;&#34;, &#34;dim&#34;]  # Alternating row styles
+    )
+
+    # Get dynamic headers from first node
+    headers = list(nodes[0].keys())
+
+    # Define columns with specific formatting
+    table.add_column(&#34;ID&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;IP&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Owner&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;OS&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Arch&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Num Servers&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Server Type&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;HTTP Port&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Models&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Num GPUs&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Provider Types&#34;, justify=&#34;left&#34;)
+
+    # Add rows
+    for node in nodes:
+        table.add_row(
+            node[&#39;id&#39;],
+            node[&#39;ip&#39;],
+            node[&#39;owner&#39;],
+            node[&#39;os&#39;],
+            node[&#39;arch&#39;],
+            str(node[&#39;num_servers&#39;]),
+            node[&#39;server_type&#39;],
+            str(node[&#39;http_port&#39;]),
+            str(node[&#39;models&#39;]), 
+            str(node[&#39;num_gpus&#39;]),
+            str(node[&#39;provider_types&#39;]) 
+        )
+    # Print table and summary
+    console.print()
+    console.print(table)
+    console.print(f&#34;\n[green]Total nodes:[/green] {len(nodes)}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.list_orchestrators"><code class="name flex">
+<span>async def <span class="ident">list_orchestrators</span></span>(<span>naptha)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_orchestrators(naptha):
+    orchestrators = await naptha.hub.list_orchestrators()
+    
+    if not orchestrators:
+        console = Console()
+        console.print(&#34;[red]No orchestrators found.[/red]&#34;)
+        return
+
+    console = Console()
+    table = Table(
+        box=box.ROUNDED,
+        show_lines=True,
+        title=&#34;Available Orchestrators&#34;,
+        title_style=&#34;bold cyan&#34;,
+        header_style=&#34;bold blue&#34;,
+        row_styles=[&#34;&#34;, &#34;dim&#34;]  # Alternating row styles
+    )
+
+    # Define columns with specific formatting
+    table.add_column(&#34;Name&#34;, justify=&#34;left&#34;, style=&#34;green&#34;)
+    table.add_column(&#34;ID&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Author&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Description&#34;, justify=&#34;left&#34;, max_width=50)
+    table.add_column(&#34;Parameters&#34;, justify=&#34;left&#34;, max_width=30)
+    table.add_column(&#34;Module URL&#34;, justify=&#34;left&#34;, max_width=30)
+    table.add_column(&#34;Module Version&#34;, justify=&#34;center&#34;)
+
+    # Add rows
+    for orchestrator in orchestrators:
+        table.add_row(
+            orchestrator[&#39;name&#39;],
+            orchestrator[&#39;id&#39;],
+            orchestrator[&#39;author&#39;],
+            orchestrator[&#39;description&#39;],
+            str(orchestrator[&#39;parameters&#39;]),
+            orchestrator[&#39;module_url&#39;],
+            orchestrator[&#39;module_version&#39;],
+        )
+
+    # Print table and summary
+    console.print()
+    console.print(table)
+    console.print(f&#34;\n[green]Total orchestrators:[/green] {len(orchestrators)}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.list_personas"><code class="name flex">
+<span>async def <span class="ident">list_personas</span></span>(<span>naptha)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_personas(naptha):
+    personas = await naptha.hub.list_personas()
+    
+    if not personas:
+        console = Console()
+        console.print(&#34;[red]No personas found.[/red]&#34;)
+        return
+
+    console = Console()
+    table = Table(
+        box=box.ROUNDED,
+        show_lines=True,
+        title=&#34;Available Personas&#34;,
+        title_style=&#34;bold cyan&#34;,
+        header_style=&#34;bold blue&#34;,
+        row_styles=[&#34;&#34;, &#34;dim&#34;]  # Alternating row styles
+    )
+
+    # Define columns with specific formatting
+    table.add_column(&#34;Name&#34;, justify=&#34;left&#34;, style=&#34;green&#34;)
+    table.add_column(&#34;ID&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Author&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Description&#34;, justify=&#34;left&#34;, max_width=50)
+    table.add_column(&#34;Parameters&#34;, justify=&#34;left&#34;, max_width=30)
+    table.add_column(&#34;Module URL&#34;, justify=&#34;left&#34;, max_width=40)
+    table.add_column(&#34;Module Version&#34;, justify=&#34;center&#34;)
+    table.add_column(&#34;Module Entrypoint&#34;, justify=&#34;center&#34;)
+
+    # Add rows
+    for persona in personas:
+        table.add_row(
+            persona[&#39;name&#39;],
+            persona[&#39;id&#39;],
+            persona[&#39;author&#39;],
+            persona[&#39;description&#39;],
+            persona[&#39;parameters&#39;],
+            persona[&#39;module_url&#39;],
+            persona[&#39;module_version&#39;],
+            persona[&#39;module_entrypoint&#39;]
+        )
+
+    # Print table and summary
+    console.print()
+    console.print(table)
+    console.print(f&#34;\n[green]Total personas:[/green] {len(personas)}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.list_servers"><code class="name flex">
+<span>async def <span class="ident">list_servers</span></span>(<span>naptha)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_servers(naptha):
+    servers = await naptha.hub.list_servers()
+    
+    if not servers:
+        console = Console()
+        console.print(&#34;[red]No servers found.[/red]&#34;)
+        return
+
+    console = Console()
+    table = Table(
+        box=box.ROUNDED,
+        show_lines=True,
+        title=&#34;Available Servers&#34;,
+        title_style=&#34;bold cyan&#34;,
+        header_style=&#34;bold blue&#34;,
+        row_styles=[&#34;&#34;, &#34;dim&#34;]  # Alternating row styles
+    )
+
+    # Add columns
+    table.add_column(&#34;Name&#34;, justify=&#34;left&#34;, style=&#34;green&#34;)
+    table.add_column(&#34;ID&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Connection&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Node ID&#34;, justify=&#34;left&#34;, max_width=30)
+
+    # Add rows
+    for server in servers:
+        table.add_row(
+            server[&#39;name&#39;],
+            server[&#39;id&#39;],
+            server[&#39;connection_string&#39;],
+            server[&#39;node_id&#39;][:30] + &#34;...&#34;  # Truncate long node ID
+        )
+
+    # Print table and summary
+    console.print()
+    console.print(table)
+    console.print(f&#34;\n[green]Total servers:[/green] {len(servers)}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.list_tools"><code class="name flex">
+<span>async def <span class="ident">list_tools</span></span>(<span>naptha)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list_tools(naptha):
+    tools = await naptha.hub.list_tools()
+    
+    if not tools:
+        console = Console()
+        console.print(&#34;[red]No tools found.[/red]&#34;)
+        return
+
+    console = Console()
+    table = Table(
+        box=box.ROUNDED,
+        show_lines=True,
+        title=&#34;Available Tools&#34;, 
+        title_style=&#34;bold cyan&#34;,
+        header_style=&#34;bold blue&#34;,
+        row_styles=[&#34;&#34;, &#34;dim&#34;]  # Alternating row styles
+    )
+
+    # Define columns with specific formatting
+    table.add_column(&#34;Name&#34;, justify=&#34;left&#34;, style=&#34;green&#34;)
+    table.add_column(&#34;ID&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Author&#34;, justify=&#34;left&#34;)
+    table.add_column(&#34;Description&#34;, justify=&#34;left&#34;, max_width=50)
+    table.add_column(&#34;Parameters&#34;, justify=&#34;left&#34;, max_width=30)
+    table.add_column(&#34;Module URL&#34;, justify=&#34;left&#34;, max_width=30)
+    table.add_column(&#34;Module Version&#34;, justify=&#34;center&#34;)
+
+    # Add rows
+    for tool in tools:
+        table.add_row(
+            tool[&#39;name&#39;],
+            tool[&#39;id&#39;],
+            tool[&#39;author&#39;],
+            tool[&#39;description&#39;],
+            str(tool[&#39;parameters&#39;]),
+            tool[&#39;module_url&#39;],
+            tool[&#39;module_version&#39;],
+        )
+
+    # Print table and summary
+    console.print()
+    console.print(table)
+    console.print(f&#34;\n[green]Total tools:[/green] {len(tools)}&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.load_yaml_to_dict"><code class="name flex">
+<span>def <span class="ident">load_yaml_to_dict</span></span>(<span>file_path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_yaml_to_dict(file_path):
+    with open(file_path, &#39;r&#39;) as file:
+        # Load the YAML content into a Python dictionary
+        yaml_content = yaml.safe_load(file)
+    return yaml_content</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.main"><code class="name flex">
+<span>async def <span class="ident">main</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def main():
+    public_key = get_public_key(os.getenv(&#34;PRIVATE_KEY&#34;)) if os.getenv(&#34;PRIVATE_KEY&#34;) else None
+    hub_username = os.getenv(&#34;HUB_USERNAME&#34;)
+    hub_password = os.getenv(&#34;HUB_PASSWORD&#34;)
+    hub_url = os.getenv(&#34;HUB_URL&#34;)
+
+    naptha = Naptha()
+
+    parser = argparse.ArgumentParser(description=&#34;CLI with for Naptha&#34;)
+    subparsers = parser.add_subparsers(title=&#34;commands&#34;, dest=&#34;command&#34;)
+
+    # Node parser
+    nodes_parser = subparsers.add_parser(&#34;nodes&#34;, help=&#34;List available nodes.&#34;)
+    nodes_parser.add_argument(&#34;-s&#34;, &#39;--list_servers&#39;, action=&#39;store_true&#39;, help=&#39;List servers&#39;)
+
+    # Agent parser
+    agents_parser = subparsers.add_parser(&#34;agents&#34;, help=&#34;List available agents.&#34;)
+    agents_parser.add_argument(&#39;agent_name&#39;, nargs=&#39;?&#39;, help=&#39;Optional agent name&#39;)
+    agents_parser.add_argument(&#34;-p&#34;, &#39;--metadata&#39;, type=str, help=&#39;Metadata in &#34;key=value&#34; format&#39;)
+    agents_parser.add_argument(&#39;-d&#39;, &#39;--delete&#39;, action=&#39;store_true&#39;, help=&#39;Delete a agent&#39;)
+
+    # Orchestrator parser
+    orchestrators_parser = subparsers.add_parser(&#34;orchestrators&#34;, help=&#34;List available orchestrators.&#34;)
+    orchestrators_parser.add_argument(&#39;orchestrator_name&#39;, nargs=&#39;?&#39;, help=&#39;Optional orchestrator name&#39;)
+    orchestrators_parser.add_argument(&#34;-p&#34;, &#39;--metadata&#39;, type=str, help=&#39;Metadata in &#34;key=value&#34; format&#39;)
+    orchestrators_parser.add_argument(&#39;-d&#39;, &#39;--delete&#39;, action=&#39;store_true&#39;, help=&#39;Delete an orchestrator&#39;)
+
+    # Environment parser
+    environments_parser = subparsers.add_parser(&#34;environments&#34;, help=&#34;List available environments.&#34;)
+    environments_parser.add_argument(&#39;environment_name&#39;, nargs=&#39;?&#39;, help=&#39;Optional environment name&#39;)
+    environments_parser.add_argument(&#34;-p&#34;, &#39;--metadata&#39;, type=str, help=&#39;Metadata in &#34;key=value&#34; format&#39;)
+    environments_parser.add_argument(&#39;-d&#39;, &#39;--delete&#39;, action=&#39;store_true&#39;, help=&#39;Delete an environment&#39;)
+
+    # Persona parser
+    personas_parser = subparsers.add_parser(&#34;personas&#34;, help=&#34;List available personas.&#34;)
+    personas_parser.add_argument(&#39;persona_name&#39;, nargs=&#39;?&#39;, help=&#39;Optional persona name&#39;)
+    personas_parser.add_argument(&#34;-p&#34;, &#39;--metadata&#39;, type=str, help=&#39;Metadata in &#34;key=value&#34; format&#39;)
+    personas_parser.add_argument(&#39;-d&#39;, &#39;--delete&#39;, action=&#39;store_true&#39;, help=&#39;Delete a persona&#39;)
+
+    # Tool parser
+    tools_parser = subparsers.add_parser(&#34;tools&#34;, help=&#34;List available tools.&#34;)
+    tools_parser.add_argument(&#39;tool_name&#39;, nargs=&#39;?&#39;, help=&#39;Optional tool name&#39;)
+    tools_parser.add_argument(&#34;-p&#34;, &#39;--metadata&#39;, type=str, help=&#39;Metadata in &#34;key=value&#34; format&#39;)
+    tools_parser.add_argument(&#39;-d&#39;, &#39;--delete&#39;, action=&#39;store_true&#39;, help=&#39;Delete a tool&#39;)
+
+    # Memory parser
+    memories_parser = subparsers.add_parser(&#34;memories&#34;, help=&#34;List available memories.&#34;)
+    memories_parser.add_argument(&#39;memory_name&#39;, nargs=&#39;?&#39;, help=&#39;Optional memory name&#39;)
+    memories_parser.add_argument(&#39;-p&#39;, &#39;--metadata&#39;, type=str, help=&#39;Metadata for memory registration in &#34;key=value&#34; format&#39;)
+    memories_parser.add_argument(&#39;-d&#39;, &#39;--delete&#39;, action=&#39;store_true&#39;, help=&#39;Delete a memory&#39;)
+    memories_parser.add_argument(&#39;-m&#39;, &#39;--memory_nodes&#39;, type=str, help=&#39;Memory nodes&#39;, default=[&#34;http://localhost:7001&#34;])
+
+    # Knowledge base parser
+    kbs_parser = subparsers.add_parser(&#34;kbs&#34;, help=&#34;List available knowledge bases.&#34;)
+    kbs_parser.add_argument(&#39;kb_name&#39;, nargs=&#39;?&#39;, help=&#39;Optional knowledge base name&#39;)
+    kbs_parser.add_argument(&#39;-p&#39;, &#39;--metadata&#39;, type=str, help=&#39;Metadata for knowledge base registration in &#34;key=value&#34; format&#39;)
+    kbs_parser.add_argument(&#39;-d&#39;, &#39;--delete&#39;, action=&#39;store_true&#39;, help=&#39;Delete a knowledge base&#39;)
+    kbs_parser.add_argument(&#39;-k&#39;, &#39;--kb_nodes&#39;, type=str, help=&#39;Knowledge base nodes&#39;)
+
+    # Create parser
+    create_parser = subparsers.add_parser(&#34;create&#34;, help=&#34;Execute create command.&#34;)
+    create_parser.add_argument(&#34;module&#34;, help=&#34;Select the module to create&#34;)
+    create_parser.add_argument(&#34;-a&#34;, &#34;--agent_modules&#34;, help=&#34;Agent modules to create&#34;)
+    create_parser.add_argument(&#34;-n&#34;, &#34;--agent_nodes&#34;, help=&#34;Agent nodes to take part in orchestrator runs.&#34;)
+    create_parser.add_argument(&#34;-e&#34;, &#34;--environment_modules&#34;, help=&#34;Environment module to create&#34;)
+    create_parser.add_argument(&#34;-m&#34;, &#34;--environment_nodes&#34;, help=&#34;Environment nodes to store data during agent runs.&#34;)
+
+    # Run parser
+    run_parser = subparsers.add_parser(&#34;run&#34;, help=&#34;Execute run command.&#34;)
+    run_parser.add_argument(&#34;agent&#34;, help=&#34;Select the agent to run&#34;)
+    run_parser.add_argument(&#34;-p&#34;, &#39;--parameters&#39;, type=str, help=&#39;Parameters in &#34;key=value&#34; format&#39;)
+    run_parser.add_argument(&#34;-n&#34;, &#34;--agent_nodes&#34;, help=&#34;Agent nodes to take part in module runs.&#34;)
+    run_parser.add_argument(&#34;-t&#34;, &#34;--tool_nodes&#34;, help=&#34;Tool nodes to take part in module runs.&#34;)
+    run_parser.add_argument(&#34;-e&#34;, &#34;--environment_nodes&#34;, help=&#34;Environment nodes to store data during module runs.&#34;)
+    run_parser.add_argument(&#39;-k&#39;, &#39;--kb_nodes&#39;, type=str, help=&#39;Knowledge base nodes to take part in module runs.&#39;)
+    run_parser.add_argument(&#39;-m&#39;, &#39;--memory_nodes&#39;, type=str, help=&#39;Memory nodes&#39;)
+    run_parser.add_argument(&#34;-pm&#34;, &#34;--persona_modules&#34;, help=&#34;Personas URLs to install before running the agent&#34;)
+    run_parser.add_argument(&#34;-f&#34;, &#34;--file&#34;, help=&#34;YAML file with module run parameters&#34;)
+
+    # Inference parser
+    inference_parser = subparsers.add_parser(&#34;inference&#34;, help=&#34;Run model inference.&#34;)
+    inference_parser.add_argument(&#34;prompt&#34;, help=&#34;Input prompt for the model&#34;)
+    inference_parser.add_argument(&#34;-m&#34;, &#34;--model&#34;, help=&#34;Model to use for inference&#34;, default=&#34;phi3:mini&#34;)
+    inference_parser.add_argument(&#34;-p&#34;, &#34;--parameters&#34;, type=str, help=&#39;Additional model parameters in &#34;key=value&#34; format&#39;)
+
+    # Storage parser
+    storage_parser = subparsers.add_parser(&#34;storage&#34;, help=&#34;Interact with Node storage.&#34;)
+    storage_parser.add_argument(&#34;storage_type&#34;, help=&#34;The type of storage&#34;, choices=[&#34;db&#34;, &#34;fs&#34;, &#34;ipfs&#34;])
+    storage_parser.add_argument(&#34;operation&#34;, help=&#34;The operation to run&#34;, choices=[&#34;create&#34;, &#34;read&#34;, &#34;update&#34;, &#34;delete&#34;, &#34;list&#34;, &#34;search&#34;])
+    storage_parser.add_argument(&#34;path&#34;, help=&#34;The path to store the object&#34;)
+    storage_parser.add_argument(&#34;-d&#34;, &#34;--data&#34;, help=&#34;Data to write to storage&#34;)
+    storage_parser.add_argument(&#34;-s&#34;, &#34;--schema&#34;, help=&#34;Schema to write to storage&#34;)
+    storage_parser.add_argument(&#34;-o&#34;, &#34;--options&#34;, help=&#34;Options to use with storage&#34;)
+    storage_parser.add_argument(&#34;-f&#34;, &#34;--file&#34;, help=&#34;File path for fs/ipfs operations&#34;)
+    storage_parser.add_argument(&#34;--output&#34;, help=&#34;Output path for downloaded files&#34;, default=&#34;./downloads&#34;)
+
+    # Signup command
+    signup_parser = subparsers.add_parser(&#34;signup&#34;, help=&#34;Sign up a new user.&#34;)
+
+    # Publish command
+    publish_parser = subparsers.add_parser(&#34;publish&#34;, help=&#34;Publish agents.&#34;)
+    publish_parser.add_argument(&#34;-d&#34;, &#34;--decorator&#34;, help=&#34;Publish module via decorator&#34;, action=&#34;store_true&#34;)
+    publish_parser.add_argument(&#34;-r&#34;, &#34;--register&#34;, 
+                              help=&#34;Register modules with hub. Optionally provide a GitHub URL to skip IPFS storage&#34;, 
+                              nargs=&#39;?&#39;, 
+                              const=True,
+                              metavar=&#34;URL&#34;)
+    publish_parser.add_argument(&#34;-s&#34;, &#34;--subdeployments&#34;, help=&#34;Publish subdeployments&#34;, action=&#34;store_true&#34;)
+        
+    async with naptha as naptha:
+        args = parser.parse_args()
+        args = _parse_str_args(args)
+        print(args)
+        if args.command == &#34;signup&#34;:
+            _, _ = await user_setup_flow(hub_url, public_key)
+        elif args.command in [
+            &#34;nodes&#34;, &#34;agents&#34;, &#34;orchestrators&#34;, &#34;environments&#34;, 
+            &#34;personas&#34;, &#34;kbs&#34;, &#34;memories&#34;, &#34;tools&#34;, &#34;run&#34;, &#34;inference&#34;, 
+            &#34;publish&#34;, &#34;create&#34;, &#34;storage&#34;
+        ]:
+            if not naptha.hub.is_authenticated:
+                if not hub_username or not hub_password:
+                    print(
+                        &#34;Please set HUB_USERNAME and HUB_PASSWORD environment variables or sign up first (run naptha signup).&#34;)
+                    return
+                success, _, _ = await naptha.hub.signin(hub_username, hub_password)
+                if not success:
+                    print(&#34;Authentication failed. Please check your username and password.&#34;)
+                    return
+
+            if args.command == &#34;nodes&#34;:
+                if not args.list_servers:
+                    await list_nodes(naptha)   
+                else:
+                    await list_servers(naptha)
+            elif args.command == &#34;agents&#34;:
+                if not args.agent_name:
+                    await list_agents(naptha)
+                elif args.delete and len(args.agent_name.split()) == 1:
+                    await naptha.hub.delete_agent(args.agent_name)
+                elif len(args.agent_name.split()) == 1:
+                    if hasattr(args, &#39;metadata&#39;) and args.metadata is not None:
+                        params = shlex.split(args.metadata)
+                        parsed_params = {}
+                        for param in params:
+                            key, value = param.split(&#39;=&#39;)
+                            parsed_params[key] = value
+
+                        required_metadata = [&#39;description&#39;, &#39;parameters&#39;, &#39;module_url&#39;]
+                        missing_metadata = [param for param in required_metadata if param not in parsed_params]
+                        if missing_metadata:
+                            print(f&#34;Missing required metadata: {&#39;, &#39;.join(missing_metadata)}&#34;)
+                            return
+                        agent_config = {
+                            &#34;id&#34;: f&#34;agent:{args.agent_name}&#34;,
+                            &#34;name&#34;: args.agent_name,
+                            &#34;description&#34;: parsed_params[&#39;description&#39;],
+                            &#34;parameters&#34;: parsed_params[&#39;parameters&#39;],
+                            &#34;author&#34;: f&#34;user:{naptha.hub.public_key}&#34;,
+                            &#34;module_url&#34;: parsed_params[&#39;module_url&#39;],
+                            &#34;module_type&#34;: parsed_params.get(&#39;module_type&#39;, &#39;agent&#39;),
+                            &#34;module_version&#34;: parsed_params.get(&#39;module_version&#39;, &#39;0.1&#39;),
+                            &#34;module_entrypoint&#34;: parsed_params.get(&#39;module_entrypoint&#39;, &#39;run.py&#39;),
+                            &#34;execution_type&#34;: parsed_params.get(&#39;execution_type&#39;, &#39;package&#39;)
+                        }
+                        await create_agent(naptha, agent_config)
+                else:
+                    print(&#34;Invalid command.&#34;)
+            elif args.command == &#34;orchestrators&#34;:
+                if not args.orchestrator_name:
+                    await list_orchestrators(naptha)
+                elif args.delete and len(args.orchestrator_name.split()) == 1:
+                    await naptha.hub.delete_orchestrator(args.orchestrator_name)
+                elif len(args.orchestrator_name.split()) == 1:
+                    if hasattr(args, &#39;metadata&#39;) and args.metadata is not None:
+                        params = shlex.split(args.metadata)
+                        parsed_params = {}
+                        for param in params:
+                            key, value = param.split(&#39;=&#39;)
+                            parsed_params[key] = value
+
+                        required_metadata = [&#39;description&#39;, &#39;parameters&#39;, &#39;module_url&#39;]
+                        if not all(param in parsed_params for param in required_metadata):
+                            print(f&#34;Missing one or more of the following required metadata: {required_metadata}&#34;)
+                            return
+                            
+                        orchestrator_config = {
+                            &#34;id&#34;: f&#34;orchestrator:{args.orchestrator_name}&#34;,
+                            &#34;name&#34;: args.orchestrator_name,
+                            &#34;description&#34;: parsed_params[&#39;description&#39;],
+                            &#34;parameters&#34;: parsed_params[&#39;parameters&#39;],
+                            &#34;author&#34;: f&#34;user:{naptha.hub.public_key}&#34;,
+                            &#34;module_url&#34;: parsed_params[&#39;module_url&#39;],
+                            &#34;module_type&#34;: parsed_params.get(&#39;module_type&#39;, &#39;orchestrator&#39;),
+                            &#34;module_version&#34;: parsed_params.get(&#39;module_version&#39;, &#39;0.1&#39;),
+                            &#34;module_entrypoint&#34;: parsed_params.get(&#39;module_entrypoint&#39;, &#39;run.py&#39;),
+                            &#34;execution_type&#34;: parsed_params.get(&#39;execution_type&#39;, &#39;package&#39;)
+                        }
+                        await create_orchestrator(naptha, orchestrator_config)
+                else:
+                    print(&#34;Invalid command.&#34;)
+            elif args.command == &#34;environments&#34;:
+                if not args.environment_name:
+                    await list_environments(naptha)
+                elif args.delete and len(args.environment_name.split()) == 1:
+                    await naptha.hub.delete_environment(args.environment_name)
+                elif len(args.environment_name.split()) == 1:
+                    if hasattr(args, &#39;metadata&#39;) and args.metadata is not None:
+                        params = shlex.split(args.metadata)
+                        parsed_params = {}
+                        for param in params:
+                            key, value = param.split(&#39;=&#39;)
+                            parsed_params[key] = value
+
+                        required_metadata = [&#39;description&#39;, &#39;parameters&#39;, &#39;module_url&#39;]
+                        if not all(param in parsed_params for param in required_metadata):
+                            print(f&#34;Missing one or more of the following required metadata: {required_metadata}&#34;)
+                            return
+                            
+                        environment_config = {
+                            &#34;id&#34;: f&#34;environment:{args.environment_name}&#34;,
+                            &#34;name&#34;: args.environment_name,
+                            &#34;description&#34;: parsed_params[&#39;description&#39;],
+                            &#34;parameters&#34;: parsed_params[&#39;parameters&#39;],
+                            &#34;author&#34;: f&#34;user:{naptha.hub.public_key}&#34;,
+                            &#34;module_url&#34;: parsed_params[&#39;module_url&#39;],
+                            &#34;module_type&#34;: parsed_params.get(&#39;module_type&#39;, &#39;environment&#39;),
+                            &#34;module_version&#34;: parsed_params.get(&#39;module_version&#39;, &#39;0.1&#39;),
+                            &#34;module_entrypoint&#34;: parsed_params.get(&#39;module_entrypoint&#39;, &#39;run.py&#39;),
+                            &#34;execution_type&#34;: parsed_params.get(&#39;execution_type&#39;, &#39;package&#39;)
+                        }
+                        await create_environment(naptha, environment_config)
+                else:
+                    print(&#34;Invalid command.&#34;)
+            elif args.command == &#34;tools&#34;:
+                if not args.tool_name:
+                    await list_tools(naptha)
+                elif args.delete and len(args.tool_name.split()) == 1:
+                    await naptha.hub.delete_tool(args.tool_name)
+                elif len(args.tool_name.split()) == 1:
+                    if hasattr(args, &#39;metadata&#39;) and args.metadata is not None:
+                        params = shlex.split(args.metadata)
+                        parsed_params = {}
+                        for param in params:
+                            key, value = param.split(&#39;=&#39;)
+                            parsed_params[key] = value
+
+                        required_metadata = [&#39;description&#39;, &#39;parameters&#39;, &#39;module_url&#39;]
+                        if not all(param in parsed_params for param in required_metadata):
+                            print(f&#34;Missing one or more of the following required metadata: {required_metadata}&#34;)
+                            return
+                            
+                        tool_config = {
+                            &#34;id&#34;: f&#34;tool:{args.tool_name}&#34;,
+                            &#34;name&#34;: args.tool_name,
+                            &#34;description&#34;: parsed_params[&#39;description&#39;],
+                            &#34;parameters&#34;: parsed_params[&#39;parameters&#39;],
+                            &#34;author&#34;: f&#34;user:{naptha.hub.public_key}&#34;,
+                            &#34;module_url&#34;: parsed_params[&#39;module_url&#39;],
+                            &#34;module_type&#34;: parsed_params.get(&#39;module_type&#39;, &#39;tool&#39;),
+                            &#34;module_version&#34;: parsed_params.get(&#39;module_version&#39;, &#39;0.1&#39;),
+                            &#34;module_entrypoint&#34;: parsed_params.get(&#39;module_entrypoint&#39;, &#39;run.py&#39;),
+                            &#34;execution_type&#34;: parsed_params.get(&#39;execution_type&#39;, &#39;package&#39;)
+                        }
+                        await naptha.hub.create_tool(tool_config)
+                else:
+                    print(&#34;Invalid command.&#34;)
+            elif args.command == &#34;personas&#34;:
+                if not args.persona_name:
+                    await list_personas(naptha)
+                elif args.delete and len(args.persona_name.split()) == 1:
+                    await naptha.hub.delete_persona(args.persona_name)
+                elif len(args.persona_name.split()) == 1:
+                    if hasattr(args, &#39;metadata&#39;) and args.metadata is not None:
+                        params = shlex.split(args.metadata)
+                        parsed_params = {}
+                        for param in params:
+                            key, value = param.split(&#39;=&#39;)
+                            parsed_params[key] = value
+
+                        required_metadata = [&#39;description&#39;, &#39;parameters&#39;, &#39;module_url&#39;]
+                        if not all(param in parsed_params for param in required_metadata):
+                            print(f&#34;Missing one or more of the following required metadata: {required_metadata}&#34;)
+                            return
+                            
+                        persona_config = {
+                            &#34;id&#34;: f&#34;persona:{args.persona_name}&#34;,
+                            &#34;name&#34;: args.persona_name,
+                            &#34;description&#34;: parsed_params[&#39;description&#39;],
+                            &#34;parameters&#34;: parsed_params[&#39;parameters&#39;],
+                            &#34;author&#34;: f&#34;user:{naptha.hub.public_key}&#34;,
+                            &#34;module_url&#34;: parsed_params[&#39;module_url&#39;],
+                            &#34;module_type&#34;: parsed_params.get(&#39;module_type&#39;, &#39;persona&#39;),
+                            &#34;module_version&#34;: parsed_params.get(&#39;module_version&#39;, &#39;0.1&#39;),
+                            &#34;module_entrypoint&#34;: parsed_params.get(&#39;module_entrypoint&#39;, &#39;run.py&#39;),
+                            &#34;execution_type&#34;: parsed_params.get(&#39;execution_type&#39;, &#39;package&#39;)
+                        }
+                        await create_persona(naptha, persona_config)
+                else:
+                    print(&#34;Invalid command.&#34;)
+            elif args.command == &#34;memories&#34;:
+                if not args.memory_name:
+                    # List all memories
+                    await list_memories(naptha)
+                elif args.list:
+                    # List content of specific memory
+                    await list_memory_content(naptha, args.memory_name)
+                elif args.add:
+                    # Add data to memory
+                    if not args.content:
+                        console = Console()
+                        console.print(&#34;[red]Data is required for add command.[/red]&#34;)
+                        return
+                    await add_data_to_memory(naptha, args.memory_name, args.content, user_id=f&#34;user:{naptha.hub.public_key}&#34;, memory_node_url=args.memory_node_urls[0])
+                elif args.delete and len(args.memory_name.split()) == 1:
+                    await naptha.hub.delete_memory(args.memory_name)
+                elif len(args.memory_name.split()) == 1:
+                    if hasattr(args, &#39;metadata&#39;) and args.metadata is not None:
+                        params = shlex.split(args.metadata)
+                        parsed_params = {}
+                        for param in params:
+                            key, value = param.split(&#39;=&#39;)
+                            parsed_params[key] = value
+
+                        required_metadata = [&#39;description&#39;, &#39;parameters&#39;, &#39;module_url&#39;]
+                        if not all(param in parsed_params for param in required_metadata):
+                            print(f&#34;Missing one or more of the following required metadata: {required_metadata}&#34;)
+                            return
+                            
+                        memory_config = {
+                            &#34;id&#34;: f&#34;memory:{args.memory_name}&#34;,
+                            &#34;name&#34;: args.memory_name,
+                            &#34;description&#34;: parsed_params[&#39;description&#39;],
+                            &#34;parameters&#34;: parsed_params[&#39;parameters&#39;],
+                            &#34;author&#34;: f&#34;user:{naptha.hub.public_key}&#34;,
+                            &#34;module_url&#34;: parsed_params[&#39;module_url&#39;],
+                            &#34;module_type&#34;: parsed_params.get(&#39;module_type&#39;, &#39;memory&#39;),
+                            &#34;module_version&#34;: parsed_params.get(&#39;module_version&#39;, &#39;0.1&#39;),
+                            &#34;module_entrypoint&#34;: parsed_params.get(&#39;module_entrypoint&#39;, &#39;run.py&#39;),
+                            &#34;execution_type&#34;: parsed_params.get(&#39;execution_type&#39;, &#39;package&#39;)
+                        }
+                        await naptha.hub.create_memory(memory_config)
+                else:
+                    # Show specific memory info
+                    await list_memories(naptha, args.memory_name)
+            elif args.command == &#34;kbs&#34;:
+                if not args.kb_name:
+                    # List all knowledge bases
+                    await list_kbs(naptha)
+                elif args.delete and len(args.kb_name.split()) == 1:
+                    await naptha.hub.delete_kb(args.kb_name)
+                elif len(args.kb_name.split()) == 1:
+                    if hasattr(args, &#39;metadata&#39;) and args.metadata is not None:
+                        params = shlex.split(args.metadata)
+                        parsed_params = {}
+                        for param in params:
+                            key, value = param.split(&#39;=&#39;)
+                            parsed_params[key] = value
+
+                        required_metadata = [&#39;description&#39;, &#39;parameters&#39;, &#39;module_url&#39;]
+                        if not all(param in parsed_params for param in required_metadata):
+                            print(f&#34;Missing one or more of the following required metadata: {required_metadata}&#34;)
+                            return
+                            
+                        kb_config = {
+                            &#34;id&#34;: f&#34;kb:{args.kb_name}&#34;,
+                            &#34;name&#34;: args.kb_name,
+                            &#34;description&#34;: parsed_params[&#39;description&#39;],
+                            &#34;parameters&#34;: parsed_params[&#39;parameters&#39;],
+                            &#34;author&#34;: f&#34;user:{naptha.hub.public_key}&#34;,
+                            &#34;module_url&#34;: parsed_params[&#39;module_url&#39;],
+                            &#34;module_type&#34;: parsed_params.get(&#39;module_type&#39;, &#39;kb&#39;),
+                            &#34;module_version&#34;: parsed_params.get(&#39;module_version&#39;, &#39;0.1&#39;),
+                            &#34;module_entrypoint&#34;: parsed_params.get(&#39;module_entrypoint&#39;, &#39;run.py&#39;),
+                            &#34;execution_type&#34;: parsed_params.get(&#39;execution_type&#39;, &#39;package&#39;)
+                        }
+                        await naptha.hub.create_kb(kb_config)
+                else:
+                    # Show specific knowledge base info
+                    await list_kbs(naptha, args.kb_name)
+            elif args.command == &#34;create&#34;:
+                await create(naptha, args.module, args.agent_modules, args.agent_nodes, args.environment_modules, args.environment_nodes)
+            elif args.command == &#34;run&#34;:                    
+                await run(naptha, args.agent, args.parameters, args.agent_nodes, args.tool_nodes, args.environment_nodes, args.kb_nodes, args.memory_nodes, args.file, args.persona_modules)
+            elif args.command == &#34;inference&#34;:
+                request = ChatCompletionRequest(
+                    messages=[{&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: args.prompt}],
+                    model=args.model,
+                )
+                await naptha.inference_client.run_inference(request)
+            elif args.command == &#34;storage&#34;:
+                await storage_interaction(
+                    naptha, 
+                    args.storage_type, 
+                    args.operation, 
+                    args.path, 
+                    data=args.data, 
+                    schema=args.schema, 
+                    options=args.options, 
+                    file=args.file
+                )
+            elif args.command == &#34;publish&#34;:
+                await naptha.publish_modules(args.decorator, args.register, args.subdeployments)
+        else:
+            parser.print_help()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.run"><code class="name flex">
+<span>async def <span class="ident">run</span></span>(<span>naptha,<br>module_name,<br>parameters=None,<br>agent_nodes=None,<br>tool_nodes=None,<br>environment_nodes=None,<br>kb_nodes=None,<br>memory_nodes=None,<br>yaml_file=None,<br>persona_modules=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run(
+    naptha,
+    module_name,
+    parameters=None, 
+    agent_nodes=None,
+    tool_nodes=None,
+    environment_nodes=None,
+    kb_nodes=None,
+    memory_nodes=None,
+    yaml_file=None, 
+    persona_modules=None
+):   
+    if yaml_file and parameters:
+        raise ValueError(&#34;Cannot pass both yaml_file and parameters&#34;)
+    
+    if yaml_file:
+        parameters = load_yaml_to_dict(yaml_file)
+
+    module_type = module_name.split(&#34;:&#34;)[0] if &#34;:&#34; in module_name else &#34;agent&#34; # Default to agent for backwards compatibility
+
+    user = await naptha.node.check_user(user_input={&#34;public_key&#34;: naptha.hub.public_key})
+
+    if user[&#39;is_registered&#39;] == True:
+        print(&#34;Found user...&#34;, user)
+    else:
+        print(&#34;No user found. Registering user...&#34;)
+        user = await naptha.node.register_user(user_input=user)
+        print(f&#34;User registered: {user}.&#34;)
+
+    # Handle sub-deployments
+    agent_deployments = []
+    if agent_nodes:
+        for agent_node in agent_nodes:
+            agent_deployments.append(AgentDeployment(node=NodeConfigUser(ip=agent_node.strip())))
+    tool_deployments = []
+    if tool_nodes:
+        for tool_node in tool_nodes:
+            tool_deployments.append(ToolDeployment(node=NodeConfigUser(ip=tool_node.strip())))
+    environment_deployments = []
+    if environment_nodes:
+        for environment_node in environment_nodes:
+            environment_deployments.append(EnvironmentDeployment(node=NodeConfigUser(ip=environment_node.strip())))
+    kb_deployments = []
+    if kb_nodes:
+        for kb_node in kb_nodes:
+            kb_deployments.append(KBDeployment(node=NodeConfigUser(ip=kb_node.strip())))
+    memory_deployments = []
+    if memory_nodes:
+        for memory_node in memory_nodes:
+            memory_deployments.append(MemoryDeployment(node=NodeConfigUser(ip=memory_node.strip())))
+
+
+    if module_type == &#34;agent&#34;:
+        print(&#34;Running Agent...&#34;)
+
+        agent_deployment = AgentDeployment(
+            module={&#34;id&#34;: module_name, &#34;name&#34;: module_name.split(&#34;:&#34;)[-1], &#34;module_type&#34;: module_type}, 
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;)), 
+            config={&#34;persona_module&#34;: {&#34;name&#34;: persona_modules[0]}} if persona_modules else None,
+            tool_deployments=tool_deployments,
+            kb_deployments=kb_deployments,
+            memory_deployments=memory_deployments,
+            environment_deployments=environment_deployments
+        )
+
+        agent_run_input = {
+            &#39;consumer_id&#39;: user[&#39;id&#39;],
+            &#34;inputs&#34;: parameters,
+            &#34;deployment&#34;: agent_deployment.model_dump(),
+            &#34;signature&#34;: sign_consumer_id(user[&#39;id&#39;], os.getenv(&#34;PRIVATE_KEY&#34;))
+        }
+        print(f&#34;Agent run input: {agent_run_input}&#34;)
+
+        agent_run = await naptha.node.run_agent_and_poll(agent_run_input)
+
+    elif module_type == &#34;tool&#34;:
+        print(&#34;Running Tool...&#34;)
+        tool_deployment = ToolDeployment(
+            module={&#34;id&#34;: module_name, &#34;name&#34;: module_name.split(&#34;:&#34;)[-1], &#34;module_type&#34;: module_type},
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;)))
+
+        tool_run_input = ToolRunInput(
+            consumer_id=user[&#39;id&#39;],
+            inputs=parameters,
+            deployment=tool_deployment,
+            signature=sign_consumer_id(user[&#39;id&#39;], os.getenv(&#34;PRIVATE_KEY&#34;))
+        )
+        tool_run = await naptha.node.run_tool_and_poll(tool_run_input)
+
+    elif module_type == &#34;orchestrator&#34;:
+        print(&#34;Running Orchestrator...&#34;)
+
+        orchestrator_deployment = OrchestratorDeployment(
+            module={&#34;id&#34;: module_name, &#34;name&#34;: module_name.split(&#34;:&#34;)[-1], &#34;module_type&#34;: module_type}, 
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;)),
+            agent_deployments=agent_deployments,
+            environment_deployments=environment_deployments,
+            kb_deployments=kb_deployments,
+            memory_deployments=memory_deployments,
+        )
+
+        orchestrator_run_input = OrchestratorRunInput(
+            consumer_id=user[&#39;id&#39;],
+            inputs=parameters,
+            deployment=orchestrator_deployment,
+            signature=sign_consumer_id(user[&#39;id&#39;], os.getenv(&#34;PRIVATE_KEY&#34;))
+        )
+        orchestrator_run = await naptha.node.run_orchestrator_and_poll(orchestrator_run_input)
+
+    elif module_type == &#34;environment&#34;:
+        print(&#34;Running Environment...&#34;)
+
+        environment_deployment = EnvironmentDeployment(
+            module={&#34;id&#34;: module_name, &#34;name&#34;: module_name.split(&#34;:&#34;)[-1], &#34;module_type&#34;: module_type}, 
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;))
+        )
+
+        environment_run_input = EnvironmentRunInput(
+            inputs=parameters,
+            deployment=environment_deployment,
+            consumer_id=user[&#39;id&#39;],
+            signature=sign_consumer_id(user[&#39;id&#39;], os.getenv(&#34;PRIVATE_KEY&#34;))
+        )
+        environment_run = await naptha.node.run_environment_and_poll(environment_run_input)
+
+    elif module_type == &#34;kb&#34;:
+        print(&#34;Running Knowledge Base...&#34;)
+
+        kb_deployment = KBDeployment(
+            module={&#34;id&#34;: module_name, &#34;name&#34;: module_name.split(&#34;:&#34;)[-1], &#34;module_type&#34;: module_type}, 
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;))
+        )
+
+        kb_run_input = KBRunInput(
+            consumer_id=user[&#39;id&#39;],
+            inputs=parameters,
+            deployment=kb_deployment,
+            signature=sign_consumer_id(user[&#39;id&#39;], os.getenv(&#34;PRIVATE_KEY&#34;))
+        )
+        kb_run = await naptha.node.run_kb_and_poll(kb_run_input)
+    elif module_type == &#34;memory&#34;:
+        print(&#34;Running Memory Module...&#34;)
+
+        memory_deployment = MemoryDeployment(
+            module={&#34;id&#34;: module_name, &#34;name&#34;: module_name.split(&#34;:&#34;)[-1], &#34;module_type&#34;: module_type}, 
+            node=url_to_node(os.getenv(&#34;NODE_URL&#34;))
+        )
+
+        memory_run_input = MemoryRunInput(
+            consumer_id=user[&#39;id&#39;],
+            inputs=parameters,
+            deployment=memory_deployment,
+            signature=sign_consumer_id(user[&#39;id&#39;], os.getenv(&#34;PRIVATE_KEY&#34;))
+        )
+        memory_run = await naptha.node.run_memory_and_poll(memory_run_input)     
+    else:
+        print(f&#34;Module type {module_type} not supported.&#34;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.cli.storage_interaction"><code class="name flex">
+<span>async def <span class="ident">storage_interaction</span></span>(<span>naptha, storage_type, operation, path, data=None, schema=None, options=None, file=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def storage_interaction(naptha, storage_type, operation, path, data=None, schema=None, options=None, file=None):
+    &#34;&#34;&#34;Handle storage interactions using StorageProvider&#34;&#34;&#34;
+    storage_provider = StorageProvider(naptha.node.node)
+    print(f&#34;Storage interaction: {storage_type}, {operation}, {path}, {data}, {schema}, {options}, {file}&#34;)
+
+    try:
+        # Convert string storage type to enum
+        storage_type = StorageType(storage_type)
+
+        # Special handling for filesystem/IPFS file operations
+        if storage_type in [StorageType.FILESYSTEM, StorageType.IPFS]:
+            if operation == &#34;create&#34; and file:
+                with open(file, &#39;rb&#39;) as f:
+                    request = CreateStorageRequest(
+                        storage_type=storage_type,
+                        path=path,
+                        file=f,
+                        options=json.loads(options) if options else {}
+                    )
+                    result = await storage_provider.execute(request)
+                    return result
+                    
+            elif operation == &#34;read&#34;:
+                request = ReadStorageRequest(
+                    storage_type=storage_type,
+                    path=path,
+                    options=json.loads(options) if options else {}
+                )
+                result = await storage_provider.execute(request)
+                
+                # Handle downloaded file
+                if isinstance(result.data, bytes):
+                    output_dir = &#34;./downloads&#34;
+                    os.makedirs(output_dir, exist_ok=True)
+                    output_path = os.path.join(output_dir, os.path.basename(path))
+                    with open(output_path, &#39;wb&#39;) as f:
+                        f.write(result.data)
+                    print(f&#34;File downloaded to: {output_path}&#34;)
+                return result
+
+        # Handle database and other operations
+        match operation:
+            case &#34;create&#34;:
+                if schema:
+                    request = CreateStorageRequest(
+                        storage_type=storage_type,
+                        path=path,
+                        data=json.loads(schema)
+                    )
+                elif data:
+                    request = CreateStorageRequest(
+                        storage_type=storage_type,
+                        path=path,
+                        data=json.loads(data)
+                    )
+                else:
+                    raise ValueError(&#34;Either schema or data must be provided for create command&#34;)
+                    
+            case &#34;read&#34;:
+                request = ReadStorageRequest(
+                    storage_type=storage_type,
+                    path=path,
+                    options=json.loads(options) if options else {}
+                )
+                
+            case &#34;update&#34;:
+                if not data:
+                    raise ValueError(&#34;Data must be provided for update command&#34;)
+                request = UpdateStorageRequest(
+                    storage_type=storage_type,
+                    path=path,
+                    data=json.loads(data),
+                    options=json.loads(options) if options else {}
+                )
+                
+            case &#34;delete&#34;:
+                request = DeleteStorageRequest(
+                    storage_type=storage_type,
+                    path=path,
+                    options=json.loads(options) if options else {}
+                )
+                
+            case &#34;list&#34;:
+                request = ListStorageRequest(
+                    storage_type=storage_type,
+                    path=path,
+                    options=json.loads(options) if options else {}
+                )
+                
+            case &#34;search&#34;:
+                if not data:
+                    raise ValueError(&#34;Query data must be provided for search command&#34;)
+                request = SearchStorageRequest(
+                    storage_type=storage_type,
+                    path=path,
+                    query=json.loads(data),
+                    options=json.loads(options) if options else {}
+                )
+
+        result = await storage_provider.execute(request)
+        print(result)
+        return result
+
+    except Exception as e:
+        print(f&#34;Storage operation failed: {str(e)}&#34;)
+        raise</code></pre>
+</details>
+<div class="desc"><p>Handle storage interactions using StorageProvider</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="naptha_sdk" href="/api_reference/index.html">naptha_sdk</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="naptha_sdk.cli.add_data_to_memory" href="#naptha_sdk.cli.add_data_to_memory">add_data_to_memory</a></code></li>
+<li><code><a title="naptha_sdk.cli.cli" href="#naptha_sdk.cli.cli">cli</a></code></li>
+<li><code><a title="naptha_sdk.cli.create" href="#naptha_sdk.cli.create">create</a></code></li>
+<li><code><a title="naptha_sdk.cli.create_agent" href="#naptha_sdk.cli.create_agent">create_agent</a></code></li>
+<li><code><a title="naptha_sdk.cli.create_environment" href="#naptha_sdk.cli.create_environment">create_environment</a></code></li>
+<li><code><a title="naptha_sdk.cli.create_orchestrator" href="#naptha_sdk.cli.create_orchestrator">create_orchestrator</a></code></li>
+<li><code><a title="naptha_sdk.cli.create_persona" href="#naptha_sdk.cli.create_persona">create_persona</a></code></li>
+<li><code><a title="naptha_sdk.cli.list_agents" href="#naptha_sdk.cli.list_agents">list_agents</a></code></li>
+<li><code><a title="naptha_sdk.cli.list_environments" href="#naptha_sdk.cli.list_environments">list_environments</a></code></li>
+<li><code><a title="naptha_sdk.cli.list_kbs" href="#naptha_sdk.cli.list_kbs">list_kbs</a></code></li>
+<li><code><a title="naptha_sdk.cli.list_memories" href="#naptha_sdk.cli.list_memories">list_memories</a></code></li>
+<li><code><a title="naptha_sdk.cli.list_memory_content" href="#naptha_sdk.cli.list_memory_content">list_memory_content</a></code></li>
+<li><code><a title="naptha_sdk.cli.list_nodes" href="#naptha_sdk.cli.list_nodes">list_nodes</a></code></li>
+<li><code><a title="naptha_sdk.cli.list_orchestrators" href="#naptha_sdk.cli.list_orchestrators">list_orchestrators</a></code></li>
+<li><code><a title="naptha_sdk.cli.list_personas" href="#naptha_sdk.cli.list_personas">list_personas</a></code></li>
+<li><code><a title="naptha_sdk.cli.list_servers" href="#naptha_sdk.cli.list_servers">list_servers</a></code></li>
+<li><code><a title="naptha_sdk.cli.list_tools" href="#naptha_sdk.cli.list_tools">list_tools</a></code></li>
+<li><code><a title="naptha_sdk.cli.load_yaml_to_dict" href="#naptha_sdk.cli.load_yaml_to_dict">load_yaml_to_dict</a></code></li>
+<li><code><a title="naptha_sdk.cli.main" href="#naptha_sdk.cli.main">main</a></code></li>
+<li><code><a title="naptha_sdk.cli.run" href="#naptha_sdk.cli.run">run</a></code></li>
+<li><code><a title="naptha_sdk.cli.storage_interaction" href="#naptha_sdk.cli.storage_interaction">storage_interaction</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+</body>
+</html>

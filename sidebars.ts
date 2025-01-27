@@ -84,6 +84,8 @@ const sidebars: SidebarsConfig = {
         'Tutorials/create-a-new-user',
         'Tutorials/module-guide',
         'Tutorials/quick-persona-guide',
+        'Tutorials/tool-module-tutorial',
+        'Tutorials/multiagent-orchestrator-tutorial',
       ],
     },
     'reference',

@@ -86,6 +86,7 @@ const sidebars: SidebarsConfig = {
         'Tutorials/quick-persona-guide',
       ],
     },
+    'reference',
   ],
 };
 

@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>naptha_sdk.module_manager API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>naptha_sdk.module_manager</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="naptha_sdk.module_manager.add_dependencies_to_pyproject"><code class="name flex">
+<span>def <span class="ident">add_dependencies_to_pyproject</span></span>(<span>package_name, packages)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_dependencies_to_pyproject(package_name, packages):
+    # Adds dependencies with wildcard versioning
+    with open(f&#34;{AGENT_DIR}/{package_name}/pyproject.toml&#34;, &#39;r&#39;, encoding=&#39;utf-8&#39;) as file:
+        data = tomlkit.parse(file.read())
+
+    dependencies = data[&#39;tool&#39;][&#39;poetry&#39;][&#39;dependencies&#39;]
+    dependencies[&#34;python&#34;] = &#34;&gt;=3.10,&lt;3.13&#34;
+    dependencies[&#34;naptha-sdk&#34;] = {
+        &#34;git&#34;: &#34;https://github.com/NapthaAI/naptha-sdk.git&#34;,
+        &#34;branch&#34;: &#34;feat/run-agent-tools&#34;
+    }
+
+    packages_to_add = []
+    for package in packages:
+        curr_package = package[&#39;module&#39;].split(&#39;.&#39;)[0]
+        if curr_package not in packages_to_add and not is_std_lib(curr_package):
+            dependencies[curr_package] = PACKAGE_VERSIONS.get(curr_package, &#34;*&#34;)
+    dependencies[&#34;python-dotenv&#34;] = &#34;*&#34;
+
+    # Serialize the TOML data and write it back to the file
+    with open(f&#34;{AGENT_DIR}/{package_name}/pyproject.toml&#34;, &#39;w&#39;, encoding=&#39;utf-8&#39;) as file:
+        file.write(tomlkit.dumps(data))</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.add_files_to_package"><code class="name flex">
+<span>def <span class="ident">add_files_to_package</span></span>(<span>agent_name, params, user_id)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_files_to_package(agent_name, params, user_id):
+    package_path = f&#39;{AGENT_DIR}/{agent_name}&#39;
+
+    # Generate schema and component yaml
+    generate_schema(agent_name, params)
+    generate_component_yaml(agent_name, user_id)
+
+    # Create .env.example file
+    env_example_path = os.path.join(package_path, &#39;.env.example&#39;)
+    with open(env_example_path, &#39;w&#39;) as env_file:
+        env_file.write(&#39;OPENAI_API_KEY=\n&#39;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.extract_dependencies"><code class="name flex">
+<span>def <span class="ident">extract_dependencies</span></span>(<span>module, modules)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_dependencies(module, modules):
+    dependencies = []
+    for mod in modules:
+        if mod[&#39;name&#39;] != module[&#39;name&#39;]:
+            # Use a negative lookahead to exclude matches within quotes
+            pattern = r&#39;\b&#39; + re.escape(mod[&#39;name&#39;]) + r&#39;\b(?=([^&#34;\&#39;]*[&#34;\&#39;][^&#34;\&#39;]*[&#34;\&#39;])*[^&#34;\&#39;]*$)&#39;
+            if re.search(pattern, module[&#39;source&#39;]):
+                dependencies.append(mod[&#39;name&#39;])
+    return dependencies</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.generate_component_yaml"><code class="name flex">
+<span>def <span class="ident">generate_component_yaml</span></span>(<span>agent_name, user_id)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_component_yaml(agent_name, user_id):
+    component = {
+        &#39;name&#39;: agent_name,
+        &#39;type&#39;: agent_name,
+        &#39;author&#39;: user_id,
+        &#39;version&#39;: &#39;0.1.0&#39;,
+        &#39;description&#39;: agent_name,
+        &#39;license&#39;: &#39;MIT&#39;,
+        &#39;models&#39;: {
+            &#39;default_model_provider&#39;: &#39;ollama&#39;,
+            &#39;ollama&#39;: {
+                &#39;model&#39;: &#39;ollama/llama3.1:70b&#39;,
+                &#39;max_tokens&#39;: 1000,
+                &#39;temperature&#39;: 0,
+                &#39;api_base&#39;: &#39;http://localhost:11434&#39;
+            }
+        },
+        &#39;inputs&#39;: {
+            &#39;system_message&#39;: &#39;You are a helpful AI assistant.&#39;,
+            &#39;save&#39;: False,
+            &#39;location&#39;: &#39;node&#39;
+        },
+        &#39;outputs&#39;: {
+            &#39;filename&#39;: &#39;output.txt&#39;,
+            &#39;save&#39;: False,
+            &#39;location&#39;: &#39;node&#39;
+        },
+        &#39;implementation&#39;: {
+            &#39;package&#39;: {
+                &#39;entrypoint&#39;: &#39;run.py&#39;
+            }
+        }
+    }
+
+    with open(f&#39;{AGENT_DIR}/{agent_name}/{agent_name}/component.yaml&#39;, &#39;w&#39;) as file:
+        yaml.dump(component, file, default_flow_style=False)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.generate_schema"><code class="name flex">
+<span>def <span class="ident">generate_schema</span></span>(<span>agent_name, params)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_schema(agent_name, params):
+    schema_code = &#39;&#39;&#39;from pydantic import BaseModel
+from typing import Any
+
+class InputSchema(BaseModel):
+    tool_name: str
+    tool_input_type: str
+    tool_input_value: dict
+&#39;&#39;&#39;
+
+    for name, info in params.items():
+        print(&#34;INFO&#34;, name, info)
+        if info[&#39;value&#39;] is None:
+            if &#39;List&#39; in str(info[&#39;type&#39;]):
+                schema_code += f&#39;    {name}: list\n&#39;
+            elif info[&#39;type&#39;] is None:
+                schema_code += f&#39;    {name}: Any\n&#39;
+            elif issubclass(info[&#34;type&#34;], BaseModel):
+                schema_code += f&#39;    {name}: dict\n&#39;
+            else:
+                schema_code += f&#39;    {name}: {info[&#34;type&#34;].__name__}\n&#39;
+        else:
+            if &#39;List&#39; in str(info[&#39;type&#39;]):
+                schema_code += f&#39;    {name}: list = {info[&#34;value&#34;]}\n&#39;
+            elif info[&#39;type&#39;] is None:
+                schema_code += f&#39;    {name}: Any = {info[&#34;value&#34;]}\n&#39;
+            elif issubclass(info[&#34;type&#34;], BaseModel):
+                schema_code += f&#39;    {name}: dict = {info[&#34;value&#34;]}\n&#39;
+            else:
+                schema_code += f&#39;    {name}: {info[&#34;type&#34;].__name__} = {info[&#34;value&#34;]}\n&#39;
+
+    with open(f&#39;{AGENT_DIR}/{agent_name}/{agent_name}/schemas.py&#39;, &#39;w&#39;) as file:
+        file.write(schema_code)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.git_add_commit"><code class="name flex">
+<span>def <span class="ident">git_add_commit</span></span>(<span>agent_name)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def git_add_commit(agent_name):
+    subprocess.run([&#34;git&#34;, &#34;-C&#34;, f&#34;{AGENT_DIR}/{agent_name}&#34;, &#34;add&#34;, &#34;-A&#34;])
+    subprocess.run([&#34;git&#34;, &#34;-C&#34;, f&#34;{AGENT_DIR}/{agent_name}&#34;, &#34;commit&#34;, &#34;-m&#34;, &#34;Initial commit&#34;])
+    subprocess.run([&#34;git&#34;, &#34;-C&#34;, f&#34;{AGENT_DIR}/{agent_name}&#34;, &#34;tag&#34;, &#34;-f&#34;, &#34;v0.1&#34;])</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.init_agent_package"><code class="name flex">
+<span>def <span class="ident">init_agent_package</span></span>(<span>package_name)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_agent_package(package_name):
+    subprocess.run([&#34;poetry&#34;, &#34;new&#34;, f&#34;{AGENT_DIR}/{package_name}&#34;])
+    subprocess.run([&#34;git&#34;, &#34;init&#34;, f&#34;{AGENT_DIR}/{package_name}&#34;])</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.is_std_lib"><code class="name flex">
+<span>def <span class="ident">is_std_lib</span></span>(<span>module_name)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_std_lib(module_name):
+    try:
+        module_spec = importlib.util.find_spec(module_name)
+        return module_spec is not None and &#39;site-packages&#39; not in module_spec.origin
+    except ImportError:
+        return False</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.load_input_schema"><code class="name flex">
+<span>def <span class="ident">load_input_schema</span></span>(<span>repo_name)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_input_schema(repo_name):
+    &#34;&#34;&#34;Loads the input schema&#34;&#34;&#34;
+    schemas_module = importlib.import_module(f&#34;{repo_name}.schemas&#34;)
+    input_schema = getattr(schemas_module, &#34;Persona&#34;)
+    return input_schema</code></pre>
+</details>
+<div class="desc"><p>Loads the input schema</p></div>
+</dd>
+<dt id="naptha_sdk.module_manager.load_persona"><code class="name flex">
+<span>async def <span class="ident">load_persona</span></span>(<span>persona_module)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def load_persona(persona_module):
+    &#34;&#34;&#34;Load persona from a JSON or YAML file in a git repository.&#34;&#34;&#34;
+
+    hub_username = os.getenv(&#34;HUB_USERNAME&#34;)
+    hub_password = os.getenv(&#34;HUB_PASSWORD&#34;)
+    hub_url = os.getenv(&#34;HUB_URL&#34;)
+
+    if not hub_username or not hub_password or not hub_url:
+        raise ValueError(&#34;HUB_USERNAME, HUB_PASSWORD, and HUB_URL environment variables must be set&#34;)
+
+    async with Hub(hub_url) as hub:
+        success, _, _ = await hub.signin(hub_username, hub_password)
+        if not success:
+            raise ConnectionError(f&#34;Failed to authenticate with Hub.&#34;)            
+
+        personas = await hub.list_personas(persona_module[&#39;name&#39;])
+    persona = personas[0]
+    persona_url = persona[&#39;module_url&#39;]
+
+    # Clone the repo
+    repo_name = persona_url.split(&#39;/&#39;)[-1]
+    repo_path = Path(f&#34;{AGENT_DIR}/{repo_name}&#34;)
+    
+    # Remove existing repo if it exists
+    if repo_path.exists():
+        import shutil
+        shutil.rmtree(repo_path)
+        
+    _ = Repo.clone_from(persona_url, to_path=str(repo_path))
+    
+    persona_file = repo_path / persona[&#39;module_entrypoint&#39;]
+    if not persona_file.exists():
+        logger.error(f&#34;Persona file not found in repository {repo_name}&#34;)
+        return None
+            
+    # Load based on file extension
+    with persona_file.open(&#39;r&#39;) as f:
+        if persona_file.suffix == &#39;.json&#39;:
+            persona_data = json.load(f)
+        elif persona_file.suffix in [&#39;.yml&#39;, &#39;.yaml&#39;]:
+            persona_data = yaml.safe_load(f)
+        else:
+            logger.error(f&#34;Unsupported file type {persona_file.suffix} in {repo_name}&#34;)
+            return None
+        
+
+    # input_schema = load_input_schema(repo_name)
+    return persona_data</code></pre>
+</details>
+<div class="desc"><p>Load persona from a JSON or YAML file in a git repository.</p></div>
+</dd>
+<dt id="naptha_sdk.module_manager.publish_ipfs_package"><code class="name flex">
+<span>async def <span class="ident">publish_ipfs_package</span></span>(<span>agent_name, decorator=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def publish_ipfs_package(agent_name, decorator = False):
+    package_path = f&#34;{AGENT_DIR}/{agent_name}&#34;
+
+    if not decorator:
+        output_zip_file = zip_dir_with_gitignore(Path.cwd())
+    else:
+        output_zip_file = zip_dir(package_path)
+    
+    success, response = await write_to_ipfs(output_zip_file)
+    logger.info(f&#34;Response: {response}&#34;)
+    return success, response</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.read_gitignore"><code class="name flex">
+<span>def <span class="ident">read_gitignore</span></span>(<span>directory)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_gitignore(directory):
+    gitignore_path = os.path.join(directory, &#39;.gitignore&#39;)
+    
+    if not os.path.exists(gitignore_path):
+        logger.info(f&#34;No .gitignore file found in {directory}&#34;)
+        return []
+    
+    with open(gitignore_path, &#39;r&#39;) as file:
+        lines = file.readlines()
+
+    ignored_files = [line.strip() for line in lines if line.strip() and not line.startswith(&#39;#&#39;)]
+    return ignored_files</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.render_agent_code"><code class="name flex">
+<span>def <span class="ident">render_agent_code</span></span>(<span>agent_name,<br>agent_code,<br>obj_name,<br>local_modules,<br>selective_import_modules,<br>standard_import_modules,<br>variable_modules,<br>union_modules,<br>params)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def render_agent_code(agent_name, agent_code, obj_name, local_modules, selective_import_modules, standard_import_modules, variable_modules, union_modules, params):
+    # Add the imports for installed modules (e.g. crewai)
+    content = &#39;&#39;
+
+    for module in standard_import_modules:
+        line = f&#39;import {module[&#34;name&#34;]} \n&#39;
+        content += line
+
+    for module in selective_import_modules:
+        line = f&#39;from {module[&#34;module&#34;]} import {module[&#34;name&#34;]} \n&#39;
+        content += line
+
+    for module in variable_modules:
+        if module[&#34;module&#34;] and module[&#34;import_needed&#34;]:
+            content += f&#39;from {module[&#34;module&#34;]} import {module[&#34;name&#34;]} \n&#39;
+
+    if any(&#39;crewai&#39; in module[&#39;module&#39;] for module in selective_import_modules):
+        content += &#34;from crewai import Task\n&#34;
+
+    for module in union_modules:
+        content += module[&#39;source&#39;]
+
+    # Add the naptha imports and logger setup
+    naptha_imports = f&#39;&#39;&#39;from dotenv import load_dotenv
+from {agent_name}.schemas import InputSchema
+from naptha_sdk.utils import get_logger
+
+logger = get_logger(__name__)
+
+load_dotenv()
+
+&#39;&#39;&#39;
+    content += naptha_imports
+    for module in selective_import_modules:
+        if &#39;source&#39; in module and module[&#39;source&#39;]:
+            content += module[&#39;source&#39;] + &#34;\n&#34;
+
+    # Add the source code for the local modules 
+    for module in local_modules:
+        content += module[&#39;source&#39;] + &#34;\n&#34;
+
+    for module in variable_modules:
+        content += module[&#39;source&#39;] + &#34;\n&#34;
+
+    # Convert class method to function
+    agent_code = agent_code.replace(&#39;self.&#39;, &#39;&#39;)
+    agent_code = agent_code.replace(&#39;self&#39;, &#39;&#39;)
+
+    content += textwrap.dedent(agent_code) + &#34;\n\n&#34;
+
+    param_str = &#34;, &#34;.join(f&#34;inputs.{name}&#34; for name, info in params.items())
+
+    # Define the new function signature
+    content += f&#34;&#34;&#34;def run(inputs: InputSchema, *args, **kwargs):
+    {agent_name}_0 = {obj_name}({param_str})
+
+    tool_input_class = globals().get(inputs.tool_input_type)
+    tool_input = tool_input_class(**inputs.tool_input_value)
+    method = getattr({agent_name}_0, inputs.tool_name, None)
+
+    return method(tool_input)
+
+if __name__ == &#34;__main__&#34;:
+    from naptha_sdk.utils import load_yaml
+    from {agent_name}.schemas import InputSchema
+
+    cfg_path = &#34;{agent_name}/component.yaml&#34;
+    cfg = load_yaml(cfg_path)
+
+    # You will likely need to change the inputs dict
+    inputs = {{&#34;tool_name&#34;: &#34;execute_task&#34;, &#34;tool_input_type&#34;: &#34;Task&#34;, &#34;tool_input_value&#34;: {{&#34;description&#34;: &#34;What is the market cap of AMZN?&#34;, &#34;expected_output&#34;: &#34;The market cap of AMZN&#34;}}}}
+    inputs = InputSchema(**inputs)
+
+    response = run(inputs)
+    print(response)
+&#34;&#34;&#34;
+    
+    return content</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.sort_modules"><code class="name flex">
+<span>def <span class="ident">sort_modules</span></span>(<span>modules, dependencies)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sort_modules(modules, dependencies):
+    sorted_modules = []
+    unsorted_modules = modules.copy()
+
+    while unsorted_modules:
+        for mod in unsorted_modules:
+            mod_deps = dependencies[mod[&#39;name&#39;]]
+            if all(dep in [m[&#39;name&#39;] for m in sorted_modules] for dep in mod_deps):
+                sorted_modules.append(mod)
+                unsorted_modules.remove(mod)
+                break
+
+    return sorted_modules</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.write_code_to_package"><code class="name flex">
+<span>def <span class="ident">write_code_to_package</span></span>(<span>agent_name, code)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_code_to_package(agent_name, code):
+    package_path = f&#39;{AGENT_DIR}/{agent_name}&#39;
+    code_path = os.path.join(package_path, agent_name, &#39;run.py&#39;)
+
+    os.makedirs(os.path.dirname(code_path), exist_ok=True)
+    with open(code_path, &#39;w&#39;) as file:
+        file.write(code)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.module_manager.write_to_ipfs"><code class="name flex">
+<span>async def <span class="ident">write_to_ipfs</span></span>(<span>file_path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def write_to_ipfs(file_path):
+    &#34;&#34;&#34;Write a file to IPFS, optionally publish to IPNS or update an existing IPNS record.&#34;&#34;&#34;
+    try:
+        logger.info(f&#34;Writing file to IPFS: {file_path}&#34;)
+        if not IPFS_GATEWAY_URL:
+            return (500, {&#34;message&#34;: &#34;IPFS_GATEWAY_URL not found&#34;})
+        
+        client = ipfshttpclient.connect(IPFS_GATEWAY_URL)
+        with tempfile.NamedTemporaryFile(mode=&#34;wb&#34;, delete=False) as tmpfile:
+            with open(file_path, &#34;rb&#34;) as f:
+                content = f.read()            
+            tmpfile.write(content)
+            tmpfile_name = tmpfile.name
+        
+        result = client.add(tmpfile_name)
+        client.pin.add(result[&#34;Hash&#34;])
+        os.unlink(tmpfile_name)
+        
+        ipfs_hash = result[&#34;Hash&#34;]
+        response = {
+            &#34;message&#34;: &#34;File written and pinned to IPFS&#34;,
+            &#34;ipfs_hash&#34;: ipfs_hash,
+        }
+
+        return (201, response)
+    except Exception as e:
+        logger.error(f&#34;Error writing file to IPFS: {e}&#34;)
+        import traceback
+        logger.error(f&#34;Error writing file to IPFS: {e}&#34;)
+        logger.error(f&#34;Traceback: {traceback.format_exc()}&#34;)
+        return (500, {&#34;message&#34;: f&#34;Error writing file to IPFS: {e}&#34;})</code></pre>
+</details>
+<div class="desc"><p>Write a file to IPFS, optionally publish to IPNS or update an existing IPNS record.</p></div>
+</dd>
+<dt id="naptha_sdk.module_manager.zip_dir"><code class="name flex">
+<span>def <span class="ident">zip_dir</span></span>(<span>directory_path: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def zip_dir(directory_path: str) -&gt; None:
+    &#34;&#34;&#34;
+    Zip the specified directory and write it to a file on disk.
+    &#34;&#34;&#34;
+    output_zip_file = f&#34;{directory_path}.zip&#34;
+    with zipfile.ZipFile(output_zip_file, &#34;w&#34;, zipfile.ZIP_DEFLATED) as zip_file:
+        for root, dirs, files in os.walk(directory_path):
+            for file in files:
+                file_path = os.path.join(root, file)
+                zip_file.write(file_path, os.path.relpath(file_path, directory_path))
+    print(f&#34;Zipped directory &#39;{directory_path}&#39; to &#39;{output_zip_file}&#39;&#34;)
+    return output_zip_file</code></pre>
+</details>
+<div class="desc"><p>Zip the specified directory and write it to a file on disk.</p></div>
+</dd>
+<dt id="naptha_sdk.module_manager.zip_dir_with_gitignore"><code class="name flex">
+<span>def <span class="ident">zip_dir_with_gitignore</span></span>(<span>directory_path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def zip_dir_with_gitignore(directory_path):
+    ignored_files = read_gitignore(directory_path)
+    output_zip_file = f&#34;./{os.path.basename(directory_path)}.zip&#34;
+
+    # Convert patterns in .gitignore to absolute paths for comparison
+    ignored_patterns = [os.path.join(directory_path, pattern) for pattern in ignored_files]
+
+    with zipfile.ZipFile(output_zip_file, &#34;w&#34;, zipfile.ZIP_DEFLATED) as zip_file:
+        for root, dirs, files in os.walk(directory_path):
+            dirs = [d for d in dirs if not any(fnmatch.fnmatch(os.path.join(root, d), pattern) for pattern in ignored_patterns)]
+            
+            for file in files:
+                file_path = os.path.join(root, file)
+
+                if any(fnmatch.fnmatch(file_path, pattern) for pattern in ignored_patterns):
+                    continue
+                
+                if file == output_zip_file.split(&#39;/&#39;)[1]:
+                    continue
+
+                zip_file.write(file_path, os.path.relpath(file_path, directory_path))
+
+    logger.info(f&#34;Zipped directory &#39;{directory_path}&#39; to &#39;{output_zip_file}&#39;&#34;)
+    return output_zip_file</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+    <li><code><a title="naptha_sdk" href="/api_reference/index.html">naptha_sdk</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="naptha_sdk.module_manager.add_dependencies_to_pyproject" href="#naptha_sdk.module_manager.add_dependencies_to_pyproject">add_dependencies_to_pyproject</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.add_files_to_package" href="#naptha_sdk.module_manager.add_files_to_package">add_files_to_package</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.extract_dependencies" href="#naptha_sdk.module_manager.extract_dependencies">extract_dependencies</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.generate_component_yaml" href="#naptha_sdk.module_manager.generate_component_yaml">generate_component_yaml</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.generate_schema" href="#naptha_sdk.module_manager.generate_schema">generate_schema</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.git_add_commit" href="#naptha_sdk.module_manager.git_add_commit">git_add_commit</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.init_agent_package" href="#naptha_sdk.module_manager.init_agent_package">init_agent_package</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.is_std_lib" href="#naptha_sdk.module_manager.is_std_lib">is_std_lib</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.load_input_schema" href="#naptha_sdk.module_manager.load_input_schema">load_input_schema</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.load_persona" href="#naptha_sdk.module_manager.load_persona">load_persona</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.publish_ipfs_package" href="#naptha_sdk.module_manager.publish_ipfs_package">publish_ipfs_package</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.read_gitignore" href="#naptha_sdk.module_manager.read_gitignore">read_gitignore</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.render_agent_code" href="#naptha_sdk.module_manager.render_agent_code">render_agent_code</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.sort_modules" href="#naptha_sdk.module_manager.sort_modules">sort_modules</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.write_code_to_package" href="#naptha_sdk.module_manager.write_code_to_package">write_code_to_package</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.write_to_ipfs" href="#naptha_sdk.module_manager.write_to_ipfs">write_to_ipfs</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.zip_dir" href="#naptha_sdk.module_manager.zip_dir">zip_dir</a></code></li>
+<li><code><a title="naptha_sdk.module_manager.zip_dir_with_gitignore" href="#naptha_sdk.module_manager.zip_dir_with_gitignore">zip_dir_with_gitignore</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.5</a>.</p>
+</footer>
+</body>
+</html>

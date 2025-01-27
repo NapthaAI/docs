@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>naptha_sdk.scrape API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>naptha_sdk.scrape</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="naptha_sdk.scrape.get_obj_dependencies"><code class="name flex">
+<span>def <span class="ident">get_obj_dependencies</span></span>(<span>context_globals, fn_code, processed=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_obj_dependencies(context_globals, fn_code, processed=None):
+    if processed is None:
+        processed = set()
+
+    modules = []
+    variables = []
+    for name, obj in context_globals.items():
+        if name in fn_code and obj not in processed:
+            print(&#34;name&#34;, name, &#34;obj&#34;, obj, type(obj), type(obj).__name__)
+            if name.startswith(&#34;__&#34;):
+                continue
+
+            processed.add(obj)  # Add the current object to the set of processed objects
+
+            if &#34;Union&#34; in type(obj).__name__:
+                print(&#34;Union&#34;, obj.__args__)
+                args_str = &#39;, &#39;.join(arg.__name__ if hasattr(arg, &#39;__name__&#39;) else str(arg) for arg in obj.__args__)
+                variables.append({&#34;type&#34;: &#34;union&#34;, &#34;target&#34;: name, &#34;value&#34;: f&#34;Union[{args_str}]&#34;})
+                for arg in obj.__args__:
+                    if inspect.isclass(arg):
+                        obj_info = {
+                            &#39;name&#39;: arg.__name__,
+                            &#39;module&#39;: arg.__module__,
+                            &#39;import_type&#39;: &#34;selective&#34;,
+                            &#39;is_local&#39;: False
+                        }
+                        modules.append(obj_info)
+            elif isinstance(obj, (int, str, float, bool)):
+                variables.append({&#34;type&#34;: &#34;constant&#34;, &#34;target&#34;: name, &#34;value&#34;: f&#34;{obj}&#34;})
+            elif inspect.ismodule(obj):
+                obj_info = {
+                    &#39;name&#39;: name,
+                    &#39;module&#39;: obj.__name__,
+                    &#39;import_type&#39;: &#34;standard&#34;,
+                    &#39;is_local&#39;: is_local_module(obj)
+                }
+                modules.append(obj_info)
+            else:
+                module = sys.modules.get(obj.__module__, None)
+                if module and module not in processed:
+                    is_local = is_local_module(module)
+                    obj_info = {
+                        &#39;name&#39;: name,
+                        &#39;module&#39;: obj.__module__,
+                        &#39;import_type&#39;: &#34;selective&#34;,
+                        &#39;is_local&#39;: is_local
+                    }
+                    if is_local:
+                        if isinstance(obj, TypeVar):
+                            obj_info[&#39;source&#39;] = &#34;&#34;
+                        else:
+                            obj_info[&#39;source&#39;] = inspect.getsource(obj)
+                            new_modules, new_variables = get_obj_dependencies(module.__dict__, obj_info[&#39;source&#39;], processed)
+                            modules.extend(new_modules)
+                            variables.extend(new_variables)
+                    modules.append(obj_info)
+
+    return modules, variables</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.scrape.is_local_module"><code class="name flex">
+<span>def <span class="ident">is_local_module</span></span>(<span>module)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_local_module(module):
+    if not hasattr(module, &#39;__file__&#39;):
+        return False  # Built-in modules don&#39;t have __file__
+
+    module_path = os.path.abspath(module.__file__)
+    current_dir = os.path.abspath(os.getcwd())
+
+    # Check if the module is in the current directory or its subdirectories
+    if module_path.startswith(current_dir):
+        # Check if the module is in the .venv directory
+        venv_dir = os.path.join(current_dir, &#39;.venv&#39;)
+        if module_path.startswith(venv_dir):
+            return False  # It&#39;s in .venv, so it&#39;s an installed package
+        return True  # It&#39;s in the project directory, but not in .venv
+    
+    return False  # It&#39;s outside the project directory</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.scrape.scrape_func"><code class="name flex">
+<span>def <span class="ident">scrape_func</span></span>(<span>func, variables)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scrape_func(func, variables):
+    fn_code = inspect.getsource(func)
+    fn_name = func.__name__
+    fn_code = &#34;\n&#34;.join(line for line in fn_code.splitlines() if not line.strip().startswith(&#34;@&#34;))
+
+    # check which variables are used in the function
+    used_variables = []
+    for variable in variables:
+        if variable[&#39;target&#39;] in fn_code:
+            used_variables.append(variable)
+
+    if inspect.isfunction(func):
+        context_globals = func.__globals__
+    elif inspect.isclass(func):
+        module = sys.modules[func.__module__]
+        context_globals = module.__dict__
+
+    modules, new_variables = get_obj_dependencies(context_globals, fn_code)
+    used_variables.extend(new_variables)
+
+    # Deal with variables from the main file
+    for used_variable in used_variables:
+        if used_variable[&#39;type&#39;] == &#39;constant&#39;:
+            if isinstance(used_variable[&#39;value&#39;], str) and used_variable[&#39;value&#39;].endswith(&#39;.yaml&#39;):
+                cwd = Path.cwd()
+                full_path = Path(f&#34;src/{cwd.name}/{used_variable[&#39;value&#39;]}&#34;)
+                if full_path.exists():
+                    with open(full_path, &#39;r&#39;) as file:
+                        yaml_data = yaml.safe_load(file)
+                    line = f&#34;{used_variable[&#39;target&#39;]} = {yaml_data}\n&#34;
+                    class_info = {
+                        &#39;name&#39;: used_variable[&#39;target&#39;],
+                        &#39;module&#39;: None,
+                        &#39;import_type&#39;: &#34;variable&#34;,
+                        &#39;is_local&#39;: False
+                    }
+                    class_info[&#39;source&#39;] = line
+            else:
+                line = f&#34;{used_variable[&#39;target&#39;]} = {used_variable[&#39;value&#39;]}\n&#34;
+                class_info = {
+                    &#39;name&#39;: used_variable[&#39;target&#39;],
+                    &#39;module&#39;: None,
+                    &#39;import_type&#39;: &#34;variable&#34;,
+                    &#39;is_local&#39;: False,
+                    &#39;source&#39;: line
+                }
+            modules.append(class_info)
+        elif used_variable[&#39;type&#39;] == &#39;union&#39;:
+            line = f&#34;{used_variable[&#39;target&#39;]} = {used_variable[&#39;value&#39;]}\n&#34;
+            class_info = {
+                &#39;name&#39;: used_variable[&#39;target&#39;],
+                &#39;module&#39;: None,
+                &#39;import_type&#39;: &#34;union&#34;,
+                &#39;is_local&#39;: False
+            }
+            class_info[&#39;source&#39;] = line
+            modules.append(class_info)
+        elif used_variable[&#39;type&#39;] == &#39;call&#39;:
+            # If the variable&#39;s class is not in modules, add it
+            var_class = context_globals.get(used_variable[&#39;cls_name&#39;])
+            if var_class and inspect.isclass(var_class):
+                module = sys.modules[var_class.__module__]
+                class_info = {
+                    &#39;name&#39;: used_variable[&#39;cls_name&#39;],
+                    &#39;module&#39;: var_class.__module__,
+                    &#39;import_type&#39;: &#34;variable&#34;,
+                    &#39;is_local&#39;: False
+                }
+                line = f&#34;{used_variable[&#39;target&#39;]} = {used_variable[&#39;cls_name&#39;]}(&#34;
+                if &#39;keywords&#39; in used_variable:
+                    for kw, value in zip(used_variable[&#39;keywords&#39;], used_variable[&#39;values&#39;]):
+                        if isinstance(value, str):
+                            line += f&#39;{kw}=&#34;{value}&#34;, &#39;
+                        else:
+                            line += f&#39;{kw}={value}, &#39;
+                line += &#34;)\n&#34;
+                class_info[&#39;source&#39;] = line
+                if any(module[&#39;name&#39;] == used_variable[&#39;cls_name&#39;] for module in modules):
+                    class_info[&#39;import_needed&#39;] = False
+                modules.append(class_info)
+
+    modules = [module for module in modules if module[&#39;name&#39;] != &#39;logger&#39;]
+    local_modules = [module for module in modules if module[&#39;is_local&#39;]]
+    module_dependencies = {mod[&#39;name&#39;]: extract_dependencies(mod, local_modules) for mod in local_modules}
+    local_modules = sort_modules(local_modules, module_dependencies) # Sort local modules based on dependencies
+    selective_import_modules = [module for module in modules if not module[&#39;is_local&#39;] and module[&#39;import_type&#39;] == &#39;selective&#39;]
+    standard_import_modules = [module for module in modules if module[&#39;import_type&#39;] == &#39;standard&#39;]
+    variable_modules = [module for module in modules if module[&#39;import_type&#39;] == &#39;variable&#39;]
+    union_modules = [module for module in modules if module[&#39;import_type&#39;] == &#39;union&#39;]
+
+    return fn_code, fn_name, local_modules, selective_import_modules, standard_import_modules, variable_modules, union_modules</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.scrape.scrape_func_params"><code class="name flex">
+<span>def <span class="ident">scrape_func_params</span></span>(<span>func)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scrape_func_params(func):
+    # Extract func parameter names, default values, and type annotations
+    sig = inspect.signature(func)
+    params = {}
+    for param_name, param in sig.parameters.items():
+        if param_name != &#34;self&#34;:
+            param_info = {
+                &#39;value&#39;: None if param.default is param.empty else param.default,
+                &#39;type&#39;: None
+            }
+            
+            # Get type annotation if available
+            if param.annotation is not param.empty:
+                param_info[&#39;type&#39;] = param.annotation
+            
+            params[param_name] = param_info
+    
+    return params</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="naptha_sdk.scrape.scrape_init"><code class="name flex">
+<span>def <span class="ident">scrape_init</span></span>(<span>file_path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scrape_init(file_path):
+    def extract_value(value):
+        if isinstance(value, ast.Constant):
+            return value.value
+        elif isinstance(value, ast.Name):
+            return value.id
+        elif isinstance(value, ast.Attribute):
+            return f&#34;{extract_value(value.value)}.{value.attr}&#34;
+        elif isinstance(value, ast.Call):
+            if isinstance(value.func, ast.Attribute):
+                return f&#34;{extract_value(value.func.value)}.{value.func.attr}()&#34;
+            elif isinstance(value.func, ast.Name):
+                return f&#34;{value.func.id}()&#34;
+        else:
+            return ast.unparse(value)
+
+    with open(file_path, &#39;r&#39;) as file:
+        tree = ast.parse(file.read(), filename=file_path)
+
+    variables = []
+    unique_variables = {}
+
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Assign):
+            for target in node.targets:
+                if isinstance(target, ast.Name):
+                    if isinstance(node.value, ast.Call) and isinstance(node.value.func, ast.Name):
+                        data = {&#34;type&#34;: &#34;call&#34;, &#34;target&#34;: target.id, &#34;cls_name&#34;: node.value.func.id}
+                        if node.value.keywords:
+                            data[&#39;keywords&#39;] = [kw.arg for kw in node.value.keywords]
+                            data[&#39;values&#39;] = [extract_value(kw.value) for kw in node.value.keywords]
+                        unique_variables[data[&#39;target&#39;]] = data
+                    elif isinstance(node.value, ast.Constant):
+                        data = {&#34;type&#34;: &#34;constant&#34;, &#34;target&#34;: target.id, &#34;value&#34;: node.value.value}
+                        unique_variables[data[&#39;target&#39;]] = data
+
+    # Convert the dictionary values back to a list
+    variables = list(unique_variables.values())
+
+    return variables</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="naptha_sdk" href="/api_reference/index.html">naptha_sdk</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="naptha_sdk.scrape.get_obj_dependencies" href="#naptha_sdk.scrape.get_obj_dependencies">get_obj_dependencies</a></code></li>
+<li><code><a title="naptha_sdk.scrape.is_local_module" href="#naptha_sdk.scrape.is_local_module">is_local_module</a></code></li>
+<li><code><a title="naptha_sdk.scrape.scrape_func" href="#naptha_sdk.scrape.scrape_func">scrape_func</a></code></li>
+<li><code><a title="naptha_sdk.scrape.scrape_func_params" href="#naptha_sdk.scrape.scrape_func_params">scrape_func_params</a></code></li>
+<li><code><a title="naptha_sdk.scrape.scrape_init" href="#naptha_sdk.scrape.scrape_init">scrape_init</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+</body>
+</html>

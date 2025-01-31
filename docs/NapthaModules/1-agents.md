@@ -65,8 +65,57 @@ For each agent, you will see a url where you can check out the code.
 #### Create a New Agent
 
 ```bash
-naptha agents agent_name -p "description='Agent description' parameters='{tool_name: str, tool_input_data: str}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
+naptha publish -r https://github.com/NapthaAI/hello_world_agent # using a Github repo
+naptha publish -r # using IPFS. Automatically builds the module, publishes it to IPFS and register
 ```
+
+If your agent module makes use of other modules (e.g. a tool module or memory module), you may also want to publish those sub-modules using:
+
+```bash
+naptha publish -r -s
+```
+
+Make sure to add a list of dicts with a ```name``` field to one or more of the ```tool_deployments```, ```environment_deployments```, ```kb_deployments```, or ```memory_deployments``` fields in your deployment.json file:
+
+ ```
+ [
+    {
+      ...
+        "tool_deployments": [{"name": "tool_deployment_1"}],
+        "environment_deployments": [{"name": "environment_deployment_1"}],
+        "kb_deployments": [{"name": "kb_deployment_1"}],
+        "memory_deployments": [{"name": "memory_deployment_1"}],
+      ...
+    }
+ ]
+ ```
+
+And also add corresponding ```tool_deployments.json```, ```environment_deployments.json```, ```kb_deployments.json```, or ```memory_deployments.json``` files to the ```configs``` folder for each subdeployment. In each file, there should be a module field with a ```name```, ```description```, ```parameters```, ```module_type```, ```module_version```, ```module_entrypoint```, and ```execution_type``` fields:
+
+ ```
+ [
+    {
+      ...
+        "module": {
+            "name": "subdeployment_module",
+            "description": "Subdeployment Module",
+            "parameters": "{tool_name: str, tool_input_data: str}",
+            "module_type": "tool",
+            "module_version": "v0.1",
+            "module_entrypoint": "run.py",
+            "execution_type": "package"
+        },
+      ...
+    }
+ ]
+ ```
+
+You can confirm that the modules were registered on the Hub by running:
+
+```bash
+naptha agents
+```
+
 
 #### Delete an Agent
 

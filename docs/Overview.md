@@ -53,10 +53,16 @@ export const featureCards = [
     link: 'NapthaStorage/overview'
   },
   {
-    title: 'Documentation',
-    description: 'Explore our comprehensive guides and references',
+    title: 'Examples',
+    description: 'Explore our examples',
     icon: '📚',
-    link: '/GettingStarted/Installation'
+    link: '/Examples/'
+  },
+  {
+    title: 'Tutorials',
+    description: 'Learn how to use Naptha',
+    icon: '📚',
+    link: '/Tutorials/'
   }
 ];
 

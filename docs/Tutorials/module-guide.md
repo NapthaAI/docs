@@ -161,54 +161,34 @@ poetry run python my-first-agent/run.py
 
 If you're interested in testing your agent module on a local node, please follow the instructions [here](https://github.com/NapthaAI/node?tab=readme-ov-file)
 
-## Packaging Your Agent
-Once your agent is ready, it's time to package it with Poetry by running:
-
-```bash
-poetry build
-```
-
-This creates distribution files in your `dist` directory.
-
 ## Publishing to Naptha Hub
-Publishing involves two key steps:
+You can register your agent module on the Naptha Hub in two ways:
+- Using a Github repo
+- Using IPFS
 
 :::tip
-    Add versioning before pushing to either Github or IPFS or Both.
+Add version tags to your repository:
 ```bash
 # Add version tag
 git tag v0.1.0
 git push --tags
 ```
-:::
-
-### 1. Upload to IPFS 
-```bash
-naptha write_storage -i dist/my-first-agent-0.1.0.tar.gz --ipfs
-```
-You'll receive an IPFS `Folder ID` upon success like:
-
-```
-Writing storage
-{'message': 'Files written to storage', 'folder_id': '********************************'}
-```
-:::info  
-
-Save the returned IPFS `Folder ID` - you'll need it for registration.
-
-:::
-
-:::note
-
-If you would like to use `Github` instead, replace the `module_url` value in the *register agent* command with your repository url. Remember to: 
-- git add and commit your files
+if you are using a Github repo, remember to: 
+- git add and commit your files 
 - create a new repository on Github and push your code. 
 
 :::
 
-### 2. Register Your Agent
+You can register the module from a GitHub url by adding your specific repo url with the ```-r``` flag:
+
 ```bash
-naptha agents my-first-agent -p "description='My first Naptha agent' parameters='{tool_name: str, tool_input_data: str}' module_url='ipfs://YOUR_FOLDER_ID'"
+naptha publish -r https://github.com/NapthaAI/module_template
+```
+
+Alternatively, you can store the module on IPFS and register on the Naptha Hub by running:
+
+```bash
+naptha publish -r
 ```
 
 ## Verifying Your Publication

@@ -33,7 +33,7 @@ git clone https://github.com/NapthaAI/naptha-sdk.git && cd naptha-sdk
 
 #### Install Dependencies
 ```bash
-poetry install  # This may take a few minutes
+poetry install  # This may take a few seconds
 ```
 
 #### Activate Environment
@@ -75,9 +75,11 @@ For a local node, set ```NODE_URL=http://localhost:7001``` in the .env file.
 To use a hosted node, set ```NODE_URL=http://node.naptha.ai:7001``` or ```NODE_URL=http://node1.naptha.ai:7001``` in the .env file.
 
 ### All Systems Go!
-You can check your installation by running:
+You can check your installation by running a sample CLI command:
 
-### Troubleshooting
+```bash
+naptha agents # should return a list of agent modules
+``` 
 
 <details>
 <summary>Common issues and solutions</summary>

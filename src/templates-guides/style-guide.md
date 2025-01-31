@@ -42,7 +42,6 @@ This document is a style guide for writing documentation for the Naptha AI platf
 
 ### Code Blocks
 ```python
-# Use syntax highlighting
 def example_function():
     """Include docstrings for Python examples"""
     pass

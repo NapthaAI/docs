@@ -69,6 +69,6 @@ Now that you've completed this tutorial, you can:
 ## Additional Resources
 
 - [Link to related documentation]
-- [Link to advanced tutorials]
+- [Link to related tutorials]
 - [Link to community resources]
 - [Link to support] - [Instructions for providing feedback or getting help] 

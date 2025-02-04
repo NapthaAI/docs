@@ -17,7 +17,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'GettingStarted/Architecture',
         'GettingStarted/Abstractions',
-        'GettingStarted/UseCases',
+        // 'GettingStarted/UseCases',
         'GettingStarted/Installation',
         'GettingStarted/SDK',
         'GettingStarted/NapthaCLI',

@@ -65,6 +65,14 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Run a Naptha Node',
+      items: [
+        'NapthaNodes/what-are-nodes',
+        'NapthaNodes/run',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Examples',
       items: [
         'Examples/index',

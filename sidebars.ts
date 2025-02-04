@@ -2,13 +2,13 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   docs: [
-    'Overview',
+    'Introduction',
     {
       type: 'category',
       label: 'Contributing',
       items: [
-        'Contributing/infrastructure-contributor',
         'Contributing/module-builder',
+        'Contributing/infrastructure-contributor',
       ],
     },
     {

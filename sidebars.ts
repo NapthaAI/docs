@@ -17,7 +17,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'GettingStarted/Architecture',
         'GettingStarted/Abstractions',
-        'GettingStarted/Decorators',
         'GettingStarted/UseCases',
         'GettingStarted/Installation',
         'GettingStarted/SDK',
@@ -40,10 +39,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Naptha Nodes',
+      label: 'Integrations',
       items: [
-        'NapthaNodes/what-are-nodes',
-        'NapthaNodes/run',
+        'Integrations/Decorators',
+        'Integrations/CrewAI',
+        'Integrations/Autogen',
+        'Integrations/Langchain',
+        'Integrations/LlamaIndex',
       ],
     },
     {

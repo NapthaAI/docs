@@ -1,21 +1,87 @@
 # Agent Modules
 
-You can think of the Agent Module as the loop that an agent runs.
-
-Agent modules can come in several forms:
+The core of the Agent Module is the loop or logic that an agent runs. Some examples of agents that use different loops include: 
 
 - **Chat Agents**  
-  Simple conversational agents that can engage in dialogue
-- **Task-Solving Agents** 
-  Agents that can break down and complete specific tasks
+  Simple conversational agents that can engage in dialogue. These agents receive a request and send a response. 
 - **ReAct Agents**
-  Agents that follow the Reason-Act pattern for structured problem solving
-- **BDI Agents**
-  Belief-Desire-Intention agents for complex autonomous behavior
-- **SOAR Agents**
-  State, Operator, And Result agents for cognitive architectures
-- **RL Agents**
-  Reinforcement Learning agents that follow the Perceive-Act-Reflect loop
+  Agents that follow the Reason-Act pattern for structured problem solving. First a reasoning step is performed to determine the best action to take. Then an action is executed. 
+- **Cognitive Agents**
+  Agents that follow the Perceive-Act-Reflect loop, where they perceive their environment, take actions, and reflect on the outcomes to improve future decisions. This kind of loop is used by cognitive architectures like SOAR and ACT-R.
+
+The code for this loop is usually contained in the `run.py` file of the agent module (for a detailed breakdown of the structure of an agent module, see the [overview](/NapthaModules/0-overview) page).
+
+## Agent Configurations
+
+As well as the core loop, Agent Modules are configured by specifying:
+
+* **An LLM Configuration** - The language model that the agent uses to generate responses
+* **System Prompts** - Define the data that will be passed to the LLM along with inputs
+* **Persona Module** - Additional personality traits and characteristics loaded into the system prompt
+
+The configuration of an agent module can be specified using the `AgentConfig` class:
+
+```python
+#naptha-sdk AgentConfig
+class AgentConfig(BaseModel):
+    config_name: Optional[str] = "agent_config"
+    llm_config: Optional[LLMConfig] = None
+    persona_module: Optional[Union[Dict, BaseModel]] = None
+    system_prompt: Optional[Union[Dict, BaseModel]] = None
+```
+
+Or in the deployment.json file in the `configs` folder of the module:
+
+```json
+# AgentConfig in deployment.json file 
+[
+    {
+        ...
+        "config": {
+            "config_name": "agent_config",
+            "llm_config": {"config_name": "model_1"},
+            "persona_module" : {"name": "richard_twitter"},
+            "system_prompt": {
+                "role": "You are a helpful AI assistant.",
+                "persona": ""
+            }
+        }
+    }
+]
+```
+
+:::info Agent Configuration Details
+- The `system_prompt` defines core agent behavior
+- `llm_config` specifies which language model to use under the hood
+- `persona_module` is loaded as a dictionary and merged into the system prompt
+- Tools/Skills are currently part of agent modules (moving to separate modules soon)
+- Memory system will also become a separate module in future updates
+:::
+
+## Agent Deployments
+
+Agent deployments allow you to specify other modules that the agent uses:
+
+* **Tools/Skills** - Capabilities that agents can use to interact with external systems
+* **Environments** - Environments that the agent interacts with
+* **Knowledge Bases** - Knowledge bases that the agent can interact with
+* **Memory** - Contextual storage enabling agents to maintain state and learn from interactions
+
+They also allow you to specify the node that the agent will run on.
+
+```python
+#naptha-sdk AgentDeployment
+class AgentDeployment(BaseModel):
+    node: Union[NodeConfigUser, NodeConfig, Dict]
+    name: Optional[str] = None
+    module: Optional[Dict] = None
+    config: Optional[AgentConfig] = None
+    data_generation_config: Optional[DataGenerationConfig] = None
+    tool_deployments: Optional[List[ToolDeployment]] = None
+    environment_deployments: Optional[List[EnvironmentDeployment]] = None
+    kb_deployments: Optional[List[KBDeployment]] = None
+    memory_deployments: Optional[List[MemoryDeployment]] = None
+```
 
 ## Deploying and Calling an Agent Module
 

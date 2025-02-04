@@ -69,10 +69,12 @@ The [Naptha Module template](https://github.com/NapthaAI/module_template) provid
 
 
 ### Explore Examples
+
 You can also browse our [GitHub repositories](https://github.com/orgs/NapthaAI/repositories) for real-world examples e.g. The [simple chat agent module](https://github.com/NapthaAI/simple_chat_agent) for running simple chat with LLMs.
 
 
 ### Discover Available Modules
+
 To see a full list of modules currently registered on the Naptha Hub, install the [Naptha SDK](https://github.com/NapthaAI/naptha-sdk) and use these CLI commands:
 ```bash
 naptha agents         # explore available agent modules
@@ -85,6 +87,34 @@ naptha environments   # explore available environment modules
 ```
 
 
+
+```python
+class ModuleType(str, Enum):
+    agent = "agent"
+    tool = "tool"
+    environment = "environment"
+    kb = "kb"
+    memory = "memory"
+    orchestrator = "orchestrator"
+    persona = "persona"
+
+class ModuleExecutionType(str, Enum):
+    package = "package"
+    docker = "docker"
+
+class Module(BaseModel):
+    id: str
+    name: str
+    description: str
+    author: str
+    module_url: str
+    module_type: Optional[ModuleType] = ModuleType.agent
+    module_version: Optional[str] = "v0.1"
+    module_entrypoint: Optional[str] = "run.py"
+    execution_type: Optional[ModuleExecutionType] = ModuleExecutionType.package
+```
+
 ## Need Help?
+
 - Join our [Community](https://naptha.ai/naptha-community)
 - Submit issues on [GitHub](https://github.com/NapthaAI)

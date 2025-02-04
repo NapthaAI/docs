@@ -16,7 +16,7 @@ const sidebars: SidebarsConfig = {
       label: 'Getting Started',
       items: [
         'GettingStarted/Architecture',
-        'GettingStarted/Abstractions',
+        // 'GettingStarted/Abstractions',
         // 'GettingStarted/UseCases',
         'GettingStarted/Installation',
         'GettingStarted/SDK',

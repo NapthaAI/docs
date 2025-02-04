@@ -1,10 +1,39 @@
 # Agent Orchestrator Modules
 
-Agent orchestrators are modules that manage the orchestration of agents, tools, environments, and personas. Examples of agent orchestrators include:
+Agent orchestrators are modules that manage the orchestration of agents, tools, environments, and personas, as defined through interaction patterns and workflows. Examples of agent orchestrators include:
 
 - Orchestration of multiple social agents e.g. agents that take part in debate or social simulations
 - Orchestration of multiple task-solving agents e.g. agents that work together to solve a problem or write code (like BabyAGI or MetaGPT)
 - Orchestration of multiple market agents e.g. agents that work together to make predictions
+
+## Orchestrator Configurations
+
+```python
+#naptha-sdk OrchestratorConfig
+class OrchestratorConfig(BaseModel):
+    config_name: Optional[str] = "orchestrator_config"
+    llm_config: Optional[LLMConfig] = None
+    max_rounds: Optional[int] = 5
+```
+
+Or in the deployment.json file in the `configs` folder of the module:
+
+```python
+        "orchestrator_config": {
+            "config_name": "orchestrator_config_1",
+            "num_agents": 10,
+            "max_rounds": 2,
+            "environment_order": [
+                "group_chat",
+                "auction"
+            ],
+            "environment_deployments": [
+                {"name": "group_chat"},
+                {"name": "auction"}
+            ],
+            "protocol": "acl_message"
+        }
+```
 
 ## Deploying and Calling an Agent Module
 

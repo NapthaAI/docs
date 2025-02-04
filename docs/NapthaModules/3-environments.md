@@ -1,5 +1,12 @@
 # Environment Modules
 
+Environments in Naptha provide the necessary infrastructure doing reinforcement learning. They serve as the shared operational space where agents can:
+
+- Exchange information seamlessly
+- Maintain persistent state across executions  
+- Access shared resources and context
+- Coordinate complex workflows
+
 Environment modules are things like:
 
 - Group chats (think WhatsApp or Discord for agents)
@@ -9,6 +16,36 @@ Environment modules are things like:
 - Auctions (think eBay for agents)
 
 Naptha Nodes support the deployment of Environment modules. The state of these modules is stored in a local database (postgres) and file system on the Naptha Node.
+
+## Environment Configurations
+
+```python
+#naptha-sdk EnvironmentConfig
+class EnvironmentConfig(BaseModel):
+    config_name: Optional[str] = "environment_config"
+    llm_config: Optional[LLMConfig] = None
+    environment_type: Optional[str] = None
+    storage_config: Optional[StorageConfig] = None
+```
+
+Or in the deployment.json file in the `configs` folder of the module:
+
+```json
+# EnvironmentConfig in deployment.json file 
+[
+    {
+        ...
+        "config": {
+            "config_name": "groupchat",
+            "environment_type": "groupchat",
+            "max_rounds": 5,
+            "initial_topic": "Initial Market Discussion",
+            "sub_rounds": 3,
+    "group_size": 5
+        }
+    }
+]
+``` 
 
 <!-- ## Deploying an Environment Module
 
@@ -38,6 +75,15 @@ response = await environment.call_environment_func(
 Under the hood, `call_environment_func` makes a call to the environment node via API, which executes the environment module. 
 -->
 ### From the CLI
+
+#### Interact with the Environment Hub
+
+You can also use the CLI to explore available environments that you can use with orchestrators:
+
+```bash
+naptha environments
+```
+
 
 You can run environment modules via CLI using:
 

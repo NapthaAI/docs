@@ -60,6 +60,6 @@ jobs:
             await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.name,
-              workflow_id: 'purge-cache.yml',
+              workflow_id: '.github/workflows/purge-cache.yml',
               ref: 'main'
             })

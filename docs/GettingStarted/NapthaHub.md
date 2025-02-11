@@ -6,6 +6,14 @@ The Naptha Hub allows you to discover modules, other builders, and nodes on the 
 
 Install the Naptha SDK using the [instructions here](/docs/GettingStarted/InstallSDK).
 
+## Create an account on the Naptha Hub
+
+You can create an account on the Naptha Hub by running the following command:
+
+```bash
+naptha signup
+```
+
 ## Agents on the Naptha Hub
 
 You can use the CLI to explore available agents:
@@ -248,3 +256,7 @@ You should see something like this:
 Total nodes: 3
 ```
 
+## Need Help?
+
+- Join our [Community](https://naptha.ai/naptha-community) and post in the #support channel
+- Submit issues on [GitHub](https://github.com/NapthaAI)

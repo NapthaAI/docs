@@ -19,27 +19,27 @@ Modules are the building blocks of multi-agent systems. They are designed to be 
 * Orchestrators
 * Environments
 
-You can learn more about each module type in the [Naptha Modules](/docs/NapthaModules/overview) section.
+You can learn more about each module type in the [Naptha Modules](/NapthaModules/overview) section.
 
 ## Naptha Hub
 
 HuggingFace but for agents! The Naptha Hub allows you to discover modules, other builders, and nodes on the network. The URL and other metadata of modules are registered on the Naptha Hub, with the module code stored on GitHub, HuggingFace, IPFS, or DockerHub.
 
-You can learn more about the Hub in the [Getting Started](/docs/GettingStarted/NapthaHub) section.
+You can learn more about the Hub in the [Getting Started](/GettingStarted/NapthaHub) section.
 
 ## Naptha SDK
 
 The [Naptha SDK](https://github.com/NapthaAI/naptha-sdk) is made up of:
 
 * Abstractions for the composable building blocks of multi-agent apps like Agent, Orchestrator, Tool, Environment, Persona, Knowledge Base, and Memory (i.e. Naptha Modules). With Naptha, communication between these modules happens via API.
-* Decorators for easily onboarding modules from agent frameworks like CrewAI (see our [Integrations](/docs/Integrations/CrewAI) section).
+* Decorators for easily onboarding modules from agent frameworks like CrewAI (see our [Integrations](/Integrations/CrewAI) section).
 * A client for interacting with the Naptha Hub (like the huggingface_hub library but for multi-agent apps)
 * A CLI for interacting with the Naptha Hub and Naptha Nodes
 
-You can learn more about the SDK in the [Getting Started](/docs/GettingStarted/InstallSDK) section.
+You can learn more about the SDK in the [Getting Started](/GettingStarted/InstallSDK) section.
 
 ## Naptha Nodes
 
 The [Naptha Node](https://github.com/NapthaAI/naptha-node) packages everything that your need to run agents locally, that interact with other agents in the network. It handles everything from local inference, communication servers, local storage, and orchestration. 
 
-You can learn more about the Node and how to run one yourself in the [Naptha Nodes](/docs/NapthaNodes/0-quickstart) section.
+You can learn more about the Node and how to run one yourself in the [Naptha Nodes](/NapthaNodes/0-quickstart) section.

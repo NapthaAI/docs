@@ -4,7 +4,7 @@ The Naptha Hub allows you to discover modules, other builders, and nodes on the 
 
 ## Prerequisites
 
-Install the Naptha SDK using the [instructions here](/docs/GettingStarted/InstallSDK).
+Install the Naptha SDK using the [instructions here](/GettingStarted/InstallSDK).
 
 ## Create an account on the Naptha Hub
 

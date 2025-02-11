@@ -170,4 +170,4 @@ Check out these sample agent modules:
 
 ## Next Steps
 
-- Learn about Orchestrator Modules: [Orchestrator Modules](/docs/NapthaModules/2-orchestrator)
+- Learn about Orchestrator Modules: [Orchestrator Modules](/NapthaModules/2-orchestrator)

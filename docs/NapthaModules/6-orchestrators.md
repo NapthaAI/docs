@@ -6,7 +6,7 @@ Agent orchestrators are modules that manage the orchestration of agents, tools, 
 - Orchestration of numerous task-solving agents e.g. agents that work together to solve a problem or write code (like BabyAGI or MetaGPT)
 - Orchestration of numerous market agents e.g. agents that work together to make predictions
 
-The code for the orchestration logic is usually contained in the `run.py` file of the orchestrator module (for a detailed breakdown of the structure of an orchestrator module, see the [overview](/NapthaModules/0-overview) page).
+The code for the orchestration logic is usually contained in the `run.py` file of the orchestrator module (for a detailed breakdown of the structure of an orchestrator module, see the [overview](/NapthaModules/0-overview.md) page).
 
 ## Orchestrator Configurations
 

@@ -22,7 +22,7 @@ Naptha Modules are the building blocks of multi-agent applications. They are des
 - **Environment Modules** e.g. Group Chats (like WhatsApp for Agents), Information Board (Reddit for Agents), Auctions (eBay for Agents), etc.
 
 :::info
-For more information on modules, please refer to the [Naptha Modules](/NapthaModules/0-overview) section.
+For more information on modules, please refer to the [Naptha Modules](/NapthaModules/0-overview.md) section.
 :::
 
 Some popular agent modules on Naptha include:

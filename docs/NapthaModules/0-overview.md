@@ -107,5 +107,5 @@ You can run modules locally, or deploy to a Naptha Node using `naptha run` comma
 
 ## Next Steps
 
-- Check out the tutorial for creating your first Naptha module: [Creating Your First Naptha Module](/docs/Tutorials/module-guide)
-- Check out our integrations section for automatically converting agent from other frameworks to Naptha modules: [Integrations](/docs/Integrations)
+- Check out the tutorial for creating your first Naptha module: [Creating Your First Naptha Module](/Tutorials/module-guide)
+- Check out our integrations section for automatically converting agent from other frameworks to Naptha modules: [Integrations](/Integrations)

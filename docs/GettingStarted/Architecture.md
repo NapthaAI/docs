@@ -1,37 +1,45 @@
-# Architecture
+# Overview of the Naptha Stack
 
-Our tech stack is made of three things:
+Open source AI developers and researchers create multi-agent systems face a number of key challenges:
 
-* Naptha SDK
-* Naptha Nodes
-* Naptha Hub
+* **Lack of Interoperability:** Agent and multi-agent frameworks built by different groups don’t interoperate. There are few standards for how agent interactions.
+* **Open Source Models use a variety of standards:** Format for tool calling and reasoning, and adherence to structured output, vary depending on the model.
 
-This architecture is designed with principles of modularity, scalability, and flexibility in mind. Naptha enables distributed multi-agent systems to grow and support a wide range of AI applications.
+The Naptha SDK, Naptha Modules and Naptha Hub make it easy to build and discover multi-agent systems with heterogeneous models, architectures and data. Naptha Nodes make it easy to deploy and run multi-agent systems at scale, and across a network of devices.
 
-### Naptha SDK
+## Naptha Modules
 
-Our toolkit empowers developers to build agentic solutions on the Naptha web, infrastructure for decentralized AI.
+Modules are the building blocks of multi-agent systems. They are designed to be framework-agnostic, allowing developers to implement modules using different agent frameworks. There are currently seven types of modules:
 
-The [Naptha SDK](https://github.com/NapthaAI/naptha-sdk) is used for prototyping and running Ai agents and multi-agent workflows. It also contains a CLI for interacting with Naptha Nodes and the Naptha Hub.
+* Agents
+* Tools
+* Knowledge Bases
+* Memories
+* Personas
+* Orchestrators
+* Environments
 
-![](/img/naptha-sdk-diagram.png)
+You can learn more about each module type in the [Naptha Modules](/docs/NapthaModules/overview) section.
 
-### Naptha Nodes
+## Naptha Hub
 
-Nodes are where the code of a decentralized AI application executes, i.e., they manage task execution, user verification, and storage operations. Our network supports both HTTP and WebSocket communication protocols. Nodes can interact both directly and indirectly (routed).
+HuggingFace but for agents! The Naptha Hub allows you to discover modules, other builders, and nodes on the network. The URL and other metadata of modules are registered on the Naptha Hub, with the module code stored on GitHub, HuggingFace, IPFS, or DockerHub.
 
-There are two types of nodes in our network:
+You can learn more about the Hub in the [Naptha Hub](/docs/NapthaHub) section.
 
-* **Orchestrators:** server, task queue, and database
-* **Workers:** local LLM and module manager
+## Naptha SDK
 
+The [Naptha SDK](https://github.com/NapthaAI/naptha-sdk) is made up of:
 
-:::info
-Our [node repository](https://github.com/NapthaAI/node) demonstrates how we build and scale multi-agent systems. While currently private, we plan to open source it in early 2025.
+* Abstractions for the composable building blocks of multi-agent apps like Agent, Orchestrator, Tool, Environment, Persona, Knowledge Base, and Memory (i.e. Naptha Modules). With Naptha, communication between these modules happens via API.
+* Decorators for easily onboarding modules from agent frameworks like CrewAI (see our [Integrations](/docs/Integrations/CrewAI) section).
+* A client for interacting with the Naptha Hub (like the huggingface_hub library but for multi-agent apps)
+* A CLI for interacting with the Naptha Hub and Naptha Nodes
 
-Want early access? [Join our Discord](https://naptha.ai/naptha-community).
-:::
+You can learn more about the SDK in the [Getting Started](/docs/GettingStarted/InstallSDK) section.
 
-### Naptha Hub
+## Naptha Nodes
 
-The Hub involves a registry and storage for modules, along with registries for nodes and tasks. This platform handles user authentication and data management, and it provides methods for listing and managing nodes, modules, tasks, and proposals. Also, it leverages SurrealDB for data persistence.
+The [Naptha Node](https://github.com/NapthaAI/naptha-node) packages everything that your need to run agents locally, that interact with other agents in the network. It handles everything from local inference, communication servers, local storage, and orchestration. 
+
+You can learn more about the Node and how to run one yourself in the [Naptha Nodes](/docs/NapthaNodes/0-quickstart) section.

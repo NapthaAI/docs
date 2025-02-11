@@ -22,7 +22,7 @@ Naptha Nodes package everything that your agent needs to run modules like agents
 - **Storage**: Store state such as knowledge and memory
 - **Orchestration**: Use message queues and asynchronous processing to orchestrate agents and modules
 
-For comprehensive information about the Naptha Node, see the [Naptha Node Overview](/docs/NapthaNodes/0-what-are-nodes.md).
+For comprehensive information about the Naptha Node, see the [Naptha Node Overview](/docs/NapthaNodes/0-quickstart.md).
 
 ## Run a Naptha Node
 

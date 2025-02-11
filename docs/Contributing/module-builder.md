@@ -103,7 +103,7 @@ To build your first module manually, you can:
 
 To automatically convert an existing agent application from frameworks like CrewAI, you should:
 
-1. Read the documentation on [Naptha Decorators](/docs/GettingStarted/Decorators.md) 
+1. Read the documentation on [Naptha Decorators](/docs/Integrations/Decorators) 
 2. Inspect examples of decorated agents e.g. [crewAI-examples](https://github.com/NapthaAI/crewAI-examples)
 
 To get up to speed with building more complex applications, composed of many modules, check out the tutorials in the Naptha Learn Hub.

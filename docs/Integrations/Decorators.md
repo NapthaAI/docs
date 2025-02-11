@@ -110,7 +110,7 @@ Let's break it down:
 
 1. [CrewAI](./CrewAI.md)
 2. [Autogen](./Autogen.md)
-3. [Langchain](./Langchain.md)
+3. [Langchain](./LangChain.md)
 4. [LlamaIndex](./LlamaIndex.md)
 
 ### Other Frameworks

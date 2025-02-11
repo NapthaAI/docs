@@ -7,10 +7,10 @@ The Naptha Node can be run using systemd/launchd services. This is closer to met
 ## Configuring your Naptha Node
 
 - `LAUNCH_DOCKER`: Set to False if you want to launch the node using systemd/launchd.
-- `LLM_BACKEND`: Should be set to "ollama" if using systemd/launchd. If you want to use VLLM, you should launch using docker compose by following the instructions in the [Docker](READMEs/docker.md) guide.
+- `LLM_BACKEND`: Should be set to "ollama" if using systemd/launchd. If you want to use VLLM, you should launch using docker compose by following the instructions in the [Docker](/docs/NapthaNodes/2-docker.md) guide.
 - `OLLAMA_MODELS`: Set this to the models you want to use, separated by commas. By default, the node will use the Nous Research Hermes 3 model.
 
-For advanced configuration settings, see the [Advanced Configuration](READMEs/advanced.md) guide.
+For advanced configuration settings, see the [Advanced Configuration](/docs/NapthaNodes/4-advanced.md) guide.
 
 ## Launching your Naptha Node
 
@@ -143,4 +143,4 @@ This is useful when you want to do a complete reset and restart of the node, esp
 
 ## Next Steps
 
-- Explore advanced configuration settings in the [Advanced Configuration](READMEs/advanced.md) guide.
+- Explore advanced configuration settings in the [Advanced Configuration](/docs/NapthaNodes/4-advanced.md) guide.

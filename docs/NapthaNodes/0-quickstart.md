@@ -36,4 +36,4 @@ If `PRIVATE_KEY`, is not set in the .env file, you will be prompted to set it. D
 
 ## Next Steps
 
-- [Learn more about services provided by the Naptha Node and how to configure custom setups](/docs/NapthaNodes/0-what-are-nodes.md)
+- [Learn more about services provided by the Naptha Node and how to configure custom setups](/docs/NapthaNodes/1-custom.md)

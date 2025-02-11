@@ -21,6 +21,18 @@ export const tutorialCards = [
     description: 'Learn how to create and use persona modules in 5 minutes',
     icon: '🎭',
     link: 'Tutorials/quick-persona-guide'
+  },
+  {
+    title: 'Create Your First Tool Module',
+    description: 'Learn how to create and use tool modules in 5 minutes',
+    icon: '🛠️',
+    link: 'Tutorials/tool-module-tutorial'
+  },
+  {
+    title: 'Build a Multiagent Orchestrator',
+    description: 'Learn how to build a multiagent system that leverages a couple of exciting Naptha modules and features',
+    icon: '🔍',
+    link: 'Tutorials/multiagent-orchestrator-tutorial'
   }
 ];
 

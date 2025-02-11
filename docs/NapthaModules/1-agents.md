@@ -1,23 +1,99 @@
 # Agent Modules
 
-You can think of the Agent Module as the loop that an agent runs.
-
-Agent modules can come in several forms:
+The core of the Agent Module is the loop or logic that an agent runs. Some examples of agents that use different loops include: 
 
 - **Chat Agents**  
-  Simple conversational agents that can engage in dialogue
-- **Task-Solving Agents** 
-  Agents that can break down and complete specific tasks
+  Simple conversational agents that can engage in dialogue. These agents receive a request and send a response. 
 - **ReAct Agents**
-  Agents that follow the Reason-Act pattern for structured problem solving
-- **BDI Agents**
-  Belief-Desire-Intention agents for complex autonomous behavior
-- **SOAR Agents**
-  State, Operator, And Result agents for cognitive architectures
-- **RL Agents**
-  Reinforcement Learning agents that follow the Perceive-Act-Reflect loop
+  Agents that follow the Reason-Act pattern for structured problem solving. First a reasoning step is performed to determine the best action to take. Then an action is executed. 
+- **Cognitive Agents**
+  Agents that follow the Perceive-Act-Reflect loop, where they perceive their environment, take actions, and reflect on the outcomes to improve future decisions. This kind of loop is used by cognitive architectures like SOAR and ACT-R.
 
-## Deploying and Calling an Agent Module
+The code for this loop is usually contained in the `run.py` file of the agent module (for a detailed breakdown of the structure of an agent module, see the [overview](/NapthaModules/0-overview) page).
+
+## Agent Configurations
+
+As well as the core loop, Agent Modules are configured by specifying:
+
+* **An LLM Configuration** - The language model that the agent uses to generate responses
+* **System Prompts** - Define the data that will be passed to the LLM along with inputs
+* **Persona Module** - Additional personality traits and characteristics loaded into the system prompt
+
+The configuration of an agent module can be specified using the `AgentConfig` class:
+
+```python
+#naptha_sdk/schemas.py
+class AgentConfig(BaseModel):
+    config_name: Optional[str] = "agent_config"
+    llm_config: Optional[LLMConfig] = None
+    persona_module: Optional[Union[Dict, BaseModel]] = None
+    system_prompt: Optional[Union[Dict, BaseModel]] = None
+```
+
+Or in the deployment.json file in the `configs` folder of the module:
+
+```json
+# AgentConfig in deployment.json file 
+[
+    {
+        ...
+        "config": {
+            "config_name": "agent_config",
+            "llm_config": {"config_name": "model_1"},
+            "persona_module" : {"name": "richard_twitter"},
+            "system_prompt": {
+                "role": "You are a helpful AI assistant.",
+                "persona": ""
+            }
+        }
+    }
+]
+```
+
+## Agent Deployments
+
+Agent deployments allow you to specify other modules that the agent module interacts with:
+
+* **Tools/Skills** - Capabilities that agents can use to interact with external systems
+* **Environments** - Environments that the agent interacts with
+* **Knowledge Bases** - Knowledge bases that the agent can interact with
+* **Memory** - Contextual storage enabling agents to maintain state and learn from interactions
+
+They also allow you to specify the `node` that the agent will run on, and the `module` that the agent will use. The configuration of an agent deployment can be specified using the `AgentDeployment` class:
+
+```python
+#naptha_sdk/schemas.py
+class AgentDeployment(BaseModel):
+    node: Union[NodeConfigUser, NodeConfig, Dict]
+    name: Optional[str] = None
+    module: Optional[Dict] = None
+    config: Optional[AgentConfig] = None
+    data_generation_config: Optional[DataGenerationConfig] = None
+    tool_deployments: Optional[List[ToolDeployment]] = None
+    environment_deployments: Optional[List[EnvironmentDeployment]] = None
+    kb_deployments: Optional[List[KBDeployment]] = None
+    memory_deployments: Optional[List[MemoryDeployment]] = None
+```
+
+Or in the deployment.json file:
+
+```json
+# AgentDeployment in deployment.json file 
+[
+    {
+        "node": {"name": "node.naptha.ai"},
+        "module": {"name": "hello_world_agent"},
+        "config": ...,
+        "tool_deployments": [{"name": "tool_deployment_1"}, {"name": "tool_deployment_2"}],
+        "environment_deployments": [{"name": "environment_deployment_1"}],
+        "kb_deployments": [{"name": "kb_deployment_1"}],
+        "memory_deployments": [{"name": "memory_deployment_1"}, {"name": "memory_deployment_2"}]
+    }
+]
+```
+
+
+## Deploying and Running an Agent Module
 
 ### Prerequisites
 
@@ -25,14 +101,19 @@ Install the Naptha SDK using the [instructions here](https://github.com/NapthaAI
 
 ### In Python
 
-You can run an agent in Python using:
+You can deploy andrun an agent in Python using:
 
 ```python
-from naptha_sdk.agent import Agent
+from naptha_sdk.modules.agent import Agent
+from naptha_sdk.client.naptha import Naptha
+from naptha_sdk.schemas import AgentRunInput
+
+naptha = Naptha()
 
 agent_deployment = {
-    "module": {"name": "simple_chat_agent"},
-    "worker_node_url": "https://node.naptha.ai"
+    "node": {"name": "node.naptha.ai"},
+    "module": {"name": "hello_world_agent"},
+    ...
 }
 
 # Instantiate the agent
@@ -41,69 +122,52 @@ agent = Agent()
 # Deploy the agent
 response = await agent.create(agent_deployment)
 
-# Call the agent
-response = await agent.call_agent_func(
-    tool_name="chat", 
-    tool_input_data="What is an AI agent?", 
+input_params = {
+    "firstname": "Sam",
+    "surname": "Altman",
+}
+
+agent_run_input = AgentRunInput(
+    consumer_id=naptha.user.id,
+    inputs=input_params,
+    deployment=agent_deployment,
+    signature=sign_consumer_id(naptha.user.id, os.getenv("PRIVATE_KEY"))
 )
+
+# Run the agent
+response = await agent.call_agent_func(agent_run_input)
 ```
 
 Under the hood, `call_agent_func` makes a call to the worker node via API, which executes the agent module. This makes it possible for agents built using different agent frameworks to interoperate.
 
 ### From the CLI
 
-#### Interact with the Agent Hub
-
-You can also use the CLI to explore available agents that you can run on a node:
+You can deploy the agent (without running) using:
 
 ```bash
-naptha agents
+# usage: naptha create <agent_name>
+naptha create agent:hello_world_agent
 ```
 
-For each agent, you will see a url where you can check out the code.
-
-#### Create a New Agent
-
-```bash
-naptha agents agent_name -p "description='Agent description' parameters='{tool_name: str, tool_input_data: str}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
-```
-
-#### Delete an Agent
-
-```bash
-naptha agents -d agent_name
-```
-
-#### Run an Agent
-
-Now you've found a node and a agent you'd like to run, so let's run it locally! You can use the commandline tool to connect with the node and run the workflow. 
+Run the agent:
 
 ```bash
 # usage: naptha run <agent_name> <agent args>
 naptha run agent:hello_world_agent -p "firstname=sam surname=altman"
 ```
 
-Try an agent that uses the local LLM running on your node:
-
-```bash
-naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='what is an ai agent?'"
-```
-
-You can also run agents from docker images (if running your own node, make sure the `DOCKER_JOBS=True` in the config):
-
-```bash
-naptha run docker_hello_world -p "docker_image=hello-world"
-```
-
 ## Examples
 
 Check out these sample agent modules:
-- [Simple Chat Agent](https://github.com/NapthaAI/simple_chat_agent)
 - [Hello World Agent](https://github.com/NapthaAI/hello_world_agent)
-- [Random Number Agent](https://github.com/NapthaAI/random_number_agent)
-- [Debate Agent](https://github.com/NapthaAI/debate_agent)
+- [Simple Chat Agent](https://github.com/NapthaAI/simple_chat_agent)
+- [Generate Image Agent](https://github.com/NapthaAI/generate_image_agent)
 - [Wikipedia Agent](https://github.com/NapthaAI/wikipedia_agent)
 
 ## Need Help?
-- Join our [Community](https://naptha.ai/naptha-community)
+- Join our [Community](https://naptha.ai/naptha-community) and post in the #support channel 
 - Submit issues on [GitHub](https://github.com/NapthaAI)
+
+## Next Steps
+
+- Learn about Orchestrator Modules: [Orchestrator Modules](/docs/NapthaModules/2-orchestrator)

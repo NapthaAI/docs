@@ -30,13 +30,6 @@ naptha run agent:hello_world_agent -p "firstname=sam surname=altman"
 This will run on whichever node you've configured as `NODE_URL` in the .env file of the Naptha SDK.
 :::
 
-You can also run agents from docker images (if running your own node, make sure the DOCKER_JOBS=True in the config):
-
-```bash
-naptha run docker_hello_world -p "docker_image=hello-world"
-```
-
-
 ## Expected Output
 
 The agent will respond with a personalized greeting using the provided name parameters.
@@ -61,12 +54,6 @@ export const nextStepsCards = [
     description: 'Experience multi-agent interactions in real-time',
     icon: '💬',
     link: '/Examples/MultiplayerChat'
-  },
-  {
-    title: 'Simple RAG',
-    description: 'Run our basic RAG setup',
-    icon: '🔍',
-    link: '/Examples/SimpleRAG'
   },
   {
     title: 'Join Our Community',

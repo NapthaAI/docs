@@ -2,6 +2,7 @@
 > With only a few lines of code, builders can easily deploy custom AI agents to the Naptha hub or their own local node.
 
 ### Context
+
 Naptha supports a web of multi-agent systems that grow and evolve. This walkthrough explains how to decorate functions in order to **quickly publish existing agents, *allowing them to interact with others.***
 
 ### Prerequisites
@@ -107,17 +108,10 @@ Let's break it down:
 
 ## Usage Examples
 
-### [CrewAI](https://github.com/NapthaAI/crewAI-examples)
-
-#### Stock Analysis
-View the full code sample [here](https://github.com/NapthaAI/crewAI-examples/blob/main/stock_analysis/src/stock_analysis/crew.py).
-```python
-@naptha_agent("financial_agent")
-    def financial_agent(self) -> Agent:
-        return Agent(
-            ...
-        )
-```
+1. [CrewAI](./CrewAI.md)
+2. [Autogen](./Autogen.md)
+3. [Langchain](./Langchain.md)
+4. [LlamaIndex](./LlamaIndex.md)
 
 ### Other Frameworks
 :::info

@@ -17,18 +17,18 @@ naptha storage fs create test_upload -f README.md
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import CreateStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 create_file_request = CreateStorageRequest(
     storage_type=StorageType.FILESYSTEM,
     path="test_upload",
     data="README.md"
 )
-upload_result = asyncio.run(await storage_provider.execute(create_file_request))
+upload_result = asyncio.run(await storage_client.execute(create_file_request))
 print("Single file upload result:", upload_result)
 ```
 
@@ -46,17 +46,17 @@ naptha storage fs read test_upload
 
 ```
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import ReadStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 read_request = ReadStorageRequest(
     storage_type=StorageType.FILESYSTEM,
     path="test_upload/test.txt"
 )
-read_result = asyncio.run(await storage_provider.execute(read_request))
+read_result = asyncio.run(await storage_client.execute(read_request))
 print("Read file result:", read_result)
 ```
 
@@ -75,11 +75,11 @@ naptha storage fs list test_upload
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import ListStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 list_request = ListStorageRequest(
     storage_type=StorageType.FILESYSTEM,
@@ -90,7 +90,7 @@ list_request = ListStorageRequest(
     }
 )
 
-list_result = asyncio.run(await storage_provider.execute(list_request))
+list_result = asyncio.run(await storage_client.execute(list_request))
 print("List directory result:", list_result)
 ```
 
@@ -107,17 +107,17 @@ naptha storage fs delete test_upload/README.md
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import DeleteStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 delete_file_request = DeleteStorageRequest(
     storage_type=StorageType.FILESYSTEM,
     path="test_upload/test.txt"
 )
 
-delete_result = asyncio.run(await storage_provider.execute(delete_file_request))
+delete_result = asyncio.run(await storage_client.execute(delete_file_request))
 print("Delete file result:", delete_result)
 ```

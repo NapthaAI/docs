@@ -38,7 +38,7 @@ poetry install  # This may take a few minutes
 
 #### Activate Environment
 ```bash
-poetry shell
+source .venv/bin/activate
 ```
 
 ### 3. Setup Dev Environment

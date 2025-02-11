@@ -74,3 +74,7 @@ Want to create your own persona? Check out our [Quick Persona Guide](../Tutorial
 ## Need Help?
 - Join our [Discord Community](https://naptha.ai/naptha-community)
 - Submit issues on [GitHub](https://github.com/NapthaAI)
+
+## Next Steps
+
+- Check out the tutorial for exporting your X data and creating a persona: [Creating a Persona](/docs/Tutorials/quick-persona-guide)

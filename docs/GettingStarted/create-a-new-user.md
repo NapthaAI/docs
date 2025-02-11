@@ -2,37 +2,66 @@
 sidebar_label: 'Create a New User'
 ---
 
-# Creating Your First Naptha User Account
+# Creating Your Naptha User Account
 
 ## What is a Naptha User Account?
 
 Your Naptha account is your identity on the Naptha platform. It allows you to:
+
 - Deploy and manage agents, tools, environments and other modules on the Naptha Hub
 - Access and interact with the Naptha Hub's features and services
 
+Identity verification with Naptha Nodes is performed using private/public keypairs. Identity verification with the Naptha Hub is performed through a username and password.
+
 This guide will walk you through the process of creating your first Naptha user account step by step.
-
-<details>
-<summary>Prerequisites</summary>
-
-Before we begin, ensure you have:
-- Python 3.8 or higher installed
-- Poetry package manager (`pipx install poetry`)
-- Basic familiarity with command line tools
-- Git installed
-</details>
 
 ## 1. Getting Started
 
-### Install the SDK
-First, clone and install the Naptha SDK:
+### Set up a Virtual Environment
+
+It is good practice to install the SDK in a dedicated virtual environment. We recommend using Poetry to manage your dependencies.
+
+<details>
+<summary>Install Poetry</summary>
+
+Learn more about Poetry in their official [docs](https://python-poetry.org/docs).
+
+Install `pipx` (or you can use `pip` instead) and run this command:
+
 ```bash
-git clone https://github.com/NapthaAI/naptha-sdk.git
-cd naptha-sdk
-poetry install
-poetry shell
-cp .env.example .env #set up your environment variables
+pipx install poetry
 ```
+
+Verify the installation:
+
+```bash
+poetry --version
+```
+</details>
+
+Create a new poetry virtual environment:
+
+```bash
+poetry new test-env
+source .venv/bin/activate
+pip install naptha-sdk
+```
+
+You can also use in-built Python virtual environments:
+
+```bash
+python -m venv test-env
+source test-env/bin/activate
+```
+
+### Install the SDK
+
+You can install the Naptha SDK using:
+
+```bash
+pip install naptha-sdk
+```
+
 
 ## 2. Creating Your Account
 
@@ -45,10 +74,16 @@ The simplest way to create a new account is through the interactive CLI. Run the
 naptha signup
 ```
 
-This will:
-- Guide you through username/password creation
-- Generate your cryptographic public/private keypair
-- Automatically save your credentials to the .env file
+:::info
+This command will prompt you to create an account by entering a username and password. It also automatically generates a private key and stores everything in your .env file.
+:::
+
+If successful, you should see a message like this:
+
+```bash
+Signing up user: <username> with public key: <public_key>
+Your credentials have been updated in the .env file. You can now use these credentials to authenticate in future sessions.
+```
 
 ### Method 2: Pre-configured Setup
 If you prefer setting credentials beforehand:
@@ -67,32 +102,16 @@ If you prefer setting credentials beforehand:
     naptha signup
     ```
 
-## 3. Verifying Your Setup
+## 3. Configure an .env file
 
-### Check Available Nodes
-```bash
-naptha nodes
-```
+#### Configure ```NODE_URL```
+Choose whether you want to interact with a *local* or *hosted* Naptha node.
 
-### Try a Sample Agent
-```bash
-naptha run agent:hello_world_agent -p "firstname=sam surname=altman"
-```
+##### Local Node
+For a local node, set ```NODE_URL=http://localhost:7001``` in the .env file.
 
-### Verify Programmatically
-You can also verify the new credentials programmatically via the [client SDK](https://pypi.org/project/naptha-sdk/):
-```python
-from naptha_sdk.client.naptha import Naptha
-
-async def verify_credentials():
-    try:
-        async with Naptha() as naptha:
-            await naptha.hub.signin(os.getenv("HUB_USERNAME"), os.getenv("HUB_PASSWORD"))
-            return True
-    except Exception as e:
-        print(f"Credential verification failed: {str(e)}")
-        return False
-```
+##### Hosted Node
+To use a hosted node, set ```NODE_URL=http://node.naptha.ai:7001``` or ```NODE_URL=http://node1.naptha.ai:7001``` in the .env file.
 
 ## 4. Best Practices
 
@@ -111,7 +130,7 @@ async def verify_credentials():
 - Keep the SDK updated by fetching the latest version from GitHub or PyPI
 - Review registered agents periodically
 
-## Troubleshooting
+## 5. Troubleshooting
 
 <details>
 <summary>Connection Issues</summary>
@@ -124,10 +143,16 @@ If you're having trouble connecting:
     NODE_URL=http://localhost:7001
 
     # Hosted node
-    NODE_URL=http://node.naptha.ai:7001
+    NODE_URL=https://node.naptha.ai
     ```
 
-2. Verify credentials:
+2. Check your hub URL in `.env`:
+    ```bash
+    # Hosted hub
+    HUB_URL=wss://hub.naptha.ai
+    ```
+
+3. Verify credentials:
     ```bash
     cat .env
     ```
@@ -154,19 +179,19 @@ Once your account is set up, you can:
 naptha agents
 ```
 
-2. Create your own agent:
-- Clone the [base template](https://github.com/NapthaAI/module_template?tab=readme-ov-file)
-- Follow the template instructions for prototyping, testing and deploying your agent
+2. Run some existing agents:
+
+```bash
+naptha run agent:hello_world_agent -p "firstname=sam surname=altman"
+```
 
 :::info
-You can also follow our [Quick Guide to Creating and Publishing Your First Agent Module on Naptha](/Tutorials/module-guide) to create your 
+You can follow our [Quick Guide to Creating and Publishing Your First Agent Module on Naptha](/Tutorials/module-guide) to create your 
 own agent.
 :::
 
 
 ## Need Help?
-- Join our [Discord Community](https://naptha.ai/naptha-community)
-- Follow us on [Twitter](https://twitter.com/NapthaAI)
-- Join us on [Farcaster](https://warpcast.com/naptha)
+- Join our [Discord Community](https://naptha.ai/naptha-community) and post in the #support channel
 - Get help with technical issues on [GitHub](https://github.com/NapthaAI/naptha-sdk/issues)
   

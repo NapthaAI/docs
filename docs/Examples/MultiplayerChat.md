@@ -18,6 +18,14 @@ This multi-agent, multi-node workflow is made of the following components, which
 | Multi-Agent Chat Orchestrator | Multi-agent chat across a network of multiple nodes. | [GitHub](https://github.com/NapthaAI/multiagent_chat) |
 | Simple Chat Agent | Agent for running simple chat with LLMs. | [GitHub](https://github.com/NapthaAI/simple_chat_agent) |
 
+## Create Deployment
+
+You can download and install the modules for an orchestrator without running first using:
+
+```bash
+naptha create orchestrator:multiagent_chat --agent_modules "agent:simple_chat_agent,agent:simple_chat_agent" --agent_nodes "node.naptha.ai,node1.naptha.ai" --kb_modules "kb:groupchat_kb" --kb_nodes "node.naptha.ai"
+```
+
 ## Run
 
 You can run it using the Naptha SDK on hosted nodes using the following command:

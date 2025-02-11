@@ -37,16 +37,62 @@ npx tweets2character
 
 This will generate a `character.json` file containing your persona's traits and characteristics, generated using either Claude or OpenAI's API. You can rename this file to match your desired persona name.
 
-### 2. Register Your Persona
+### 2. Create a Persona Module
 
-- Next, follow and request to join the [Naptha organization on Hugging Face](https://huggingface.co/NapthaAI), then create a PR to upload your `character.json` to the [Twitter personas collection](https://huggingface.co/datasets/NapthaAI/twitter_personas/tree/main).
+To create a persona module, you can follow one of these steps:
 
-- Once your PR is merged, you can register your persona module using:
+#### A. Clone the Persona Template Repository
+
+Clone the persona template [repo](https://github.com/NapthaAI/persona-template) using:
+
 ```bash
-naptha personas my-persona -p "description='My custom persona' parameters='{name: str, bio: str, openness: int}' module_url='https://huggingface.co/datasets/NapthaAI/twitter_personas' module_entrypoint='my-persona.json'"
+git clone https://github.com/NapthaAI/persona-template
+cd persona-template
 ```
 
-- Try these example prompts to test your persona's behavior:
+You can install the module using:
+
+```bash
+poetry install
+source .venv/bin/activate
+```
+
+Change the filename and content of the `data/richard.json` to that of your generated `character.json`.
+
+When ready, you can push to your personal GitHub, HuggingFace or IPFS. Make sure to change the remote origin:
+
+```bash
+git remote rm origin
+git remote add origin https://github.com/persona_name/persona_template.git
+```
+
+Also add a new module version number using e.g.:
+
+```bash
+git tag v0.1
+```
+
+```bash
+git push --tags
+```
+
+#### B. Push your persona to the Naptha Organization on Hugging Face
+
+You can also follow and request to join the [Naptha organization on Hugging Face](https://huggingface.co/NapthaAI), then create a PR to upload your `character.json` to the [Twitter personas collection](https://huggingface.co/datasets/NapthaAI/twitter_personas/tree/main).
+
+### 2. Register Your Persona
+
+You can register your persona module using:
+
+```bash
+naptha personas persona_name -p "description='Persona for <persona_name>' parameters='{name: str, bio: List, lore: List, adjectives: List, topics: List, style: Dict[str, List], messageExamples: List, postExamples: List}' module_url='https://github.com/persona_name/persona_template' module_version='v0.1' module_entrypoint='data/richard.json'" 
+```
+
+Make sure that the `module_url` is the url of the main repo (e.g the huggingface dataset, github repo, or repo stored on ipfs) and the `module_entrypoint` is the path to the file in the dataset (currently can be json or yaml).
+
+### 3. Run an Agent with Your Persona
+
+Try these example prompts to test your persona's behavior:
 
 ```bash
 # Basic identity check
@@ -62,31 +108,6 @@ running agent simple_chat_agent
 completed agent simple_chat_agent
 Output:  [{"role": "user", "content": "who are you?"}, {"role": "assistant", "content": "I'm interstellarninja, an AI enthusiast and developer focused on advancing open-source language models and structured output frameworks. I have a deep interest in large language models, function calling, and multi-agent systems. I actively contribute to projects in the AI community, collaborating with organizations like NousResearch and experimenting with various AI models and techniques. I'm passionate about the implications of AI technology and enjoy discussing topics related to AI, blockchain, and space exploration! How can I assist you today?"}]
 ```
-
-
-<details>
-<summary>Alternative Registration Methods</summary>
-
-You can also register your persona without uploading to HuggingFace by following these steps:
-
-1. Clone the [persona template](https://github.com/NapthaAI/persona_template)
-2. Place your `character.json` file in the template's `data` folder
-:::info
-The template contains all the necessary files and structure for a persona module, with examples. You can also find it on [HuggingFace](https://huggingface.co/datasets/NapthaAI/persona_template/tree/main).
-:::
-
-3. Make the files accessible by either:
-   - Pushing to a public GitHub repository
-   - Uploading to IPFS using: `naptha write_storage -i folder_name`
-   - or both
-
-4. Register it like this:
-```bash
-naptha personas my-persona -p "description='My custom persona' parameters='{name: str, bio: list, lore: list, adjectives: list}' module_url='github://YOUR_GITHUB_USERNAME/REPO_NAME or ipfs://FOLDER_ID' module_type='persona' module_version='0.1' module_entrypoint='data/character.json'"
-```
-
-</details>
-
 
 ## Next Steps
 - Join our [Discord Community](https://naptha.ai/naptha-community) to share your personas

@@ -16,22 +16,10 @@ export const exampleCards = [
     link: 'Examples/HelloWorld'
   },
   {
-    title: 'BabyAGI',
-    description: 'Run a true multi-agent BabyAGI implementation',
-    icon: '🤖',
-    link: 'Examples/BabyAGI'
-  },
-  {
     title: 'Generate Image',
     description: 'Create AI-generated images from text descriptions',
     icon: '🎨',
     link: 'Examples/GenerateImage'
-  },
-  {
-    title: 'Image2Image',
-    description: 'Transform and modify existing images with AI',
-    icon: '🖼️',
-    link: 'Examples/Image2Image'
   },
   {
     title: 'Multiplayer Chat',

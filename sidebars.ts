@@ -82,10 +82,9 @@ const sidebars: SidebarsConfig = {
         'Examples/index',
         'Examples/HelloWorld',
         'Examples/GenerateImage',
-        'Examples/Image2Image',
         'Examples/MultiplayerChat',
-        'Examples/BabyAGI', 
-        'Examples/BuildAgent',
+        // 'Examples/BabyAGI', 
+        // 'Examples/BuildAgent',
       ],
     },
     {

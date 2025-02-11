@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
         'GettingStarted/Architecture',
         // 'GettingStarted/Abstractions',
         // 'GettingStarted/UseCases',
-        'GettingStarted/InstallSDK',
+        'GettingStarted/create-a-new-user',
         // 'GettingStarted/SDK',
         'GettingStarted/NapthaCLI',
         'GettingStarted/NapthaHub',

@@ -34,7 +34,7 @@ Execute via CLI and enter the environment:
 
 ```bash
 poetry install
-poetry shell
+source .venv/bin/activate
 ```
 
 ### 3. Copy the `.env.example` file

@@ -27,7 +27,7 @@ poetry install
 ```
 #### Activate Environment
 ```bash
-poetry shell
+source .venv/bin/activate
 ```
 
 ## 3. Setup Environment

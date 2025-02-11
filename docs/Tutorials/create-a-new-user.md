@@ -30,7 +30,7 @@ First, clone and install the Naptha SDK:
 git clone https://github.com/NapthaAI/naptha-sdk.git
 cd naptha-sdk
 poetry install
-poetry shell
+source .venv/bin/activate
 cp .env.example .env #set up your environment variables
 ```
 

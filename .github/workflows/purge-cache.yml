@@ -1,12 +1,17 @@
 name: Purge Cloudflare Cache
 
 on:
-  page_build:  # Triggers after GitHub Pages builds
-  workflow_dispatch:  # Allows manual triggering if needed
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types:
+      - completed
+    branches:
+      - main
 
 jobs:
-  purge:
+  purge-cache:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Purge Cloudflare cache
         run: |

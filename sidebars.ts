@@ -2,7 +2,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   docs: [
-    'Introduction',
+    'Overview', // Changed from 'Introduction' to 'Overview' as that's what exists
     {
       type: 'category',
       label: 'Contributing',
@@ -16,10 +16,9 @@ const sidebars: SidebarsConfig = {
       label: 'Getting Started',
       items: [
         'GettingStarted/Architecture',
-        // 'GettingStarted/Abstractions',
-        // 'GettingStarted/UseCases',
+        'GettingStarted/UseCases',
         'GettingStarted/create-a-new-user',
-        // 'GettingStarted/SDK',
+        'GettingStarted/SDK',
         'GettingStarted/NapthaCLI',
         'GettingStarted/NapthaHub',
       ],
@@ -45,7 +44,7 @@ const sidebars: SidebarsConfig = {
         'Integrations/Decorators',
         'Integrations/CrewAI',
         'Integrations/Autogen',
-        'Integrations/Langchain',
+        'Integrations/LangChain', // Fixed capitalization
         'Integrations/LlamaIndex',
       ],
     },
@@ -53,8 +52,8 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Naptha Inference',
       items: [
-        'NapthaInference/0-overview',
-        'NapthaInference/1-inference',
+        'NapthaInference/overview', // Changed from 0-overview
+        'NapthaInference/inference', // Changed from 1-inference
       ],
     },
     {
@@ -71,8 +70,11 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Run a Naptha Node',
       items: [
-        'NapthaNodes/what-are-nodes',
-        'NapthaNodes/run',
+        'NapthaNodes/quickstart', // Changed from what-are-nodes
+        'NapthaNodes/custom',     // Added existing pages
+        'NapthaNodes/advanced',
+        'NapthaNodes/docker',
+        'NapthaNodes/systemd',
       ],
     },
     {
@@ -83,8 +85,6 @@ const sidebars: SidebarsConfig = {
         'Examples/HelloWorld',
         'Examples/GenerateImage',
         'Examples/MultiplayerChat',
-        // 'Examples/BabyAGI', 
-        // 'Examples/BuildAgent',
       ],
     },
     {
@@ -92,7 +92,6 @@ const sidebars: SidebarsConfig = {
       label: 'Tutorials',
       items: [
         'Tutorials/index',
-        'Tutorials/create-a-new-user',
         'Tutorials/module-guide',
         'Tutorials/quick-persona-guide',
       ],

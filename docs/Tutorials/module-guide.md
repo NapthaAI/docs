@@ -163,7 +163,7 @@ Alternatively, you can store the module on IPFS and register on the Naptha Hub b
 naptha publish -r
 ```
 
-If successful, you will see an output with the IPFS hash, and a link where you can test download via the browser http://provider.akash.pro:30584/ipfs/`<ipfs_hash>`.
+If successful, you will see an output with the IPFS hash, and a link where you can test download via the browser http://provider.akash.pro:30584/ipfs/<ipfs_hash>.
 
 If your module makes use of other modules (e.g. your agent module uses a tool module or memory module), you may also want to publish those sub-modules using:
 

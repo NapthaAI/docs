@@ -51,6 +51,9 @@ jobs:
     name: Purge Cloudflare Cache
     needs: deploy
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
     steps:
       - name: Trigger cache purge workflow
         uses: actions/github-script@v7

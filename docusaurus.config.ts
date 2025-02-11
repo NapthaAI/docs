@@ -42,6 +42,8 @@ const config: Config = {
           sidebarPath: require.resolve('./sidebars.ts'),
           editUrl:
             'https://github.com/NapthaAI/docs/tree/main/',
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
         },
         blog: false,
         theme: {
@@ -52,6 +54,11 @@ const config: Config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
     image: 'img/naptha-social.png',
     navbar: {
       title: 'Naptha AI',
@@ -66,6 +73,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          label: 'Blog',
+          href: 'https://naptha.ai/blog?utm_source=docs_naptha',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/NapthaAI',
           position: 'right',
           className: 'header-github-link',
@@ -77,11 +89,32 @@ const config: Config = {
       style: 'dark',
       links: [
         {
+          title: 'Learn',
+          items: [
+            {
+              label: 'Overview',
+              to: '/',
+            },
+            {
+              label: 'Getting Started',
+              to: '/GettingStarted/Installation',
+            },
+            {
+              label: 'Examples',
+              to: '/Examples',
+            },
+          ],
+        },
+        {
           title: 'About',
           items: [
             {
               label: 'Website',
               href: 'https://naptha.ai',
+            },
+            {
+              label: 'Blog',
+              href: 'https://naptha.ai/blog?utm_source=docs_naptha',
             },
           ],
         },
@@ -109,6 +142,15 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['bash', 'json', 'yaml', 'toml', 'python', 'typescript', 'markdown'],
+      magicComments: [
+        {
+          className: 'theme-code-block-highlighted-line',
+          line: 'highlight-next-line',
+          block: {start: 'highlight-start', end: 'highlight-end'},
+        },
+      ],
+      copyButton: true,
     },
   } satisfies Preset.ThemeConfig,
 };

@@ -1,6 +1,6 @@
 # IPFS Storage
 
-Naptha's storage provider also provides decentralized file storage via the IPFS network.
+Naptha's storage client also provides decentralized file storage via the IPFS network.
 
 ## Upload a File
 
@@ -17,11 +17,11 @@ naptha storage ipfs create test -f README.md
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import CreateStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 upload_request = CreateStorageRequest(
     storage_type=StorageType.IPFS,
@@ -29,7 +29,7 @@ upload_request = CreateStorageRequest(
     file="README.md"
 )
     
-upload_result = asyncio.run(await storage_provider.execute(upload_request))
+upload_result = asyncio.run(await storage_client.execute(upload_request))
 print("Basic IPFS upload result:", upload_result)
 ```
 
@@ -48,18 +48,18 @@ naptha storage ipfs read <IPFS_HASH>
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import ReadStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 read_request = ReadStorageRequest(
     storage_type=StorageType.IPFS,
     path=ipfs_hash
 )
 
-read_result = asyncio.run(await storage_provider.execute(read_request))
+read_result = asyncio.run(await storage_client.execute(read_request))
 print("IPFS read result:", read_result)
 ```
 
@@ -77,11 +77,11 @@ naptha storage ipfs create test -f README.md -o '{"ipns_operation": "create"}'
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import CreateStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 ipns_request = CreateStorageRequest(
     storage_type=StorageType.IPFS,
@@ -91,7 +91,7 @@ ipns_request = CreateStorageRequest(
         "ipns_operation": "create"
     }
 )
-ipns_result = asyncio.run(await storage_provider.execute(ipns_request))
+ipns_result = asyncio.run(await storage_client.execute(ipns_request))
 print("IPNS upload result:", ipns_result)
 ```
 
@@ -110,11 +110,11 @@ naptha storage ipfs read <IPNS_NAME>
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import ReadStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 ipns_read_request = ReadStorageRequest(
     storage_type=StorageType.IPFS,
@@ -124,7 +124,7 @@ ipns_read_request = ReadStorageRequest(
     }
 )
 
-ipns_read_result = asyncio.run(await storage_provider.execute(ipns_read_request))
+ipns_read_result = asyncio.run(await storage_client.execute(ipns_read_request))
 print("IPNS read result:", ipns_read_result)
 ```
 

@@ -1,8 +1,8 @@
 # Database Storage
 
-We offer a powerful way to manage structured data via our database storage provider. You can interact with it using Naptha's SDK, either via the CLI or Python client interface.
+We offer a powerful way to manage structured data via our database storage client. You can interact with it using Naptha's SDK, either via the CLI or Python client interface.
 
-For the `CLI` option, the database storage provider commands start with `naptha storage db`.
+For the `CLI` option, the database storage client commands start with `naptha storage db`.
 
 Here are some examples of how to interact with the database storage:
 
@@ -27,11 +27,11 @@ naptha storage db create test_embeddings -d '{
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import CreateStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 schema = {
     "schema": {
@@ -47,7 +47,7 @@ create_table_request = CreateStorageRequest(
     data=schema
 )
 
-create_table_result = asyncio.run(storage_provider.create_storage_object(create_table_request))
+create_table_result = asyncio.run(storage_client.create_storage_object(create_table_request))
 print("Create Table Result:", create_table_result)
 ```
 
@@ -72,11 +72,11 @@ naptha storage db create test_embeddings -d '{
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import CreateStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 insert_data = {
     "data": {
@@ -92,7 +92,7 @@ create_row_request = CreateStorageRequest(
     data=insert_data
 )
 
-create_row_result = asyncio.run(storage_provider.execute(create_row_request))
+create_row_result = asyncio.run(storage_client.execute(create_row_request))
 print("Create Row Result:", create_row_result)
 ```
 
@@ -113,11 +113,11 @@ naptha storage db update test_embeddings -d '{
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import UpdateStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 update_data = {
     "data": {
@@ -132,7 +132,7 @@ update_request = UpdateStorageRequest(
     options={"condition": {"text": "Document 1"}}  # Update where text = 'Document 1'
 )
 
-update_result = asyncio.run(storage_provider.execute(update_request))
+update_result = asyncio.run(storage_client.execute(update_request))
 print("Update Result:", update_result)
 ```
 
@@ -153,11 +153,11 @@ naptha storage db read test_embeddings -o '{
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import ReadStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 query_request = ReadStorageRequest(
     storage_type=StorageType.DATABASE,
@@ -167,7 +167,7 @@ query_request = ReadStorageRequest(
     }
 )
 
-query_result = asyncio.run(storage_provider.execute(query_request))
+query_result = asyncio.run(storage_client.execute(query_request))
 print("Query Result:", query_result)
 ```
 
@@ -192,11 +192,11 @@ naptha storage db read test_embeddings -o '{
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import ReadStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 vector_request = ReadStorageRequest(
     storage_type=StorageType.DATABASE,
@@ -210,7 +210,7 @@ vector_request = ReadStorageRequest(
     }
 )
 
-vector_result = asyncio.run(storage_provider.execute(vector_request))
+vector_result = asyncio.run(storage_client.execute(vector_request))
 print("Vector Similarity Search Result:", vector_result)
 ```
 
@@ -230,11 +230,11 @@ naptha storage db list test_embeddings -o '{
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import ListStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 list_request = ListStorageRequest(
     storage_type=StorageType.DATABASE,
@@ -245,7 +245,7 @@ list_request = ListStorageRequest(
     }
 )
 
-list_result = asyncio.run(storage_provider.execute(list_request))
+list_result = asyncio.run(storage_client.execute(list_request))
 print("List Rows Result:", list_result)
 ```
 
@@ -264,11 +264,11 @@ naptha storage db delete test_embeddings -o '{
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import DeleteStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 delete_rows_request = DeleteStorageRequest(
     storage_type=StorageType.DATABASE,
@@ -276,7 +276,7 @@ delete_rows_request = DeleteStorageRequest(
     condition={"text": "Document 1"}
 )
 
-delete_rows_result = asyncio.run(storage_provider.execute(delete_rows_request))
+delete_rows_result = asyncio.run(storage_client.execute(delete_rows_request))
 print("Delete Rows Result:", delete_rows_result)
 ```
 
@@ -293,17 +293,17 @@ naptha storage db delete test_embeddings
 ```
 import asyncio
 from naptha_sdk.schemas import NodeConfigUser
-from naptha_sdk.storage.storage_provider import StorageProvider
+from naptha_sdk.storage.storage_client import StorageClient
 from naptha_sdk.storage.schemas import DeleteStorageRequest, StorageType
 
-node = NodeConfigUser(ip="node.naptha.ai", http_port=7001, server_type="http")
-storage_provider = StorageProvider(node)
+node = NodeConfigUser(ip="node.naptha.ai", http_port=None, server_type="https")
+storage_client = StorageClient(node)
 
 delete_table_request = DeleteStorageRequest(
     storage_type=StorageType.DATABASE,
     path="test_embeddings"
 )
 
-delete_table_result = asyncio.run(storage_provider.execute(delete_table_request))
+delete_table_result = asyncio.run(storage_client.execute(delete_table_request))
 print("Delete Table Result:", delete_table_result)
 ```

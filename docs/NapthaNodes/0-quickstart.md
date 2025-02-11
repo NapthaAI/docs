@@ -23,7 +23,16 @@ bash launch.sh
 
 By default, the node will launch using docker compose, and will use ollama with the Nous Research Hermes 3 model.
 
-If `PRIVATE_KEY`, `HUB_USERNAME` and `HUB_PASSWORD` are not set in the .env file, you will be prompted to set them. You will also be prompted as to whether you want to set `OPENAI_API_KEY` and `STABILITY_API_KEY`.
+:::info
+This will set up all of the node services, including:
+- Local Inference 
+- LiteLLM Proxy Server
+- Local Servers
+- Local Storage
+- Message Broker and Workers
+:::
+
+If `PRIVATE_KEY`, is not set in the .env file, you will be prompted to set it. Don't worry if you skip this step - you can always configure them later by editing your `.env` file.
 
 ## Next Steps
 

@@ -53,7 +53,8 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Naptha Inference',
       items: [
-        'NapthaInference/inference',
+        'NapthaInference/0-overview',
+        'NapthaInference/1-inference',
       ],
     },
     {

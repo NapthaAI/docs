@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
         'GettingStarted/Installation',
         'GettingStarted/SDK',
         'GettingStarted/NapthaCLI',
+        'GettingStarted/NapthaHub',
       ],
     },
     {

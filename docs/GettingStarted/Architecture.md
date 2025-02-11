@@ -25,7 +25,7 @@ You can learn more about each module type in the [Naptha Modules](/docs/NapthaMo
 
 HuggingFace but for agents! The Naptha Hub allows you to discover modules, other builders, and nodes on the network. The URL and other metadata of modules are registered on the Naptha Hub, with the module code stored on GitHub, HuggingFace, IPFS, or DockerHub.
 
-You can learn more about the Hub in the [Naptha Hub](/docs/NapthaHub) section.
+You can learn more about the Hub in the [Getting Started](/docs/GettingStarted/NapthaHub) section.
 
 ## Naptha SDK
 

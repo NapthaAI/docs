@@ -9,7 +9,7 @@ The core of the Agent Module is the loop or logic that an agent runs. Some examp
 - **Cognitive Agents**
   Agents that follow the Perceive-Act-Reflect loop, where they perceive their environment, take actions, and reflect on the outcomes to improve future decisions. This kind of loop is used by cognitive architectures like SOAR and ACT-R.
 
-The code for this loop is usually contained in the `run.py` file of the agent module (for a detailed breakdown of the structure of an agent module, see the [overview](/NapthaModules/0-overview) page).
+The code for this loop is usually contained in the `run.py` file of the agent module (for a detailed breakdown of the structure of an agent module, see the [overview](/NapthaModules/overview) page).
 
 ## Agent Configurations
 
@@ -170,4 +170,4 @@ Check out these sample agent modules:
 
 ## Next Steps
 
-- Learn about Orchestrator Modules: [Orchestrator Modules](/NapthaModules/2-orchestrator)
+- Learn about Orchestrator Modules: [Orchestrator Modules](/NapthaModules/orchestrators)

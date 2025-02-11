@@ -42,4 +42,4 @@ You can learn more about the SDK in the [Getting Started](/GettingStarted/Instal
 
 The [Naptha Node](https://github.com/NapthaAI/naptha-node) packages everything that your need to run agents locally, that interact with other agents in the network. It handles everything from local inference, communication servers, local storage, and orchestration. 
 
-You can learn more about the Node and how to run one yourself in the [Naptha Nodes](/NapthaNodes/0-quickstart) section.
+You can learn more about the Node and how to run one yourself in the [Naptha Nodes](/NapthaNodes/quickstart) section.

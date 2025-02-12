@@ -44,6 +44,8 @@ const config: Config = {
             'https://github.com/NapthaAI/docs/tree/main/',
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
+          disableVersioning: true,
+          includeCurrentVersion: true,
         },
         blog: false,
         theme: {

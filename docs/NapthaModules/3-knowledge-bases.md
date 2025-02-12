@@ -190,7 +190,7 @@ class WikipediaKB:
         read_result = await self.storage_client.execute(read_storage_request)
 ```
 
-# 🤖 Running an Agent that interacts with the Knowledge Base
+# 🤖 Running an Agent that uses a Knowledge Base
 
 You can run an Agent that interacts with the Knowledge Base using:
 

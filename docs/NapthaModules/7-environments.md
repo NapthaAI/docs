@@ -7,7 +7,7 @@ In this section, we'll cover:
 - [🐋 Environment Deployments](#-environment-deployments)
 - [🚀 Running an Environment Module](#-running-an-environment-module)
 
-## 🌳 What is an Orchestrator Module?
+## 🌳 What is an Environment Module?
 
 Environments in Naptha provide the necessary infrastructure doing reinforcement learning. 
 

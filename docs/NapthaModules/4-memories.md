@@ -6,7 +6,6 @@ In this section, we'll cover:
 - [📝 Memory Configurations](#-memory-configurations)
 - [🐋 Memory Deployments](#-memory-deployments)
 - [🚀 Running a Memory Module](#-running-a-memory-module)
-- [🤖 Running an Agent that uses a Memory](#-running-an-agent-that-uses-a-memory)
 
 ## 💭 What is a Memory Module?
 

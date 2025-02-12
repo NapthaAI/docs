@@ -16,7 +16,7 @@ The node packages a number of services, with several options and combinations of
 
 - [Message Broker and Workers](https://github.com/NapthaAI/node/blob/main/node/worker): The Naptha Node uses asynchronous processing and message queues (RabbitMQ) to pass messages between modules. Modules are executed using either Poetry or Docker. 
 
-- (Optional) [Local Hub](https://github.com/NapthaAI/node/blob/main/node/storage/hub): The Naptha Node can run a local Hub, which is a registry for modules (agents, tools, agent orchestrators, environments, and personas) and nodes by setting `LOCAL_HUB=true` in the Config. This is useful for testing locally before publishing to the main Naptha Hub. For the Hub DB, we use SurrealDB.
+- (Optional) [Local Hub](https://github.com/NapthaAI/node/blob/main/node/storage/hub): The Naptha Node can run a local Hub, which is a registry for modules (agents, tools, agent orchestrators, environments, and personas) and nodes by setting `LOCAL_HUB=true` in the .env file. This is useful for testing locally before publishing to the main Naptha Hub. For the Hub DB, we use SurrealDB.
 
 ## Configuring the Node Services
 

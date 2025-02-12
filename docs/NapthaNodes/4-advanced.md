@@ -15,7 +15,7 @@ For development purposes, it is sometimes useful to run a local hub DB (e.g. to 
 
 - `LOCAL_HUB`: Set to True if you want to run a local hub.
 
-By default, the local hub will be available at `ws://localhost:3001/rpc` with the namespace defined by `HUB_DB_SURREAL_NS`, the database name defined by `HUB_DB_SURREAL_NAME` in the config.py file, and the root user and password defined by `HUB_DB_SURREAL_ROOT_USER` and `HUB_DB_SURREAL_ROOT_PASS` in the .env file.
+By default, the local hub will be available at `ws://localhost:3001/rpc` with the namespace defined by `HUB_DB_SURREAL_NS`, the database name defined by `HUB_DB_SURREAL_NAME` and the root user and password defined by `HUB_DB_SURREAL_ROOT_USER` and `HUB_DB_SURREAL_ROOT_PASS` in the .env file.
 
 If using docker, you should see the `surrealdb` service in the `docker ps -a` output. You can also check the logs of the `surrealdb` service with `docker logs -f surrealdb`.
 
@@ -53,7 +53,7 @@ If you are running a Naptha Node on a machine behind a WiFi router, the IP addre
 
 ## Running a separate LiteLLM instance
 
-If you are running LiteLLM externally to the node, you can specify the `LITELLM_URL` value in `node/config.py`, and add `LITELLM_MASTER_KEY` in your `.env` file so that your node is able to access your LiteLLM instance.
+If you are running LiteLLM externally to the node, you can specify the `LITELLM_URL` value and add `LITELLM_MASTER_KEY` in your `.env` file so that your node is able to access your LiteLLM instance.
 
 ## Configuring RabbitMQ and PostgreSQL
 

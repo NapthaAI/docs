@@ -22,9 +22,9 @@ Configure your `.env` file:
 ```
 HUB_USERNAME=<your_naptha_username>
 HUB_PASSWORD=<your_naptha_password>
-HUB_URL=ws://node.naptha.ai:3001/rpc
+HUB_URL=wss://hub.naptha.ai/rpc
 
-NODE_URL=http://node.naptha.ai:7001
+NODE_URL=https://node.naptha.ai
 ```
 :::info
 These variables are used to connect to the Naptha network.

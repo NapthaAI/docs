@@ -139,6 +139,18 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Naptha AI`,
     },
+    algolia: {
+      appId: process.env.ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: 'naptha',
+      contextualSearch: true,
+      searchParameters: {},
+      searchPagePath: 'search',
+      replaceSearchResultPathname: {
+        from: '(https?://docs.naptha.ai|http://localhost:3000)',
+        to: '/',
+      },
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

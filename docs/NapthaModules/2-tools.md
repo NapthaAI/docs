@@ -156,6 +156,10 @@ class GenerateImageAgent:
         return tool_response.results
 ```
 
+:::info
+Under the hood, `Tool.run` makes a call to the worker node via API, which executes the tool module. This makes it possible for agents and tools built using different frameworks or languages to interoperate.
+:::
+
 ## Need Help?
 - Join our [Community](https://naptha.ai/naptha-community) and post in the #support channel 
 - Submit issues on [GitHub](https://github.com/NapthaAI)

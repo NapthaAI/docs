@@ -256,6 +256,10 @@ class WikipediaAgent:
         ...
 ```
 
+:::info
+Under the hood, `KnowledgeBase.run` makes a call to the worker node via API, which executes the knowledge base module. This makes it possible for agents and knowledge bases built using different frameworks or languages to interoperate.
+:::
+
 ## Examples
 
 Check out these knowledge base implementations:

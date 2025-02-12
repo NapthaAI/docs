@@ -156,6 +156,9 @@ class MultiAgentChat:
                     response = await agent.run(agent_run_input)
 ```
 
+:::info
+Under the hood, `agent.run` makes a call to the worker node via API, which executes the agent module. This makes it possible for agents built using different agent frameworks to interoperate.
+:::
 
 You can deploy the modules for an orchestrator (without running) using:
 
@@ -169,6 +172,44 @@ You can run the orchestrator module on hosted nodes using:
 
 ```bash
 naptha run orchestrator:multiagent_chat -p "prompt='i would like to count up to ten, one number at a time. ill start. one.'" --agent_nodes "node.naptha.ai,node.naptha.ai" --kb_nodes "node.naptha.ai"
+```
+
+## 🤖 Running an Orchestrator from Python
+
+It may be useful to run an orchestrator module from Python e.g. an orchestrator module that calls another orchestrator module. The following example shows how to do this:
+
+```python
+from naptha_sdk.modules.orchestrator import Orchestrator
+from naptha_sdk.client.naptha import Naptha
+from naptha_sdk.schemas import AgentDeployment, KBDeployment, OrchestratorRunInput, OrchestratorDeployment, NodeConfig
+from naptha_sdk.user import sign_consumer_id
+
+naptha = Naptha()
+node = NodeConfig(...)
+
+agent_deployments = [
+    AgentDeployment(module={"name": "simple_chat_agent"}, node=node),
+    AgentDeployment(module={"name": "simple_chat_agent"}, node=node),
+]
+kb_deployment = KBDeployment(module={"name": "groupchat_kb"}, node=node)
+
+orchestrator_deployment = OrchestratorDeployment(
+    module={"name": "multiagent_chat"},
+    node=node,
+    kb_deployments=[kb_deployment],
+    agent_deployments=agent_deployments,
+)
+
+input_params = {"prompt": "lets count up one number at a time. ill start. one."}
+orchestrator_run_input = OrchestratorRunInput(
+    consumer_id=naptha.user.id,
+    inputs=input_params,
+    deployment=orchestrator_deployment,
+    signature=sign_consumer_id(naptha.user.id, os.getenv("PRIVATE_KEY"))
+)
+
+orchestrator = Orchestrator()
+response = await orchestrator.run(orchestrator_run_input)
 ```
 
 ## Examples

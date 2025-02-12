@@ -183,6 +183,10 @@ class EnvironmentAgent:
         await self.environment.run(environment_run_input)
 ```
 
+:::info
+Under the hood, `Environment.run` makes a call to the worker node via API, which executes the environment module. This makes it possible for agents and environments built using different frameworks or languages to interoperate.
+:::
+
 ## Need Help?
 - Join our [Community](https://naptha.ai/naptha-community) and post in the #support channel 
 - Submit issues on [GitHub](https://github.com/NapthaAI)

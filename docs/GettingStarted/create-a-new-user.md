@@ -8,7 +8,7 @@ sidebar_label: 'Create a New User'
 
 Your Naptha account is your identity on the Naptha platform. It allows you to:
 
-- Deploy and manage agents, tools, environments and other modules on the Naptha Hub
+- Deploy and run agents, tools, environments and other modules on Naptha Nodes 
 - Access and interact with the Naptha Hub's features and services
 
 Identity verification with Naptha Nodes is performed using private/public keypairs. Identity verification with the Naptha Hub is performed through a username and password.
@@ -111,7 +111,7 @@ Choose whether you want to interact with a *local* or *hosted* Naptha node.
 For a local node, set ```NODE_URL=http://localhost:7001``` in the .env file.
 
 ##### Hosted Node
-To use a hosted node, set ```NODE_URL=http://node.naptha.ai:7001``` or ```NODE_URL=http://node1.naptha.ai:7001``` in the .env file.
+To use a hosted node, set ```NODE_URL=https://node.naptha.ai``` or ```NODE_URL=https://node1.naptha.ai``` in the .env file.
 
 ## 4. Best Practices
 

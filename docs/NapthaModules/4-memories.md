@@ -1,5 +1,15 @@
 # Memory Modules
 
+In this section, we'll cover:
+
+- [💭 What is a Memory Module?](#-what-is-a-memory-module)
+- [📝 Memory Configurations](#-memory-configurations)
+- [🐋 Memory Deployments](#-memory-deployments)
+- [🚀 Running a Memory Module](#-running-a-memory-module)
+- [🤖 Running an Agent that uses a Memory](#-running-an-agent-that-uses-a-memory)
+
+## 💭 What is a Memory Module?
+
 Memory modules enable agent modules on Naptha to store, retrieve, and manage their experiences over time. These modules are crucial for maintaining context and learning from past interactions.
 
 You can create modules for different types of memories such as:
@@ -10,7 +20,7 @@ You can create modules for different types of memories such as:
 
 Naptha Nodes support the deployment of Memory modules. The state of these modules is stored in a local database (postgres) and file system on the Naptha Node.
 
-## Memory Configurations
+## 📝 Memory Configurations
 
 You can configure a memory module by specifying:
 
@@ -27,18 +37,40 @@ class MemoryConfig(BaseModel):
 ```
 
 :::info
-The storage configuration schema can be found in the [Storage Provider](/docs/NapthaStorage/0-overview.md) section.
+More details on the `StorageConfig` schema can be found in the [Storage Provider](/docs/NapthaStorage/0-overview.md) section.
 :::
 
-Or in the deployment.json file in the `configs` folder of the module:
+## 🐋 Memory Deployments
+
+Memory deployments allow you to specify the `node` that the memory will run on, the `module` that the memory will use, and the `config` that the memory will use. The configuration of a memory deployment can be specified using the `MemoryDeployment` class:
+
+```python
+#naptha_sdk/schemas.py
+class MemoryDeployment(BaseModel):
+    node: Union[NodeConfig, NodeConfigUser, Dict]
+    name: Optional[str] = None
+    module: Optional[Dict] = None
+    config: Optional[MemoryConfig] = None
+```
+
+## 🚀 Running a Memory Module
+
+### Prerequisites
+
+Install the Naptha SDK using the [instructions here](https://github.com/NapthaAI/naptha-sdk/?tab=readme-ov-file#install).
+
+### Example
+
+The [Cognitive Memory module](https://github.com/NapthaAI/cognitive_memory) is a simple example of a Memory module. It is intended to demonstrate how agents can interact with a Memory module that allows them to store and retrieve cognitive steps such as reflections. You can create a memory table using:
+
+The configuration of a memory module is specified in the `deployment.json` file in the `configs` folder of the module.
 
 ```json
-# MemoryConfig in deployment.json file 
+# MemoryConfig in configs/deployment.json file 
 [
     {
         ...
         "config": {
-            "llm_config": {"config_name": "model_1"},
             "storage_config": {
                 "storage_type": "db",
                 "path": "cognitive_memory",
@@ -59,77 +91,6 @@ Or in the deployment.json file in the `configs` folder of the module:
 ]
 ```
 
-## Memory Deployments
-
-Memory deployments allow you to specify the `node` that the memory will run on, the `module` that the memory will use, and the `config` that the memory will use. The configuration of a memory deployment can be specified using the `MemoryDeployment` class:
-
-```python
-#naptha_sdk/schemas.py
-class MemoryDeployment(BaseModel):
-    node: Union[NodeConfig, NodeConfigUser, Dict]
-    name: Optional[str] = None
-    module: Optional[Dict] = None
-    config: Optional[MemoryConfig] = None
-```
-
-Or in the deployment.json file in the `configs` folder of the module:
-
-```json
-# MemoryDeployment in deployment.json file 
-[
-    {
-        "node": {"name": "node.naptha.ai"},
-        "module": {"name": "wikipedia_kb"},
-    }
-]
-```
-
-## Deploying and Running a Memory Module
-
-### Prerequisites
-
-Install the Naptha SDK using the [instructions here](https://github.com/NapthaAI/naptha-sdk/?tab=readme-ov-file#install).
-
-### In Python
-
-You can deploy and run memory in Python using:
-
-```python
-from naptha_sdk.modules.memory import Memory
-from naptha_sdk.client.naptha import Naptha
-from naptha_sdk.schemas import MemoryRunInput
-
-naptha = Naptha()
-
-memory_deployment = {
-    "node": {"name": "node.naptha.ai"},
-    "module": {"name": "wikipedia_kb"},
-    ...
-}
-
-memory = Memory()
-
-# Deploy the memory
-response = await memory.create(memory_deployment)
-
-input_params = {
-    "func_name": "init",
-    "func_input_data": None
-}
-
-memory_run_input = MemoryRunInput(
-    consumer_id=naptha.user.id,
-    inputs=input_params,
-    deployment=memory_deployment,
-    signature=sign_consumer_id(naptha.user.id, os.getenv("PRIVATE_KEY"))
-)
-
-# Run memory
-response = await memory.call_memory_func(memory_run_input)
-```
-
-### From the CLI
-
 You can deploy the memory (without running) using:
 
 ```bash
@@ -137,13 +98,13 @@ You can deploy the memory (without running) using:
 naptha create memory:cognitive_memory 
 ```
 
-Create a Memory Table:
+There is a CognitiveMemory class in the `run.py` file that has a number of methods. You can think of these methods as [endpoints of the Memory](https://github.com/NapthaAI/cognitive_memory/blob/main/cognitive_memory/run.py#L34), which will be called using the `run` command below. For example, you can initialize the table in Memory using:
 
 ```bash
 naptha run memory:cognitive_memory -p "func_name='init'"
 ```
 
-Add to Memory:
+You can add to the memory table using:
 
 ```bash
 naptha run memory:cognitive_memory -p '{
@@ -155,7 +116,7 @@ naptha run memory:cognitive_memory -p '{
 }'
 ```
 
-Query Memory:
+You can query the memory table using:
 
 ```bash
 naptha run memory:cognitive_memory -p '{
@@ -166,7 +127,7 @@ naptha run memory:cognitive_memory -p '{
 }'
 ```
 
-Delete a row in Memory:
+You can delete a row in the memory table using:
 
 ```bash
 naptha run memory:cognitive_memory -p '{
@@ -186,3 +147,16 @@ Check out these memory implementations:
 ## Need Help?
 - Join our [Community](https://naptha.ai/naptha-community) and post in the #support channel
 - Submit issues on [GitHub](https://github.com/NapthaAI)
+
+## Next Steps
+
+import CardGrid from '@site/src/components/CardGrid';
+
+export const featureCards = [
+  {
+    title: 'Interact with Storage Providers',
+    description: 'Learn how to use storage within your memory module', 
+    icon: '💾',
+    link: 'NapthaStorage/0-overview'
+  }
+];

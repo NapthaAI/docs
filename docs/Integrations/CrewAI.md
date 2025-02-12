@@ -48,8 +48,8 @@ cp .env.example .env
 And add the following variables to the `.env` file:
 
 ```
-HUB_URL=ws://node.naptha.ai:3001/rpc
-NODE_URL=http://node.naptha.ai:7001
+HUB_URL=wss://hub.naptha.ai/rpc
+NODE_URL=https://node.naptha.ai
 ```
 
 :::info

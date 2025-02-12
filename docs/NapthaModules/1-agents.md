@@ -1,5 +1,14 @@
 # Agent Modules
 
+In this section, we'll cover:
+
+- [🤖 What is an Agent Module?](#-what-is-an-agent-module)
+- [📝 Agent Configurations](#-agent-configurations)
+- [🐋 Agent Deployments](#-agent-deployments)
+- [🚀 Running an Agent Module](#-running-an-agent-module)
+
+## 🤖 What is an Agent Module?
+
 The core of the Agent Module is the loop or logic that an agent runs. Some examples of agents that use different loops include: 
 
 - **Chat Agents**  
@@ -11,7 +20,7 @@ The core of the Agent Module is the loop or logic that an agent runs. Some examp
 
 The code for this loop is usually contained in the `run.py` file of the agent module (for a detailed breakdown of the structure of an agent module, see the [overview](/NapthaModules/overview) page).
 
-## Agent Configurations
+## 📝 Agent Configurations
 
 As well as the core loop, Agent Modules are configured by specifying:
 
@@ -30,27 +39,7 @@ class AgentConfig(BaseModel):
     system_prompt: Optional[Union[Dict, BaseModel]] = None
 ```
 
-Or in the deployment.json file in the `configs` folder of the module:
-
-```json
-# AgentConfig in deployment.json file 
-[
-    {
-        ...
-        "config": {
-            "config_name": "agent_config",
-            "llm_config": {"config_name": "model_1"},
-            "persona_module" : {"name": "richard_twitter"},
-            "system_prompt": {
-                "role": "You are a helpful AI assistant.",
-                "persona": ""
-            }
-        }
-    }
-]
-```
-
-## Agent Deployments
+## 🐋 Agent Deployments
 
 Agent deployments allow you to specify other modules that the agent module interacts with:
 
@@ -75,74 +64,15 @@ class AgentDeployment(BaseModel):
     memory_deployments: Optional[List[MemoryDeployment]] = None
 ```
 
-Or in the deployment.json file:
-
-```json
-# AgentDeployment in deployment.json file 
-[
-    {
-        "node": {"name": "node.naptha.ai"},
-        "module": {"name": "hello_world_agent"},
-        "config": ...,
-        "tool_deployments": [{"name": "tool_deployment_1"}, {"name": "tool_deployment_2"}],
-        "environment_deployments": [{"name": "environment_deployment_1"}],
-        "kb_deployments": [{"name": "kb_deployment_1"}],
-        "memory_deployments": [{"name": "memory_deployment_1"}, {"name": "memory_deployment_2"}]
-    }
-]
-```
-
-
-## Deploying and Running an Agent Module
+## 🚀 Running an Agent Module
 
 ### Prerequisites
 
 Install the Naptha SDK using the [instructions here](https://github.com/NapthaAI/naptha-sdk/?tab=readme-ov-file#install).
 
-### In Python
+### Example
 
-You can deploy andrun an agent in Python using:
-
-```python
-from naptha_sdk.modules.agent import Agent
-from naptha_sdk.client.naptha import Naptha
-from naptha_sdk.schemas import AgentRunInput
-
-naptha = Naptha()
-
-agent_deployment = {
-    "node": {"name": "node.naptha.ai"},
-    "module": {"name": "hello_world_agent"},
-    ...
-}
-
-# Instantiate the agent
-agent = Agent()
-
-# Deploy the agent
-response = await agent.create(agent_deployment)
-
-input_params = {
-    "firstname": "Sam",
-    "surname": "Altman",
-}
-
-agent_run_input = AgentRunInput(
-    consumer_id=naptha.user.id,
-    inputs=input_params,
-    deployment=agent_deployment,
-    signature=sign_consumer_id(naptha.user.id, os.getenv("PRIVATE_KEY"))
-)
-
-# Run the agent
-response = await agent.call_agent_func(agent_run_input)
-```
-
-Under the hood, `call_agent_func` makes a call to the worker node via API, which executes the agent module. This makes it possible for agents built using different agent frameworks to interoperate.
-
-### From the CLI
-
-You can deploy the agent (without running) using:
+The [Hello World Agent](https://github.com/NapthaAI/hello_world_agent) is the simplest example of an agent that prints hello. You can deploy the agent (without running) using:
 
 ```bash
 # usage: naptha create <agent_name>
@@ -155,6 +85,38 @@ Run the agent:
 # usage: naptha run <agent_name> <agent args>
 naptha run agent:hello_world_agent -p "firstname=sam surname=altman"
 ```
+
+Try running the [Simple Chat Agent](https://github.com/NapthaAI/simple_chat_agent) that uses the local LLM running on your node:
+
+```bash
+naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='what is an ai agent?'"
+```
+
+The configuration of an agent module is specified in the `deployment.json` file in the `configs` folder of the module.
+
+```json
+# AgentConfig in deployment.json file 
+[
+    {
+        ...
+        "config": {
+            "config_name": "agent_config",
+            "llm_config": {"config_name": "model_1"},
+            "persona_module" : {"name": "richard_twitter"},
+            "system_prompt": {
+                "role": "You are a helpful AI assistant.",
+                "persona": ""
+            }
+        }
+    }
+]
+```
+
+:::info
+For details on how to run LLM inference within modules, see the [LLM Inference](/docs/NapthaInference/1-inference) page.
+:::
+
+For an example of calling an agent from Python (within an orchestrator module that uses an agent module), see the [Orchestrator Modules](/docs/NapthaModules/6-orchestrator) page.
 
 ## Examples
 
@@ -170,4 +132,57 @@ Check out these sample agent modules:
 
 ## Next Steps
 
-- Learn about Orchestrator Modules: [Orchestrator Modules](/NapthaModules/orchestrators)
+import CardGrid from '@site/src/components/CardGrid';
+
+export const featureCards = [
+  {
+    title: 'Create Your First Module',
+    description: 'Follow our tutorial to create your first agent module',
+    icon: '✨',
+    link: 'Tutorials/module-guide'
+  },
+  {
+    title: 'Onboard your Agent from Other Frameworks', 
+    description: 'Find out how to automatically create a Naptha module from other agent frameworks',
+    icon: '🔄',
+    link: 'Integrations'
+  },
+  {
+    title: 'Run LLM Inference',
+    description: 'Learn how to make LLM calls within your agent module',
+    icon: '🧠',
+    link: 'NapthaInference/1-inference'
+  },
+  {
+    title: 'Tool Modules',
+    description: 'Learn how to use Agents with Tool Modules',
+    icon: '🛠️',
+    link: 'NapthaModules/2-tools'
+  },
+  {
+    title: 'Knowledge Base Modules',
+    description: 'Learn how to use Agents with Knowledge Base Modules',
+    icon: '📚',
+    link: 'NapthaModules/3-knowledge-bases'
+  },
+  {
+    title: 'Memory Modules',
+    description: 'Learn how to use Agents with Memory Modules',
+    icon: '💭',
+    link: 'NapthaModules/4-memories'
+  },
+  {
+    title: 'Persona Modules',
+    description: 'Learn how to use Agents with Persona Modules',
+    icon: '🎭',
+    link: 'NapthaModules/5-personas'
+  },
+  {
+    title: 'Orchestrator Modules',
+    description: 'Learn how to use Agents within Orchestrator Modules',
+    icon: '🎮',
+    link: 'NapthaModules/6-orchestrator'
+  }
+];
+
+<CardGrid cards={featureCards} />

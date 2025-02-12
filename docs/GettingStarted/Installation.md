@@ -72,7 +72,7 @@ Choose whether you want to interact with a *local* or *hosted* Naptha node.
 For a local node, set ```NODE_URL=http://localhost:7001``` in the .env file.
 
 ##### Hosted Node
-To use a hosted node, set ```NODE_URL=http://node.naptha.ai:7001``` or ```NODE_URL=http://node1.naptha.ai:7001``` in the .env file.
+To use a hosted node, set ```NODE_URL=https://node.naptha.ai``` or ```NODE_URL=https://node1.naptha.ai``` in the .env file.
 
 ### All Systems Go!
 You can check your installation by running:

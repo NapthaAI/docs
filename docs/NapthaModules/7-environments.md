@@ -166,19 +166,20 @@ from naptha_sdk.schemas import AgentDeployment, AgentRunInput, EnvironmentRunInp
 from naptha_sdk.user import sign_consumer_id
 
 class EnvironmentAgent:
-    def __init__(self, deployment: AgentDeployment):
+    async def create(self, deployment: AgentDeployment, *args, **kwargs):
         ...
+        self.deployment = deployment
+        self.environment = Environment()
         # the arg below is loaded from configs/environment_deployments.json
-        self.environment = Environment(self.deployment.environment_deployments[0])
+        environment_deployment = await self.environment.create(self.deployment.environment_deployments[0])
 
-    async def run_environment_agent(self, module_run: AgentRunInput):
+    async def run(self, module_run: AgentRunInput, *args, **kwargs):
         environment_run_input = EnvironmentRunInput(
             consumer_id=module_run.consumer_id,
             inputs={"func_name": "step", "func_input_data": {"message": module_run.inputs.message}},
             deployment=self.deployment.environment_deployments[0],
             signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY"))
         )
-
         await self.environment.run(environment_run_input)
 ```
 

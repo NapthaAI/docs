@@ -125,23 +125,25 @@ The names of the Agent and KB subdeployments that the orchestrator uses are spec
 
 There is a `MultiAgentChat` class in the `run.py` [file](https://github.com/NapthaAI/multiagent_chat/blob/main/multiagent_chat/run.py#L24C7-L24C21), which imports the `Agent` and `KnowledgeBase` classes and calls the `Agent.run` and `KnowledgeBase.run` methods:
 
-```
+```python
 from naptha_sdk.modules.agent import Agent
 from naptha_sdk.modules.kb import KnowledgeBase
 from naptha_sdk.schemas import OrchestratorRunInput, OrchestratorDeployment, KBRunInput, AgentRunInput
 from naptha_sdk.user import sign_consumer_id
 
 class MultiAgentChat:
-    def __init__(self, deployment: OrchestratorDeployment):
-        self.orchestrator_deployment = orchestrator_deployment
-        self.agent_deployments = self.orchestrator_deployment.agent_deployments
+    async def create(self, deployment: OrchestratorDeployment, *args, **kwargs):
+        self.deployment = deployment
+        self.agent_deployments = self.deployment.agent_deployments
         self.agents = [
-            Agent(deployment=self.agent_deployments[0], *args, **kwargs),
-            Agent(deployment=self.agent_deployments[1], *args, **kwargs)
+            Agent(),
+            Agent(),
         ]
-        self.groupchat_kb = KnowledgeBase(kb_deployment=self.orchestrator_deployment.kb_deployments[0])
+        agent_deployments = [await agent.create(deployment=self.agent_deployments[i], *args, **kwargs) for i, agent in enumerate(self.agents)]
+        self.groupchat_kb = KnowledgeBase()
+        kb_deployment = await self.groupchat_kb.create(deployment=self.deployment.kb_deployments[0], *args, **kwargs)
 
-    async def run_multiagent_chat(self, module_run: OrchestratorRunInput):
+    async def run(self, module_run: OrchestratorRunInput, *args, **kwargs):
         ...
         for round_num in range(self.orchestrator_deployment.config.max_rounds):
             for agent_num, agent in enumerate(self.agents):
@@ -151,7 +153,7 @@ class MultiAgentChat:
                         deployment=self.agent_deployments[agent_num],
                         signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY"))
                     )
-                    response = await agent.call_agent_func(agent_run_input)
+                    response = await agent.run(agent_run_input)
 ```
 
 

@@ -236,21 +236,24 @@ from naptha_sdk.schemas import AgentDeployment, AgentRunInput, KBRunInput
 from naptha_sdk.user import sign_consumer_id
 
 class WikipediaAgent:
-    def __init__(self, deployment: AgentDeployment):
-        ...
+    async def create(self, deployment: AgentDeployment, *args, **kwargs):
+        self.deployment = deployment
+        self.wikipedia_kb = KnowledgeBase()
         # the arg below is loaded from configs/kb_deployments.json
-        self.wikipedia_kb = KnowledgeBase(kb_deployment=self.deployment.kb_deployments[0])
-        ...
+        kb_deployment = await self.wikipedia_kb.create(deployment=self.deployment.kb_deployments[0])
+        self.system_prompt = SystemPromptSchema(role=self.deployment.config.system_prompt["role"])
+        self.inference_client = InferenceClient(self.deployment.node)
 
-    async def run_wikipedia_agent(self, module_run: AgentRunInput):
+    async def run(self, module_run: AgentRunInput, *args, **kwargs):
+        ...
         kb_run_input = KBRunInput(
             consumer_id=module_run.consumer_id,
             inputs={"func_name": "run_query", "func_input_data": {"query": module_run.inputs.query}},
             deployment=self.deployment.kb_deployments[0],
             signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY"))
         )
-
         page = await self.wikipedia_kb.run(kb_run_input)
+        ...
 ```
 
 ## Examples

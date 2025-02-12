@@ -139,21 +139,21 @@ from naptha_sdk.modules.tool import Tool
 from naptha_sdk.user import sign_consumer_id
 
 class GenerateImageAgent:
-    def __init__(self, deployment: AgentDeployment):
-        ...
-        # the arg below is loaded from configs/tool_deployments.json
-        self.tool = Tool(tool_deployment=self.deployment.tool_deployments[0])
-        ...
+    async def create(self, deployment: AgentDeployment, *args, **kwargs):
+        self.deployment = deployment
+        self.tool = Tool()
+        tool_deployment = await self.tool.create(deployment=deployment.tool_deployments[0])
+        self.system_prompt = SystemPromptSchema(role=self.deployment.config.system_prompt["role"])
 
-    async def call_tool(self, module_run: AgentRunInput):
+    async def run(self, module_run: AgentRunInput, *args, **kwargs):
         tool_run_input = ToolRunInput(
             consumer_id=module_run.consumer_id,
             inputs=module_run.inputs,
             deployment=self.deployment.tool_deployments[0],
             signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY"))
         )
-
         tool_response = await self.tool.run(tool_run_input)
+        return tool_response.results
 ```
 
 ## Need Help?

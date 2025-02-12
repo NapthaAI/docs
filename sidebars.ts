@@ -16,7 +16,6 @@ const sidebars: SidebarsConfig = {
       label: 'Getting Started',
       items: [
         'GettingStarted/Architecture',
-        'GettingStarted/UseCases',
         'GettingStarted/create-a-new-user',
         'GettingStarted/SDK',
         'GettingStarted/NapthaCLI',

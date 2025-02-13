@@ -152,8 +152,6 @@ const config: Config = {
       ],
       copyButton: true,
     },
-    // Temporarily commented out Algolia search configuration
-    /*
     algolia: {
       appId: process.env.ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_API_KEY,
@@ -166,7 +164,6 @@ const config: Config = {
         to: '/',
       },
     },
-    */
   } satisfies Preset.ThemeConfig,
 };
 

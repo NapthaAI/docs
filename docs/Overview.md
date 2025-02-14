@@ -21,7 +21,7 @@ Distributed multi-agent workflows can run on one or more Naptha nodes (rather th
 The Web of Agents can bring about increased performance compared to monolithic systems through:
 
 * **Heterogeneity:** Diversity in model ensembles contributes to improved overall performance [^1]. There is a phenomenon called "collaborativeness" where LLMs tend to generate better responses when given outputs from other models even if those other models are less capable [^2]. Diversity of architectures, knowledge, and tools also improves performance [^3].
-* **Scalability:** Brute-force ensemble of smaller LLMs can achieve comparable or superior performance to larger LLMs [^4]. Just as increasing neurons in a neural network leads to emergent capabilities, increasing agents in a multi-agent system may too enablle emergent capabilities [^5].
+* **Scalability:** Brute-force ensemble of smaller LLMs can achieve comparable or superior performance to larger LLMs [^4]. Just as increasing neurons in a neural network leads to emergent capabilities, increasing agents in a multi-agent system may too enable emergent capabilities [^5].
 
 Furthermore, agents running across a network of nodes can lead to enhanced:
 

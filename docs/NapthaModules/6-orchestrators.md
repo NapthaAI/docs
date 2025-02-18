@@ -174,6 +174,10 @@ You can run the orchestrator module on hosted nodes using:
 naptha run orchestrator:multiagent_chat -p "prompt='i would like to count up to ten, one number at a time. ill start. one.'" --agent_nodes "node.naptha.ai,node.naptha.ai" --kb_nodes "node.naptha.ai"
 ```
 
+:::note
+You can modify the `max_rounds` of the orchestrator run from the default value of 10 by passing in a config object in the command line: `--config '{"max_rounds": 5}'`
+:::
+
 ## 🤖 Running an Orchestrator from Python
 
 It may be useful to run an orchestrator module from Python e.g. an orchestrator module that calls another orchestrator module. The following example shows how to do this:

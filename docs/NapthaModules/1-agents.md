@@ -92,6 +92,10 @@ Try running the [Simple Chat Agent](https://github.com/NapthaAI/simple_chat_agen
 naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='what is an ai agent?'"
 ```
 
+:::note
+You can modify the `llm_config` of the agent run from the default value by passing in a config object in the command line: `--config '{"llm_config": {"config_name": "model_1"}}'`
+:::
+
 The configuration of an agent module is specified in the `deployment.json` file in the `configs` folder of the module.
 
 ```json

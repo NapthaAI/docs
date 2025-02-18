@@ -58,13 +58,13 @@ Install the Naptha SDK using the [instructions here](https://github.com/NapthaAI
 Below are examples of running the Simple Chat Agent with a [twitter/X persona](https://huggingface.co/datasets/NapthaAI/twitter_personas/blob/main/interstellarninja.json), generated from exported X data:
 
 ```bash
-naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are you?'" --persona_modules "interstellarninja_twitter"
+naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are you?'" --config '{"persona_module": {"name": "interstellarninja_twitter"}}'
 ```
 
 and from a synthetically generated [market persona](https://huggingface.co/datasets/NapthaAI/market_agents_personas/blob/main/market_agents_personas/data/Aileen_May.yaml) based on census data:
 
 ```bash
-naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are you?'" --persona_modules "marketagents_aileenmay"
+naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are you?'" --config '{"persona_module": {"name": "marketagents_aileenmay"}}'
 ```
 
 ## Need Help?

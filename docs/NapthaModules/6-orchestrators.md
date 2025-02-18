@@ -151,7 +151,7 @@ class MultiAgentChat:
                         consumer_id=module_run.consumer_id,
                         inputs={"tool_name": "chat", "tool_input_data": messages},
                         deployment=self.agent_deployments[agent_num],
-                        signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY"))
+                        signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY_FULL_PATH"))
                     )
                     response = await agent.run(agent_run_input)
 ```
@@ -209,7 +209,7 @@ orchestrator_run_input = OrchestratorRunInput(
     consumer_id=naptha.user.id,
     inputs=input_params,
     deployment=orchestrator_deployment,
-    signature=sign_consumer_id(naptha.user.id, os.getenv("PRIVATE_KEY"))
+    signature=sign_consumer_id(naptha.user.id, os.getenv("PRIVATE_KEY_FULL_PATH"))
 )
 
 orchestrator = Orchestrator()

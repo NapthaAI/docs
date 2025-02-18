@@ -150,7 +150,7 @@ class GenerateImageAgent:
             consumer_id=module_run.consumer_id,
             inputs=module_run.inputs,
             deployment=self.deployment.tool_deployments[0],
-            signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY"))
+            signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY_FULL_PATH"))
         )
         tool_response = await self.tool.run(tool_run_input)
         return tool_response.results

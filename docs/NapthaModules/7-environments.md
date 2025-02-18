@@ -178,7 +178,7 @@ class EnvironmentAgent:
             consumer_id=module_run.consumer_id,
             inputs={"func_name": "step", "func_input_data": {"message": module_run.inputs.message}},
             deployment=self.deployment.environment_deployments[0],
-            signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY"))
+            signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY_FULL_PATH"))
         )
         await self.environment.run(environment_run_input)
 ```

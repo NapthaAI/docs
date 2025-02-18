@@ -151,7 +151,7 @@ class MultiAgentChat:
                         consumer_id=module_run.consumer_id,
                         inputs={"tool_name": "chat", "tool_input_data": messages},
                         deployment=self.agent_deployments[agent_num],
-                        signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY"))
+                        signature=sign_consumer_id(module_run.consumer_id, os.getenv("PRIVATE_KEY_FULL_PATH"))
                     )
                     response = await agent.run(agent_run_input)
 ```
@@ -173,6 +173,10 @@ You can run the orchestrator module on hosted nodes using:
 ```bash
 naptha run orchestrator:multiagent_chat -p "prompt='i would like to count up to ten, one number at a time. ill start. one.'" --agent_nodes "node.naptha.ai,node.naptha.ai" --kb_nodes "node.naptha.ai"
 ```
+
+:::note
+You can modify the `max_rounds` of the orchestrator run from the default value of 10 by passing in a config object in the command line: `--config '{"max_rounds": 5}'`
+:::
 
 ## 🤖 Running an Orchestrator from Python
 
@@ -205,7 +209,7 @@ orchestrator_run_input = OrchestratorRunInput(
     consumer_id=naptha.user.id,
     inputs=input_params,
     deployment=orchestrator_deployment,
-    signature=sign_consumer_id(naptha.user.id, os.getenv("PRIVATE_KEY"))
+    signature=sign_consumer_id(naptha.user.id, os.getenv("PRIVATE_KEY_FULL_PATH"))
 )
 
 orchestrator = Orchestrator()

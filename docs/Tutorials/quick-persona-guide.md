@@ -15,7 +15,7 @@ The easiest way to understand how persona modules work on Naptha is to use an ex
 
 For example, to use the "interstellarninja_twitter" persona:
 ```bash
-naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are you?'" --persona_modules "interstellarninja_twitter"
+naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are you?'" --config '{"persona_module": {"name": "interstellarninja_twitter"}}'
 ```
 </details>
 
@@ -96,10 +96,10 @@ Try these example prompts to test your persona's behavior:
 
 ```bash
 # Basic identity check
-naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are you?'" --persona_modules "your-persona"
+naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='who are you?'" --config '{"persona_module": {"name": "your_persona"}}'
 
 # Topic expertise
-naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='can you help me with a technical problem?'" --persona_modules "your-persona"
+naptha run agent:simple_chat_agent -p "tool_name='chat' tool_input_data='can you help me with a technical problem?'" --config '{"persona_module": {"name": "your_persona"}}'
 ```
 
 You'll see an output like this:

@@ -270,6 +270,10 @@ For more complex modules like orchestrators, you can download and install the mo
 naptha create orchestrator:multiagent_chat --agent_modules "agent:simple_chat_agent,agent:simple_chat_agent" --worker_node_urls "node.naptha.ai,node1.naptha.ai" --environment_modules "environment:groupchat_environment" --environment_node_urls "node.naptha.ai"
 ```
 
+:::note
+You can modify the `max_rounds` of the orchestrator run from the default value of 10 by passing in a config object in the command line: `--config '{"max_rounds": 5}'`
+:::
+
 ### Run a module on a Naptha Node
 
 Run allows you to run a module on a node.

@@ -57,7 +57,7 @@ export const featureCards = [
   title: 'Naptha Nodes',
   description: 'Run your own node and join the decentralized AI network',
   icon: '🌐',
-  link: '/NapthaNodes/what-are-nodes'
+  link: 'NapthaNodes/quickstart'
   },
   {
     title: 'Naptha Inference',

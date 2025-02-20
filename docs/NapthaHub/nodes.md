@@ -1,6 +1,6 @@
-# Naptha Hub
+# Discovering Nodes on the Naptha Hub
 
-The Naptha Hub allows you to discover modules, other builders, and nodes on the network. The URL and other metadata of modules are registered on the Naptha Hub, with the module code stored on GitHub, HuggingFace, IPFS, or DockerHub.
+The Naptha Hub allows you to discover nodes that can be used for deploying agents and other modules, running inference using a variety of open source models, and storing data such as knowledge and memory for agents.
 
 ## Prerequisites
 
@@ -12,208 +12,6 @@ You can create an account on the Naptha Hub by running the following command:
 
 ```bash
 naptha signup
-```
-
-## Agents on the Naptha Hub
-
-You can use the CLI to explore available agents:
-
-```bash
-naptha agents
-```
-
-You should see something like this:
-
-```
-                                                                                                                         Available Agent                                                                                                                         
-╭───────────────────────────┬────────────────────────────┬────────────────────────────┬─────────────────────────────┬────────────────────────────┬───────────────────────────────────────────────────────────┬────────────────┬─────────────┬───────────────────╮
-│ Name                      │ ID                         │ Author                     │ Description                 │ Parameters                 │ Module URL                                                │ Module Version │ Module Type │ Module Entrypoint │
-├───────────────────────────┼────────────────────────────┼────────────────────────────┼─────────────────────────────┼────────────────────────────┼───────────────────────────────────────────────────────────┼────────────────┼─────────────┼───────────────────┤
-│ babyagi_task_executor     │ agent:babyagi_task_execut… │ user:naptha                │ A simple agent for          │ {tool_name: str,           │ https://github.com/NapthaAI/babyagi_task_executor         │ v0.2           │ agent       │ run.py            │
-│                           │                            │                            │ executing tasks in BabyAGI  │ tool_input_data: str}      │                                                           │                │             │                   │
-├───────────────────────────┼────────────────────────────┼────────────────────────────┼─────────────────────────────┼────────────────────────────┼───────────────────────────────────────────────────────────┼────────────────┼─────────────┼───────────────────┤
-```
-
-For each agent, you will see a module url where you can check out the code. 
-
-To register a new agent, you can use the following command:
-
-```bash
-naptha agents agent_name -c "description='Agent description' parameters='{tool_name: str, tool_input_data: str}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
-```
-
-To update an agent, you can use the following command:
-
-```bash
-naptha agents agent_name -u "module_version='v0.2'" 
-```
-
-To delete an agent, you can use the following command:
-
-```bash
-naptha agents -d agent_name
-```
-
-## Tools on the Naptha Hub
-
-You can use the CLI to explore available tools for agents to use:
-
-```bash
-naptha tools
-```
-
-For each tool, you will see a url where you can check out the code.
-
-To create a new tool, you can use the following command:
-
-```bash
-naptha tools tool_name -p "description='Tool description' parameters='{tool_input_1: str, tool_input_2: str}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
-```
-
-To update a tool, you can use the following command:
-
-```bash
-naptha tools tool_name -u "module_version='v0.2'" 
-```
-
-To delete a tool, you can use the following command:
-
-```bash
-naptha tools -d tool_name
-```
-
-## Knowledge Bases on the Naptha Hub
-
-You can use the CLI to explore available knowledge bases that you can use with agents:
-
-```bash
-naptha kbs
-```
-
-To register a new knowledge base, you can use the following command:
-
-```bash
-naptha kbs kb_name -p "description='Knowledge Base description' parameters='{input_parameter_1: str, input_parameter_2: int}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
-```
-
-To update a knowledge base, you can use the following command:
-
-```bash
-naptha kbs kb_name -u "module_version='v0.2'" 
-```
-
-To delete a knowledge base, you can use the following command:
-
-```bash
-naptha kbs -d kb_name
-```
-
-## Memories on the Naptha Hub
-
-You can use the CLI to explore available memory modules that you can use with agents:
-
-```bash
-naptha memories
-```
-
-To register a new memory, you can use the following command:
-
-```bash
-naptha memories memory_name -p "description='Memory description' parameters='{input_parameter_1: str, input_parameter_2: int}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
-```
-
-To update a memory module, you can use the following command:
-
-```bash
-naptha memories memory_name -u "module_version='v0.2'" 
-```
-
-To delete a memory module, you can use the following command:
-
-```bash
-naptha memories -d memory_name
-```
-
-## Personas on the Naptha Hub
-
-You can use the CLI to explore available personas that you can use with agents:
-
-```bash
-naptha personas
-```
-
-To register a new persona, you can use the following command:
-
-```bash
-naptha personas sam_altman_twitter -c "description='Persona for Sam Altman' parameters='{name: str, bio: str, openness: int}' module_url='https://huggingface.co/datasets/OpenAI/twitter_personas' module_entrypoint='data/sam.json'" 
-```
-
-Make sure that the `module_url` is the url of the main repo (e.g the huggingface dataset, github repo, or repo stored on ipfs) and the `module_entrypoint` is the path to the file in the dataset (currently can be json or yaml).
-
-To update a persona, you can use the following command:
-
-```bash
-naptha personas sam_altman_twitter -u "module_version='v0.2'" 
-```
-
-To delete a persona, you can use the following command:
-
-```bash
-naptha personas -d sam_altman_twitter
-```
-
-## Orchestrators on the Naptha Hub
-
-You can use the CLI to explore available agent orchestrators that you can use to orchestrate agents and other modules:
-
-```bash
-naptha orchestrators
-```
-
-For each orchestrator, you will see a url where you can check out the code.
-
-To register a new orchestrator, you can use the following command:
-
-```bash
-naptha orchestrators orchestrator_name -p "description='Orchestrator description' parameters='{input_parameter_1: str, input_parameter_2: int}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
-```
-
-To update an orchestrator, you can use the following command:
-
-```bash
-naptha orchestrators orchestrator_name -u "module_version='v0.2'" 
-```
-
-To delete an orchestrator, you can use the following command:
-
-```bash
-naptha orchestrators -d orchestrator_name
-```
-
-## Environments on the Naptha Hub
-
-You can use the CLI to explore available environments that you can use with orchestrators and agents:
-
-```bash
-naptha environments
-```
-
-To register a new environment, you can use the following command:
-
-```bash
-naptha environments environment_name -p "description='Environment description' parameters='{input_parameter_1: str, input_parameter_2: int}' module_url='ipfs://QmNer9SRKmJPv4Ae3vdVYo6eFjPcyJ8uZ2rRSYd3koT6jg'" 
-```
-
-To update an environment, you can use the following command:
-
-```bash
-naptha environments environment_name -u "module_version='v0.2'" 
-```
-
-To delete an environment, you can use the following command:
-
-```bash
-naptha environments -d environment_name
 ```
 
 ## Node Registry
@@ -255,6 +53,12 @@ You should see something like this:
 
 Total nodes: 3
 ```
+
+The `Node IP` column indicates the IP address of the node. You can connect to the node by setting the `NODE_URL` variable in the `.env` of the Naptha SDK to `f"https://{node_ip}"`.
+
+The `Available Models` column indicates the open source models that are available on the node.
+
+The `Provider Types` column indicates the capabilities of the node. For example, a node with `['models', 'storage', 'modules']` can be used for model inference, storing data, and deploying modules.
 
 ## Need Help?
 

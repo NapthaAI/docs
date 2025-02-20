@@ -19,7 +19,15 @@ const sidebars: SidebarsConfig = {
         'GettingStarted/create-a-new-user',
         'GettingStarted/InstallSDK',
         'GettingStarted/NapthaCLI',
-        'GettingStarted/NapthaHub',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Naptha Hub',
+      items: [
+        'NapthaHub/NapthaHub',
+        'NapthaHub/nodes',
+        'NapthaHub/secrets',
       ],
     },
     {

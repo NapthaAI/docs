@@ -368,7 +368,7 @@ The NODE_URL should be set in your .env file e.g. `NODE_URL=https://node2.naptha
 You can run inference on a node using the inference command:
 
 ```bash
-naptha inference "How can we create scaling laws for multi-agent systems?" -m "hermes3:8b"
+naptha inference completions "How can we create scaling laws for multi-agent systems?" -m "hermes3:8b"
 ```
 
 ## Storage Operations 

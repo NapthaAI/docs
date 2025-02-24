@@ -7,8 +7,8 @@ sidebar_label: 'Inference Client'
 You can access inference quickly using the `naptha inference` CLI command:
 
 ```bash
-# Format: naptha inference "<prompt>" -m "<model_name>"
-naptha inference "How can we create scaling laws for multi-agent systems?" -m "hermes3:8b"
+# Format: naptha inference completions "<prompt>" -m "<model_name>"
+naptha inference completions "How can we create scaling laws for multi-agent systems?" -m "hermes3:8b"
 ```
 
 # Accessing Inference in Modules via the Naptha SDK

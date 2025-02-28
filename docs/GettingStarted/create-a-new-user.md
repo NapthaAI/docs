@@ -39,29 +39,28 @@ poetry --version
 ```
 </details>
 
-Create a new poetry virtual environment:
+If you don't already have a poetry virtual environment, create a new one:
+
+If you don't already have a poetry virtual environment, create a new one:
 
 ```bash
-poetry new test-env
+poetry init --python ">=3.10,<3.13"
+```
+
+Then install the SDK:
+
+```bash
+poetry add naptha-sdk
+source .venv/bin/activate
+```
+
+Alternatively, you can use in-built Python virtual environments:
+
+```bash
+python -m venv .venv
 source .venv/bin/activate
 pip install naptha-sdk
 ```
-
-You can also use in-built Python virtual environments:
-
-```bash
-python -m venv test-env
-source test-env/bin/activate
-```
-
-### Install the SDK
-
-You can install the Naptha SDK using:
-
-```bash
-pip install naptha-sdk
-```
-
 
 ## 2. Creating Your Account
 
@@ -70,6 +69,7 @@ You have two methods to choose from:
 ### Method 1: Interactive Signup (Recommended)
 
 The simplest way to create a new account is through the interactive CLI. Run the following command:
+
 ```bash
 naptha signup
 ```
@@ -86,6 +86,7 @@ Your credentials have been updated in the .env file. You can now use these crede
 ```
 
 ### Method 2: Pre-configured Setup
+
 If you prefer setting credentials beforehand:
 
 1. Edit your `.env` file with your desired credentials:

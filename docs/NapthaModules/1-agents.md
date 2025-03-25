@@ -120,7 +120,7 @@ The configuration of an agent module is specified in the `deployment.json` file 
 For details on how to run LLM inference within modules, see the [LLM Inference](/NapthaInference/inference) page.
 :::
 
-For an example of calling an agent from Python (within an orchestrator module that uses an agent module), see the [Orchestrator Modules](/NapthaModules/orchestrator) page.
+For an example of calling an agent from Python (within an orchestrator module that uses an agent module), see the [Orchestrator Modules](/NapthaModules/orchestrators) page.
 
 ## Examples
 
@@ -185,7 +185,7 @@ export const featureCards = [
     title: 'Orchestrator Modules',
     description: 'Learn how to use Agents within Orchestrator Modules',
     icon: '🎮',
-    link: '/NapthaModules/orchestrator'
+    link: '/NapthaModules/orchestrators'
   }
 ];
 

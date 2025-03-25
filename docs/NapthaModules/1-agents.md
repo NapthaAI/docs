@@ -117,10 +117,10 @@ The configuration of an agent module is specified in the `deployment.json` file 
 ```
 
 :::info
-For details on how to run LLM inference within modules, see the [LLM Inference](/NapthaInference/1-inference) page.
+For details on how to run LLM inference within modules, see the [LLM Inference](/NapthaInference/inference) page.
 :::
 
-For an example of calling an agent from Python (within an orchestrator module that uses an agent module), see the [Orchestrator Modules](NapthaModules/6-orchestrator) page.
+For an example of calling an agent from Python (within an orchestrator module that uses an agent module), see the [Orchestrator Modules](/NapthaModules/orchestrator) page.
 
 ## Examples
 
@@ -143,49 +143,49 @@ export const featureCards = [
     title: 'Create Your First Module',
     description: 'Follow our tutorial to create your first agent module',
     icon: '✨',
-    link: 'Tutorials/module-guide'
+    link: '/Tutorials/module-guide'
   },
   {
     title: 'Onboard your Agent from Other Frameworks', 
     description: 'Find out how to automatically create a Naptha module from other agent frameworks',
     icon: '🔄',
-    link: 'Integrations'
+    link: '/Integrations/Decorators'
   },
   {
     title: 'Run LLM Inference',
     description: 'Learn how to make LLM calls within your agent module',
     icon: '🧠',
-    link: 'NapthaInference/1-inference'
+    link: '/NapthaInference/inference'
   },
   {
     title: 'Tool Modules',
     description: 'Learn how to use Agents with Tool Modules',
     icon: '🛠️',
-    link: 'NapthaModules/2-tools'
+    link: '/NapthaModules/tools'
   },
   {
     title: 'Knowledge Base Modules',
     description: 'Learn how to use Agents with Knowledge Base Modules',
     icon: '📚',
-    link: 'NapthaModules/3-knowledge-bases'
+    link: '/NapthaModules/knowledge-bases'
   },
   {
     title: 'Memory Modules',
     description: 'Learn how to use Agents with Memory Modules',
     icon: '💭',
-    link: 'NapthaModules/4-memories'
+    link: '/NapthaModules/memories'
   },
   {
     title: 'Persona Modules',
     description: 'Learn how to use Agents with Persona Modules',
     icon: '🎭',
-    link: 'NapthaModules/5-personas'
+    link: '/NapthaModules/personas'
   },
   {
     title: 'Orchestrator Modules',
     description: 'Learn how to use Agents within Orchestrator Modules',
     icon: '🎮',
-    link: 'NapthaModules/6-orchestrator'
+    link: '/NapthaModules/orchestrator'
   }
 ];
 
